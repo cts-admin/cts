@@ -1,0 +1,44 @@
+{% load static wagtailuserbar %***REMOVED***
+
+<!DOCTYPE html>
+<!--[if lt IE 7***REMOVED***>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif***REMOVED***-->
+<!--[if IE 7***REMOVED***>         <html class="no-js lt-ie9 lt-ie8"> <![endif***REMOVED***-->
+<!--[if IE 8***REMOVED***>         <html class="no-js lt-ie9"> <![endif***REMOVED***-->
+<!--[if gt IE 8***REMOVED***><!--> <html class="no-js"> <!--<![endif***REMOVED***-->
+    <head>
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <title>
+        ***REMOVED***% block title %***REMOVED***
+            ***REMOVED***% if self.seo_title %***REMOVED***{{ self.seo_title ***REMOVED******REMOVED***{% else %***REMOVED***{{ self.title ***REMOVED******REMOVED***{% endif %***REMOVED***
+        ***REMOVED***% endblock %***REMOVED***
+        ***REMOVED***% block title_suffix %***REMOVED***
+            ***REMOVED***% with self.get_site.site_name as site_name %***REMOVED***
+                ***REMOVED***% if site_name %***REMOVED***- {{ site_name ***REMOVED******REMOVED***{% endif %***REMOVED***
+            ***REMOVED***% endwith %***REMOVED***
+        ***REMOVED***% endblock %***REMOVED***
+        </title>
+        <meta name="description" content="" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    ***REMOVED***# Global stylesheets #***REMOVED***
+        <link rel="stylesheet" type="text/css" href="{% static 'css/cts.css' %***REMOVED***">
+
+    ***REMOVED***% block extra_css %***REMOVED***
+        ***REMOVED***# Override this in templates to add extra stylesheets #***REMOVED***
+    ***REMOVED***% endblock %***REMOVED***
+    </head>
+
+    <body class="{% block body_class %***REMOVED***{% endblock %***REMOVED***">
+    ***REMOVED***% wagtailuserbar %***REMOVED***
+
+    ***REMOVED***% block content %***REMOVED***{% endblock %***REMOVED***
+
+    ***REMOVED***# Global javascript #***REMOVED***
+        <script type="text/javascript" src="{% static 'js/cts.js' %***REMOVED***"></script>
+
+    ***REMOVED***% block extra_js %***REMOVED***
+        ***REMOVED***# Override this in templates to add extra javascript #***REMOVED***
+    ***REMOVED***% endblock %***REMOVED***
+    </body>
+</html>

@@ -1,0 +1,38 @@
+{% extends "base.html" %***REMOVED***
+{% load static wagtailcore_tags %***REMOVED***
+
+{% block body_class %***REMOVED***template-searchresults{% endblock %***REMOVED***
+
+{% block title %***REMOVED***Search{% endblock %***REMOVED***
+
+{% block content %***REMOVED***
+    <h1>Search</h1>
+
+    <form action="{% url 'search' %***REMOVED***" method="get">
+        <input type="text" name="query"{% if search_query %***REMOVED*** value="{{ search_query ***REMOVED******REMOVED***"{% endif %***REMOVED***>
+        <input type="submit" value="Search" class="button">
+    </form>
+
+***REMOVED***% if search_results %***REMOVED***
+        <ul>
+        ***REMOVED***% for result in search_results %***REMOVED***
+                <li>
+                    <h4><a href="{% pageurl result %***REMOVED***">{{ result ***REMOVED******REMOVED***</a></h4>
+                ***REMOVED***% if result.search_description %***REMOVED***
+                    ***REMOVED***{ result.search_description ***REMOVED******REMOVED***
+                ***REMOVED***% endif %***REMOVED***
+                </li>
+        ***REMOVED***% endfor %***REMOVED***
+        </ul>
+
+    ***REMOVED***% if search_results.has_previous %***REMOVED***
+            <a href="{% url 'search' %***REMOVED***?query={{ search_query|urlencode ***REMOVED******REMOVED***&amp;page={{ search_results.previous_page_number ***REMOVED******REMOVED***">Previous</a>
+    ***REMOVED***% endif %***REMOVED***
+
+    ***REMOVED***% if search_results.has_next %***REMOVED***
+            <a href="{% url 'search' %***REMOVED***?query={{ search_query|urlencode ***REMOVED******REMOVED***&amp;page={{ search_results.next_page_number ***REMOVED******REMOVED***">Next</a>
+    ***REMOVED***% endif %***REMOVED***
+***REMOVED***% elif search_query %***REMOVED***
+        No results found
+***REMOVED***% endif %***REMOVED***
+{% endblock %***REMOVED***
