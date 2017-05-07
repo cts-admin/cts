@@ -1,0 +1,18 @@
+{% extends "base.html" %***REMOVED***
+
+{% load wagtailcore_tags %***REMOVED***
+
+{% block body_class %***REMOVED***template-blogindexpage{% endblock %***REMOVED***
+
+{% block content %***REMOVED***
+    <h1>{{ page.title ***REMOVED******REMOVED***</h1>
+
+    <div class="intro">{{ page.intro|richtext ***REMOVED******REMOVED***</div>
+
+***REMOVED***% for post in page.get_children %***REMOVED***
+        <h2><a href="{% pageurl post %***REMOVED***">{{ post.title ***REMOVED******REMOVED***</a> </h2>
+    ***REMOVED***{ post.specific.intro ***REMOVED******REMOVED***
+    ***REMOVED***{ post.specific.body|richtext ***REMOVED******REMOVED***
+***REMOVED***% endfor %***REMOVED***
+
+{% endblock %***REMOVED***
