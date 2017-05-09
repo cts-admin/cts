@@ -1,0 +1,23 @@
+{% extends "base.html" %***REMOVED***
+{% load wagtailcore_tags %***REMOVED***
+
+{% block content %***REMOVED***
+
+***REMOVED***% if request.GET.tag|length %***REMOVED***
+        <h4>Showing pages tagged "{{ request.GET.tag ***REMOVED******REMOVED***"</h4>
+***REMOVED***% endif %***REMOVED***
+
+***REMOVED***% for blogpage in blogpages %***REMOVED***
+
+        <p>
+            <strong><a href="{% pageurl blogpage %***REMOVED***">{{ blogpage.title ***REMOVED******REMOVED***</a> </strong><br />
+            <small>Revised: {{ blogpage.latest_revision_created_at ***REMOVED******REMOVED***</small><br />
+        ***REMOVED***% if blogpage.author %***REMOVED***
+                <p>By {{ blogpage.author.profile ***REMOVED******REMOVED***</p>
+        ***REMOVED***% endif %***REMOVED***
+        </p>
+***REMOVED***% empty %***REMOVED***
+        No Pages found with that tag.
+***REMOVED***% endfor %***REMOVED***
+
+{% endblock content %***REMOVED***
