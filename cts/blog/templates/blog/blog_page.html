@@ -19,6 +19,15 @@
         </div>
 ***REMOVED***% endfor %***REMOVED***
 
+***REMOVED***% if page.tags.all.count %***REMOVED***
+        <div class="tags">
+            <h3>Tags</h3>
+        ***REMOVED***% for tag in page.tags.all %***REMOVED***
+                <a href="{% slugurl 'tags' %***REMOVED***?tag={{ tag ***REMOVED******REMOVED***"><button type="button">{{ tag ***REMOVED******REMOVED***</button> </a>
+        ***REMOVED***% endfor %***REMOVED***
+        </div>
+***REMOVED***% endif %***REMOVED***
+
     <p><a href="{{ page.get_parent.url ***REMOVED******REMOVED***">Return to blog</a> </p>
 
 {% endblock %***REMOVED***
