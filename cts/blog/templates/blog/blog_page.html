@@ -8,6 +8,20 @@
     <h1>{{ page.title ***REMOVED******REMOVED***</h1>
     <p class="meta">{{ page.date ***REMOVED******REMOVED***</p>
 
+***REMOVED***% with categories=page.categories.all %***REMOVED***
+    ***REMOVED***% if categories %***REMOVED***
+            <h3>Posted in:</h3>
+            <ul>
+            ***REMOVED***% for category in categories %***REMOVED***
+                    <li style="display: inline">
+                    ***REMOVED***% image category.icon fill-32x32 style="vertical-align: middle" %***REMOVED***
+                    ***REMOVED***{ category.name ***REMOVED******REMOVED***
+                    </li>
+            ***REMOVED***% endfor %***REMOVED***
+            </ul>
+    ***REMOVED***% endif %***REMOVED***
+***REMOVED***% endwith %***REMOVED***
+
     <div class="intro">{{ page.intro ***REMOVED******REMOVED***</div>
 
 ***REMOVED***{ page.body|richtext ***REMOVED******REMOVED***
