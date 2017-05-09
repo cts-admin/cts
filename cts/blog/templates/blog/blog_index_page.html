@@ -12,7 +12,12 @@
 ***REMOVED***% for post in blogpages %***REMOVED***
     ***REMOVED***% with post=post.specific %***REMOVED***
             <h2><a href="{% pageurl post %***REMOVED***">{{ post.title ***REMOVED******REMOVED***</a> </h2>
-        ***REMOVED***{ post.intro ***REMOVED******REMOVED***
+
+        ***REMOVED***% with post.main_image as main_image %***REMOVED***
+            ***REMOVED***% if main_image %***REMOVED***{% image main_image fill-160x100 %***REMOVED***{% endif %***REMOVED***
+        ***REMOVED***% endwith %***REMOVED***
+
+            <p>{{ post.intro ***REMOVED******REMOVED***</p>
         ***REMOVED***{ post.body|richtext ***REMOVED******REMOVED***
     ***REMOVED***% endwith %***REMOVED***
 ***REMOVED***% endfor %***REMOVED***
