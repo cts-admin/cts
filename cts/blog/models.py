@@ -29,6 +29,17 @@ class BlogIndexPage(Page):
     ***REMOVED***
 
 
+class BlogTagIndexPage(Page):
+
+    def get_context(self, request):
+        tag = request.GET.get('tag')
+        blogpages = BlogPage.objects.filter(tags__name=tag)
+
+        context = super(BlogTagIndexPage, self).get_context(request)
+        context['blogpages'***REMOVED*** = blogpages
+        return context
+
+
 class BlogPage(Page):
     date = models.DateField("Post date")
     intro = models.CharField(max_length=250)
