@@ -1,0 +1,17 @@
+{% extends "base.html" %***REMOVED***
+
+{% load wagtailcore_tags %***REMOVED***
+
+{% block body_class %***REMOVED***template-blogpage{% endblock %***REMOVED***
+
+{% block content %***REMOVED***
+    <h1>{{ page.title ***REMOVED******REMOVED***</h1>
+    <p class="intro">{{ page.date ***REMOVED******REMOVED***</p>
+
+    <div class="intro">{{ page.intro ***REMOVED******REMOVED***</div>
+
+***REMOVED***{ page.body|richtext ***REMOVED******REMOVED***
+
+    <p><a href="{{ page.get_parent.url ***REMOVED******REMOVED***">Return to blog</a> </p>
+
+{% endblock %***REMOVED***

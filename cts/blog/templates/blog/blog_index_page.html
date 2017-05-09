@@ -9,10 +9,12 @@
 
     <div class="intro">{{ page.intro|richtext ***REMOVED******REMOVED***</div>
 
-***REMOVED***% for post in page.get_children %***REMOVED***
-        <h2><a href="{% pageurl post %***REMOVED***">{{ post.title ***REMOVED******REMOVED***</a> </h2>
-    ***REMOVED***{ post.specific.intro ***REMOVED******REMOVED***
-    ***REMOVED***{ post.specific.body|richtext ***REMOVED******REMOVED***
+***REMOVED***% for post in blogpages %***REMOVED***
+    ***REMOVED***% with post=post.specific %***REMOVED***
+            <h2><a href="{% pageurl post %***REMOVED***">{{ post.title ***REMOVED******REMOVED***</a> </h2>
+        ***REMOVED***{ post.intro ***REMOVED******REMOVED***
+        ***REMOVED***{ post.body|richtext ***REMOVED******REMOVED***
+    ***REMOVED***% endwith %***REMOVED***
 ***REMOVED***% endfor %***REMOVED***
 
 {% endblock %***REMOVED***
