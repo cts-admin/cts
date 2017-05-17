@@ -144,4 +144,4 @@
 
 ***REMOVED***
 ***REMOVED***
-BASE_URL = 'http://example.com'
+***REMOVED***
