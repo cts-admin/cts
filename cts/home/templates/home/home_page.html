@@ -1,6 +1,179 @@
 {% extends "base.html" %***REMOVED***
 
+{% load wagtailcore_tags %***REMOVED***
+{% load static %***REMOVED***
+
+{% block extra_css %***REMOVED***
+    <!--     Font Awesome     -->
+    <link href="{% static 'bootstrap3/css/font-awesome.css' %***REMOVED***" rel="stylesheet">
+{% endblock extra_css %***REMOVED***
+
 {% block content %***REMOVED***
-    <h1>Saving the World</h1>
-    <h3>One Seed At A Time</h3>
-{% endblock %***REMOVED***
+<div id="navbar-full">
+    <div class="container">
+        <nav class="navbar navbar-ct-blue navbar-transparent navbar-fixed-top" role="navigation">
+
+          <div class="container">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a href="https://conservationtechnologysolutions.com">
+                     <div class="logo-container">
+                        <div class="logo">
+                            <span class="glyphicon glyphicon-leaf" aria-hidden="true" style="padding: 16px 16px; color:darkgreen"></span>
+                        </div>
+                        <div class="brand">
+                            Conservation Technology Solutions
+                        </div>
+                    </div>
+                </a>
+            </div>
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+              <ul class="nav navbar-nav navbar-right">
+                    <li><a href="mission.html">Mission</a></li>
+
+                    <li><a href="https://www.paypal.com/" class="btn btn-round btn-default">Donate</a></li>
+               </ul>
+
+            </div><!-- /.navbar-collapse -->
+          </div><!-- /.container-fluid -->
+        </nav>
+    </div><!--  end container-->
+
+    <div class='blurred-container'>
+        <div class="motto">
+            <div class="border no-left-border no-right-border">CTS</div>
+        </div>
+        <div class="img-src" style="background-image: url({% static 'img/eriogonum.JPG' %***REMOVED***)"></div>
+        <div class='img-src blur' style="background-image: url({% static 'img/eriogonum_blur.JPG' %***REMOVED***)"></div>
+    </div>
+
+</div>
+
+<div class="main">
+    <div class="container tim-container">
+        <div id="extras">
+            <div class="space"></div>
+            <div class="row">
+                <div class="col-md-7 col-md-offset-0 col-sm-10 col-sm-offset-1">
+                    <div class="text-center">
+                        <img src="{% static 'img/bird_flying_low.jpeg' %***REMOVED***" alt="Rounded Image" class="img-rounded img-responsive img-dog">
+                    </div>
+                </div>
+                <div class="col-md-5 col-sm-12">
+                                <h1 class="text-center">About Conservation Technology Solutions
+
+                                <small class="subtitle">Get to know us</small></h1>
+                                <hr>
+                                <p>
+                                    CTS was founded to address the needs of those involved in natural resource conservation and help them leverage the power of both existing and upcoming technologies so they can do their jobs more quickly, more efficiently, and more easily.
+                                </p>
+                                <p>
+                                    We’re interested in developing tools that can help land managers, native seed producers, native seed collectors, and citizen scientists communicate more effectively and track the key elements that matter to them. If you’re involved in natural resource conservation efforts, please get in touch and share your ideas for how we can better assist you.
+                                </p>
+
+                </div>
+            </div>
+        </div>
+    <!--     end extras -->
+    </div>
+<!-- end container -->
+<div class="space-30"></div>
+</div>
+
+
+<!-- end main -->
+
+<div class="parallax-pro">
+    <div class="img-src" style="background-image: url({% static 'img/zion_fence.jpg' %***REMOVED***);"></div>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12 text-center">
+                <h1>
+                    <small>
+                       On the horizon
+                    </small>
+                </h1>
+            </div>
+            <div class="col-md-6 col-md-offset-3 col-md-12 text-center">
+                <h1 class="hello text-center">
+                   <a href="http://{% slugurl 'mission' %***REMOVED***">Mission Goals</a>
+                   <small>
+                    <ul class="list-unstyled">
+                        <li>Develop Communication Tools</li>
+                        <li>Provide Technical Assistance to Project Partners</li>
+                        <li>Promote Citizen Science</li>
+                        <li>Enhance Natural Resource Education</li>
+                    </ul>
+                    </small>
+                </h1>
+                 <div class="actions">
+                     <a class="btn btn-lg btn-warning btn-fill" href="{% slugurl 'contact_us' %***REMOVED***">Work With Us</a>
+                </div>
+            </div>
+        </div>
+        <div class="space-30"></div>
+        <div class="row">
+             <div class="col-md-12 text-center">
+                <div class="credits">
+                    &copy; <script>document.write(new Date().getFullYear())</script> Conservation Technology Solutions Inc.
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+
+{% block extra_js %***REMOVED***
+    <script src="{% static 'jquery/jquery-1.10.2.js' %***REMOVED***" type="text/javascript"></script>
+	<script src="{% static 'js/jquery-ui-1.10.4.custom.min.js' %***REMOVED***" type="text/javascript"></script>
+
+	<script src="{% static 'bootstrap3/js/bootstrap.js' %***REMOVED***" type="text/javascript"></script>
+	<script src="{% static 'js/gsdk-checkbox.js' %***REMOVED***"></script>
+	<script src="{% static 'js/gsdk-radio.js' %***REMOVED***"></script>
+	<script src="{% static 'js/gsdk-bootstrapswitch.js' %***REMOVED***"></script>
+	<script src="{% static 'js/get-shit-done.js' %***REMOVED***"></script>
+    <script src="{% static 'js/custom.js' %***REMOVED***"></script>
+
+<script type="text/javascript">
+
+    $('.btn-tooltip').tooltip();
+    $('.label-tooltip').tooltip();
+    $('.pick-class-label').click(function(){
+        var new_class = $(this).attr('new-class');
+        var old_class = $('#display-buttons').attr('data-class');
+        var display_div = $('#display-buttons');
+        if(display_div.length) {
+        var display_buttons = display_div.find('.btn');
+        display_buttons.removeClass(old_class);
+        display_buttons.addClass(new_class);
+        display_div.attr('data-class', new_class);
+    ***REMOVED***
+***REMOVED***);
+    $( "#slider-range" ).slider({
+		range: true,
+		min: 0,
+		max: 500,
+		values: [ 75, 300 ***REMOVED***,
+	***REMOVED***);
+	$( "#slider-default" ).slider({
+			value: 70,
+			orientation: "horizontal",
+			range: "min",
+			animate: true
+	***REMOVED***);
+	$('.carousel').carousel({
+      interval: 4000
+***REMOVED***);
+</script>
+{% endblock extra_js %***REMOVED***
+
+{% endblock content %***REMOVED***
