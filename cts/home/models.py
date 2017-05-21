@@ -3,13 +3,18 @@
 from django.db import models
 
 from wagtail.wagtailcore.models import Page
-from wagtail.wagtailcore.fields import RichTextField
-from wagtail.wagtailadmin.edit_handlers import FieldPanel
+from wagtail.wagtailcore.fields import StreamField
+from wagtail.wagtailcore import blocks
+from wagtail.wagtailadmin.edit_handlers import StreamFieldPanel
 
 
 class HomePage(Page):
-    body = RichTextField(blank=True)
+    content = StreamField([
+        ('heading', blocks.CharBlock(classname='text-center')),
+        ('motto', blocks.CharBlock(classname='subtitle')),
+        ('paragraph', blocks.RichTextBlock())
+    ***REMOVED***, blank=True)
 
     content_panels = Page.content_panels + [
-        FieldPanel('body', classname='full'),
+        StreamFieldPanel('content', classname='full'),
     ***REMOVED***
