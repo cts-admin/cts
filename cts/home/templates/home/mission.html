@@ -3,3 +3,48 @@
 {% load wagtailcore_tags %***REMOVED***
 {% load static %***REMOVED***
 
+{% block extra_css %***REMOVED***
+    <!--     Font Awesome     -->
+    <link href="http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
+    <link href='http://fonts.googleapis.com/css?family=Grand+Hotel' rel='stylesheet' type='text/css'>
+{% endblock extra_css %***REMOVED***
+
+{% block content %***REMOVED***
+***REMOVED***% block nav %***REMOVED***{{ block.super ***REMOVED******REMOVED***{% endblock %***REMOVED***
+
+    <div class="main">
+        <div class="container tim-container" style="max-width:800px; padding-top:100px">
+            <h1 class="text-center">
+            ***REMOVED***{ page.title ***REMOVED******REMOVED***
+            </h1>
+         ***REMOVED***% for block in page.body %***REMOVED***
+            ***REMOVED***% if block.block_type == 'motto' %***REMOVED***
+                    <h1 class="text-center">
+                        <small class="subtitle">
+                        ***REMOVED***% include_block block.value %***REMOVED***
+                        </small>
+                    </h1>
+             ***REMOVED***% endif %***REMOVED***
+             ***REMOVED***% if block.block_type == 'paragraph' %***REMOVED***
+                 ***REMOVED***% include_block block %***REMOVED***
+             ***REMOVED***% endif %***REMOVED***
+         ***REMOVED***% endfor %***REMOVED***
+        </div>
+        <div class="space"></div>
+    <!-- end container -->
+    </div>
+    <!-- end main -->
+
+{% endblock content %***REMOVED***
+
+{% block extra_js %***REMOVED***
+    <script src="{% static 'jquery/jquery-1.10.2.js' %***REMOVED***" type="text/javascript"></script>
+	<script src="{% static 'js/jquery-ui-1.10.4.custom.min.js' %***REMOVED***" type="text/javascript"></script>
+
+	<script src="{% static 'bootstrap3/js/bootstrap.js' %***REMOVED***" type="text/javascript"></script>
+	<script src="{% static 'js/gsdk-checkbox.js' %***REMOVED***"></script>
+	<script src="{% static 'js/gsdk-radio.js' %***REMOVED***"></script>
+	<script src="{% static 'js/gsdk-bootstrapswitch.js' %***REMOVED***"></script>
+	<script src="{% static 'js/get-shit-done.js' %***REMOVED***"></script>
+    <script src="{% static 'js/custom.js' %***REMOVED***"></script>
+{% endblock extra_js %***REMOVED***
