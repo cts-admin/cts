@@ -1,4 +1,5 @@
 {% load static wagtailuserbar %}
+{% load wagtailcore_tags %}
 
 <!doctype html>
 <html lang="en">
@@ -58,7 +59,56 @@
     <body class="{% block body_class %}{% endblock %}">
         {% wagtailuserbar %}
 
-        {% block content %}{% endblock %}
+        {% block content %}
+            {% block nav %}
+                <div id="navbar-full">
+                    <div class="container">
+                        <nav class="navbar navbar-ct-blue navbar-transparent navbar-fixed-top" role="navigation">
+
+                          <div class="container">
+                            <!-- Brand and toggle get grouped for better mobile display -->
+                            <div class="navbar-header">
+                                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                                    <span class="sr-only">Toggle navigation</span>
+                                    <span class="icon-bar"></span>
+                                    <span class="icon-bar"></span>
+                                    <span class="icon-bar"></span>
+                                </button>
+                                <a href="/">
+                                     <div class="logo-container">
+                                        <div class="logo">
+                                            <span class="glyphicon glyphicon-leaf" aria-hidden="true" style="padding: 16px 16px; color:darkgreen"></span>
+                                        </div>
+                                        <div class="brand">
+                                            Conservation Technology Solutions
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+
+                            <!-- Collect the nav links, forms, and other content for toggling -->
+                            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                              <ul class="nav navbar-nav navbar-right">
+                                    <li><a href={% slugurl 'mission' %}>Mission</a></li>
+
+                                    <li><a href="https://paypal.me/donatects" class="btn btn-round btn-default">Donate</a></li>
+                               </ul>
+
+                            </div><!-- /.navbar-collapse -->
+                          </div><!-- /.container-fluid -->
+                        </nav>
+                    </div><!--  end container-->
+
+                    <div class='blurred-container'>
+                        <div class="motto">
+                            <div class="border no-left-border no-right-border">CTS</div>
+                        </div>
+                        <div class="img-src" style="background-image: url({% static 'img/eriogonum.JPG' %})"></div>
+                        <div class='img-src blur' style="background-image: url({% static 'img/eriogonum_blur.JPG' %})"></div>
+                    </div>
+                </div>
+            {% endblock nav %}
+        {% endblock %}
 
         {# Global javascript #}
         <script type="text/javascript" src="{% static 'js/cts.js' %}"></script>

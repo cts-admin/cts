@@ -3,3 +3,48 @@
 {% load wagtailcore_tags %}
 {% load static %}
 
+{% block extra_css %}
+    <!--     Font Awesome     -->
+    <link href="http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
+    <link href='http://fonts.googleapis.com/css?family=Grand+Hotel' rel='stylesheet' type='text/css'>
+{% endblock extra_css %}
+
+{% block content %}
+    {% block nav %}{{ block.super }}{% endblock %}
+
+    <div class="main">
+        <div class="container tim-container" style="max-width:800px; padding-top:100px">
+            <h1 class="text-center">
+                {{ page.title }}
+            </h1>
+             {% for block in page.body %}
+                {% if block.block_type == 'motto' %}
+                    <h1 class="text-center">
+                        <small class="subtitle">
+                            {% include_block block.value %}
+                        </small>
+                    </h1>
+                 {% endif %}
+                 {% if block.block_type == 'paragraph' %}
+                     {% include_block block %}
+                 {% endif %}
+             {% endfor %}
+        </div>
+        <div class="space"></div>
+    <!-- end container -->
+    </div>
+    <!-- end main -->
+
+{% endblock content %}
+
+{% block extra_js %}
+    <script src="{% static 'jquery/jquery-1.10.2.js' %}" type="text/javascript"></script>
+	<script src="{% static 'js/jquery-ui-1.10.4.custom.min.js' %}" type="text/javascript"></script>
+
+	<script src="{% static 'bootstrap3/js/bootstrap.js' %}" type="text/javascript"></script>
+	<script src="{% static 'js/gsdk-checkbox.js' %}"></script>
+	<script src="{% static 'js/gsdk-radio.js' %}"></script>
+	<script src="{% static 'js/gsdk-bootstrapswitch.js' %}"></script>
+	<script src="{% static 'js/get-shit-done.js' %}"></script>
+    <script src="{% static 'js/custom.js' %}"></script>
+{% endblock extra_js %}
