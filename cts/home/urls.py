@@ -4,6 +4,10 @@ from . import views
 
 app_name = 'home'
 urlpatterns = [
+
+***REMOVED***
+
+***REMOVED***
     url(r'^index/', views.index, name='index'),
     url(r'^components/', views.components, name='components'),
     url(r'^navbar/', views.navbar, name='navbar'),
