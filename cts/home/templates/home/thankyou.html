@@ -1,0 +1,45 @@
+{% extends 'base.html' %***REMOVED***
+
+{% load wagtailcore_tags %***REMOVED***
+{% load static %***REMOVED***
+
+{% block extra_css %***REMOVED***
+    <!--     Font Awesome     -->
+    <link href="http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
+    <link href='http://fonts.googleapis.com/css?family=Grand+Hotel' rel='stylesheet' type='text/css'>
+{% endblock extra_css %***REMOVED***
+
+{% block content %***REMOVED***
+***REMOVED***% block nav %***REMOVED***{{ block.super ***REMOVED******REMOVED***{% endblock %***REMOVED***
+
+    <div class="main">
+        <div class="container tim-container text-center" style="max-width:800px; padding-top:100px">
+            <h1>
+            ***REMOVED***{ page.title ***REMOVED******REMOVED***
+            </h1>
+            <p>
+                Thank you for contacting us {{ name ***REMOVED******REMOVED***!
+            </p>
+            <br />
+            <p>
+                We'll get back to you as soon as we can!
+            </p>
+        </div>
+        <div class="space"></div>
+    <!-- end container -->
+    </div>
+    <!-- end main -->
+
+{% endblock content %***REMOVED***
+
+{% block extra_js %***REMOVED***
+    <script src="{% static 'jquery/jquery-1.10.2.js' %***REMOVED***" type="text/javascript"></script>
+	<script src="{% static 'js/jquery-ui-1.10.4.custom.min.js' %***REMOVED***" type="text/javascript"></script>
+
+	<script src="{% static 'bootstrap3/js/bootstrap.js' %***REMOVED***" type="text/javascript"></script>
+	<script src="{% static 'js/gsdk-checkbox.js' %***REMOVED***"></script>
+	<script src="{% static 'js/gsdk-radio.js' %***REMOVED***"></script>
+	<script src="{% static 'js/gsdk-bootstrapswitch.js' %***REMOVED***"></script>
+	<script src="{% static 'js/get-shit-done.js' %***REMOVED***"></script>
+    <script src="{% static 'js/custom.js' %***REMOVED***"></script>
+{% endblock extra_js %***REMOVED***

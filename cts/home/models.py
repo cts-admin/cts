@@ -21,7 +21,7 @@ class ContactPage(Page):
         FieldPanel('thankyou_page_title'),
     ***REMOVED***
 
-    def serve(self, request):
+    def serve(self, request, *args, **kwargs):
         from .forms import ContactForm
 
         if request.method == 'POST':

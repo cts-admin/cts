@@ -1,14 +1,13 @@
 from django.shortcuts import render
 
-***REMOVED***
-# Testing out the Get Shit Done bootstrap package
-def index(request):
-    return render(request, 'home/index.html')
-
 
 def components(request):
     return render(request, 'home/components.html')
 
+***REMOVED***
+# Testing out the Get Shit Done bootstrap package
+def index(request):
+    return render(request, 'home/index.html')
 
 def navbar(request):
     return render(request, 'home/navbar-transparent.html')

@@ -1,0 +1,61 @@
+{% extends 'base.html' %***REMOVED***
+
+{% load wagtailcore_tags %***REMOVED***
+{% load static %***REMOVED***
+
+{% block extra_css %***REMOVED***
+    <!--     Font Awesome     -->
+    <link href="http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
+    <link href='http://fonts.googleapis.com/css?family=Grand+Hotel' rel='stylesheet' type='text/css'>
+{% endblock extra_css %***REMOVED***
+
+{% block content %***REMOVED***
+***REMOVED***% block nav %***REMOVED***{{ block.super ***REMOVED******REMOVED***{% endblock %***REMOVED***
+
+    <div class="main">
+        <div class="container tim-container" style="max-width:800px; padding-top:100px">
+            <div class="col-md-3">
+                <h3>{{ page.title ***REMOVED******REMOVED***</h3>
+            </div>
+            <div class="col-md-9">
+                <p>
+                ***REMOVED***{ page.intro|richtext ***REMOVED******REMOVED***
+                </p>
+                <form class="form-horizontal" action="." method="POST">
+                ***REMOVED***% csrf_token %***REMOVED***
+                ***REMOVED***% for error in form.non_field_errors %***REMOVED***
+                    <div class="form-group has-error text-danger small">
+                    ***REMOVED***{ error ***REMOVED******REMOVED***
+                    </div>
+                ***REMOVED***% endfor %***REMOVED***
+                ***REMOVED***% for field in form %***REMOVED***
+                    <div class="form-group has-error text-danger small">
+                    ***REMOVED***{ field.errors ***REMOVED******REMOVED***
+                    </div>
+                    <div class="form-group">
+                    ***REMOVED***{ field.label_tag ***REMOVED******REMOVED***
+                    ***REMOVED***{ field ***REMOVED******REMOVED***
+                    </div>
+                ***REMOVED***% endfor %***REMOVED***
+                    <button class="btn btn-primary" type="submit">Send</button>
+                </form>
+            </div>
+        </div>
+        <div class="space"></div>
+    <!-- end container -->
+    </div>
+    <!-- end main -->
+
+{% endblock content %***REMOVED***
+
+{% block extra_js %***REMOVED***
+    <script src="{% static 'jquery/jquery-1.10.2.js' %***REMOVED***" type="text/javascript"></script>
+	<script src="{% static 'js/jquery-ui-1.10.4.custom.min.js' %***REMOVED***" type="text/javascript"></script>
+
+	<script src="{% static 'bootstrap3/js/bootstrap.js' %***REMOVED***" type="text/javascript"></script>
+	<script src="{% static 'js/gsdk-checkbox.js' %***REMOVED***"></script>
+	<script src="{% static 'js/gsdk-radio.js' %***REMOVED***"></script>
+	<script src="{% static 'js/gsdk-bootstrapswitch.js' %***REMOVED***"></script>
+	<script src="{% static 'js/get-shit-done.js' %***REMOVED***"></script>
+    <script src="{% static 'js/custom.js' %***REMOVED***"></script>
+{% endblock extra_js %***REMOVED***
