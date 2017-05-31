@@ -24,7 +24,7 @@ class BlogCategory(models.Model):
     panels = [
         FieldPanel('name'),
         ImageChooserPanel('icon'),
-    ***REMOVED***
+    ]
 
     def __str__(self):
         return self.name
@@ -43,12 +43,12 @@ class BlogIndexPage(Page):
     def get_context(self, request):
         context = super(BlogIndexPage, self).get_context(request)
         blogpages = self.get_children().live().order_by('-first_published_at')
-        context['blogpages'***REMOVED*** = blogpages
+        context['blogpages'] = blogpages
         return context
 
     content_panels = Page.content_panels + [
         FieldPanel('intro', classname="full")
-    ***REMOVED***
+    ]
 
 
 class BlogTagIndexPage(Page):
@@ -58,7 +58,7 @@ class BlogTagIndexPage(Page):
         blogpages = BlogPage.objects.filter(tags__name=tag)
 
         context = super(BlogTagIndexPage, self).get_context(request)
-        context['blogpages'***REMOVED*** = blogpages
+        context['blogpages'] = blogpages
         return context
 
 
@@ -79,18 +79,18 @@ class BlogPage(Page):
     search_fields = Page.search_fields + [
         index.SearchField('intro'),
         index.SearchField('body'),
-    ***REMOVED***
+    ]
 
     content_panels = Page.content_panels + [
         MultiFieldPanel([
             FieldPanel('date'),
             FieldPanel('tags'),
             FieldPanel('categories', widget=forms.CheckboxSelectMultiple),
-        ***REMOVED***, heading="Blog information"),
+        ], heading="Blog information"),
         FieldPanel('intro'),
         FieldPanel('body', classname="full"),
         InlinePanel('gallery_images', label="Gallery images"),
-    ***REMOVED***
+    ]
 
 
 class BlogPageGalleryImage(Orderable):
@@ -103,4 +103,4 @@ class BlogPageGalleryImage(Orderable):
     panels = [
         ImageChooserPanel('image'),
         FieldPanel('caption'),
-    ***REMOVED***
+    ]

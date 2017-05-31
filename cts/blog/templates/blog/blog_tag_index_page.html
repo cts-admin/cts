@@ -1,23 +1,23 @@
-{% extends "base.html" %***REMOVED***
-{% load wagtailcore_tags %***REMOVED***
+{% extends "base.html" %}
+{% load wagtailcore_tags %}
 
-{% block content %***REMOVED***
+{% block content %}
 
-***REMOVED***% if request.GET.tag|length %***REMOVED***
-        <h4>Showing pages tagged "{{ request.GET.tag ***REMOVED******REMOVED***"</h4>
-***REMOVED***% endif %***REMOVED***
+    {% if request.GET.tag|length %}
+        <h4>Showing pages tagged "{{ request.GET.tag }}"</h4>
+    {% endif %}
 
-***REMOVED***% for blogpage in blogpages %***REMOVED***
+    {% for blogpage in blogpages %}
 
         <p>
-            <strong><a href="{% pageurl blogpage %***REMOVED***">{{ blogpage.title ***REMOVED******REMOVED***</a> </strong><br />
-            <small>Revised: {{ blogpage.latest_revision_created_at ***REMOVED******REMOVED***</small><br />
-        ***REMOVED***% if blogpage.author %***REMOVED***
-                <p>By {{ blogpage.author.profile ***REMOVED******REMOVED***</p>
-        ***REMOVED***% endif %***REMOVED***
+            <strong><a href="{% pageurl blogpage %}">{{ blogpage.title }}</a> </strong><br />
+            <small>Revised: {{ blogpage.latest_revision_created_at }}</small><br />
+            {% if blogpage.author %}
+                <p>By {{ blogpage.author.profile }}</p>
+            {% endif %}
         </p>
-***REMOVED***% empty %***REMOVED***
+    {% empty %}
         No Pages found with that tag.
-***REMOVED***% endfor %***REMOVED***
+    {% endfor %}
 
-{% endblock content %***REMOVED***
+{% endblock content %}

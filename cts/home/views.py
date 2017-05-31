@@ -4,7 +4,7 @@ from django.shortcuts import render
 def components(request):
     return render(request, 'home/components.html')
 
-***REMOVED***
+"""
 # Testing out the Get Shit Done bootstrap package
 def index(request):
     return render(request, 'home/index.html')
@@ -23,4 +23,4 @@ def template(request):
 
 def tutorial(request):
     return render(request, 'home/tutorial.html')
-***REMOVED***
+"""

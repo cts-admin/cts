@@ -1,4 +1,4 @@
-***REMOVED***
+from __future__ import absolute_import, unicode_literals
 
 from django.core.mail import send_mail
 from django.db import models
@@ -19,7 +19,7 @@ class ContactPage(Page):
     content_panels = Page.content_panels + [
         FieldPanel('intro', classname="full"),
         FieldPanel('thankyou_page_title'),
-    ***REMOVED***
+    ]
 
     def serve(self, request, *args, **kwargs):
         from .forms import ContactForm
@@ -27,40 +27,40 @@ class ContactPage(Page):
         if request.method == 'POST':
             form = ContactForm(request.POST)
             if form.is_valid():
-                name = form.cleaned_data['name'***REMOVED***
-                subject = form.cleaned_data['subject'***REMOVED***
-                message = form.cleaned_data['message'***REMOVED***
-                sender = form.cleaned_data['sender'***REMOVED***
-                cc_myself = form.cleaned_data['cc_myself'***REMOVED***
+                name = form.cleaned_data['name']
+                subject = form.cleaned_data['subject']
+                message = form.cleaned_data['message']
+                sender = form.cleaned_data['sender']
+                cc_myself = form.cleaned_data['cc_myself']
 
-                recipients = ['ctsadmin@conservationtechnologysolutions.com'***REMOVED***
+                recipients = ['ctsadmin@conservationtechnologysolutions.com']
                 if cc_myself:
                     recipients.append(sender)
                 send_mail(subject, message, sender, recipients)
                 return render(request, 'home/thankyou.html', {
                     'page': self,
                     'name': name,
-            ***REMOVED***)
+                })
         else:
             form = ContactForm()
 
         return render(request, 'home/contact_us.html', {
             'page': self,
             'form': form,
-    ***REMOVED***)
+        })
 
 
 class HomePage(Page):
     body = StreamField([
         ('motto', blocks.CharBlock()),
         ('paragraph', blocks.RichTextBlock())
-    ***REMOVED***, blank=True)
+    ], blank=True)
     use_detail_template = models.BooleanField()
 
     content_panels = Page.content_panels + [
         StreamFieldPanel('body'),
         FieldPanel('use_detail_template')
-    ***REMOVED***
+    ]
 
     def get_template(self, request, *args, **kwargs):
         if self.use_detail_template:

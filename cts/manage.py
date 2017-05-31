@@ -1,7 +1,7 @@
 #!/usr/bin/env python
-***REMOVED***
+from __future__ import absolute_import, unicode_literals
 
-***REMOVED***
+import os
 import sys
 
 if __name__ == "__main__":

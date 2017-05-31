@@ -14,7 +14,7 @@ class Migration(migrations.Migration):
 
     dependencies = [
         ('wagtailcore', '0033_remove_golive_expiry_help_text'),
-    ***REMOVED***
+    ]
 
     operations = [
         migrations.CreateModel(
@@ -22,10 +22,10 @@ class Migration(migrations.Migration):
             fields=[
                 ('page_ptr', models.OneToOneField(auto_created=True, on_delete=django.db.models.deletion.CASCADE, parent_link=True, primary_key=True, serialize=False, to='wagtailcore.Page')),
                 ('content', wagtail.wagtailcore.fields.StreamField((('heading', wagtail.wagtailcore.blocks.CharBlock(classname='text-center')), ('motto', wagtail.wagtailcore.blocks.CharBlock(classname='subtitle')), ('paragraph', wagtail.wagtailcore.blocks.RichTextBlock())), blank=True)),
-            ***REMOVED***,
+            ],
             options={
                 'abstract': False,
-    ***REMOVED***
+            },
             bases=('wagtailcore.page',),
         ),
-    ***REMOVED***
+    ]

@@ -1,47 +1,47 @@
-{% extends "base.html" %***REMOVED***
+{% extends "base.html" %}
 
-{% load wagtailcore_tags  wagtailimages_tags %***REMOVED***
+{% load wagtailcore_tags  wagtailimages_tags %}
 
-{% block body_class %***REMOVED***template-blogpage{% endblock %***REMOVED***
+{% block body_class %}template-blogpage{% endblock %}
 
-{% block content %***REMOVED***
-    <h1>{{ page.title ***REMOVED******REMOVED***</h1>
-    <p class="meta">{{ page.date ***REMOVED******REMOVED***</p>
+{% block content %}
+    <h1>{{ page.title }}</h1>
+    <p class="meta">{{ page.date }}</p>
 
-***REMOVED***% with categories=page.categories.all %***REMOVED***
-    ***REMOVED***% if categories %***REMOVED***
+    {% with categories=page.categories.all %}
+        {% if categories %}
             <h3>Posted in:</h3>
             <ul>
-            ***REMOVED***% for category in categories %***REMOVED***
+                {% for category in categories %}
                     <li style="display: inline">
-                    ***REMOVED***% image category.icon fill-32x32 style="vertical-align: middle" %***REMOVED***
-                    ***REMOVED***{ category.name ***REMOVED******REMOVED***
+                        {% image category.icon fill-32x32 style="vertical-align: middle" %}
+                        {{ category.name }}
                     </li>
-            ***REMOVED***% endfor %***REMOVED***
+                {% endfor %}
             </ul>
-    ***REMOVED***% endif %***REMOVED***
-***REMOVED***% endwith %***REMOVED***
+        {% endif %}
+    {% endwith %}
 
-    <div class="intro">{{ page.intro ***REMOVED******REMOVED***</div>
+    <div class="intro">{{ page.intro }}</div>
 
-***REMOVED***{ page.body|richtext ***REMOVED******REMOVED***
+    {{ page.body|richtext }}
 
-***REMOVED***% for item in page.gallery_images.all %***REMOVED***
+    {% for item in page.gallery_images.all %}
         <div style="float: left; margin: 10px">
-        ***REMOVED***% image item.image fill-320x240 %***REMOVED***
-            <p>{{ item.caption ***REMOVED******REMOVED***</p>
+            {% image item.image fill-320x240 %}
+            <p>{{ item.caption }}</p>
         </div>
-***REMOVED***% endfor %***REMOVED***
+    {% endfor %}
 
-***REMOVED***% if page.tags.all.count %***REMOVED***
+    {% if page.tags.all.count %}
         <div class="tags">
             <h3>Tags</h3>
-        ***REMOVED***% for tag in page.tags.all %***REMOVED***
-                <a href="{% slugurl 'tags' %***REMOVED***?tag={{ tag ***REMOVED******REMOVED***"><button type="button">{{ tag ***REMOVED******REMOVED***</button> </a>
-        ***REMOVED***% endfor %***REMOVED***
+            {% for tag in page.tags.all %}
+                <a href="{% slugurl 'tags' %}?tag={{ tag }}"><button type="button">{{ tag }}</button> </a>
+            {% endfor %}
         </div>
-***REMOVED***% endif %***REMOVED***
+    {% endif %}
 
-    <p><a href="{{ page.get_parent.url ***REMOVED******REMOVED***">Return to blog</a> </p>
+    <p><a href="{{ page.get_parent.url }}">Return to blog</a> </p>
 
-{% endblock %***REMOVED***
+{% endblock %}

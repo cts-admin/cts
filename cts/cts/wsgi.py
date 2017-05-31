@@ -1,15 +1,15 @@
-***REMOVED***
+"""
 WSGI config for cts project.
 
 It exposes the WSGI callable as a module-level variable named ``application``.
 
-***REMOVED***
+For more information on this file, see
 https://docs.djangoproject.com/en/1.10/howto/deployment/wsgi/
-***REMOVED***
+"""
 
-***REMOVED***
+from __future__ import absolute_import, unicode_literals
 
-***REMOVED***
+import os
 
 from django.core.wsgi import get_wsgi_application
 
