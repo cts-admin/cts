@@ -77,7 +77,7 @@
                                 <a href="/">
                                      <div class="logo-container">
                                         <div class="logo">
-                                            <span class="glyphicon glyphicon-leaf" aria-hidden="true" style="padding: 16px 16px; color:darkgreen"></span>
+                                            <img src="{% static 'img/cts_icon.svg' %}">
                                         </div>
                                         <div class="brand">
                                             Conservation Technology Solutions
@@ -101,7 +101,9 @@
 
                     <div class='blurred-container'>
                         <div class="motto">
-                            <div class="border no-left-border no-right-border">CTS</div>
+                            <div class="border no-left-border no-right-border">
+                                <img class="img-main" src="{% static "img/cts_bold_shadow.png" %}">
+                            </div>
                         </div>
                         <div class="img-src" style="background-image: url({% static 'img/eriogonum.JPG' %})"></div>
                         <div class='img-src blur' style="background-image: url({% static 'img/eriogonum_blur.JPG' %})"></div>

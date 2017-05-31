@@ -334,7 +334,6 @@
 .logo-container .logo{
     overflow: hidden;
     border-radius: 50%;
-    border: 1px solid #4CD964;
     height: 50px;
     width: 50px;
     float: left;
@@ -349,31 +348,21 @@
     float: left;
     height: 60px;
     line-height: 20px;
-    margin-left: 10px;
     margin-bottom: 10px;
     width: 60px;
 }
 .blurred-container .motto{
-    color: #FFFFFF;
-    font-size: 76px;
-    font-weight: 600;
-
-    text-align: center;
-    text-shadow: 0 0 10px rgba(0, 0, 0, 0.33);
-    text-transform: uppercase;
     top: 100px;
     z-index: 3;
 
     display: block;
     margin: 0 auto;
     position: relative;
-    width: 306px;
+    width: 350px;
     height: 0;
 }
 .blurred-container .motto .border{
-    float: left;
     border: 3px solid #FFFFFF;
-    padding: 0px 30px;
     text-align: center;
 }
 .blurred-container .motto .no-left-border{
