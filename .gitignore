@@ -72,3 +72,4 @@ cts/home/templates/home/tutorial.html
 cts/media/
 cts/static/
 docker-compose.yml
+/cts/home/migrations/0001_initial.py
