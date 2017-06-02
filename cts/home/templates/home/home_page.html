@@ -3,11 +3,6 @@
 {% load wagtailcore_tags %}
 {% load static %}
 
-{% block extra_css %}
-    <!--     Font Awesome     -->
-    <link href="{% static 'bootstrap3/css/font-awesome.css' %}" rel="stylesheet">
-{% endblock extra_css %}
-
 {% block content %}
     {% block nav %}{{ block.super }}{% endblock %}
 
@@ -61,7 +56,7 @@
                 </div>
                 <div class="col-md-6 col-md-offset-3 col-md-12 text-center">
                     <h1 class="hello text-center">
-                       <a href="http://{% slugurl 'mission' %}">Mission</a>
+                       <a href="{% slugurl 'mission' %}">Mission</a>
                        <small>
                         <ul class="list-unstyled">
                             <li>Develop Communication Tools</li>
