@@ -2,7 +2,7 @@
 .idea/
 Dockerfile
 cts/cts/settings/base.py
-/cts/cts/settings/dev.py
+cts/cts/settings/dev.py
 cts/cts/settings/production.py
 cts/cts/static/img/apple-icon.png
 cts/cts/static/img/bg.jpg
