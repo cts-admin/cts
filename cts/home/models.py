@@ -32,7 +32,7 @@ class ContactPage(Page):
                 name = form.cleaned_data['name']
                 subject = form.cleaned_data['subject']
                 sender = form.cleaned_data['sender']
-                message = form.cleaned_data['message'] + '\n\nSender: {}'.format(sender)
+                message = form.cleaned_data['message'] + '\n\nName: {}\nSender: {}'.format(name, sender)
 
                 cc_myself = form.cleaned_data['cc_myself']
 
