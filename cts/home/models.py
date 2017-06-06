@@ -1,6 +1,5 @@
 from __future__ import absolute_import, unicode_literals
 
-from django.core.mail import send_mail
 from django.db import models
 from django.shortcuts import render
 
@@ -8,6 +7,8 @@ from wagtail.wagtailcore.models import Page
 from wagtail.wagtailcore.fields import RichTextField, StreamField
 from wagtail.wagtailcore import blocks
 from wagtail.wagtailadmin.edit_handlers import StreamFieldPanel, FieldPanel
+
+from .tasks import mail_task
 
 
 class ContactPage(Page):
@@ -36,7 +37,7 @@ class ContactPage(Page):
                 recipients = ['ctsadmin@conservationtechnologysolutions.com']
                 if cc_myself:
                     recipients.append(sender)
-                send_mail(subject, message, sender, recipients)
+                mail_task(subject, message, sender, recipients)
                 return render(request, 'home/thankyou.html', {
                     'page': self,
                     'name': name,
