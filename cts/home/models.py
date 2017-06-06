@@ -28,16 +28,18 @@ class ContactPage(Page):
         if request.method == 'POST':
             form = ContactForm(request.POST)
             if form.is_valid():
+                cts_mail = 'ctsadmin@conservationtechnologysolutions.com'
                 name = form.cleaned_data['name']
                 subject = form.cleaned_data['subject']
-                message = form.cleaned_data['message']
                 sender = form.cleaned_data['sender']
+                message = form.cleaned_data['message'] + '\n\nSender: {}'.format(sender)
+
                 cc_myself = form.cleaned_data['cc_myself']
 
-                recipients = ['ctsadmin@conservationtechnologysolutions.com']
+                recipients = [cts_mail]
                 if cc_myself:
                     recipients.append(sender)
-                mail_task(subject, message, sender, recipients)
+                mail_task.delay(subject, message, cts_mail, recipients)
                 return render(request, 'home/thankyou.html', {
                     'page': self,
                     'name': name,
