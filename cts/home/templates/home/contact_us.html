@@ -3,6 +3,8 @@
 {% load wagtailcore_tags %}
 {% load static %}
 
+{% block title %}Contact Us{% endblock %}
+
 {% block extra_css %}
     <!--     Font Awesome     -->
     <link href="https://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
@@ -15,12 +17,12 @@
     <div class="main">
         <div class="container tim-container" style="max-width:800px; padding-top:100px">
             <div class="col-md-3">
-                <h3>{{ page.title }}</h3>
+                <h3>Contact Us</h3>
             </div>
             <div class="col-md-9">
-                <p>
-                    {{ page.intro|richtext }}
-                </p>
+
+                If you have questions, comments, or need some help with something technical of your own, please reach out to us! We'd love to hear from you!
+
                 <form class="form-horizontal" action="." method="POST">
                     {% csrf_token %}
                     {% for error in form.non_field_errors %}
@@ -37,7 +39,7 @@
                         {{ field }}
                     </div>
                     {% endfor %}
-                    <button class="btn btn-primary" type="submit">Send</button>
+                    <button class="btn btn-primary form-group">Send</button>
                 </form>
             </div>
         </div>
