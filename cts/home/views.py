@@ -35,6 +35,10 @@ def contact(request):
         'form': form,
     })
 
+
+def mission(request):
+    return render(request, 'home/mission.html')
+
 # Testing out the Get Shit Done bootstrap package
 if settings.DEBUG:
     def components(request):

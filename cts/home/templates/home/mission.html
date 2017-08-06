@@ -3,6 +3,8 @@
 {% load wagtailcore_tags %}
 {% load static %}
 
+{% block title %}Our Mission{% endblock %}
+
 {% block extra_css %}
     <!--     Font Awesome     -->
     <link href="https://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
@@ -15,20 +17,38 @@
     <div class="main">
         <div class="container tim-container" style="max-width:800px; padding-top:100px">
             <h1 class="text-center">
-                {{ page.title }}
+                Our Mission
             </h1>
-             {% for block in page.body %}
-                {% if block.block_type == 'motto' %}
-                    <h1 class="text-center">
-                        <small class="subtitle">
-                            {% include_block block.value %}
-                        </small>
-                    </h1>
-                 {% endif %}
-                 {% if block.block_type == 'paragraph' %}
-                     {% include_block block %}
-                 {% endif %}
-             {% endfor %}
+
+            <h1 class="text-center">
+                <small class="subtitle">
+                    To Save the World
+                </small>
+            </h1>
+            <p>
+                We want to make life easier for anyone involved in environmental conservation work. To make this happen, we’ve made it our goal to leverage the power of existing technologies as well as develop our own. From web apps, to DIY hardware-based citizen science projects, we have a lot of ideas for how we can move towards a more environmentally conscious future.
+            </p>
+
+            <h1 class="text-center">
+                <small class="subtitle">
+                    Communication
+                </small>
+            </h1>
+            <p>
+                Your team can’t reach its full potential without an effective portal for communication. If you need help figuring out what communication tools would work best for your needs, or you need help deploying them, please get in touch.
+            </p>
+            <p>
+                We’ll also be experimenting with various chat bot technologies to help raise environmental awareness and boost productivity.
+            </p>
+
+            <h1 class="text-center">
+                <small class="subtitle">
+                    Promoting Citizen Science
+                </small>
+            </h1>
+            <p>
+                You don’t need a lab coat to be a scientist! We want to show people the value of taking a scientific approach to thinking about the world. We’ll be putting together some projects to get kids and adults alike asking questions about the world around them.
+            </p>
         </div>
         <div class="space"></div>
     <!-- end container -->
