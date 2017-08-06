@@ -265,7 +265,7 @@ class PaymentForm(forms.Form):
                 {'donation': donation}
             )
             send_mail(
-                'Thank you for your donation to the Django Software Foundation',
+                'Thank you for your donation to CTS',
                 message,
                 settings.DEFAULT_FROM_EMAIL,
                 [donation.receipt_email]
