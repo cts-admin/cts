@@ -1,0 +1,13 @@
+Hello {{ donation.donor.name_with_fallback }},
+
+This message is to let you know that your recurring payment to Conservation
+ Technology Solutions Inc has been cancelled. No further payments will be sent.
+
+If you did not intend to do this, please go back to the fundraising page and
+recreate your payment subscription:
+{% url 'fundraising:donate' %}
+
+Thanks very much for your support.
+
+Regards,
+Conservation Technology Solutions Inc
