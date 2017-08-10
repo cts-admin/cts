@@ -1,0 +1,72 @@
+{% extends 'base.html' %}
+{% load fundraising_extras humanize static %}
+
+{% block title %}Support CTS{% endblock %}
+
+{% block content %}
+    {% block nav %}{{ block.super }}{% endblock %}
+
+    {% block messages %}
+
+        {% if messages %}
+            {% for message in messages %}
+                <h1>{{ message }}</h1>
+            {% endfor %}
+            <hr>
+        {% endif %}
+
+    {% endblock %}
+
+    <div class="main">
+    <div class="container tim-container" style="max-width:800px; padding-top:100px">
+    <h1 class="text-center">
+        Support CTS
+    </h1>
+    <h3 class="text-muted">Support natural resource conservation by donating to Conservation Technology Solutions Inc.</h3>
+
+
+    {% donation_form_with_heart %}
+
+    <h2 id="why-give">Why give to Conservation Technology Solutions?</h2>
+
+    <p>Our main goal is to provide technical support to those involved in natural resource conservation. This means:</p>
+    <ul>
+        <li>Developing software that helps researchers do their jobs.</li>
+        <li>Designing hardware to help answer questions about the natural world.</li>
+        <li>Encourage the next generation of scientists by getting kids interested in the
+            technology surrounding scientific discoveries.</li>
+        <li>Planning, promoting, and implementing citizen science projects that invite
+            everyone to participate in a more scientific view of the world around them.</li>
+    </ul>
+
+    {% if testimonial %}
+        <blockquote>
+            {{ testimonial.body|linebreaks }}
+            <em>{{ testimonial.author }}</em>
+        </blockquote>
+    {% endif %}
+
+    <hr style="margin: 40px 0" />
+
+    <div class="heroes-section">
+        <h1>CTS Supporters</h1>
+        <p>Our donors make our work possible! We are incredibly grateful for the
+            financial support from the following individuals and organizations in our
+            community.</p>
+
+        {% display_django_heroes %}
+    </div>
+{% endblock %}
+
+{% block content-extra %}
+    <div class="layout-tertiary" id="about">
+        <div class="container">
+            <h2>What is Conservation Technology Solutions Inc?</h2>
+            <p>Conservation Technology Solutions is a 501(c)(3) non-profit that seeks to fill the
+                technical gap that currently exists in the field of natural resource conservation.
+                You can read about our mission <a href="{% url 'home:mission' %}">here</a>.
+            </p>
+        </div>
+    </div>
+    </div>
+{% endblock %}
