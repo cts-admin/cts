@@ -1,0 +1,70 @@
+{% extends 'fundraising/payments.html' %}
+{% load staticfiles %}
+
+{% block messages %}
+
+    {% if messages %}
+        {% for message in messages %}
+            <p>{{ message }}</p>
+        {% endfor %}
+        <hr>
+    {% endif %}
+
+{% endblock %}
+
+{% block content %}
+
+    <h1>Manage your donations to Conservation Technology Solutions Inc</h1>
+    <p>Your support is <strong>critical</strong> to the fulfillment of our mission
+        and the preservation of our natural resources.
+        Thank you!</p>
+
+    <form enctype="multipart/form-data" action="" method="post" class="form-input cts-donor-form"
+          data-stripe-key="{{ stripe_publishable_key }}" data-stripe-icon="{% static 'img/cts_icon.svg' %}"
+          data-update-card-url="{% url 'fundraising:update-card' %}">
+        <h2>Manage your participation in the fundraising campaigns</h2>
+        <p>Information entered below will be visible on all of your donations to CTS.</p>
+        {% csrf_token %}
+        {% include 'fundraising/includes/_form.html' with form=donor_form %}
+        <p class="submit">
+            <input type="submit" class="cta" value="Save &rarr;">
+        </p>
+        {# Always include to avoid "Management form has been tampered with" if no recurring donations exist #}
+        {{ modify_donations_formset.management_form }}
+        {% if recurring_donations %}
+            <hr />
+            <h2>Modify your recurring donations</h2>
+            <p>Update the time interval or amount of your recurring donation here:</p>
+            {% for form in modify_donations_formset %}
+                {% include 'fundraising/includes/_form.html' %}
+                <div class="change-card-container">
+                    <input type="button" value="Change card details" class="change-card cta outline inline"
+                           data-donation-id="{{ form.instance.id }}" data-donor-email="{{ donor.email }}">
+                    <span class="change-card-result"></span>
+                </div>
+            {% endfor %}
+            <p class="submit">
+                <input type="submit" class="cta" value="Save &rarr;">
+            </p>
+            </form>
+            <hr />
+            <h2>Cancel your recurring donations</h2>
+            <p>You can cancel your recurring donation to Conservation Technology Solutions Inc anytime.</p>
+            <ul>
+                {% for donation in recurring_donations %}
+                    <li>
+                        Your {{ donation.interval }} recurring donation of ${{ donation.subscription_amount }}.
+                        <form method="POST" action="{% url 'fundraising:cancel-donation' donor.pk %}">
+                            {% csrf_token %}
+                            <input name="donation" type="hidden" value="{{ donation.pk }}">
+                            <input type="submit" value="cancel this donation">
+                        </form>
+                    </li>
+                {% endfor %}
+            </ul>
+        {% else %}
+            </form>
+        {% endif %}
+{% endblock %}
+
+{% block content-extra %}{% endblock %}
