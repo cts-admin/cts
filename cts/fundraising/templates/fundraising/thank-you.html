@@ -1,0 +1,47 @@
+{% extends 'fundraising/payments.html' %}
+{% load humanize static %}
+
+{% block content %}
+    <h1>Thank you for supporting Conservation Technology Solutions Inc!</h1>
+    <p>Your support is <strong>critical</strong> to the fulfillment of our mission
+        and the preservation of our natural resources.</p>
+
+    <p>Please help us spread the word and encourage your friends and colleagues to
+        donate. Thank you!</p>
+
+    <a href="https://twitter.com/intent/tweet?button_hashtag=SupportCTS&text=I+just+donated+to+support+natural+resource+conservation+and+promote+tech+in+the+sciences.+https%3A%2F%2Fconservationtechnologysolutions.com%payments%2F"
+       class="twitter-hashtag-button" data-related="CTS">Tweet #SupportCTS</a>
+    <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+
+    <p>We'd love if you proudly displayed a badge on your website or online profile
+        to help spread the word about our campaign. You may use the "Leader" badge if
+        you donated more than ${{ leadership_level_amount|intcomma }} per year.</p>
+
+    <p>
+        <a href="{% url 'fundraising:index' %}">
+            <img width="80" height="65" border="0" title="CTS Donor" alt="CTS Donor"
+                 src="{% static "img/badges/cts-donor.png" %}"></a>
+        &nbsp; &nbsp;
+        <a href="{% url 'fundraising:index' %}">
+            <img src="{% static "img/badges/cts-leader.png" %}"
+                 width="126" height="70" border="0" title="CTS Leader" alt="CTS Leader"></a>
+    </p>
+
+    <p>If you'd like to have your name or company displayed on the
+        <a href="{% url 'fundraising:index' %}">Fundraising page</a> please fill out the form below. This is, of
+        course, <em>optional</em>.
+    </p>
+
+    <form enctype="multipart/form-data" action="" method="post" class="form-input cts-donor-form">
+        <h2>You're now a CTS Donor</h2>
+        Enter your details below to show up on our <a href="{% url "fundraising:index" %}">fundraising page</a>.
+        {% csrf_token %}
+        {% include 'fundraising/includes/_form.html' %}
+        <p class="submit">
+            <input type="submit" class="cta" value="Save &rarr;">
+        </p>
+    </form>
+
+{% endblock %}
+
+{% block content-extra %}{% endblock %}
