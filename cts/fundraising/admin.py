@@ -18,11 +18,11 @@ class DonationInline(admin.TabularInline):
 
 
 @admin.register(CTSDonor)
-class DjangoHeroAdmin(admin.ModelAdmin):
+class CTSDonorAdmin(admin.ModelAdmin):
     actions = [download_donor_report]
     inlines = [DonationInline]
     list_filter = [
-        'approved', 'created', 'modified', 'hero_type', 'is_visible',
+        'approved', 'created', 'modified', 'donor_type', 'is_visible',
         'is_subscribed', ('donation__created', DonatedFilter),
     ]
     list_display = ['id', 'name', 'email', 'created', 'modified', 'approved', 'donor_type']

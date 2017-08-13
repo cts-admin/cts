@@ -92,9 +92,9 @@
                             <!-- Collect the nav links, forms, and other content for toggling -->
                             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                               <ul class="nav navbar-nav navbar-right">
-                                    <li><a href={% url 'home:mission' %}>Mission</a></li>
+                                    <li><a href="{% url 'home:mission' %}">Mission</a></li>
 
-                                    <li><a href="https://paypal.me/donatects" class="btn btn-round btn-default">Donate</a></li>
+                                    <li><a href="{% url 'fundraising:index' %}" class="btn btn-round btn-default">Donate</a></li>
                                </ul>
 
                             </div><!-- /.navbar-collapse -->

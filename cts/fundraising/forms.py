@@ -67,7 +67,7 @@ class CTSDonorForm(forms.ModelForm):
     )
 
     class Meta:
-        model = DjangoHero
+        model = CTSDonor
         fields = (
             'donor_type', 'name', 'location', 'url', 'logo', 'is_visible',
             'is_subscribed',

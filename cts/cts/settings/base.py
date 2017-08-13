@@ -23,6 +23,7 @@ SECRET_KEY = os.environ['DJANGO_SECRET_KEY']
 INSTALLED_APPS = [
     'home',
     'blog',
+    'fundraising',
 
     'wagtail.wagtailforms',
     'wagtail.wagtailredirects',
