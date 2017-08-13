@@ -28,19 +28,6 @@ def as_percentage(part, total):
         return "0.00"
 
 
-@register.inclusion_tag('fundraising/includes/donation_snippet.html')
-def donation_snippet():
-    try:
-        donation = DjangoHero.objects.filter(
-            approved=True,
-            is_visible=True,
-        ).exclude(name='').order_by('?')[:1].get()
-    except DjangoHero.DoesNotExist:
-        donation = None
-
-    return {'donation': donation}
-
-
 @register.inclusion_tag('fundraising/includes/donation_form_with_heart.html', takes_context=True)
 def donation_form_with_heart(context):
     user = context['user']
