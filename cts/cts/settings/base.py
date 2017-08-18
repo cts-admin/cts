@@ -160,3 +160,5 @@ SERVER_EMAIL = 'ctsadmin@conservationtechnologysolutions.com'
 ADMINS = [('Avery', 'ctsadmin@conservationtechnologysolutions.com')]
 
 CELERY_RESULT_BACKEND = 'django-db'
+
+STRIPE_PUBLISHABLE_KEY = os.environ['STRIPE_PUBLISHABLE_KEY']
