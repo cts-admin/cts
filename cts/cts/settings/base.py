@@ -155,7 +155,7 @@ EMAIL_HOST_PASSWORD = os.environ['EMAIL_HOST_PASS']
 EMAIL_USE_TLS = True
 EMAIL_USE_SSL = False
 
-DEFAULT_FROM_EMAIL = 'ctsadmin@conservationtechnologysolutions.com'
+DEFAULT_FROM_EMAIL = 'info@conservationtechnologysolutions.com'
 SERVER_EMAIL = 'ctsadmin@conservationtechnologysolutions.com'
 ADMINS = [('Avery', 'ctsadmin@conservationtechnologysolutions.com')]
 
