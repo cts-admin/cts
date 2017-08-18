@@ -11,9 +11,13 @@ from wagtail.wagtaildocs import urls as wagtaildocs_urls
 urlpatterns = [
     url(r'^django-admin/', include(admin.site.urls)),
 
+    # Django-Registration
+    url(r'^accounts/', include('registration.backends.hmac.urls')),
+
     url(r'^admin/', include(wagtailadmin_urls)),
     url(r'^documents/', include(wagtaildocs_urls)),
 
+    url(r'^members/', include('members.urls')),
     url(r'^fundraising/', include('fundraising.urls')),
     url(r'', include('home.urls')),
 
