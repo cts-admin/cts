@@ -15,7 +15,6 @@ urlpatterns = [
         account_views.edit_profile,
         name='edit_profile',
     ),
-    url(r'^_trac/userinfo/$', account_views.json_user_info),
     url(r'', include('django.contrib.auth.urls')),
     url(r'', include('registration.backends.default.urls')),
 ]
