@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+{% load i18n %}
+
+{% block content %}
+  <h1>{% trans "Corporate membership application submitted." %}</h1>
+  <p>
+    {% blocktrans %}
+      Thank you! Your application is being reviewed, and we'll follow up a
+      response from the board as soon as possible.
+    {% endblocktrans %}
+  </p>
+{% endblock %}
