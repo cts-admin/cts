@@ -7,7 +7,7 @@ app_name = 'home'
 urlpatterns = [
     url(r'^contact/', views.contact, name='contact'),
     url(r'^mission/', views.mission, name='mission'),
-    url(r'', views.home, name='home'),
+    url(r'^$', views.home, name='home'),
 ]
 
 if settings.DEBUG:
