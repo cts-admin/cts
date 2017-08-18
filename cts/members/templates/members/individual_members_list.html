@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+{% load i18n markdown %}
+
+{% block content %}
+    <h1>{% trans "Individual members" %}</h1>
+    <p>
+        {% blocktrans %}
+            The following are Individual Member Supporters of Conservation Technology Solutions. Individual Members
+            are appointed by CTS in recognition of their service to natural resource conservation. If you
+            know someone who you think should be considered for Individual Membership, please
+        {% endblocktrans %}
+        <a href="{% url "hone:contact" %}">{% trans "get in touch" %}</a>.
+    </p>
+    <ul>
+        {% for member in members %}
+            <li>{{ member.linked_name }}
+                {{ member.bio|markdownify }}</li>
+        {% endfor %}
+    </ul>
+
+    {% if former_members %}
+        <h2>{% trans "Former members" %}</h2>
+        <p>{% trans "The following are former Individual Members of CTS." %}</p>
+
+        <ul>
+            {% for member in former_members %}
+                <li>{{ member.name }} ({{ member.reason_for_leaving }})</li>
+            {% endfor %}
+        </ul>
+    {% endif %}
+{% endblock %}
