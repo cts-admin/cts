@@ -1,45 +1,49 @@
 {% extends "base.html" %}
+{% load home_extras %}
 
 {% block title %}Log in{% endblock %}
 
 {% block content %}
     {% block nav %}{{ block.super }}{% endblock nav %}
 
-    <h1>Log in</h1>
+    <div class="main">
+        <div class="container tim-container" style="max-width:800px; padding-top:100px">
+            <div class="col-md-3">
+                <h3>Log In</h3>
+            </div>
 
-    {% if form.errors %}
-        <p class="error">Please correct the errors below:</p>
-        {{ form.non_field_errors }}
-    {% endif %}
+            <div class="col-md-9">
+                If you don't have an account, you can
+                <a href="{% url 'registration_register' %}">sign up</a> for one.
+                <p></p>
 
-    <form method="POST" action="" class="form-input">
-        {% csrf_token %}
-        <input type="hidden" name="next" value="{{ next|default:"/" }}">
+                If you forgot your password, you can
+                <a href="{% url 'auth_password_reset' %}">reset it</a>.
+                <p></p>
 
-        <div>
-            <label for="id_username">Username:</label>
-            {% if form.username.errors %}
-                <span class="error">{{ form.username.errors|join:", " }}</span>
-            {% endif %}
-            {{ form.username }}
+                <form method="POST" action="" class="form-input">
+                    {% csrf_token %}
+                    {% for error in form.non_field_errors %}
+                        <div class="form-group has-error text-danger">
+                            {{ error }}
+                        </div>
+                    {% endfor %}
+                    {% for field in form %}
+                        <div class="form-group has-error text-danger">
+                            {{ field.errors }}
+                        </div>
+                        <div class="form-group">
+                            {{ field.label_tag }}
+                            {{ field|add_css:"form-control" }}
+                        </div>
+                    {% endfor %}
+                    <button class="btn btn-primary form-group">Log in</button>
+                    </p>
+                </form>
+            </div>
         </div>
-        <div>
-            <label for="id_password">Password:</label>
-            {% if form.password.errors %}
-                <span class="error">{{ form.password.errors|join:", " }}</span>
-            {% endif %}
-            {{ form.password }}
-        </div>
-        <p>
-            <input type="submit" value="Log in" class="cta"/>
-        </p>
-    </form>
-
-<div role="complementary">
-    <p>If you don't have an account, you can
-        <a href="{% url 'registration_register' %}">sign up</a> for one.</p>
-
-    <p>If you forgot your password, you can
-        <a href="{% url 'auth_password_reset' %}">reset it</a>.</p>
-</div>
+        <div class="space"></div>
+        <!-- end container -->
+    </div>
+    <!-- end main -->
 {% endblock %}
