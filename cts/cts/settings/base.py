@@ -164,9 +164,18 @@ DEFAULT_FROM_EMAIL = 'info@conservationtechnologysolutions.com'
 SERVER_EMAIL = 'ctsadmin@conservationtechnologysolutions.com'
 ADMINS = [('Avery', 'ctsadmin@conservationtechnologysolutions.com')]
 
+
+# Celery
 CELERY_RESULT_BACKEND = 'django-db'
 
+
+# Stripe
 STRIPE_PUBLISHABLE_KEY = os.environ['STRIPE_PUBLISHABLE_KEY']
 
-# Registraton settings
+
+# Django registraton settings
 ACCOUNT_ACTIVATION_DAYS = 7
+
+
+# Django auth settings
+LOGIN_REDIRECT_URL = 'edit_profile'

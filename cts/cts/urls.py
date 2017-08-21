@@ -8,11 +8,16 @@ from wagtail.wagtailadmin import urls as wagtailadmin_urls
 from wagtail.wagtailcore import urls as wagtail_urls
 from wagtail.wagtaildocs import urls as wagtaildocs_urls
 
+from accounts import views as account_views
+
 urlpatterns = [
     url(r'^django-admin/', include(admin.site.urls)),
 
     # Django-Registration
     url(r'^accounts/', include('accounts.urls')),
+
+    # User stats
+    url(r'^~(?P<username>[\w.@+-]+)/$', account_views.user_profile, name='user_profile'),
 
     url(r'^admin/', include(wagtailadmin_urls)),
     url(r'^documents/', include(wagtaildocs_urls)),

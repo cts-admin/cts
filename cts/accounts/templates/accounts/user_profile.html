@@ -1,0 +1,51 @@
+{% extends "base.html" %}
+{% load humanize %}
+
+{% block title %}{% firstof user_obj.profile.name user_obj.username %}{% endblock %}
+
+{% block content %}
+    {% block nav %}{{ block.super }}{% endblock nav %}
+
+    <div class="main">
+        <div class="container tim-container" style="max-width:800px; padding-top:100px">
+            <div class="col-md-3">
+                <h3>User Profile</h3>
+
+                <img class='avatar' width='150' height='150'
+                     src="https://secure.gravatar.com/avatar/{{ email_hash }}?s=150&amp;d=https%3A%2F%2Frobohash.org%2F{{ email_hash }}%3Fset%3Dset3%26size%3D150x150">
+            </div>
+
+            <div class="col-md-9">
+                <h4>
+                    {% firstof user_obj.profile.name user_obj.username %}
+                </h4>
+
+                <a href="{% url 'edit_profile' %}">Edit your name and email here.</a>
+                <p></p>
+
+                The image is the <a href="https://en.gravatar.com/">Gravatar</a> linked
+                to the email address you signed up with. You can change the image over
+                at <a href="https://en.gravatar.com/">Gravatar</a>. If you see a robot, that's
+                because you don't have a Gravatar yet.
+                (Robots provided by <a href="https://robohash.org/">Robohash</a>.)
+                <p></p>
+
+                User stats will be visible here in the future.
+
+                {% with user_obj.owned_feeds.all as feeds %}
+                    {% if feeds %}
+                        <h2>Community feeds:</h2>
+                        <ul>
+                            {% for f in feeds %}
+                                <li><a href="{{ f.public_url }}">{{ f.title }}</a></li>
+                            {% endfor %}
+                        </ul>
+                    {% endif %}
+                {% endwith %}
+            </div>
+        </div>
+        <div class="space"></div>
+        <!-- end container -->
+    </div>
+    <!-- end main -->
+{% endblock content %}
