@@ -12,7 +12,7 @@ urlpatterns = [
     url(r'^django-admin/', include(admin.site.urls)),
 
     # Django-Registration
-    url(r'^accounts/', include('registration.backends.hmac.urls')),
+    url(r'^accounts/', include('accounts.urls')),
 
     url(r'^admin/', include(wagtailadmin_urls)),
     url(r'^documents/', include(wagtaildocs_urls)),
