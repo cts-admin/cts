@@ -1,7 +1,7 @@
 import stripe
 from django import forms
 from django.conf import settings
-from django.core.mail import send_mail
+from django.forms.widgets import Select
 from django.template.loader import render_to_string
 from django.utils.safestring import mark_safe
 
@@ -10,20 +10,21 @@ from .models import (
     INTERVAL_CHOICES, LEADERSHIP_LEVEL_AMOUNT, CTSDonor, Donation,
 )
 
+from home.tasks import mail_task
+
 
 class CTSDonorForm(forms.ModelForm):
-    hero_type = forms.ChoiceField(
+    donor_type = forms.ChoiceField(
         required=False,
-        widget=forms.RadioSelect,
+        widget=forms.RadioSelect(attrs={'data-toggle': 'radio'}),
         label='I am donating as an',
         choices=CTSDonor.DONOR_TYPE_CHOICES,
-        initial=CTSDonor.DONOR_TYPE_CHOICES[0][0],
     )
     name = forms.CharField(
         required=False,
         widget=forms.TextInput(
             attrs={
-                'class': 'required',
+                'class': 'required form-control',
                 'placeholder': 'Your name or the name of your organization',
             },
         )
@@ -32,6 +33,7 @@ class CTSDonorForm(forms.ModelForm):
         required=False,
         widget=forms.TextInput(
             attrs={
+                'class': 'form-control',
                 'placeholder': 'Where are you located? (optional; will not be displayd)',
             },
         )
@@ -40,6 +42,7 @@ class CTSDonorForm(forms.ModelForm):
         required=False,
         widget=forms.TextInput(
             attrs={
+                'class': 'form-control',
                 'placeholder': 'Which URL should we link your name to?',
             },
         )
@@ -53,6 +56,9 @@ class CTSDonorForm(forms.ModelForm):
     )
     is_visible = forms.BooleanField(
         required=False,
+        widget=forms.CheckboxInput(
+            attrs={'data-toggle': 'checkbox'}
+        ),
         label=(
             "Yes, display my name, URL, and logo on this site. "
             "It'll be displayed shortly after we verify it."
@@ -60,6 +66,9 @@ class CTSDonorForm(forms.ModelForm):
     )
     is_subscribed = forms.BooleanField(
         required=False,
+        widget=forms.CheckboxInput(
+            attrs={'data-toggle': 'checkbox'}
+        ),
         label=(
             'Yes, Conservation Technology Solutions Inc can inform me about '
             'future fundraising campaigns by email.'
@@ -121,8 +130,8 @@ class DonateForm(forms.Form):
         ('custom', 'Other amount'),
     )
 
-    amount = forms.ChoiceField(choices=AMOUNT_CHOICES)
-    interval = forms.ChoiceField(choices=INTERVAL_CHOICES)
+    amount = forms.ChoiceField(choices=AMOUNT_CHOICES, widget=Select(attrs={'class': 'form-group form-control'}))
+    interval = forms.ChoiceField(choices=INTERVAL_CHOICES, widget=Select(attrs={'class': 'form-group form-control'}))
 
 
 class DonationForm(forms.ModelForm):
@@ -238,7 +247,7 @@ class PaymentForm(forms.Form):
 
         else:
             if not donor:
-                hero = CTSDonor.objects.create(
+                donor = CTSDonor.objects.create(
                     email=receipt_email,
                     stripe_customer_id=customer.id,
                 )
@@ -264,7 +273,7 @@ class PaymentForm(forms.Form):
                 'fundraising/email/thank-you.html',
                 {'donation': donation}
             )
-            send_mail(
+            mail_task(
                 'Thank you for your donation to CTS',
                 message,
                 settings.DEFAULT_FROM_EMAIL,

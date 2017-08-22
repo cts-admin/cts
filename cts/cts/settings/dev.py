@@ -5,6 +5,8 @@ from .base import *
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
+ALLOWED_HOSTS = ['127.0.0.1', '15565cad.ngrok.io']
+
 EMAIL_SSL_KEYFILE = '/home/ave/PycharmProjects/cts/privkey.pem'
 EMAIL_SSL_CERTFILE = '/home/ave/PycharmProjects/cts/fullchain.pem'
 

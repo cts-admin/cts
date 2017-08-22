@@ -171,6 +171,7 @@ CELERY_RESULT_BACKEND = 'django-db'
 
 # Stripe
 STRIPE_PUBLISHABLE_KEY = os.environ['STRIPE_PUBLISHABLE_KEY']
+STRIPE_SECRET_KEY = os.environ['STRIPE_SECRET_KEY']
 
 
 # Django registraton settings

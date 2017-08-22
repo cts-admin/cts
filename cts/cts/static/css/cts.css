@@ -4,3 +4,49 @@
 .img-main{
     max-height: 220px;
 }
+
+.donate {
+    margin-bottom: 30px;
+}
+
+.stripe-custom-checkout .form-control {
+    max-width: 450px;
+}
+
+.form-horizontal .form-group .radio {
+    padding-top: 0;
+    margin-top: 7px;
+}
+
+div.form-group.checkbox {
+    padding-top: 0;
+    margin-top: 7px;
+}
+
+#donor-btn {
+    margin-top: 10px;
+}
+
+.btn-file {
+    position: relative;
+    overflow: hidden;
+}
+.btn-file input[type=file] {
+    position: absolute;
+    top: 0;
+    right: 0;
+    min-width: 100%;
+    min-height: 100%;
+    font-size: 100px;
+    text-align: right;
+    filter: alpha(opacity=0);
+    opacity: 0;
+    outline: none;
+    background: white;
+    cursor: inherit;
+    display: block;
+}
+
+.form-group {
+    margin-bottom: 10px;
+}

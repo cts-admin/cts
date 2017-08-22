@@ -18,55 +18,75 @@
     {% endblock %}
 
     <div class="main">
-    <div class="container tim-container" style="max-width:800px; padding-top:100px">
-    <h1 class="text-center">
-        Support CTS
-    </h1>
-    <h3 class="text-muted">Support natural resource conservation by donating to Conservation Technology Solutions Inc.</h3>
+        <div class="container tim-container" style="padding-top:100px">
+            <div class="col-md-3">
+                <h3>
+                    Support CTS
+                </h3>
+
+                <div class="text-muted">
+                    Support natural resource conservation by donating to Conservation Technology Solutions Inc.
+                </div>
+            </div>
+
+            <div class="col-md-9">
+                {% donation_form_with_heart %}
+            </div>
+        </div>
+
+        <div class="container tim-container">
+            <div class="col-md-3">
+                <h3 id="why-give">
+                    Why Give?
+                </h3>
+            </div>
+
+            <div class="col-md-9">
+                <p>
+                    The main goal of CTS is to provide technical support to those involved in natural resource
+                    conservation. This means:
+                </p>
+                <ul>
+                    <li>Developing software that helps researchers do their jobs</li>
+                    <li>Designing hardware to help answer questions about the natural world</li>
+                    <li>Encourage the next generation of scientists by getting kids interested in the
+                        technology surrounding scientific discoveries</li>
+                    <li>Planning, promoting, and implementing citizen science projects that invite
+                        everyone to participate in a more scientific view of the world around them</li>
+                </ul>
+
+                <h4>What is Conservation Technology Solutions Inc?</h4>
+
+                <p>Conservation Technology Solutions is a 501(c)(3) non-profit that seeks to fill the
+                    technical gap that currently exists in the field of natural resource conservation.
+                    You can read about our mission <a href="{% url 'home:mission' %}">here</a>.
+                </p>
 
 
-    {% donation_form_with_heart %}
+                {% if testimonial %}
+                    <blockquote>
+                        {{ testimonial.body|linebreaks }}
+                        <em>{{ testimonial.author }}</em>
+                    </blockquote>
+                {% endif %}
 
-    <h2 id="why-give">Why give to Conservation Technology Solutions?</h2>
+                <hr style="margin: 40px 0" />
 
-    <p>Our main goal is to provide technical support to those involved in natural resource conservation. This means:</p>
-    <ul>
-        <li>Developing software that helps researchers do their jobs</li>
-        <li>Designing hardware to help answer questions about the natural world</li>
-        <li>Encourage the next generation of scientists by getting kids interested in the
-            technology surrounding scientific discoveries</li>
-        <li>Planning, promoting, and implementing citizen science projects that invite
-            everyone to participate in a more scientific view of the world around them</li>
-    </ul>
+                <div>
+                    <h4>CTS Supporters</h4>
+                    <p>Our donors make our work possible! We are incredibly grateful for the
+                        financial support from the following individuals and organizations in our
+                        community.</p>
 
-    {% if testimonial %}
-        <blockquote>
-            {{ testimonial.body|linebreaks }}
-            <em>{{ testimonial.author }}</em>
-        </blockquote>
-    {% endif %}
-
-    <hr style="margin: 40px 0" />
-
-    <div class="heroes-section">
-        <h1>CTS Supporters</h1>
-        <p>Our donors make our work possible! We are incredibly grateful for the
-            financial support from the following individuals and organizations in our
-            community.</p>
-
-        {% display_cts_donors %}
+                    {% display_cts_donors %}
+                </div>
+            </div>
+        </div>
     </div>
 {% endblock %}
 
-{% block content-extra %}
-    <div class="layout-tertiary" id="about">
-        <div class="container">
-            <h2>What is Conservation Technology Solutions Inc?</h2>
-            <p>Conservation Technology Solutions is a 501(c)(3) non-profit that seeks to fill the
-                technical gap that currently exists in the field of natural resource conservation.
-                You can read about our mission <a href="{% url 'home:mission' %}">here</a>.
-            </p>
-        </div>
-    </div>
-    </div>
+{% block extra_js %}
+    <script src="https://checkout.stripe.com/checkout.js"></script>
+    <script type="text/javascript" src="{% static 'js/stripe-custom-checkout.js' %}"></script>
+    <script type="text/javascript" src="{% static 'js/fundraising-index.js' %}"></script>
 {% endblock %}
