@@ -4,7 +4,6 @@ import json
 import stripe
 from django.conf import settings
 from django.contrib import messages
-from django.core.mail import send_mail
 from django.forms.models import modelformset_factory
 from django.http import HttpResponse, JsonResponse
 from django.shortcuts import get_object_or_404, redirect, render
@@ -19,6 +18,7 @@ from .models import (
     LEADERSHIP_LEVEL_AMOUNT, CTSDonor, Donation, Payment, Testimonial,
 )
 
+from home.tasks import mail_task
 
 def index(request):
     testimonial = Testimonial.objects.filter(is_active=True).order_by('?').first()
@@ -197,7 +197,7 @@ class WebhookHandler(object):
 
         mail_text = render_to_string(
             'fundraising/email/subscription_cancelled.txt', {'donation': donation})
-        send_mail('Payment cancelled', mail_text,
+        mail_task('Payment cancelled', mail_text,
                   settings.DEFAULT_FROM_EMAIL, [donation.donor.email])
 
         return HttpResponse(status=204)
@@ -209,7 +209,7 @@ class WebhookHandler(object):
 
         mail_text = render_to_string(
             'fundraising/email/payment_failed.txt', {'donation': donation})
-        send_mail('Payment failed', mail_text,
+        mail_task('Payment failed', mail_text,
                   settings.DEFAULT_FROM_EMAIL, [donation.donor.email])
 
         return HttpResponse(status=204)
