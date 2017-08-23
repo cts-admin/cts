@@ -1,4 +1,4 @@
-{% extends 'fundraising/index.html' %}
+{% extends 'base.html' %}
 {% load humanize static %}
 
 {% block title %}Thank you!{% endblock %}
@@ -33,13 +33,16 @@
                     you donated more than ${{ leadership_level_amount|intcomma }} per year.</p>
 
                 <p class="text-center">
-                    <a href="{% static "img/greenbadge_500.png" %}">
-                        <img width="300px" height="auto" border="0" title="CTS Donor" alt="CTS Donor"
-                             src="{% static "img/greenbadge_500.png" %}"></a>
-                    &nbsp; &nbsp;
-                    <a href="{% static "img/goldbadge_500.png" %}">
-                        <img width="300px" height="auto" border="0" title="CTS Leader" alt="CTS Leader"
-                             src="{% static "img/goldbadge_500.png" %}"></a>
+                    {% if donation.subscription_amount < leadership_level_amount %}
+                        <a href="{% static "img/greenbadge_500.png" %}">
+                            <img width="300px" height="auto" border="0" title="CTS Donor" alt="CTS Donor"
+                                 src="{% static "img/greenbadge_500.png" %}"></a>
+                    {% else %}
+                        <p>You unlocked our golden "Leader" badge! Thank you for your support!</p>
+                        <a href="{% static "img/goldbadge_500.png" %}">
+                            <img width="300px" height="auto" border="0" title="CTS Leader" alt="CTS Leader"
+                                 src="{% static "img/goldbadge_500.png" %}"></a>
+                    {% endif %}
                 </p>
 
                 <p>If you'd like to have your name or company displayed on the
