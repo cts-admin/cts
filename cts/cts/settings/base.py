@@ -43,6 +43,7 @@ INSTALLED_APPS = [
     'taggit',
     'django_celery_results',
     'registration',
+    'sorl.thumbnail',
 
     'django.contrib.admin',
     'django.contrib.auth',

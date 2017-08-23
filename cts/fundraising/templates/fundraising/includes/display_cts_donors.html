@@ -1,7 +1,7 @@
 {% load humanize %}
 <div class="donors">
     {% if corporate_members.diamond %}
-        <h3>Diamond Corporate Members (${{ corporate_membership_amounts.diamond|intcomma }}+)</h3>
+        <h5>Diamond Corporate Members (${{ corporate_membership_amounts.diamond|intcomma }}+)</h5>
         <p>Our diamond <a href="/members/corporate-membership/">corporate
             members</a> include mega corporations and foundations.</p>
         <div>
@@ -12,7 +12,7 @@
     {% endif %}
 
     {% if corporate_members.platinum %}
-        <h3>Platinum Corporate Members (${{ corporate_membership_amounts.platinum|intcomma }}+)</h3>
+        <h5>Platinum Corporate Members (${{ corporate_membership_amounts.platinum|intcomma }}+)</h5>
         <p>Our platinum <a href="/members/corporate-membership/">corporate
             members</a> include organizations of ~500 people.</p>
         <div>
@@ -23,7 +23,7 @@
     {% endif %}
 
     {% if corporate_members.gold %}
-        <h3>Gold Corporate Members (${{ corporate_membership_amounts.gold|intcomma }}+)</h3>
+        <h5>Gold Corporate Members (${{ corporate_membership_amounts.gold|intcomma }}+)</h5>
         <p>Our gold <a href="/members/corporate-membership/">corporate
             members</a> include organizations of ~200 people.</p>
         <div>
@@ -34,7 +34,7 @@
     {% endif %}
 
     {% if corporate_members.silver %}
-        <h3>Silver Corporate Members (${{ corporate_membership_amounts.silver|intcomma }}+)</h3>
+        <h5>Silver Corporate Members (${{ corporate_membership_amounts.silver|intcomma }}+)</h5>
         <p>Our silver <a href="/members/corporate-membership/">corporate
             members</a> include organizations of ~50 people.</p>
         <div>
@@ -45,7 +45,7 @@
     {% endif %}
 
     {% if corporate_members.bronze %}
-        <h3>Bronze Corporate Members (${{ corporate_membership_amounts.bronze|intcomma }}+)</h3>
+        <h5>Bronze Corporate Members (${{ corporate_membership_amounts.bronze|intcomma }}+)</h5>
         <p>Our bronze <a href="/members/corporate-membership/">corporate
             members</a> include organizations of ~10 people.</p>
         <div>
@@ -55,7 +55,7 @@
         </div>
     {% endif %}
 
-    <h3>In-kind donors</h3>
+    <h5 class="tim-title"><strong>In-kind donors</strong></h5>
     <p>These donors help with significant non-cash contributions.</p>
     <div>
         {% with show_description=True %}
@@ -65,7 +65,7 @@
         {% endwith %}
     </div>
 
-    <h3>Leaders (${{ display_logo_amount|intcomma }}+)</h3>
+    <h5 class="tim-title"><strong>Leaders (${{ display_logo_amount|intcomma }}+)</strong></h5>
     <p>Leadership-level donors contribute ${{ display_logo_amount|intcomma }} or
         more in a calendar year.</p>
     <div>
@@ -74,7 +74,7 @@
         {% endfor %}
     </div>
 
-    <h3>Donors</h3>
+    <h5 class="tim-title"><strong>Donors</strong></h5>
     <p>Our donor roll for all donations made in the last {{ display_donor_days }} days.</p>
     <div>
         {% for donor in donors %}
