@@ -20,6 +20,7 @@ from .models import (
 
 from home.tasks import mail_task
 
+
 def index(request):
     testimonial = Testimonial.objects.filter(is_active=True).order_by('?').first()
     return render(request, 'fundraising/index.html', {

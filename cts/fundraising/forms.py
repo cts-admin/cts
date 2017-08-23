@@ -135,9 +135,11 @@ class DonateForm(forms.Form):
 
 
 class DonationForm(forms.ModelForm):
-    subscription_amount = forms.DecimalField(max_digits=9, decimal_places=2, required=True)
+    subscription_amount = forms.DecimalField(max_digits=9, decimal_places=2, required=True,
+                                             widget=forms.NumberInput(attrs={'class': 'form-control'}))
     # here we're removing "onetime" option from interval choices:
-    interval = forms.ChoiceField(choices=INTERVAL_CHOICES[:3], required=True)
+    interval = forms.ChoiceField(choices=INTERVAL_CHOICES[:3], required=True,
+                                 widget=Select(attrs={'class': 'form-control'}))
 
     class Meta:
         model = Donation

@@ -32,7 +32,7 @@
                     to help spread the word about our campaign. You may use the "Leader" badge if
                     you donated more than ${{ leadership_level_amount|intcomma }} per year.</p>
 
-                <p class="text-center">
+                <div class="text-center">
                     {% if donation.subscription_amount < leadership_level_amount %}
                         <a href="{% static "img/greenbadge_500.png" %}">
                             <img width="300px" height="auto" border="0" title="CTS Donor" alt="CTS Donor"
@@ -43,7 +43,7 @@
                             <img width="300px" height="auto" border="0" title="CTS Leader" alt="CTS Leader"
                                  src="{% static "img/goldbadge_500.png" %}"></a>
                     {% endif %}
-                </p>
+                </div>
 
                 <p>If you'd like to have your name or company displayed on the
                     <a href="{% url 'fundraising:index' %}">fundraising page</a> please fill out the form below.
@@ -55,50 +55,7 @@
 
                     <hr style="margin: 40px 0" />
 
-                    {% for error in form.non_field_errors %}
-                        <div class="form-group has-error text-danger">
-                            {{ error }}
-                        </div>
-                    {% endfor %}
-                    {% for field in form %}
-                        <div class="has-error text-danger">
-                            {{ field.errors }}
-                        </div>
-                        {% if field.name == 'donor_type' %}
-                            <div class="form-group">
-                                {{ form.donor_type.label_tag }}
-                                {% for radio in form.donor_type %}
-                                    <div class="radio">
-                                        {{ radio }}
-                                    </div>
-                                {% endfor %}
-                            </div>
-                        {% elif field.name == 'logo' %}
-                            <div class="form-group">
-                                {{ form.logo.label_tag }}
-                                <div>
-                                    <label class="btn btn-default btn-file">
-                                        Browse {{ form.logo }}
-                                    </label>
-                                </div>
-                            </div>
-                        {% elif field.name == 'is_visible' %}
-                            <div class="form-group checkbox">
-                                {{ form.is_visible }}
-                                {{ form.is_visible.label_tag }}
-                            </div>
-                        {% elif field.name == 'is_subscribed' %}
-                            <div class="form-group checkbox">
-                                {{ form.is_subscribed }}
-                                {{ form.is_subscribed.label_tag }}
-                            </div>
-                        {% else %}
-                            <div class="form-group">
-                                {{ field.label_tag }}
-                                {{ field }}
-                            </div>
-                        {% endif %}
-                    {% endfor %}
+                    {% include 'fundraising/includes/_form.html' %}
                     <p class="submit">
                         <input id="donor-btn" type="submit" class="btn btn-primary form-group" value="Save &rarr;">
                     </p>
