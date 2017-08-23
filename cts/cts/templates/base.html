@@ -115,16 +115,16 @@
     {% endblock nav %}
 
     {% block messages %}
-        <div class="container-fluid">
-            <div class="text-center alert alert-info">
-                {% if messages %}
+        {% if messages %}
+            <div class="container-fluid">
+                <div class="text-center alert alert-info">
                     {% for message in messages %}
                         <p>{{ message }}</p>
                     {% endfor %}
                     <hr>
-                {% endif %}
+                </div>
             </div>
-        </div>
+        {% endif %}
     {% endblock %}
 
 {% endblock %}
