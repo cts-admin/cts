@@ -1,8 +1,13 @@
 .parallax-pro .img-src {
     background-image: linear-gradient(45deg, #eee 25%, transparent 25%, transparent 75%, #eee 75%, #eee 100%),linear-gradient(45deg, #eee 25%, white 25%, white 75%, #eee 75%, #eee 100%);
 }
+
 .img-main{
     max-height: 220px;
+}
+
+.navbar-header {
+    padding-right:70px;
 }
 
 .donate {
@@ -23,30 +28,75 @@ div.form-group.checkbox {
     margin-top: 7px;
 }
 
-#donor-btn {
+.form-group {
+    margin-bottom: 10px;
+}
+
+.btn-space {
     margin-top: 10px;
 }
 
-.btn-file {
-    position: relative;
-    overflow: hidden;
-}
-.btn-file input[type=file] {
-    position: absolute;
-    top: 0;
-    right: 0;
-    min-width: 100%;
-    min-height: 100%;
-    font-size: 100px;
-    text-align: right;
-    filter: alpha(opacity=0);
-    opacity: 0;
-    outline: none;
-    background: white;
-    cursor: inherit;
-    display: block;
+.donor-goals {
+    float: right;
 }
 
-.form-group {
-    margin-bottom: 10px;
+@media (max-width: 620px) {
+    .donor-goals {
+        margin: 10px 0 10px;
+        float: inherit;
+    }
+}
+
+.donors-section {
+    overflow: hidden;
+}
+
+.donors-section .donors {
+    clear: both;
+    float: inherit;
+}
+
+.donors-section h5 {
+    clear: both;
+    text-align: center;
+}
+
+.donors-section .donor {
+    width: calc(100% / 3);
+    position: relative;
+    height: auto;
+}
+
+.donors-section .donor div {
+    width: 100%;
+}
+
+.donors-section .donor-logo {
+    height: 100px;
+    line-height: 100px;
+}
+
+.donors-section .donor-logo img {
+    vertical-align: middle;
+}
+
+.donors-section .donor-name {
+    min-height: 87px;
+    vertical-align: top;
+    margin-bottom: 5px;
+}
+
+.donors-section .no-logo-donor {
+    min-height: 60px;
+    margin-right: 24px;
+}
+
+.donors-section div {
+    float: left;
+    text-align: center;
+}
+
+.donors-section div img {
+    max-width: 90%;
+    max-height: 170px;
 }
