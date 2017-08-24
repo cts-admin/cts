@@ -28,7 +28,7 @@ def as_percentage(part, total):
         return "0.00"
 
 
-@register.inclusion_tag('fundraising/includes/donation_form_with_heart.html', takes_context=True)
+@register.inclusion_tag('fundraising/includes/donation_form.html', takes_context=True)
 def donation_form_with_heart(context):
     user = context['user']
     donated_amount = Payment.objects.filter(date__gte=GOAL_START_DATE).aggregate(
