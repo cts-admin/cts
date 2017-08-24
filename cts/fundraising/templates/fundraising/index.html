@@ -20,7 +20,20 @@
             </div>
 
             <div class="col-md-9">
-                {% donation_form %}
+                {% if user.is_authenticated %}
+                    {% donation_form %}
+                {% else %}
+                    <p><strong>
+                        We take security seriously so we would prefer if you were
+                        <a href="{% url 'login' %}?next={{request.path}}">logged in</a> before donating!
+                    </strong></p>
+                    <p>This helps us ensure all of your information stays private and protected.</p>
+                    <br/>
+                    <p>If you really don't want to <a href="{% url 'login' %}?next={{request.path}}">login</a>, you can
+                        <a href="https://paypal.me/donatects">donate via PayPal</a> but you'll miss out on some extra
+                        features and functionality.
+                    </p>
+                {% endif %}
             </div>
         </div>
 

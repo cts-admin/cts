@@ -4,6 +4,7 @@ import json
 import stripe
 from django.conf import settings
 from django.contrib import messages
+from django.contrib.auth.decorators import login_required
 from django.forms.models import modelformset_factory
 from django.http import HttpResponse, JsonResponse
 from django.shortcuts import get_object_or_404, redirect, render
@@ -77,6 +78,7 @@ def thank_you(request, donation):
     })
 
 
+@login_required
 @never_cache
 def manage_donations(request, donor):
     donor = get_object_or_404(CTSDonor, pk=donor)
