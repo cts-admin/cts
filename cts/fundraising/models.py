@@ -8,6 +8,8 @@ from django.utils import crypto, timezone
 from django.urls import reverse
 from sorl.thumbnail import ImageField, get_thumbnail
 
+from accounts.models import Profile
+
 GOAL_AMOUNT = Decimal("20000.00")
 GOAL_START_DATE = datetime.date(2017, 1, 1)
 DISPLAY_DONOR_DAYS = 365
@@ -47,6 +49,7 @@ class FundraisingModel(models.Model):
 
 
 class CTSDonor(FundraisingModel):
+    profile = models.OneToOneField(Profile, on_delete=models.CASCADE)
     email = models.EmailField(blank=True)
     stripe_customer_id = models.CharField(max_length=100, blank=True)
     logo = ImageField(upload_to="fundraising/logos/", blank=True)

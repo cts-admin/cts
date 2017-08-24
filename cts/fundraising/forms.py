@@ -9,6 +9,7 @@ from .exceptions import DonationError
 from .models import (
     INTERVAL_CHOICES, LEADERSHIP_LEVEL_AMOUNT, CTSDonor, Donation,
 )
+from accounts.models import Profile
 
 from home.tasks import mail_task
 
@@ -174,6 +175,10 @@ class PaymentForm(forms.Form):
     stripe_token = forms.CharField(widget=forms.HiddenInput())
     token_type = forms.CharField(widget=forms.HiddenInput())
 
+    def __init__(self, *args, **kwargs):
+        self.user = kwargs.pop('user', None)
+        super(PaymentForm, self).__init__(*args, **kwargs)
+
     def make_donation(self):
         receipt_email = self.cleaned_data['receipt_email']
         amount = self.cleaned_data['amount']
@@ -181,6 +186,7 @@ class PaymentForm(forms.Form):
         token_type = self.cleaned_data['token_type']
         interval = self.cleaned_data['interval']
         is_bitcoin = token_type == 'source_bitcoin'
+        user = self.user
 
         donor = CTSDonor.objects.filter(email=receipt_email).first()
 
@@ -250,6 +256,7 @@ class PaymentForm(forms.Form):
         else:
             if not donor:
                 donor = CTSDonor.objects.create(
+                    profile=Profile.objects.get(user=user),
                     email=receipt_email,
                     stripe_customer_id=customer.id,
                 )

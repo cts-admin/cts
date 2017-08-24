@@ -30,7 +30,11 @@
                 (Robots provided by <a href="https://robohash.org/">Robohash</a>.)
                 <p></p>
 
-                User stats will be visible here in the future.
+                {% if donations %}
+                    <p>You can manage your donations <a href="{% url 'fundraising:manage-donations' donor.pk %}">at this link</a>.</p>
+                {% else %}
+                    <p>You have not made any <a href="{% url 'fundraising:index' %}">donations</a> yet.</p>
+                {% endif %}
 
                 {% with user_obj.owned_feeds.all as feeds %}
                     {% if feeds %}

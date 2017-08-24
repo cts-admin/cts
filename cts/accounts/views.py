@@ -9,13 +9,22 @@ from django.shortcuts import get_object_or_404, redirect, render
 
 from .forms import ProfileForm
 from .models import Profile
+from fundraising.models import CTSDonor
 
 
 def user_profile(request, username):
     user = get_object_or_404(User, username=username)
+    profile = Profile.objects.get(user=user)
+    donor = CTSDonor.objects.filter(profile=profile).first()
+    if donor:
+        donations = donor.donation_set.all()
+    else:
+        donations = None
     return render(request, "accounts/user_profile.html", {
         'user_obj': user,
         'email_hash': hashlib.md5(user.email.encode('ascii', 'ignore')).hexdigest(),
+        'donor': donor,
+        'donations': donations,
     })
 
 

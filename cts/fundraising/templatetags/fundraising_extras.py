@@ -61,7 +61,6 @@ def display_cts_donors():
         if donor.donated_amount is not None and donor.donated_amount < LEADERSHIP_LEVEL_AMOUNT:
             break
 
-    print('i: ', i)
     return {
         'corporate_members': CorporateMember.objects.by_membership_level(),
         'leaders': donors[:i],

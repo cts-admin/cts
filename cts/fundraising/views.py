@@ -31,7 +31,7 @@ def index(request):
 
 @require_POST
 def donate(request):
-    form = PaymentForm(request.POST)
+    form = PaymentForm(request.POST, user=request.user)
 
     if form.is_valid():
         # Try to create the charge on Stripe's servers - this will charge the user's card
