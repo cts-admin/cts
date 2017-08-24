@@ -6,10 +6,21 @@
 {% block content %}
     {% block nav %}{{ block.super }}{% endblock nav %}
 
-    <h1>Account activation failed.</h1>
+    <div class="main">
+        <div class="container tim-container" style="padding-top:50px">
+            <div class="col-md-3">
+                <h3>Account activation failed.</h3>
+            </div>
 
-    <p>Sorry, it didn't work. Either your activation link was incorrect, or
-        the activation key for your account has expired; activation keys are
-        only valid for {{ expiration_days|apnumber }} days after
-        registration.</p>
+            <div class="col-md-9">
+                <p>Sorry, it didn't work. Either your activation link was incorrect, or
+                    the activation key for your account has expired; activation keys are
+                    only valid for {{ expiration_days|apnumber }} days after
+                    registration.</p>
+            </div>
+        </div>
+        <div class="space"></div>
+        <!-- end container -->
+    </div>
+    <!-- end main -->
 {% endblock %}
