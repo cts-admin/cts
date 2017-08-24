@@ -1,0 +1,116 @@
+{% extends "base.html" %}
+{% load humanize %}
+
+{% block title %}About Corporate Membership{% endblock %}
+
+{% block content %}
+    {% block nav %}{{ block.super }}{% endblock %}
+
+    <div class="main">
+        <div class="container tim-container" style="max-width:800px; padding-top:50px">
+            <div class="col-md-3">
+                <h3>About Corporate Membership</h3>
+            </div>
+
+            <div class="col-md-9">
+                <p>
+                    <strong>Conservation Technology Solutions Inc</strong> has a corporate membership program designed to give a voice to
+                    organizations interested in supporting and sponsoring CTS's
+                    <a href="{% url 'home:mission' %}">mission</a>.
+                </p>
+
+                <p>
+                    Corporate members contribute unrestricted funds that are used to fund CTS priorities, which include, but
+                    are not limited to:
+                </p>
+                <ul>
+                    <li>Funding the development of software to be used by biologists, ecologists, botanists,
+                        or other scientists involved in natural resource conservation.</li>
+                    <li>Funding small, local citizen science projects designed to encourage people to think
+                        scientifically about the world around them.</li>
+                    <li>Funding continuing operations and other miscellaneous expenses.</li>
+                </ul>
+
+                <p>
+                    There are several levels of corporate membership: Diamond, Platinum, Gold, Silver, and Bronze.
+                    Memberships are renewed annually.
+                </p>
+            </div>
+
+            <div class="col-md-3">
+                <h3>Why join?</h3>
+            </div>
+
+            <div class="col-md-9">
+                <p>
+                    Current members may decide to join CTS for a variety of reasons, including:
+                </p>
+                <ul>
+                    <li>A desire to give back to the community.</li>
+                    <li>In recognition of a growing need to protect our natural environment.</li>
+                    <li>Investing in and supporting the work of natural resource scientists.</li>
+                    <li>Technical support and natural resource consulting services.</li>
+                    <li>Tax deductions: <strong>Conservation Technology Solutions Inc</strong> is a 501(c)(3) non-profit
+                        charitable organization. Membership dues are tax-deductible for U.S. organizations; members
+                        outside of the United States should consult a tax advisor.</li>
+                </ul>
+            </div>
+            <div class="col-md-3">
+                <h3>How do I become a member?</h3>
+            </div>
+
+            <div class="col-md-9">
+                <p>
+                    Fill out our <a href="{% url 'members:corporate-members-join' %}">onboarding form</a> and we'll
+                    follow up with an invoice after your organization is approved by our board.
+                </p>
+                <h4 class="tim-title">Dues</h4>
+
+                <p>
+                    Membership dues are paid annually. The Django Software Foundation has several levels of corporate membership:
+                </p>
+                <ul>
+                    <li>Diamond: Mega corporations and foundations. Dues:
+                        ${{ corporate_membership_amounts.diamond|intcomma }}.</li>
+                    <li>Platinum: Organizations of ~500 people. Dues:
+                        ${{ corporate_membership_amounts.platinum|intcomma }}.</li>
+                    <li>Gold: Organizations of ~200 people. Dues:
+                        ${{ corporate_membership_amounts.gold|intcomma }}.</li>
+                    <li>Silver: Organizations of ~50 people. Dues:
+                        ${{ corporate_membership_amounts.silver|intcomma }}.</li>
+                    <li>Bronze: Organizations of up to 10 people. Dues:
+                        ${{ corporate_membership_amounts.bronze|intcomma }}.</li>
+                </ul>
+                <p>
+                    Organizations that are unable to join at the above levels are invited to consider making a one-time or recurring gift totaling $1,000 or more on our fundraising page. With this gift, you will be recognized as a Leadership-level donor on our fundraising page.
+                </p>
+            </div>
+            <div class="col-md-3">
+                <h3 class="tim-title">Benefits</h3>
+            </div>
+            <div class="col-md-9">
+                <p class="tim-title"><strong>
+                    Corporate members receive:
+                </strong></p>
+
+                <ul>
+                    <li>A single vote in votes put to membership.</li>
+                    <li>An organization description on the Corporate Members page.</li>
+                    <li>Your logo and link on the fundraising page.</li>
+                    <li>A CTS Donor badge denoting your level of membership, for use on your website & elsewhere.</li>
+                    <li>An annual impact report from the Board, featuring highlights from our work.</li>
+                    <li>Announcement and thanks for your membership on our Twitter account (@ctsadmin)</li>
+
+                </ul>
+
+                <h4 class="tim-title">Questions?</h4>
+                <p>
+                    If you have questions not answered above, please <a href="{% url 'home:contact' %}">contact us</a>.
+                </p>
+            </div>
+        </div>
+        <div class="space"></div>
+        <!-- end container -->
+    </div>
+    <!-- end main -->
+{% endblock %}
