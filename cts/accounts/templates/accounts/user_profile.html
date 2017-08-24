@@ -30,22 +30,19 @@
                 (Robots provided by <a href="https://robohash.org/">Robohash</a>.)
                 <p></p>
 
+                <hr />
+
                 {% if donations %}
-                    <p>You can manage your donations <a href="{% url 'fundraising:manage-donations' donor.pk %}">at this link</a>.</p>
+                    <p>
+                        Thank you for being a CTS Donor! You have made {{ donations|length }}
+                        contribution{{ donations|pluralize }}.
+                    </p>
+                    <p>You can manage your donations
+                        <a href="{% url 'fundraising:manage-donations' donor.pk %}">at this link</a>.</p>
                 {% else %}
-                    <p>You have not made any <a href="{% url 'fundraising:index' %}">donations</a> yet.</p>
+                    <p>You have not made any <a href="{% url 'fundraising:index' %}">contributions to CTS</a> yet.</p>
                 {% endif %}
 
-                {% with user_obj.owned_feeds.all as feeds %}
-                    {% if feeds %}
-                        <h2>Community feeds:</h2>
-                        <ul>
-                            {% for f in feeds %}
-                                <li><a href="{{ f.public_url }}">{{ f.title }}</a></li>
-                            {% endfor %}
-                        </ul>
-                    {% endif %}
-                {% endwith %}
             </div>
         </div>
         <div class="space"></div>
