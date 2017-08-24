@@ -11,7 +11,7 @@ PROJECT_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 BASE_DIR = os.path.dirname(PROJECT_DIR)
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = os.environ['DJANGO_SECRET_KEY']
+SECRET_KEY = os.environ.get('DJANGO_SECRET_KEY', '')
 
 
 # Quick-start development settings - unsuitable for production
@@ -103,7 +103,7 @@ DATABASES = {
         'ENGINE': 'django.contrib.gis.db.backends.postgis',
         'NAME': 'geodjango',
         'USER': 'geodjango',
-        'PASSWORD': os.environ['DJANGO_DB_PASS'],
+        'PASSWORD': os.environ.get('DJANGO_DB_PASS', ''),
         'HOST': 'localhost',
         'PORT': '',
     }
@@ -157,13 +157,15 @@ EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 EMAIL_HOST = 'smtp-relay.gmail.com'
 EMAIL_PORT = 587
 EMAIL_HOST_USER = 'ctsadmin@conservationtechnologysolutions.com'
-EMAIL_HOST_PASSWORD = os.environ['EMAIL_HOST_PASS']
+EMAIL_HOST_PASSWORD = os.environ.get('EMAIL_HOST_PASS', '')
 EMAIL_USE_TLS = True
 EMAIL_USE_SSL = False
 
 DEFAULT_FROM_EMAIL = 'info@conservationtechnologysolutions.com'
 SERVER_EMAIL = 'ctsadmin@conservationtechnologysolutions.com'
-ADMINS = [('Avery', 'ctsadmin@conservationtechnologysolutions.com')]
+ADMINS = [('Avery', 'ctsadmin@conservationtechnologysolutions.com'),
+          ('Will', 'wtrost@conservationtechnologysolutions.com'),
+          ('Summer', 'srasmussen@conservationtechnologysolutions.com')]
 
 
 # Celery
@@ -171,8 +173,8 @@ CELERY_RESULT_BACKEND = 'django-db'
 
 
 # Stripe
-STRIPE_PUBLISHABLE_KEY = os.environ['STRIPE_PUBLISHABLE_KEY']
-STRIPE_SECRET_KEY = os.environ['STRIPE_SECRET_KEY']
+STRIPE_PUBLISHABLE_KEY = os.environ.get('STRIPE_PUBLISHABLE_KEY', '')
+STRIPE_SECRET_KEY = os.environ.get('STRIPE_SECRET_KEY', '')
 
 
 # Django registraton settings
