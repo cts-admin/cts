@@ -76,13 +76,13 @@
 
     <h5 class="tim-title"><strong>Donors</strong></h5>
     <p>Our donor roll for all donations made in the last {{ display_donor_days }} days.</p>
-    <ul>
+    <div>
         {% for donor in donors %}
-            {% if donor.is_visible %}
-                <li>{{ donor.name }}</li>
-            {% else %}
-                <li>Anonymous</li>
-            {% endif %}
+            <div class="no-logo-donor">
+                {% if donor.url %}<a href="{{ donor.url }}" rel="nofollow">{% endif %}{% spaceless %}
+                <span>{{ donor.name_with_fallback }}</span>
+            {% endspaceless %}{% if donor.url %}</a>{% endif %}
+            </div>
         {% endfor %}
-    </ul>
+    </div>
 </div>

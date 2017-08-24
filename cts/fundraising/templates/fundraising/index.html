@@ -8,7 +8,7 @@
     {% block messages %}{{ block.super }}{% endblock %}
 
     <div class="main">
-        <div class="container tim-container" style="padding-top:100px">
+        <div class="container tim-container" style="padding-top:50px">
             <div class="col-md-3">
                 <h3>
                     Support CTS
@@ -62,8 +62,8 @@
 
                 <hr style="margin: 40px 0" />
 
-                <div>
-                    <h4>CTS Supporters</h4>
+                <div class="donors-section">
+                    <h4><strong>CTS Supporters</strong></h4>
                     <p>Our donors make our work possible! We are incredibly grateful for the
                         financial support from the following individuals and organizations in our
                         community.</p>
@@ -82,5 +82,4 @@
     <script src="https://checkout.stripe.com/checkout.js"></script>
     <script type="text/javascript" src="{% static 'js/stripe-custom-checkout.js' %}"></script>
     <script type="text/javascript" src="{% static 'js/fundraising-index.js' %}"></script>
-    <script type="text/javascript" src="{% static 'js/fundraising-heart.js' %}"></script>
 {% endblock %}

@@ -1,6 +1,6 @@
 {% load static thumbnail %}
-<div class="hero">
-    <div class="hero-logo">
+<div class="donor">
+    <div class="donor-logo">
         {% if obj.url %}<a href="{{ obj.url }}" rel="nofollow">{% endif %}
         <img src="{% static 'img/fundraising-heart.png' %}"
              data-src="{% if obj.logo %}{{ obj.thumbnail.url }}{% else %}{% static 'img/fundraising-heart.png' %}{% endif %}"
@@ -8,7 +8,7 @@
              alt="{{ obj.display_name }}" />
         {% if obj.url %}</a>{% endif %}
     </div>
-    <div class="hero-name">
+    <div class="donor-name">
         {% if obj.url %}<a href="{{ obj.url }}" rel="nofollow">{% endif %}{% spaceless %}
         {{ obj.display_name }}
     {% endspaceless %}{% if obj.url %}</a>{% endif %}

@@ -31,8 +31,10 @@ def as_percentage(part, total):
 @register.inclusion_tag('fundraising/includes/donation_form_with_heart.html', takes_context=True)
 def donation_form_with_heart(context):
     user = context['user']
-    donated_amount = Payment.objects.filter(date__gte=GOAL_START_DATE).aggregate(models.Sum('amount'))['amount__sum'] or 0
-    donated_amount += Invoice.objects.filter(paid_date__gte=GOAL_START_DATE).aggregate(models.Sum('amount'))['amount__sum'] or 0
+    donated_amount = Payment.objects.filter(date__gte=GOAL_START_DATE).aggregate(
+        models.Sum('amount'))['amount__sum'] or 0
+    donated_amount += Invoice.objects.filter(paid_date__gte=GOAL_START_DATE).aggregate(
+        models.Sum('amount'))['amount__sum'] or 0
 
     total_donors = CTSDonor.objects.filter(donation__payment__date__gte=GOAL_START_DATE).distinct().count()
     form = DonateForm(initial={
@@ -59,10 +61,11 @@ def display_cts_donors():
         if donor.donated_amount is not None and donor.donated_amount < LEADERSHIP_LEVEL_AMOUNT:
             break
 
+    print('i: ', i)
     return {
         'corporate_members': CorporateMember.objects.by_membership_level(),
         'leaders': donors[:i],
-        'heroes': donors[i:],
+        'donors': donors[i:],
         'inkind_donors': InKindDonor.objects.all(),
         'display_donor_days': DISPLAY_DONOR_DAYS,
         'display_logo_amount': int(LEADERSHIP_LEVEL_AMOUNT),
