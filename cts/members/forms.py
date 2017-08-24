@@ -1,8 +1,8 @@
 from django import forms
 from django.conf import settings
-from django.core.mail import send_mail
 
 from .models import CorporateMember
+from home.tasks import mail_task
 
 
 class CorporateMemberSignUpForm(forms.ModelForm):
@@ -111,7 +111,7 @@ class CorporateMemberSignUpForm(forms.ModelForm):
     def save(self, *args, **kwargs):
         is_renewing = self.is_renewing  # self.is_renewing changes after super()
         instance = super().save(*args, **kwargs)
-        send_mail(
+        mail_task(
             'CTS Corporate Membership %s: %s' % (
                 'Renewal' if is_renewing else 'Application',
                 self.instance.display_name,
@@ -126,7 +126,6 @@ class CorporateMemberSignUpForm(forms.ModelForm):
             [
                 settings.DEFAULT_FROM_EMAIL,
                 self.instance.contact_email,
-                'info@conservationtechnologysolutions.com',
                 'ctsadmin@conservationtechnologysolutions.com',
             ],
         )
