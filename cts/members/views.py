@@ -6,6 +6,7 @@ from django.views.generic import CreateView, ListView, UpdateView
 from django.views.generic.dates import timezone_today
 
 from .forms import CorporateMemberSignUpForm
+from fundraising.models import LEADERSHIP_LEVEL_AMOUNT
 from .models import (
     CORPORATE_MEMBERSHIP_AMOUNTS, CorporateMember, IndividualMember, Team,
 )
@@ -29,6 +30,7 @@ class IndividualMemberListView(ListView):
 def about_corp_membership(request):
     return render(request, 'members/corporate_membership_about.html', {
         'corporate_membership_amounts': CORPORATE_MEMBERSHIP_AMOUNTS,
+        'leader_amount': LEADERSHIP_LEVEL_AMOUNT,
     })
 
 

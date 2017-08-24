@@ -20,8 +20,8 @@ CORPORATE_MEMBERSHIP_AMOUNTS = {
     'diamond': 25000,
     'platinum': 10000,
     'gold': 5000,
-    'silver': 1000,
-    'bronze': 500,
+    'silver': 3000,
+    'bronze': 1500,
 }
 
 MEMBERSHIP_LEVELS = (
