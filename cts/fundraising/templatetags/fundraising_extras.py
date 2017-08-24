@@ -29,7 +29,7 @@ def as_percentage(part, total):
 
 
 @register.inclusion_tag('fundraising/includes/donation_form.html', takes_context=True)
-def donation_form_with_heart(context):
+def donation_form(context):
     user = context['user']
     donated_amount = Payment.objects.filter(date__gte=GOAL_START_DATE).aggregate(
         models.Sum('amount'))['amount__sum'] or 0
