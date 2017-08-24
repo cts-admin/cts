@@ -27,7 +27,7 @@ class IndividualMemberListView(ListView):
 
 
 def corporate_member_list_view(request):
-    return render(request, 'members/corporatemember_list.html', {
+    return render(request, 'members/corporate_members_list.html', {
         'members': CorporateMember.objects.by_membership_level(),
         'corporate_membership_amounts': CORPORATE_MEMBERSHIP_AMOUNTS,
     })
