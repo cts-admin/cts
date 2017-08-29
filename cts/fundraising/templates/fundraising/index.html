@@ -3,6 +3,8 @@
 
 {% block title %}Support CTS{% endblock %}
 
+{% block extra_css %}<link rel="stylesheet" type="text/css" href="{% static 'css/overlay.css' %}">{% endblock %}
+
 {% block content %}
     {% block nav %}{{ block.super }}{% endblock %}
     {% block messages %}{{ block.super }}{% endblock %}
@@ -89,6 +91,11 @@
         <!-- end container -->
     </div>
     <!-- end main -->
+
+    <div id="overlay">
+        <div class="loader"></div>
+        <div id="overlay-text">Processing...</div>
+    </div>
 {% endblock %}
 
 {% block extra_js %}

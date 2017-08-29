@@ -18,7 +18,7 @@ var handler = StripeCheckout.configure({
             'interval': interval,
             'csrfmiddlewaretoken': csrfToken
         };
-
+        overlayOn();
         $.ajax({
             type: "POST",
             url: $donationForm.attr('action'),
@@ -26,9 +26,11 @@ var handler = StripeCheckout.configure({
             dataType: 'json',
             success: function (data) {
                 if (data.success) {
+                    overlayOff();
                     window.location = data.redirect;
                 } else {
                     $submitButton.prop('disabled', false).removeClass('disabled');
+                    overlayOff();
                     alert(data.error);
                 }
             }
@@ -38,6 +40,7 @@ var handler = StripeCheckout.configure({
 
 // Close Checkout on page navigation
 $(window).on('popstate', function () {
+    overlayOff();
     handler.close();
 });
 
@@ -57,3 +60,11 @@ $donationForm.on('submit', function (e) {
         panelLabel: 'Donate'
     });
 });
+
+function overlayOn() {
+    document.getElementById("overlay").style.display = "block";
+}
+
+function overlayOff() {
+    document.getElementById("overlay").style.display = "none";
+}

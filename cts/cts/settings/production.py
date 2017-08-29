@@ -5,7 +5,7 @@ from .base import *
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['.conservationtechnologysolutions.com']
+ALLOWED_HOSTS = ['.conservationtechnologysolutions.com', '104.236.198.4']
 
 EMAIL_SSL_KEYFILE = '/etc/letsencrypt/live/conservationtechnologysolutions.com/privkey.pem'
 EMAIL_SSL_CERTFILE = '/etc/letsencrypt/live/conservationtechnologysolutions.com/fullchain.pem'
