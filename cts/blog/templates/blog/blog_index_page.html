@@ -1,25 +1,36 @@
 {% extends "base.html" %}
-
 {% load wagtailcore_tags wagtailimages_tags %}
 
-{% block body_class %}template-blogindexpage{% endblock %}
+{% block title %}CTS Blog{% endblock %}
 
 {% block content %}
-    <h1>{{ page.title }}</h1>
+    {% block nav %}{{ block.super }}{% endblock %}
 
-    <div class="intro">{{ page.intro|richtext }}</div>
+    <div class="main">
+        <div class="container tim-container" style="padding-top:50px">
+            <div class="col-md-3">
+                <h3>{{ page.title }}</h3>
 
-    {% for post in blogpages %}
-        {% with post=post.specific %}
-            <h2><a href="{% pageurl post %}">{{ post.title }}</a> </h2>
+                <div class="text-muted">{{ page.intro|richtext }}</div>
+            </div>
 
-            {% with post.main_image as main_image %}
-                {% if main_image %}{% image main_image fill-160x100 %}{% endif %}
-            {% endwith %}
+            <div class="col-md-9">
+                {% for post in blogpages %}
+                    {% with post=post.specific %}
+                        <h2><a href="{% pageurl post %}">{{ post.title }}</a> </h2>
 
-            <p>{{ post.intro }}</p>
-            {{ post.body|richtext }}
-        {% endwith %}
-    {% endfor %}
+                        {% with post.main_image as main_image %}
+                            {% if main_image %}{% image main_image fill-160x100 %}{% endif %}
+                        {% endwith %}
 
+                        <p>{{ post.intro }}</p>
+                        {{ post.body|richtext }}
+                    {% endwith %}
+                {% endfor %}
+            </div>
+        </div>
+        <div class="space"></div>
+        <!-- end container -->
+    </div>
+    <!-- end main -->
 {% endblock %}
