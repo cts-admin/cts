@@ -1,5 +1,7 @@
 {% extends "base.html" %}
-{% load wagtailcore_tags wagtailimages_tags %}
+{% load wagtailcore_tags wagtailimages_tags blog_tags static wagtailuserbar %}
+
+{% block extra_css %}<link href="{% static 'blog/css/blog.css' %}" rel="stylesheet" type="text/css" />{% endblock %}
 
 {% block title %}CTS Blog{% endblock %}
 
@@ -14,20 +16,36 @@
                 <div class="text-muted">{{ page.intro|richtext }}</div>
             </div>
 
-            <div class="col-md-9">
-                {% for post in blogpages %}
-                    {% with post=post.specific %}
-                        <h2><a href="{% pageurl post %}">{{ post.title }}</a> </h2>
-
-                        {% with post.main_image as main_image %}
-                            {% if main_image %}{% image main_image fill-160x100 %}{% endif %}
-                        {% endwith %}
-
-                        <p>{{ post.intro }}</p>
-                        {{ post.body|richtext }}
-                    {% endwith %}
-                {% endfor %}
+            <div class="col-md-5">
+                {% post_list %}
             </div>
+
+        <div class="col-sm-3 col-sm-offset-1 blog-sidebar">
+            <div class="sidebar-module sidebar-module-inset">
+                <h4>About</h4>
+                <p>{{ page.about|richtext }}</p>
+            </div>
+            <div class="sidebar-module">
+                <h4>Archives</h4>
+                {% archives_list %}
+            </div>
+            <div class="sidebar-module">
+                <h4>Elsewhere</h4>
+                <ol class="list-unstyled">
+                    <li>
+                        <img src="{% static 'img/social-1_logo-github.svg' %}" height="15px" style="padding-right: 5px">
+                        <a href="https://github.com/cts-admin">GitHub</a>
+                    </li>
+                    <li>
+                        <img src="{% static 'img/social-1_logo-twitter.svg' %}" height="15px" style="padding-right: 5px">
+                        <a href="https://twitter.com/ctsadmin">Twitter</a></li>
+                    <li>
+                        <img src="{% static 'img/social-1_logo-facebook.svg' %}" height="15px" style="padding-right: 5px">
+                        <a href="https://www.facebook.com/ConservationTechnologySolutions/">Facebook</a>
+                    </li>
+                </ol>
+            </div>
+        </div><!-- /.blog-sidebar -->
         </div>
         <div class="space"></div>
         <!-- end container -->

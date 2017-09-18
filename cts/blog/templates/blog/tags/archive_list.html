@@ -1,0 +1,25 @@
+{% load i18n wagtailroutablepage_tags %}
+
+
+<ol class="list-unstyled">
+    {% regroup archives by year as year_list %}
+    {% for year in year_list %}
+        <li>
+            <a href="{% routablepageurl index_page "blogpages_by_date" year.grouper %}">
+                {{ year.grouper }}
+            </a>
+            <ul>
+                {% regroup year.list by month as month_list %}
+                {% for month in month_list reversed %}
+                    <li>
+                        <a href="{% routablepageurl index_page "blogpages_by_date" year.grouper month.list.0|date:"m" %}">
+                            {{ month.list.0|date:"F" }} ({{ month.list|length }})
+                        </a>
+                    </li>
+                {% endfor %}
+            </ul>
+        </li>
+    {% empty %}
+        {% trans 'No entry archives yet' %}
+    {% endfor %}
+</ol>

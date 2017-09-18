@@ -27,6 +27,7 @@ INSTALLED_APPS = [
     'members',
     'accounts',
 
+    'wagtail.contrib.wagtailroutablepage',
     'wagtail.wagtailforms',
     'wagtail.wagtailredirects',
     'wagtail.wagtailembeds',
@@ -87,6 +88,7 @@ TEMPLATES = [
             ],
             'libraries': {
                 'home_tags': 'home.templatetags.home_extras',
+                'blog_tags': 'blog.templatetags.blog_tags',
             },
         },
     },

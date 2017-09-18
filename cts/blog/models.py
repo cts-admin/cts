@@ -1,3 +1,5 @@
+import datetime
+
 from django import forms
 from django.db import models
 
@@ -11,6 +13,8 @@ from wagtail.wagtailadmin.edit_handlers import FieldPanel, InlinePanel, MultiFie
 from wagtail.wagtailimages.edit_handlers import ImageChooserPanel
 from wagtail.wagtailsnippets.models import register_snippet
 from wagtail.wagtailsearch import index
+
+from .routes import BlogRoutes
 
 
 @register_snippet
@@ -37,18 +41,35 @@ class BlogPageTag(TaggedItemBase):
     content_object = ParentalKey('BlogPage', related_name='tagged_items')
 
 
-class BlogIndexPage(Page):
+class BlogIndexPage(BlogRoutes, Page):
     intro = RichTextField(blank=True)
+    about = RichTextField(blank=True, help_text='What is the blog about?')
 
-    def get_context(self, request):
+    filtered_posts = None
+
+    content_panels = Page.content_panels + [
+        FieldPanel('intro', classname="full"),
+        FieldPanel('about', classname="full"),
+    ]
+
+    search_fields = Page.search_fields + [
+        index.SearchField('intro', 'about'),
+    ]
+
+    subpage_types = [
+        'blog.BlogPage',
+    ]
+
+    def get_posts(self):
+        return BlogPage.objects.descendant_of(self).live().order_by('-date')
+
+    def get_context(self, request, **kwargs):
+        # Update context to include only published posts, ordered by reverse-chron
         context = super(BlogIndexPage, self).get_context(request)
         blogpages = self.get_children().live().order_by('-first_published_at')
         context['blogpages'] = blogpages
+        context['index_page'] = self
         return context
-
-    content_panels = Page.content_panels + [
-        FieldPanel('intro', classname="full")
-    ]
 
 
 class BlogTagIndexPage(Page):
@@ -63,7 +84,7 @@ class BlogTagIndexPage(Page):
 
 
 class BlogPage(Page):
-    date = models.DateField("Post date")
+    date = models.DateTimeField("Post date")
     intro = models.CharField(max_length=250)
     body = RichTextField(blank=True)
     tags = ClusterTaggableManager(through=BlogPageTag, blank=True)

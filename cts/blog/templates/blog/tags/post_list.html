@@ -1,0 +1,18 @@
+{% load wagtailcore_tags wagtailimages_tags %}
+
+{% for post in posts %}
+    {% with post=post.specific %}
+        <div class="blog-post">
+            <h2 class="blog-post-title"><a href="{% pageurl post %}">{{ post.title }}</a></h2>
+            <p class="blog-post-meta">{{ post.date }} by
+                <a href="{% url 'user_profile' post.owner %}">{{ post.owner }}</a></p>
+
+            {% with post.main_image as main_image %}
+                {% if main_image %}{% image main_image fill-160x100 %}{% endif %}
+            {% endwith %}
+
+            <p>{{ post.intro }}</p>
+            <p>{{ post.body|richtext|truncatewords_html:75 }}</p>
+        </div>
+    {% endwith %}
+{% endfor %}
