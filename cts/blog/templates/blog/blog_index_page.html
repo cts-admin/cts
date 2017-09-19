@@ -20,32 +20,32 @@
                 {% post_list %}
             </div>
 
-        <div class="col-sm-3 col-sm-offset-1 blog-sidebar">
-            <div class="sidebar-module sidebar-module-inset">
-                <h4>About</h4>
-                <p>{{ page.about|richtext }}</p>
-            </div>
-            <div class="sidebar-module">
-                <h4>Archives</h4>
-                {% archives_list %}
-            </div>
-            <div class="sidebar-module">
-                <h4>Elsewhere</h4>
-                <ol class="list-unstyled">
-                    <li>
-                        <img src="{% static 'img/social-1_logo-github.svg' %}" height="15px" style="padding-right: 5px">
-                        <a href="https://github.com/cts-admin">GitHub</a>
-                    </li>
-                    <li>
-                        <img src="{% static 'img/social-1_logo-twitter.svg' %}" height="15px" style="padding-right: 5px">
-                        <a href="https://twitter.com/ctsadmin">Twitter</a></li>
-                    <li>
-                        <img src="{% static 'img/social-1_logo-facebook.svg' %}" height="15px" style="padding-right: 5px">
-                        <a href="https://www.facebook.com/ConservationTechnologySolutions/">Facebook</a>
-                    </li>
-                </ol>
-            </div>
-        </div><!-- /.blog-sidebar -->
+            <div class="col-sm-3 col-sm-offset-1 blog-sidebar">
+                <div class="sidebar-module sidebar-module-inset">
+                    <h4>About</h4>
+                    <p>{{ page.about|richtext }}</p>
+                </div>
+                <div class="sidebar-module">
+                    <h4>Archives</h4>
+                    {% archives_list %}
+                </div>
+                <div class="sidebar-module">
+                    <h4>Elsewhere</h4>
+                    <ol class="list-unstyled">
+                        <li>
+                            <img src="{% static 'img/social-1_logo-github.svg' %}" height="15px" style="padding-right: 5px">
+                            <a href="https://github.com/cts-admin">GitHub</a>
+                        </li>
+                        <li>
+                            <img src="{% static 'img/social-1_logo-twitter.svg' %}" height="15px" style="padding-right: 5px">
+                            <a href="https://twitter.com/ctsadmin">Twitter</a></li>
+                        <li>
+                            <img src="{% static 'img/social-1_logo-facebook.svg' %}" height="15px" style="padding-right: 5px">
+                            <a href="https://www.facebook.com/ConservationTechnologySolutions/">Facebook</a>
+                        </li>
+                    </ol>
+                </div>
+            </div><!-- /.blog-sidebar -->
         </div>
         <div class="space"></div>
         <!-- end container -->

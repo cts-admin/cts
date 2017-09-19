@@ -1,23 +1,38 @@
 {% extends "base.html" %}
 {% load wagtailcore_tags %}
 
+{% block title %}{{ page.title }}{% endblock %}
+
 {% block content %}
+    {% block nav %}{{ block.super }}{% endblock %}
 
-    {% if request.GET.tag|length %}
-        <h4>Showing pages tagged "{{ request.GET.tag }}"</h4>
-    {% endif %}
+    <div class="main">
+        <div class="container tim-container" style="padding-top:125px">
+            <div class="col-md-3">
+                <h3>{{ page.title }}</h3>
+            </div>
 
-    {% for blogpage in blogpages %}
+            <div class="col-md-9">
+                {% if request.GET.tag|length %}
+                    <h4>Showing pages tagged "{{ request.GET.tag }}"</h4>
+                {% endif %}
 
-        <p>
-            <strong><a href="{% pageurl blogpage %}">{{ blogpage.title }}</a> </strong><br />
-            <small>Revised: {{ blogpage.latest_revision_created_at }}</small><br />
-            {% if blogpage.author %}
-                <p>By {{ blogpage.author.profile }}</p>
-            {% endif %}
-        </p>
-    {% empty %}
-        No Pages found with that tag.
-    {% endfor %}
-
+                {% for blogpage in blogpages %}
+                    <p>
+                        <strong><a href="{% pageurl blogpage %}">{{ blogpage.title }}</a> </strong>
+                        {% if blogpage.owner %}
+                            <small class="text-muted">authored by
+                                <a href="{% url 'user_profile' page.owner %}">{{ blogpage.owner }}</a>
+                            </small><br />
+                        {% endif %}
+                        <small>Revised: {{ blogpage.latest_revision_created_at }}</small><br />
+                    </p>
+                    {% empty %}
+                    No Pages found with that tag.
+                {% endfor %}
+            </div>
+        </div>
+        <div class="space"></div>
+        <!-- end container -->
+    </div>
 {% endblock content %}
