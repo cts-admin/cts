@@ -11,7 +11,7 @@
                 {% if main_image %}{% image main_image fill-160x100 %}{% endif %}
             {% endwith %}
 
-            <p>{{ post.intro }}</p>
+            <p class="small"><em>{{ post.intro }}</em></p>
             <p>{{ post.body|richtext|truncatewords_html:75 }}</p>
         </div>
     {% endwith %}
