@@ -5490,11 +5490,11 @@ footer li {
 }
 
 footer .actions {
+  width: 250px;
   margin-right: 1.5%;
-  width: auto;
 }
 
-footer .actions .dropdown {
+footer .preview .dropdown {
   width: 250px;
 }
 
@@ -5520,10 +5520,9 @@ footer .meta a:hover {
 }
 
 @media screen and (max-width: 50em) {
-  footer .actions {
-    width: 100%;
-  }
-  footer .actions .dropdown {
+  footer .actions,
+  footer .preview,
+  footer .preview .dropdown {
     width: 100%;
   }
   footer .meta p {
