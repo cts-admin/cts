@@ -1,5 +1,5 @@
-{% extends "blog/blog_base.html" %}
-{% load wagtailcore_tags  wagtailimages_tags %}
+{% extends "base.html" %}
+{% load  wagtailimages_tags wagtailcore_tags %}
 
 {% block title %}{{ page.title }}{% endblock %}
 
@@ -27,8 +27,6 @@
                 <h3>{{ page.title }}</h3>
                 <p class="text-muted">{{ page.date }}</p>
 
-
-
                 <div class="intro">{{ page.intro }}</div>
             </div>
 
@@ -53,4 +51,6 @@
 
                 <p><a href="{{ page.get_parent.url }}">Return to blog</a> </p>
             </div>
+        </div>
+    </div>
 {% endblock %}
