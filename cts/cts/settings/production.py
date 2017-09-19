@@ -10,6 +10,8 @@ ALLOWED_HOSTS = ['.conservationtechnologysolutions.com', '104.236.198.4']
 EMAIL_SSL_KEYFILE = '/etc/letsencrypt/live/conservationtechnologysolutions.com/privkey.pem'
 EMAIL_SSL_CERTFILE = '/etc/letsencrypt/live/conservationtechnologysolutions.com/fullchain.pem'
 
+SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
+
 try:
     from .local import *
 except ImportError:
