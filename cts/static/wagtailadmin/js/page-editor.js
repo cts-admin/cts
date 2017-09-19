@@ -86,7 +86,7 @@ function initDateTimeChooser(id, opts) {
             i18n: {
                 lang: window.dateTimePickerTranslations
             },
-            language: 'lang',
+            lang: 'lang',
             onGenerate: hideCurrent
         }, opts || {}));
     } else {
@@ -197,7 +197,7 @@ function InlinePanel(opts) {
 
     self.updateAddButtonState = function() {
         if (opts.maxForms) {
-            var forms = self.formsUl.children('li:visible');
+            var forms = $('> li', self.formsUl).not('.deleted');
             var addButton = $('#' + opts.formsetPrefix + '-ADD');
 
             if (forms.length >= opts.maxForms) {
