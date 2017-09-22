@@ -12,7 +12,11 @@
             {% endwith %}
 
             <p class="small"><em>{{ post.intro }}</em></p>
-            <p>{{ post.body.paragraph|richtext|truncatewords_html:75 }}</p>
+            {% for block in post.body %}
+                {% if block.block_type == 'paragraph' %}
+                    <p>{{ block.value|richtext|truncatewords_html:75 }}</p>
+                {% endif %}
+            {% endfor %}
         </div>
     {% endwith %}
 {% endfor %}
