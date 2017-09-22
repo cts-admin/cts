@@ -12,7 +12,7 @@
             {% endwith %}
 
             <p class="small"><em>{{ post.intro }}</em></p>
-            <p>{{ post.body|richtext|truncatewords_html:75 }}</p>
+            <p>{{ post.body.paragraph|richtext|truncatewords_html:75 }}</p>
         </div>
     {% endwith %}
 {% endfor %}

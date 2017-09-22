@@ -49,9 +49,18 @@
             </div>
 
             <div class="col-md-9">
-                {{ page.body|richtext }}
+                {% for block in page.body %}
+                    <section>{% include_block block %}</section>
+                {% endfor %}
 
                 <br />
+
+                {% if page.references %}
+                    <div class="references">
+                        <h5>References</h5>
+                        {{ page.references|richtext }}
+                    </div>
+                {% endif %}
 
                 {% for item in page.gallery_images.all %}
                     <div class="text-center">

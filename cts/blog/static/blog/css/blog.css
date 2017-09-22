@@ -188,6 +188,9 @@ h6, .h6 {
 img.richtext-image {
     padding: 20px;
 }
+.references {
+    display: inline-block;
+}
 
 
 /*
