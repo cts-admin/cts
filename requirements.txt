@@ -43,6 +43,7 @@ Unidecode==0.4.21
 urllib3==1.22
 vine==1.1.4
 wagtail==1.12.2
+Wand==0.4.4
 webencodings==0.5.1
 websocket-client==0.44.0
 Willow==0.4
