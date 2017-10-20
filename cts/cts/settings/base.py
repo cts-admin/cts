@@ -26,6 +26,7 @@ INSTALLED_APPS = [
     'fundraising',
     'members',
     'accounts',
+    'tracker',
 
     'wagtail.contrib.wagtailroutablepage',
     'wagtail.wagtailforms',
