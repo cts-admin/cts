@@ -3,6 +3,16 @@ import os
 from django.contrib.gis.utils import LayerMapping
 from .models import WorldBorder
 
+# Auto-generated `LayerMapping` dictionary for ProvisionalSeedZone model
+provisionalseedzone_mapping = {
+    'objectid': 'OBJECTID',
+    'fid_level_field': 'FID_Level_',
+    'area': 'AREA',
+    'perimeter': 'PERIMETER',
+    'eco': 'ECO',
+    'level3': 'LEVEL3',
+}
+
 world_mapping = {
     'fips': 'FIPS',
     'iso2': 'ISO2',

@@ -1,6 +1,23 @@
 from django.contrib.gis.db import models
 
 
+class ProvisionalSeedZone(models.Model):
+    objectid = models.BigIntegerField()
+    fid_level_field = models.BigIntegerField()
+    area = models.FloatField()
+    perimeter = models.FloatField()
+    eco = models.CharField(max_length=7)
+    level3 = models.IntegerField()
+    level3_nam = models.CharField(max_length=90)
+    fid_2017_n = models.BigIntegerField()
+    tmin_class = models.CharField(max_length=50)
+    ahm_class = models.CharField(max_length=50)
+    seed_zone = models.CharField(max_length=50)
+    new_label = models.CharField(max_length=30)
+    ahm_name = models.CharField(max_length=40)
+    geom = models.MultiPolygonField(srid=3857)
+
+
 class WorldBorder(models.Model):
     # The following are all regular Django fields
     name = models.CharField(max_length=50)
