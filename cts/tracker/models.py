@@ -18,6 +18,15 @@ class ProvisionalSeedZone(models.Model):
     geom = models.MultiPolygonField(srid=3857)
 
 
+class Waypoint(models.Model):
+    name = models.CharField(max_length=32)
+    geometry = models.PointField(srid=3857)
+    objects = models.GeoManager()
+
+    def __unicode__(self):
+        return '{} {} {}'.format(self.name, self.geometry.x, self.geometry.y)
+
+
 class WorldBorder(models.Model):
     # The following are all regular Django fields
     name = models.CharField(max_length=50)
