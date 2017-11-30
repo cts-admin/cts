@@ -1,10 +1,12 @@
+{% load static %}
+
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Tracker Index</title>
-</head>
-<body>
-<p>Hello</p>
-</body>
+<html>
+  <head>
+    <link rel="stylesheet" href="{% static 'tracker/css/tracker.css' %}"
+  </head>
+  <body>
+    <h3>My Google Maps Demo</h3>
+    <div id="map"></div>
+  </body>
 </html>
