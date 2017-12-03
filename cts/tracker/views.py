@@ -1,6 +1,8 @@
 import os
 import simplejson
 
+from django.contrib.gis.db.models.functions import Distance
+from django.contrib.gis.geos import Point
 from django.http import HttpResponse
 from django.shortcuts import render_to_response
 from django.template.loader import render_to_string
@@ -31,3 +33,26 @@ def save(request):
         waypoint.save()
 
     return HttpResponse(simplejson.dumps(dict(isOk=1)), content_type='application/json')
+
+
+def search(request):
+    """
+    Search waypoints.
+    """
+    try:
+        search_point = Point(float(request.GET.get('lng')), float(request.GET.get('lat')), srid=3857)
+    except:
+        return HttpResponse(simplejson.dumps(dict(isOk=0, message='Could not parse search point')))
+
+    waypoints = Waypoint.objects.all().annotate(distance=Distance('geometry', search_point)).order_by('distance')
+    return HttpResponse(simplejson.dumps(dict(
+        isOK=1,
+        content=render_to_string('tracker/waypoints.html', {
+            'waypoints': waypoints
+        }),
+        waypointByID=dict((x.id, {
+            'name': x.name,
+            'lat': x.geometry.y,
+            'lng': x.geometry.x,
+        }) for x in waypoints),
+    )), content_type='application/json')

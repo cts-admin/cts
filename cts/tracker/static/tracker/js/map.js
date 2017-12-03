@@ -5,4 +5,5 @@ function initMap() {
         center: center,
         mapTypeId: 'roadmap'
     });
+    geocoder = new google.maps.Geocoder;
 }

@@ -22,9 +22,13 @@
     {{content}}
 </div>
 <input id="saveWaypoints" type="button" value="Save" disabled="disabled">
+<div class="space-30"></div>
+<input id="address" value="Salt Lake City, UT">
+<input id="searchWaypoints" type="button" value="Rank waypoints by distance from address">
 
 <script>
     var map;
+    var geocoder;
 </script>
 <script type="text/javascript" src="{% static 'tracker/js/map.js'%}"></script>
 <script async defer
@@ -70,6 +74,33 @@
                 );
             });
         }
+        function searchWaypoints() {
+            geocoder.geocode({
+                'address': $('#address').val()
+            }, function (results, status) {
+                if (status === google.maps.GeocoderStatus.OK) {
+                    var position = results[0].geometry.location;
+                    $.get("{% url 'tracker:search' %}", {
+                        lat: position.lat(),
+                        lng: position.lng()
+                    }, function (data) {
+                        if (data.isOK) {
+                            $('#waypoints').html(data.content);
+                            waypointByID = data.waypointByID;
+                            activateWaypoints();
+                        } else {
+                            alert(data.message);
+                        }
+                    }, 'json');
+                } else {
+                    alert('Could not find geocoordinates for the following reason: ' + status);
+                }
+            });
+        }
+        $('#searchWaypoints').click(searchWaypoints);
+        $('#address').keydown(function(e) {
+            if (e.keyCode === 13) searchWaypoints();
+        });
         $('#saveWaypoints').click(function () {
             function getCookie(name) {
                 var cookieValue = null;
