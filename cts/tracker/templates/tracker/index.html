@@ -22,6 +22,9 @@
     {{content}}
 </div>
 
+<script>
+    var map;
+</script>
 <script type="text/javascript" src="{% static 'tracker/js/map.js'%}"></script>
 <script async defer
         src="https://maps.googleapis.com/maps/api/js?key={{ maps_api_key }}&callback=initMap">
@@ -30,7 +33,7 @@
 <script src="{% static 'js/jquery-ui-1.10.4.custom.min.js' %}" type="text/javascript"></script>
 
 <script>
-    var marker;
+    var user_marker;
     var waypointByID = {};
     {% for waypoint in waypoints %}
         waypointByID[{{waypoint.id}}] = {
@@ -45,10 +48,10 @@
             $('.waypoint').each(function () {
                 $(this).click(function() {
                     var waypoint = waypointByID[this.id];
-                    var center = new google.maps.LatLng(waypoint.lat, waypoint.lng);
-                    if (marker) marker.setMap();
-                    marker = new google.maps.Marker({map: map, position: center});
-                    map.panTo(center);
+                    var new_center = new google.maps.LatLng(waypoint.lat, waypoint.lng);
+                    if (user_marker) user_marker.setMap();
+                    user_marker = new google.maps.Marker({map: map, position: new_center});
+                    map.panTo(new_center);
                 }).hover(
                     function () {this.className = this.className.replace('OFF', 'ON');},
                     function () {this.className = this.className.replace('ON', 'OFF');}
