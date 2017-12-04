@@ -22,3 +22,38 @@ html, body {
     color: white;
     background-color: darkblue;
 }
+
+.tracker-logo {
+    overflow: hidden;
+    height: 80px;
+    width: auto;
+    clear: left;
+}
+
+.tracker-form {
+    margin-top: -35px;
+}
+.btn-file {
+    position: relative;
+    overflow: hidden;
+}
+.btn-file input[type=file] {
+    position: absolute;
+    top: 0;
+    right: 0;
+    min-width: 100%;
+    min-height: 100%;
+    font-size: 100px;
+    text-align: right;
+    filter: alpha(opacity=0);
+    opacity: 0;
+    outline: none;
+    background: white;
+    cursor: inherit;
+    display: block;
+}
+@media screen and (max-width: 950px){
+    .tracker-form {
+        margin-top: 0;
+    }
+}
