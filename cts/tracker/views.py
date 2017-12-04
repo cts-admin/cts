@@ -1,10 +1,14 @@
 import os
+import tempfile
+
 import simplejson
 
 from django.contrib.gis.db.models.functions import Distance
+from django.contrib.gis.gdal import DataSource
 from django.contrib.gis.geos import Point
-from django.http import HttpResponse
-from django.shortcuts import render_to_response
+from django.core.urlresolvers import reverse
+from django.http import HttpResponse, HttpResponseRedirect
+from django.shortcuts import render
 from django.template.loader import render_to_string
 
 from tracker.models import Waypoint
@@ -14,7 +18,7 @@ MAPS_API_KEY = os.environ.get('MAPS_API_KEY', None)
 
 def index(request):
     waypoints = Waypoint.objects.all().order_by('name')
-    return render_to_response('tracker/index.html', {
+    return render(request, 'tracker/index.html', {
         'waypoints': waypoints,
         'maps_api_key': MAPS_API_KEY,
         'content': render_to_string('tracker/waypoints.html', {'waypoints': waypoints}),
@@ -56,3 +60,24 @@ def search(request):
             'lng': x.geometry.x,
         }) for x in waypoints),
     )), content_type='application/json')
+
+
+def upload(request):
+    """
+    Upload waypoints from GPX file.
+    """
+    if 'gpx' in request.FILES:
+        gpx_file = request.FILES['gpx']
+        target_path = tempfile.mkstemp()[1]
+        with open(target_path, 'wb+') as destination:
+            for chunk in gpx_file.chunks():
+                destination.write(chunk)
+        data_source = DataSource(target_path)
+        layer = data_source[0]
+        waypoint_names = layer.get_fields('name')
+        waypoint_geometries = layer.get_geoms()
+        for waypoint_name, waypoint_geometry in zip(waypoint_names, waypoint_geometries):
+            waypoint = Waypoint(name=waypoint_name, geometry=waypoint_geometry.wkt)
+            waypoint.save()
+        os.remove(target_path)
+    return HttpResponseRedirect(reverse('tracker:index'))

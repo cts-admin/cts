@@ -17,6 +17,11 @@
 </head>
 <body>
 <h3>CTS Plant Tracker Prototype</h3>
+<form enctype="multipart/form-data" method="post" action="{% url 'tracker:upload' %}">
+    {% csrf_token %}
+    <input type="file" name="gpx">
+    <input type="submit" value="Upload GPX">
+</form>
 <div id="map"></div>
 <div id=waypoints>
     {{content}}
