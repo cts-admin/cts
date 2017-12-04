@@ -41,16 +41,21 @@
     </label>
     <button class="btn btn-primary" type="submit">Upload GPX</button>
 </form>
-
 <div id="map"></div>
-<div id=waypoints>
-    {{content}}
+<div class="tracker container-fluid">
+    <div id=waypoints>
+        <h5 class="text-center">
+            Waypoints
+        </h5>
+        {{content}}
+    </div>
+    <button class="btn btn-primary" id="saveWaypoints" type="submit">Save</button>
+    <div class="space-30"></div>
+    <div>
+        <input type="text" title="address" class="form-control" id="address" value="Salt Lake City, UT">
+    </div>
+    <button class="btn btn-default form-control" id="searchWaypoints" type="submit">Rank waypoints by distance from address</button>
 </div>
-<input id="saveWaypoints" type="button" value="Save" disabled="disabled">
-<div class="space-30"></div>
-<input id="address" value="Salt Lake City, UT">
-<input id="searchWaypoints" type="button" value="Rank waypoints by distance from address">
-
 <script>
     var map;
     var geocoder;
@@ -112,7 +117,7 @@
                         currentObject.html(waypoint.name +
                             ' (' + waypoint.lat +
                             ', ' + waypoint.lng + ')');
-                        $('#saveWaypoints').removeAttr('disabled');
+                        $('#saveWaypoints').css('display', 'block');
                     });
                     map.panTo(new_center);
                 }).hover(

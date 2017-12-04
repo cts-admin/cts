@@ -11,8 +11,9 @@ html, body {
 
 #waypoints {
     overflow: auto;
-    width: 500px;
-    height: 100px
+}
+#saveWaypoints {
+    display: none;
 }
 
 .linkOFF {
@@ -36,6 +37,7 @@ html, body {
 .btn-file {
     position: relative;
     overflow: hidden;
+    margin-left: 10px;
 }
 .btn-file input[type=file] {
     position: absolute;
@@ -55,5 +57,13 @@ html, body {
 @media screen and (max-width: 950px){
     .tracker-form {
         margin-top: 0;
+    }
+}
+@media screen and (min-width: 600px){
+    div.tracker.container-fluid {
+        position: absolute;
+        top: 160px;
+        left: 10px;
+        background: rgba(76, 175, 80, 0.3)
     }
 }
