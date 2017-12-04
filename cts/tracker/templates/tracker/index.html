@@ -73,7 +73,11 @@
 
         $(document).ready( function() {
             $(':file').on('fileselect', function(event, numFiles, label) {
-                $(this).parent().closest('label').text(label);
+                if (label.split('.')[1] !== 'gpx') {
+                    alert("You must select a valid GPX file.")
+                } else {
+                    $(this).parent().closest('label').text(label);
+                }
             });
         });
 
