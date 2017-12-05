@@ -54,6 +54,12 @@ html, body {
     cursor: inherit;
     display: block;
 }
+.tracker-layers {
+    padding: 5px;
+}
+.tracker-layer-label {
+    padding-top: 2px;
+}
 @media screen and (max-width: 950px){
     .tracker-form {
         margin-top: 0;
