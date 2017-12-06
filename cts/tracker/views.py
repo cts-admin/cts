@@ -24,6 +24,10 @@ def index(request):
     })
 
 
+def ol_index(request):
+    return render(request, 'tracker/ol_index.html')
+
+
 def load_pstz(request):
     with open('tracker/data/provision_seed_zones/psz_geojson.json') as infile:
         pstz_json = json.load(infile)

@@ -5,6 +5,7 @@ from . import views
 app_name = 'tracker'
 urlpatterns = [
     url(r'^$', views.index, name='index'),
+    url(r'^ol$', views.ol_index, name='ol_index'),
     url(r'^save$', views.save, name='save'),
     url(r'^search$', views.search, name='search'),
     url(r'^upload$', views.upload, name='upload'),
