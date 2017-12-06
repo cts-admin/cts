@@ -72,11 +72,13 @@
     </button>
 
     <div class="tracker-layers">
-        <div class="col-sm-3">
-            <input id="pstz" type="checkbox" data-toggle="switch" class="ct-green"/>
-        </div>
-        <div class="col-sm-9 tracker-layer-label">
-            <label for="pstz" class="">Add Provisional Seed Transfer Zones</label>
+        <div class="pstz">
+            <div class="col-sm-3">
+                <input id="pstz_slider" type="checkbox" data-toggle="switch" class="ct-green"/>
+            </div>
+            <div class="col-sm-9 tracker-layer-label">
+                <label for="pstz_slider" class="">Add Provisional Seed Transfer Zones</label>
+            </div>
         </div>
     </div>
 
@@ -85,6 +87,8 @@
 <script>
     var map;
     var geocoder;
+    var pstz = false;
+    var loading = false;
 </script>
 <script type="text/javascript" src="{% static 'tracker/js/map.js'%}"></script>
 <script async defer
@@ -211,6 +215,34 @@
             });
         });
         activateWaypoints();
+    });
+</script>
+
+<script>
+    $(document).ready(function () {
+        console.log('document ready.');
+        $("#pstz_slider").parent().change(load_pstz);
+        function load_pstz() {
+            console.log('click detected on pstz slider.');
+            if (loading === false && pstz === false && $("#pstz_slider").parent().hasClass("switch-on")) {
+                loading = true;
+                console.log('the slider is on so fetching json data...');
+                $.ajax({
+                    type:"GET",
+                    dataType: 'json',
+                    url:'{% url 'tracker:load_pstz' %}',
+                    success: function(response){
+                        console.log('Loading json to map...');
+                        console.log(response['pstz']);
+                        var geojson = response['pstz'];
+                        map.data.addGeoJson(geojson);
+                        console.log(map);
+                        pstz = true;
+                        loading = false;
+                    }
+                })
+            }
+        }
     });
 </script>
 </body>

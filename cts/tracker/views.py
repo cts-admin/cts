@@ -1,7 +1,6 @@
 import os
 import tempfile
-
-import simplejson
+import json
 
 from django.contrib.gis.db.models.functions import Distance
 from django.contrib.gis.gdal import DataSource
@@ -25,6 +24,14 @@ def index(request):
     })
 
 
+def load_pstz(request):
+    with open('tracker/data/provision_seed_zones/psz_geojson.json') as infile:
+        pstz_json = json.load(infile)
+    return HttpResponse(json.dumps({
+        'pstz': pstz_json,
+    }))
+
+
 def save(request):
     """
     Save waypoints.
@@ -36,7 +43,7 @@ def save(request):
         waypoint.geometry.set_y(float(waypoint_y))
         waypoint.save()
 
-    return HttpResponse(simplejson.dumps(dict(isOk=1)), content_type='application/json')
+    return HttpResponse(json.dumps(dict(isOk=1)), content_type='application/json')
 
 
 def search(request):
@@ -46,10 +53,10 @@ def search(request):
     try:
         search_point = Point(float(request.GET.get('lng')), float(request.GET.get('lat')), srid=3857)
     except:
-        return HttpResponse(simplejson.dumps(dict(isOk=0, message='Could not parse search point')))
+        return HttpResponse(json.dumps(dict(isOk=0, message='Could not parse search point')))
 
     waypoints = Waypoint.objects.all().annotate(distance=Distance('geometry', search_point)).order_by('distance')
-    return HttpResponse(simplejson.dumps(dict(
+    return HttpResponse(json.dumps(dict(
         isOK=1,
         content=render_to_string('tracker/waypoints.html', {
             'waypoints': waypoints
