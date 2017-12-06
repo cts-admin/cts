@@ -102,4 +102,4 @@ ENV/
 # mypy
 .mypy_cache/
 /cert.pem
-/cts/tracker/data/provision_seed_zones/psz_geojson.json
+/cts/tracker/data/
