@@ -16,7 +16,8 @@ about any such tools on our [blog](https://conservationtechnologysolutions.com/b
 Our latest project can be found under the 'plant-tracker' branch. There we'd like to develop a mapping web application
 which targets those involved in native seed collection. The aim will be to help track and prioritize both seed
 collections themselves as well as conservation of the land from which the seed sources derived by correlating seed
-collection locations with their underlying Provisional Seed Zones.
+collection locations with their underlying 
+[Provisional Seed Zones](https://www.fs.fed.us/wwetac/threat-map/TRMSeedZoneMapper.php).
 
 # Get Involved
 
