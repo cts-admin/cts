@@ -10,8 +10,8 @@ env:
   - DJANGO_SETTINGS_MODULE="cts.settings.travis"
 before_script:
   - psql -c 'CREATE DATABASE travis_ci_test;' -U postgres
+  - psql -c 'CREATE SCHEMA postgis;' -U postgres -d travis_ci_test
   - psql -c 'CREATE EXTENSION postgis SCHEMA postgis;' -U postgres -d travis_ci_test
-  - psql -c 'CREATE EXTENSION postgis_topology;' -U postgres -d travis_ci_test
   - psql -c 'CREATE EXTENSION pgrouting;' -U postgres -d travis_ci_test
   - cd cts
 install:
