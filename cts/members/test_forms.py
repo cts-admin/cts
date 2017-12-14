@@ -39,7 +39,7 @@ class CorporateMemberCorporateMemberSignUpFormTests(TestCase):
         msg = mail.outbox[0]
         self.assertEqual(msg.subject, 'CTS Corporate Membership Application: Foo Widgets')
         self.assertEqual(msg.body, (
-            "Thanks for applying to be a corporate member of Conservation Technology Solutions!"
+            "Thank you for applying to be a corporate member of Conservation Technology Solutions Inc! "
             "Your application is being reviewed, and we'll follow up a "
             "response from the board as soon as possible."
         ))
@@ -49,7 +49,6 @@ class CorporateMemberCorporateMemberSignUpFormTests(TestCase):
             [
                 settings.DEFAULT_FROM_EMAIL,
                 data['contact_email'],
-                'info@conservationtechnologysolutions.com',
                 'ctsadmin@conservationtechnologysolutions.com',
             ]
         )
