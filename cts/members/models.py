@@ -5,8 +5,8 @@ from django.db import models
 from django.db.models.signals import post_save
 from django.dispatch import receiver
 from django.utils.html import format_html
+from django.shortcuts import reverse
 from django.views.generic.dates import timezone_today
-from django_hosts import reverse
 from markdownx.models import MarkdownxField
 from sorl.thumbnail import ImageField, get_thumbnail
 

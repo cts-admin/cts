@@ -12,7 +12,6 @@ cssselect==1.0.1
 Django==1.11.7
 django-appconf==1.0.2
 django-celery-results==1.0.1
-django-hosts==2.0
 django-markdownx==2.0.21
 django-modelcluster==3.1
 django-registration==2.2
