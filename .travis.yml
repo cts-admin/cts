@@ -11,17 +11,26 @@ addons:
     - postgresql-9.6-postgis-2.3
     - postgresql-9.6-pgrouting
 env:
-  - DJANGO_SETTINGS_MODULE="cts.settings.travis"
+  - DJANGO=1.11.7
 before_script:
   - psql -c 'CREATE DATABASE travis_ci_test;' -U postgres
   - psql -c 'CREATE SCHEMA postgis;' -U postgres -d travis_ci_test
   - psql -c 'CREATE EXTENSION postgis SCHEMA postgis;' -U postgres -d travis_ci_test
   - psql -c 'CREATE EXTENSION pgrouting;' -U postgres -d travis_ci_test
-  - cd cts
+before_install:
+  - export DJANGO_SETTINGS_MODULE="cts.settings.travis"
+  - export SECRET_KEY='This is a secret Travis CI key'
+  - export DEBUG=True
 install:
+  - pip install coverage
+  - pip install coveralls
   - pip install -r requirements.txt
 script:
-  - manage.py test
+  - cd cts
+  - coverage run manage.py test
+after_success:
+  - coverage report
+  - coveralls
 notifications:
   email:
     on_success: change
