@@ -82,16 +82,15 @@ class CorporateMemberCorporateMemberSignUpFormTests(TestCase):
         msg = mail.outbox[0]
         self.assertEqual(msg.subject, 'CTS Corporate Membership Renewal: Foo Widgets')
         self.assertEqual(msg.body, (
-            "Thanks for renewing as a corporate member of Conservation Technology Solutions! "
-            "Your renewal is received, and we'll follow up with an invoice soon."
+            "Thank you for renewing as a corporate member of Conservation Technology Solutions Inc! "
+            "Your renewal has been received, and we'll follow up with an invoice soon."
         ))
-        self.assertEqual(msg.from_email, settings.FUNDRAISING_DEFAULT_FROM_EMAIL)
+        self.assertEqual(msg.from_email, settings.DEFAULT_FROM_EMAIL)
         self.assertEqual(
             msg.to,
             [
-                settings.FUNDRAISING_DEFAULT_FROM_EMAIL,
+                settings.DEFAULT_FROM_EMAIL,
                 data['contact_email'],
-                'info@conservationtechnologysolutions.com',
                 'ctsadmin@conservationtechnologysolutions.com',
             ]
         )

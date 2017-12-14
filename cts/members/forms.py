@@ -116,9 +116,9 @@ class CorporateMemberSignUpForm(forms.ModelForm):
                 'Renewal' if is_renewing else 'Application',
                 self.instance.display_name,
             ),
-            "Thanks for %s a corporate member of Conservation Technology Solutions Inc! %s" % (
+            "Thank you for %s a corporate member of Conservation Technology Solutions Inc! %s" % (
                 'renewing as' if is_renewing else 'applying to be',
-                "Your renewal is received, and we'll follow up with an invoice soon." if is_renewing else
+                "Your renewal has been received, and we'll follow up with an invoice soon." if is_renewing else
                 "Your application is being reviewed, and we'll follow up a "
                 "response from the board as soon as possible.",
             ),
