@@ -43,9 +43,12 @@ class CorporateMemberAdminTests(TestCase):
         self.assertIn('green', modeladmin.membership_expires(self.member))
 
     def test_renewal_link(self):
-        expected_str = '<a href="http://127.0.0.1:8000/foundation/corporate-membership/renew/'
+        expected_beg = '<a href="/members/corporate-membership/renew/'
+        expended_end = '/"><img src="/static/admin/img/icon-changelink.svg" alt="renewal link" />'
         modeladmin = CorporateMemberAdmin(CorporateMember, admin.site)
-        self.assertTrue(modeladmin.renewal_link(self.member).startswith(expected_str))
+        renewal_link = modeladmin.renewal_link(self.member)
+        self.assertTrue(renewal_link.startswith(expected_beg))
+        self.assertTrue(renewal_link.endswith(expended_end))
 
     def test_status_filter(self):
         members = CorporateMember.objects.all()
