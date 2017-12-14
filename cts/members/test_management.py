@@ -39,17 +39,17 @@ class CorporateMemberTests(TestCase):
         self.assertEqual(msg.subject, 'Expiring Conservation Technology Solutions Membership for Corporation')
         self.assertIn('Hi Contact Name,', msg.body)
         self.assertIn(
-            'The Conservation Technology Solutions membership for Corporation expires\n'
+            'Your Conservation Technology Solutions membership for Corporation expires\n'
             '%s. Would you like to renew your support?' % localize(self.thirty_days_from_now),
             msg.body
         )
-        self.assertIn('http://127.0.0.1:8000/foundation/corporate-membership/renew/', msg.body)
+        self.assertIn('https://conservationtechnologysolutions.com/members/corporate-membership/renew/', msg.body)
         self.assertEqual(msg.from_email, settings.DEFAULT_FROM_EMAIL)
         self.assertEqual(
             msg.to,
             [
                 settings.DEFAULT_FROM_EMAIL,
-                'info@conservationtechnologysolutions.com',
+                self.member.contact_email,
                 'ctsadmin@conservationtechnologysolutions.com',
             ]
         )

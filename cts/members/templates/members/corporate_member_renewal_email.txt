@@ -4,8 +4,9 @@ Your Conservation Technology Solutions membership for {{ member_name }} expires
 {{ expiry_date }}. Would you like to renew your support?
 
 Use this link to do so:
-{{ renewal_link }}
-It expires 30 days from today, but just email us if you need one later.
+https://conservationtechnologysolutions.com{{ renewal_link }}
+
+The above link expires 30 days from today, but just email us if you need one later.
 
 Thank you for your support!
 
