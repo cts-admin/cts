@@ -96,10 +96,9 @@ class CorporateMemberListViewTests(TestCase):
 
 
 class CorporateMemberJoinViewTests(TestCase):
-
     def test_get(self):
         response = self.client.get(reverse('members:corporate-members-join'))
-        self.assertContains(response, "Become a CTS corporate member")
+        self.assertContains(response, "Become a CTS Corporate Member")
 
     def test_submit_success(self):
         data = {
@@ -124,7 +123,6 @@ class CorporateMemberJoinViewTests(TestCase):
 
 
 class CorporateMemberRenewalViewTests(TestCase):
-
     @classmethod
     def setUpTestData(cls):
         cls.member = CorporateMember.objects.create(
