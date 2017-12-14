@@ -19,7 +19,6 @@ before_script:
   - psql -c 'CREATE EXTENSION pgrouting;' -U postgres -d travis_ci_test
 before_install:
   - export DJANGO_SETTINGS_MODULE="cts.settings.travis"
-  - export SECRET_KEY='This is a secret Travis CI key'
   - export DEBUG=True
 install:
   - pip install coverage
