@@ -133,7 +133,7 @@ class CorporateMemberRenewalViewTests(TestCase):
 
     def test_get(self):
         response = self.client.get(self.member.get_renewal_link())
-        self.assertContains(response, 'Become a CTS corporate member')
+        self.assertContains(response, 'Become a CTS Corporate Member')
         self.assertEqual(response.context['form'].instance, self.member)
 
     def test_invalid_token(self):
