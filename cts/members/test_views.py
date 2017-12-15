@@ -17,14 +17,9 @@ class IndividualMemberListViewTests(TestCase):
             email='conservationist@example.com'
         )
 
-    def test_developer_member_redirect(self):
-        old_url = reverse('members:conservationist-members')
-        response = self.client.get(old_url)
-        self.assertRedirects(response, self.url)
-
     def test_view_render(self):
         response = self.client.get(self.url)
-        self.assertContains(response, 'Individual members')
+        self.assertContains(response, 'Individual Members')
         self.assertContains(response, 'CTS Conservationist')
 
     def test_view_should_only_render_former_members_once(self):

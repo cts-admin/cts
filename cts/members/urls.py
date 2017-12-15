@@ -1,5 +1,5 @@
 from django.conf.urls import url
-from django.views.generic import RedirectView, TemplateView
+from django.views.generic import TemplateView
 
 from .views import (
     CorporateMemberRenewView, CorporateMemberSignUpView,
@@ -8,11 +8,6 @@ from .views import (
 
 app_name = 'members'
 urlpatterns = [
-    url(
-        r'^conservation-members/$',
-        RedirectView.as_view(pattern_name='members:individual-members'),
-        name='conservation-members',
-    ),
     url(r'^individual-members/$', IndividualMemberListView.as_view(), name='individual-members'),
     url(r'^corporate-members/$', corporate_member_list_view, name='corporate-members'),
     url(r'^corporate-membership/$', about_corp_membership, name='about-corporate-membership'),
