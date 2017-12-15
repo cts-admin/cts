@@ -1,5 +1,9 @@
 # About
 
+[![Build Status](https://travis-ci.org/cts-admin/cts.svg?branch=master)](https://travis-ci.org/cts-admin/cts)
+[![Coverage Status](https://coveralls.io/repos/github/cts-admin/cts/badge.svg?branch=master)](https://coveralls.io/github/cts-admin/cts?branch=master)
+[<img src="https://img.shields.io/badge/built%20with-Python3-brightgreen.svg">](https://docs.python.org/3.5/)
+
 This project is being developed to support the 501(c)(3) nonprofit Conservation Technology Solutions Inc.
 
 CTS aims to make life easier for anyone involved in environmental conservation work. We’ve made it our goal to leverage 
