@@ -58,7 +58,7 @@ class CorporateMemberListViewTests(TestCase):
 
     def test_view_render(self):
         response = self.client.get(self.url)
-        self.assertContains(response, 'Corporate members')
+        self.assertContains(response, 'Corporate Members')
         self.assertContains(response, 'Corporation')
 
     def test_view_should_not_render_unapproved(self):
