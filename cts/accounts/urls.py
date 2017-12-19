@@ -1,13 +1,13 @@
 from django.conf.urls import include, url
 from registration.backends.model_activation.views import RegistrationView
-from registration.forms import RegistrationFormUniqueEmail
 
+from .forms import CustomRegistrationFormUniqueEmail
 from . import views as account_views
 
 urlpatterns = [
     url(
         r'^register/$',
-        RegistrationView.as_view(form_class=RegistrationFormUniqueEmail),
+        RegistrationView.as_view(form_class=CustomRegistrationFormUniqueEmail),
         name='registration_register',
     ),
     url(

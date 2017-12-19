@@ -1,13 +1,30 @@
 from django import forms
+from registration.forms import RegistrationFormUniqueEmail
 
 from .models import Profile
+
+
+class CustomRegistrationFormUniqueEmail(RegistrationFormUniqueEmail):
+    """
+    Subclass of RegistrationFormUniqueEmail which adds additional
+    preferences for this interested in getting involved with CTS.
+    """
+    seed_collector = forms.BooleanField(
+        required=False,
+        help_text='Are you involved in native seed collection?'
+    )
+    developer = forms.BooleanField(
+        required=False,
+        help_text='Are you interested in contributing to the CTS codebase or otherwise helping with the technical side'
+                  'of CTS\' mission?'
+    )
 
 
 class ProfileForm(forms.ModelForm):
     """
     A form for editing user profiles.
     Assumes that the Profile instance passed in has an associated User
-    object. The view (see views.py) takes care of that
+    object. The view (see views.py) takes care of that.
     """
     name = forms.CharField(
         required=False,
