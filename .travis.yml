@@ -23,7 +23,7 @@ before_install:
 install:
   - pip install coverage
   - pip install coveralls
-  - pip install -r requirements.txt
+  - pip install -r cts/requirements.txt
 script:
   - cd cts
   - coverage run manage.py test
