@@ -32,11 +32,54 @@ Please also follow us on twitter [@ctsadmin](https://twitter.com/ctsadmin) for u
 resource conservation. You can also find us [on Facebook](https://www.facebook.com/ConservationTechnologySolutions/)!
 Feel free to reach out with any questions or comments; we'd love to hear from you!
 
-## Requirements
+## Deployment
 
-This project uses python 3.5.x. Project requirements can be installed by executing ```pip install -r requirements.txt```
-For animated GIF support, you will also need to install ImageMagick. Installation instructions can be found
-[here](http://docs.wand-py.org/en/0.4.2/guide/install.html).
+Follow these steps for deploying locally:
+
+
+1. First, you'll need to [install Docker](https://docs.docker.com/engine/installation/) and 
+[Docker Compose](https://docs.docker.com/compose/install/)
+
+2. Change into the root web application directory:
+```bash
+$ cd cts/
+```
+
+3. Build the Postgres image:
+```bash
+$ docker build --rm -t my_postgres postgres/
+```
+
+4. Build the PostGIS image:
+```bash
+$ docker build --rm -t my_postis postgis/
+```
+
+5. Customize environment variables
+    1. Review the included example*.env files in the ```cts/``` directory.
+    2. Modify as needed.
+    3. The ```cts/docker-compose.yml``` file expects to find the database ```.env``` file at ```/opt/db_secrets.env``` 
+    and the django ```.env``` file at ```/opt/django_secrets.env```. You can either:
+        * Place each respective ```.env``` in your ```/opt``` directory. Or...
+        * Modify the two occurrences of ```env_file:``` in ```cts/docker-compose.yml``` to point to your customized 
+        ```.env``` files.
+
+6. Migrate the database:
+```bash
+$ docker-compose run web python manage.py migrate
+```
+
+7. Create a super user
+```bash
+$ docker-compose run web python manage.py createsuperuser
+```
+
+8. Start the app with docker-compose:
+```bash
+$ docker-compose up
+```
+
+You should now be able to navigate to [http://127.0.0.1:8000](http://127.0.0.1:8000) to view the web server.
 
 # License
 

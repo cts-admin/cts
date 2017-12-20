@@ -13,10 +13,10 @@ EMAIL_SSL_CERTFILE = '/home/ave/PycharmProjects/cts/fullchain.pem'
 DATABASES = {
     'default': {
         'ENGINE': 'django.contrib.gis.db.backends.postgis',
-        'NAME': 'postgres',
-        'USER': 'postgres',
+        'NAME': os.environ.get('PG_DB', 'postgres'),
+        'USER': os.environ.get('PG_USER', 'postgres'),
         'PASSWORD': os.environ['DJANGO_DB_PASS'],
-        'HOST': '0.0.0.0',
+        'HOST': os.environ.get('DOCKER_HOST', '0.0.0.0'),
         'PORT': '',
     }
 }
