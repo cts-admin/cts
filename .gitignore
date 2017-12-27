@@ -104,3 +104,4 @@ ENV/
 /cert.pem
 /cts/secrets.env
 /cts/static/
+/cts/restore_dump.sh
