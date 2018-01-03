@@ -24,7 +24,7 @@ services:
   web:
     build: .
     env_file: /opt/django_secrets.env
-    command: python manage.py runserver 0.0.0.0:8000
+    command: ./run_web.sh
     volumes:
       - .:/code
     ports:
@@ -41,7 +41,8 @@ services:
     build:
       context: .
       dockerfile: Dockerfile
-    command: celery worker -A cts worker -l info -Q default -n default@%h
+    env_file: /opt/django_secrets.env
+    command: ./run_celery.sh
     volumes:
       - .:/code
     links:
