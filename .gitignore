@@ -1,7 +1,5 @@
 
 .idea/
-/fullchain.pem
-/privkey.pem
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
@@ -99,9 +97,11 @@ ENV/
 # mkdocs documentation
 /site
 
+# Cert files for testing
+*.pem
+
 # mypy
 .mypy_cache/
-/cert.pem
 /cts/secrets.env
 /cts/static/
 /cts/restore_dump.sh

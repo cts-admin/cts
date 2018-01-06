@@ -7,8 +7,8 @@ DEBUG = True
 
 ALLOWED_HOSTS = ['127.0.0.1', 'testserver', '0.0.0.0']
 
-EMAIL_SSL_KEYFILE = '/home/ave/PycharmProjects/cts/privkey.pem'
-EMAIL_SSL_CERTFILE = '/home/ave/PycharmProjects/cts/fullchain.pem'
+EMAIL_SSL_KEYFILE = BASE_DIR + '/key.pem'
+EMAIL_SSL_CERTFILE = BASE_DIR + '/certificate.pem'
 
 DATABASES = {
     'default': {
