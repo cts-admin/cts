@@ -15,7 +15,7 @@ DATABASES = {
         'ENGINE': 'django.contrib.gis.db.backends.postgis',
         'NAME': os.environ.get('PG_DB', 'postgres'),
         'USER': os.environ.get('PG_USER', 'postgres'),
-        'PASSWORD': os.environ['DJANGO_DB_PASS'],
+        'PASSWORD': os.environ['PG_PASS'],
         'HOST': os.environ.get('DOCKER_HOST', '0.0.0.0'),
         'PORT': '',
     }

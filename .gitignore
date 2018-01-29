@@ -105,3 +105,5 @@ ENV/
 /cts/secrets.env
 /cts/static/
 /cts/restore_dump.sh
+/cts/docker-compose.production.yml
+media/

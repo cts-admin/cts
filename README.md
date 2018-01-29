@@ -50,19 +50,31 @@ $ cd cts/
 $ docker build --rm -t my_postgres postgres/
 ```
 
+If you receive a "permission denied" error while running the above command, you likely need to add your user to the
+docker group:
+```bash
+$ sudo usermod -aG docker $USER
+```
+Note that you'll need to logout and back in before the above command will take effect.
+
 4. Build the PostGIS image:
 ```bash
-$ docker build --rm -t my_postis postgis/
+$ docker build --rm -t my_postgis postgis/
 ```
 
 5. Customize environment variables
     1. Review the included example*.env files in the ```cts/``` directory.
     2. Modify as needed.
-    3. The ```cts/docker-compose.yml``` file expects to find the database ```.env``` file at ```/opt/db_secrets.env``` 
-    and the django ```.env``` file at ```/opt/django_secrets.env```. You can either:
+    3. The ```cts/cts/docker-compose.yml``` file expects to find the database ```.env``` file at 
+    ```/opt/db_secrets.env```, the RabbitMQ credential file at ```/opt/rabbit_secrets.env``` and the django ```.env``` 
+    file at ```/opt/django_secrets.env```. You can either:
         * Place each respective ```.env``` in your ```/opt``` directory. Or...
-        * Modify the two occurrences of ```env_file:``` in ```cts/docker-compose.yml``` to point to your customized 
+        * Modify the three occurrences of ```env_file:``` in ```cts/docker-compose.yml``` to point to your customized 
         ```.env``` files.
+        * Note that values should be consistent across the three files. For example, the password listed under 
+        ```PG_PASS``` in ```db_secrets.env``` should be the same password listed under ```PG_PASS``` in
+        ```django_secrets.env```.
+        
 
 6. Migrate the database:
 ```bash
