@@ -21,6 +21,7 @@ djangorestframework==3.6.4
 docopt==0.6.2
 feedfinder2==0.0.4
 feedparser==5.2.1
+gunicorn==19.7.1
 html5lib==0.999999999
 idna==2.6
 jieba3k==0.35.1

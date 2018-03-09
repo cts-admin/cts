@@ -1,6 +1,16 @@
 version: '3'
 
 services:
+  # Nginx
+  nginx:
+    image: nginx:latest
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./config/nginx:/etc/nginx/conf.d
+      - /static:/static
+    depends_on:
+      - web
   # PostGIS database
   db:
     env_file: /opt/db_secrets.env
@@ -27,14 +37,14 @@ services:
     command: ./run_web.sh
     volumes:
       - .:/code
-    ports:
-      - "8000:8000"
     links:
       - db
       - rabbit
       - redis
     depends_on:
       - db
+    expose:
+      - "8000"
 
   # Celery worker
   worker:
