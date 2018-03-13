@@ -3,26 +3,38 @@ version: '3'
 services:
   # Nginx
   nginx:
+    restart: always
     image: nginx:latest
     ports:
-      - "8000:8000"
+      - "8080:80"
     volumes:
-      - ./config/nginx:/etc/nginx/conf.d
-      - /static:/static
-    depends_on:
+      - ../nginx/dev/config:/etc/nginx/conf.d
+      - static:/code/static
+      - media:/code/media
+    links:
       - web
+    environment:
+      - SERVER_NAME=localhost
+      - CRED_LOC=/etc/nginx/conf.d/.htpasswd
+    command: /bin/bash -c "envsubst < /etc/nginx/conf.d/cts.template > /etc/nginx/conf.d/cts.conf && nginx -g 'daemon off;'"
+
   # PostGIS database
   db:
+    restart: always
     env_file: /opt/db_secrets.env
-    image: my_postgis
+    image: my_postgis  # Default postgres port exposed in container image from Dockerfile
 
   # Redis
   redis:
+    restart: always
     image: redis:3.2.11
     hostname: redis
+    expose:
+      - "6379"
 
   # RabbitMQ
   rabbit:
+    restart: always
     hostname: rabbit
     image: rabbitmq:3.7.2
     env_file: /opt/rabbit_secrets.env
@@ -32,11 +44,14 @@ services:
 
   # Django web server
   web:
+    restart: always
     build: .
     env_file: /opt/django_secrets.env
     command: ./run_web.sh
     volumes:
       - .:/code
+      - static:/code/static
+      - media:/code/media
     links:
       - db
       - rabbit
@@ -48,6 +63,7 @@ services:
 
   # Celery worker
   worker:
+    restart: always
     build:
       context: .
       dockerfile: Dockerfile
@@ -61,3 +77,7 @@ services:
       - redis
     depends_on:
       - rabbit
+
+volumes:
+  static:
+  media:

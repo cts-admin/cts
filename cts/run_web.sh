@@ -11,8 +11,5 @@ su -m myuser -c "python manage.py migrate"
 # collect static files
 su -m myuser -c "python manage.py collectstatic --noinput"
 
-# start development server on public ip interface, on port 8000
-#su -m myuser -c "python manage.py runserver 0.0.0.0:8000"
-
 # serve with gunicorn
-su -m myuser -c "gunicorn cts.wsgi -b 0.0.0.0:8000"
+su -m myuser -c "gunicorn cts.wsgi:application -w 2 -b :8000"

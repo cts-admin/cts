@@ -1,0 +1,23 @@
+server {
+    listen 80;
+    server_name ${SERVER_NAME};
+    charset utf-8;
+
+    auth_basic "Development Zone";
+    auth_basic_user_file ${CRED_LOC};
+    location = /favicon.ico { access_log off; log_not_found off; }
+
+    location /static {
+        alias /code/static;
+    }
+
+    location /media {
+        alias /code/media;
+    }
+
+    location / {
+        proxy_pass http://web:8000;
+
+        include /etc/nginx/conf.d/proxy.conf;
+    }
+}
