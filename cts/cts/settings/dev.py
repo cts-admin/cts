@@ -5,7 +5,8 @@ from .base import *
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['127.0.0.1', 'web', '0.0.0.0', '159.65.242.181']
+ALLOWED_HOSTS = ['127.0.0.1', 'web', '0.0.0.0', '.dev.conservationtechnologysolutions.com',
+                 'www.dev.conservationtechnologysolutions.com']
 
 EMAIL_SSL_KEYFILE = BASE_DIR + '/key.pem'
 EMAIL_SSL_CERTFILE = BASE_DIR + '/certificate.pem'
