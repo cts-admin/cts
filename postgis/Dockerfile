@@ -1,4 +1,4 @@
-FROM my_postgres
+FROM postgres:9.6
 
 # Install PostGIS
 RUN apt-get update && apt-get install -y \
