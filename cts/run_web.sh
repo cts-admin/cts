@@ -4,12 +4,19 @@
 sleep 10
 
 # prepare init migration
-su -m myuser -c "python manage.py makemigrations"
+python manage.py makemigrations
+
 # migrate db, so we have the latest db schema
-su -m myuser -c "python manage.py migrate"
+python manage.py migrate
 
 # collect static files
-su -m myuser -c "python manage.py collectstatic --noinput"
+python manage.py collectstatic --noinput
+
+# Delete the initial wagtail welcome page
+python clear_wagtail_data.py
+
+# load default database data
+python manage.py loaddata np-nf_no-auth_no-contenttypes.json
 
 # serve with gunicorn
-su -m myuser -c "gunicorn cts.wsgi:application -w 2 -b :8000"
+gunicorn cts.wsgi:application -w 2 -b :8000

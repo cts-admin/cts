@@ -44,19 +44,8 @@ Follow these steps for deploying locally:
     ```bash
     $ cd cts/
     ```
-3. Build the PostGIS image:
-    ```bash
-    $ docker build --rm -t my_postgis postgis/
-    ```
-    
-    If you receive a "permission denied" error while running the above command, you likely need to add your user to the
-    docker group:
-    ```bash
-    $ sudo usermod -aG docker $USER
-    ```
-    Note that you'll need to logout and back in before the above command will take effect.
 
-4. Customize environment variables
+3. Customize environment variables
     1. Review the included example*.env files in the ```cts/``` directory.
     2. Modify as needed.
     3. The ```cts/cts/docker-compose.yml``` file expects to find the database ```.env``` file at 
@@ -68,23 +57,18 @@ Follow these steps for deploying locally:
         * Note that values should be consistent across the three files. For example, the password listed under 
         ```PG_PASS``` in ```db_secrets.env``` should be the same password listed under ```PG_PASS``` in
         ```django_secrets.env```.
-        
-5. Migrate the database:
-    ```bash
-    $ docker-compose run web python manage.py migrate
-    ```
 
-6. Create a super user
+4. Create a super user
     ```bash
     $ docker-compose run web python manage.py createsuperuser
     ```
 
-7. Start the app with docker-compose:
+5. Start the app with docker-compose:
     ```bash
     $ docker-compose up
     ```
 
-You should now be able to navigate to [http://0.0.0.0:8080](http://127.0.0.1:8000) to view the web server. Nginx is
+You should now be able to navigate to [http://0.0.0.0:8000](http://127.0.0.1:8000) to view the web server. Nginx is
 configured with basic auth, but for local testing you can use the following credentials:
 
 username: `testuser`

@@ -1,28 +1,11 @@
 version: '3'
 
 services:
-  # Nginx
-  nginx:
-    restart: always
-    image: nginx:latest
-    ports:
-      - "8080:80"
-    volumes:
-      - ../nginx/dev/config:/etc/nginx/conf.d
-      - static:/code/static
-      - media:/code/media
-    links:
-      - web
-    environment:
-      - SERVER_NAME=localhost
-      - CRED_LOC=/etc/nginx/conf.d/.htpasswd
-    command: /bin/bash -c "envsubst < /etc/nginx/conf.d/cts.template > /etc/nginx/conf.d/cts.conf && nginx -g 'daemon off;'"
-
   # PostGIS database
   db:
     restart: always
     env_file: /opt/db_secrets.env
-    image: my_postgis  # Default postgres port exposed in container image from Dockerfile
+    build: ../postgis
 
   # Redis
   redis:
@@ -58,8 +41,8 @@ services:
       - redis
     depends_on:
       - db
-    expose:
-      - "8000"
+    ports:
+      - "8000:8000"
 
   # Celery worker
   worker:
