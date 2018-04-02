@@ -9,11 +9,17 @@ RUN apt-get update && apt-get install -y \
     libgeoip1 \
     python-gdal
 
+RUN groupadd -g 999 appuser && \
+    useradd -r -u 999 -g appuser appuser
+
 RUN mkdir /code
 WORKDIR /code
 
-ADD requirements.txt /code/
+COPY requirements.txt /code/
 
 RUN pip install -r requirements.txt
 
-ADD . /code/
+COPY . /code/
+
+RUN chown -R appuser:appuser /code
+USER appuser

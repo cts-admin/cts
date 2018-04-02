@@ -4,9 +4,9 @@ server {
     server_name ${SERVER_NAME};
     charset utf-8;
 
-    ssl_certificate /etc/letsencrypt/live/dev.conservationtechnologysolutions.com/fullchain.pem;
-    ssl_certificate_key /etc/letsencrypt/live/dev.conservationtechnologysolutions.com/privkey.pem;
-    ssl_trusted_certificate /etc/letsencrypt/live/dev.conservationtechnologysolutions.com/fullchain.pem;
+    ssl_certificate /etc/letsencrypt/live/${SERVER_NAME_1}conservationtechnologysolutions.com/fullchain.pem;
+    ssl_certificate_key /etc/letsencrypt/live/${SERVER_NAME_1}conservationtechnologysolutions.com/privkey.pem;
+    ssl_trusted_certificate /etc/letsencrypt/live/${SERVER_NAME_1}conservationtechnologysolutions.com/fullchain.pem;
     ssl_session_timeout 1d;
     ssl_session_cache shared:SSL:50m;
 
@@ -17,16 +17,14 @@ server {
     ssl_prefer_server_ciphers on;
     ssl_ciphers 'EECDH+AESGCM:EDH+AESGCM:AES256+EECDH:AES256+EDH';
 
-    auth_basic "Development Zone";
-    auth_basic_user_file ${CRED_LOC};
     location = /favicon.ico { access_log off; log_not_found off; }
 
     location /static {
-        alias /code/static;
+        alias /home/static;
     }
 
     location /media {
-        alias /code/media;
+        alias /home/media;
     }
 
     location / {

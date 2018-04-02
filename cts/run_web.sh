@@ -16,7 +16,7 @@ python manage.py collectstatic --noinput
 python clear_wagtail_data.py
 
 # load default database data
-python manage.py loaddata np-nf_no-auth_no-contenttypes.json
+python manage.py loaddata $DB_DATA_FILE
 
 # serve with gunicorn
-gunicorn cts.wsgi:application -w 2 -b :8000
+gunicorn cts.wsgi:application -w 2 --timeout 120 -b :8000

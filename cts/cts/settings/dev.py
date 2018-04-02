@@ -6,21 +6,10 @@ from .base import *
 DEBUG = True
 
 ALLOWED_HOSTS = ['127.0.0.1', 'web', '0.0.0.0', '.dev.conservationtechnologysolutions.com',
-                 'www.dev.conservationtechnologysolutions.com']
+                 'www.dev.conservationtechnologysolutions.com', '165.227.186.154']
 
-EMAIL_SSL_KEYFILE = BASE_DIR + '/key.pem'
-EMAIL_SSL_CERTFILE = BASE_DIR + '/certificate.pem'
-
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.contrib.gis.db.backends.postgis',
-        'NAME': os.environ.get('PG_DB', 'postgres'),
-        'USER': os.environ.get('PG_USER', 'postgres'),
-        'PASSWORD': os.environ['PG_PASSWORD'],
-        'HOST': os.environ.get('DB_HOST', '0.0.0.0'),
-        'PORT': '',
-    }
-}
+EMAIL_SSL_KEYFILE = '/etc/letsencrypt/live/dev.conservationtechnologysolutions.com/privkey.pem'
+EMAIL_SSL_CERTFILE = '/etc/letsencrypt/live/dev.conservationtechnologysolutions.com/fullchain.pem'
 
 try:
     from .local import *

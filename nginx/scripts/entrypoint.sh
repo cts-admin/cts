@@ -2,6 +2,10 @@
 # https://github.com/staticfloat/docker-nginx-certbot/blob/master/scripts/entrypoint.sh
 #!/bin/sh
 
+# Create proper permissions for static files served by nginx
+chown -R $USER:www-data /root/media
+chown -R $USER:www-data /root/static
+
 # Create our config file from the template
 envsubst < /etc/nginx/conf.d/cts.template > /etc/nginx/conf.d/cts.conf
 

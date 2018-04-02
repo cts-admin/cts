@@ -3,7 +3,7 @@
 
 FROM nginx
 
-ENV SERVER_NAME="dev.conservationtechnologysolutions.com www.dev.conservationtechnologysolutions.com"
+ENV SERVER_NAME="${SERVER_NAME_1}conservationtechnologysolutions.com ${SERVER_NAME_2}conservationtechnologysolutions.com"
 ENV CRED_LOC=/.htpasswd
 ENV CERTBOT_EMAIL=ctsadmin@conservationtechnologysolutions.com
 
@@ -23,9 +23,9 @@ RUN apt update && \
     rm -rf /var/lib/apt/lists/*
 
 # Copy in cron job and scripts for certbot
-COPY ./crontab /etc/cron.d/certbot
+COPY crontab /etc/cron.d/certbot
 RUN crontab /etc/cron.d/certbot
-COPY ./scripts/ /scripts
+COPY scripts /scripts
 RUN chmod +x /scripts/*.sh
 
 # Add /scripts/startup directory to source more startup scripts
@@ -34,7 +34,7 @@ RUN mkdir -p /scripts/startup
 # Copy in default nginx configuration (which just forwards ACME requests to
 # certbot, or redirects to HTTPS, but has no HTTPS configurations by default).
 RUN rm -f /etc/nginx/conf.d/*
-COPY config/ /etc/nginx/conf.d/
+COPY config /etc/nginx/conf.d/
 
 ENTRYPOINT []
 CMD ["/bin/bash", "/scripts/entrypoint.sh"]

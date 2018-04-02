@@ -102,10 +102,9 @@ ENV/
 
 # mypy
 .mypy_cache/
-/cts/secrets.env
-static/
+/cts/static/
 /cts/restore_dump.sh
 /cts/docker-compose.production.yml
-media/
+/cts/media/
 /cts/docker-cloud.dev.yml
-/cts/docker-cloud.production.yml
+/cts/production_backups/

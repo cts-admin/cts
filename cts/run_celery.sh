@@ -4,4 +4,4 @@
 sleep 10
 
 # run Celery worker for our project myproject with Celery configuration stored in celery.py
-celery worker -A cts -l info -Q default -n default@%h
+celery -A cts.celery worker -l INFO -Q default -n default@%h

@@ -104,10 +104,10 @@ WSGI_APPLICATION = 'cts.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.contrib.gis.db.backends.postgis',
-        'NAME': 'geodjango',
-        'USER': 'geodjango',
-        'PASSWORD': os.environ.get('DJANGO_DB_PASS', ''),
-        'HOST': 'localhost',
+        'NAME': os.environ.get('PG_DB', 'postgres'),
+        'USER': os.environ.get('PG_USER', 'postgres'),
+        'PASSWORD': os.environ['PG_PASSWORD'],
+        'HOST': os.environ.get('DB_HOST', '0.0.0.0'),
         'PORT': '',
     }
 }
