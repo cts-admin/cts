@@ -63,5 +63,5 @@ get_certificate() {
     echo "Getting certificate for domain $1 on behalf of user $2"
     certbot certonly --agree-tos --keep -n --text --email $2 --server \
         https://acme-v01.api.letsencrypt.org/directory -d $1 \
-        --webroot --webroot-path /usr/share/nginx/html --debug
+        --webroot --webroot-path /usr/share/nginx/html --debug $STAGING
 }
