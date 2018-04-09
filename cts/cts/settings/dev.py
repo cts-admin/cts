@@ -5,21 +5,11 @@ from .base import *
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['127.0.0.1']
+ALLOWED_HOSTS = ['127.0.0.1', 'web', '0.0.0.0', '.dev.conservationtechnologysolutions.com',
+                 'www.dev.conservationtechnologysolutions.com', '104.131.38.9']
 
-EMAIL_SSL_KEYFILE = '/home/ave/PycharmProjects/cts/privkey.pem'
-EMAIL_SSL_CERTFILE = '/home/ave/PycharmProjects/cts/fullchain.pem'
-
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.contrib.gis.db.backends.postgis',
-        'NAME': 'postgres',
-        'USER': 'postgres',
-        'PASSWORD': os.environ['DJANGO_DB_PASS'],
-        'HOST': '0.0.0.0',
-        'PORT': '',
-    }
-}
+EMAIL_SSL_KEYFILE = '/etc/letsencrypt/live/dev.conservationtechnologysolutions.com/privkey.pem'
+EMAIL_SSL_CERTFILE = '/etc/letsencrypt/live/dev.conservationtechnologysolutions.com/fullchain.pem'
 
 try:
     from .local import *

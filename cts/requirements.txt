@@ -12,7 +12,6 @@ cssselect==1.0.1
 Django==1.11.7
 django-appconf==1.0.2
 django-celery-results==1.0.1
-django-hosts==2.0
 django-markdownx==2.0.21
 django-modelcluster==3.1
 django-registration==2.2
@@ -22,6 +21,7 @@ djangorestframework==3.6.4
 docopt==0.6.2
 feedfinder2==0.0.4
 feedparser==5.2.1
+gunicorn==19.7.1
 html5lib==0.999999999
 idna==2.6
 jieba3k==0.35.1
@@ -39,6 +39,7 @@ pyparsing==2.2.0
 python-dateutil==2.6.1
 pytz==2017.3
 PyYAML==3.12
+redis==2.10.6
 requests==2.18.4
 requests-file==1.4.2
 simplejson==3.13.2

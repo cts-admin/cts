@@ -1,7 +1,5 @@
 
 .idea/
-/fullchain.pem
-/privkey.pem
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
@@ -101,5 +99,11 @@ ENV/
 
 # mypy
 .mypy_cache/
-/cert.pem
+/cts/static/
+/cts/restore_dump.sh
+/cts/docker-compose.staging.yml
+/cts/docker-compose.production.yml
+/cts/media/
+/cts/docker-cloud.dev.yml
+/cts/production_backups/
 /cts/tracker/data/

@@ -17,14 +17,9 @@ class IndividualMemberListViewTests(TestCase):
             email='conservationist@example.com'
         )
 
-    def test_developer_member_redirect(self):
-        old_url = reverse('members:conservationist-members')
-        response = self.client.get(old_url)
-        self.assertRedirects(response, self.url)
-
     def test_view_render(self):
         response = self.client.get(self.url)
-        self.assertContains(response, 'Individual members')
+        self.assertContains(response, 'Individual Members')
         self.assertContains(response, 'CTS Conservationist')
 
     def test_view_should_only_render_former_members_once(self):
@@ -58,7 +53,7 @@ class CorporateMemberListViewTests(TestCase):
 
     def test_view_render(self):
         response = self.client.get(self.url)
-        self.assertContains(response, 'Corporate members')
+        self.assertContains(response, 'Corporate Members')
         self.assertContains(response, 'Corporation')
 
     def test_view_should_not_render_unapproved(self):
@@ -96,10 +91,9 @@ class CorporateMemberListViewTests(TestCase):
 
 
 class CorporateMemberJoinViewTests(TestCase):
-
     def test_get(self):
         response = self.client.get(reverse('members:corporate-members-join'))
-        self.assertContains(response, "Become a CTS corporate member")
+        self.assertContains(response, "Become a CTS Corporate Member")
 
     def test_submit_success(self):
         data = {
@@ -113,7 +107,7 @@ class CorporateMemberJoinViewTests(TestCase):
             'membership_level': 2,
             'address': 'USA',
             'description': 'We make widgets!',
-            'django_usage': 'fun',
+            'cts_usage': 'fun',
             'amount': 2000,
         }
         response = self.client.post(reverse('members:corporate-members-join'), data)
@@ -124,7 +118,6 @@ class CorporateMemberJoinViewTests(TestCase):
 
 
 class CorporateMemberRenewalViewTests(TestCase):
-
     @classmethod
     def setUpTestData(cls):
         cls.member = CorporateMember.objects.create(
@@ -135,7 +128,7 @@ class CorporateMemberRenewalViewTests(TestCase):
 
     def test_get(self):
         response = self.client.get(self.member.get_renewal_link())
-        self.assertContains(response, 'Become a CTS corporate member')
+        self.assertContains(response, 'Become a CTS Corporate Member')
         self.assertEqual(response.context['form'].instance, self.member)
 
     def test_invalid_token(self):
