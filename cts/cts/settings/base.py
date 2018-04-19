@@ -152,23 +152,23 @@ WAGTAIL_SITE_NAME = "cts"
 
 # Base URL to use when referring to full URLs within the Wagtail admin backend -
 # e.g. in notification emails. Don't include '/admin' or a trailing slash
-BASE_URL = 'http://conservationtechnologysolutions.com'
+BASE_URL = 'http://conservationtechnologysolutions.org'
 
 
 # Email
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 EMAIL_HOST = 'smtp-relay.gmail.com'
 EMAIL_PORT = 587
-EMAIL_HOST_USER = 'ctsadmin@conservationtechnologysolutions.com'
+EMAIL_HOST_USER = 'ctsadmin@conservationtechnologysolutions.org'
 EMAIL_HOST_PASSWORD = os.environ.get('EMAIL_HOST_PASS', '')
 EMAIL_USE_TLS = True
 EMAIL_USE_SSL = False
 
-DEFAULT_FROM_EMAIL = 'info@conservationtechnologysolutions.com'
-SERVER_EMAIL = 'ctsadmin@conservationtechnologysolutions.com'
-ADMINS = [('Avery', 'ctsadmin@conservationtechnologysolutions.com'),
-          ('Will', 'wtrost@conservationtechnologysolutions.com'),
-          ('Summer', 'srasmussen@conservationtechnologysolutions.com')]
+DEFAULT_FROM_EMAIL = 'info@conservationtechnologysolutions.org'
+SERVER_EMAIL = 'ctsadmin@conservationtechnologysolutions.org'
+ADMINS = [('Avery', 'ctsadmin@conservationtechnologysolutions.org'),
+          ('Will', 'wtrost@conservationtechnologysolutions.org'),
+          ('Summer', 'srasmussen@conservationtechnologysolutions.org')]
 
 
 # Redis

@@ -49,7 +49,7 @@ class CorporateMemberCorporateMemberSignUpFormTests(TestCase):
             [
                 settings.DEFAULT_FROM_EMAIL,
                 data['contact_email'],
-                'ctsadmin@conservationtechnologysolutions.com',
+                'ctsadmin@conservationtechnologysolutions.org',
             ]
         )
 
@@ -90,6 +90,6 @@ class CorporateMemberCorporateMemberSignUpFormTests(TestCase):
             [
                 settings.DEFAULT_FROM_EMAIL,
                 data['contact_email'],
-                'ctsadmin@conservationtechnologysolutions.com',
+                'ctsadmin@conservationtechnologysolutions.org',
             ]
         )

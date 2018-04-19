@@ -2,13 +2,6 @@
 # https://github.com/staticfloat/docker-nginx-certbot/blob/master/scripts/entrypoint.sh
 #!/bin/sh
 
-# Wait for Django to spin up
-sleep 40
-
-# Create proper permissions for static files served by nginx
-chown -R $USER:www-data /home/media
-chown -R $USER:www-data /home/static
-
 # Create our config file from the template
 envsubst < /etc/nginx/conf.d/cts.template > /etc/nginx/conf.d/cts.conf
 
@@ -36,6 +29,11 @@ for f in /scripts/startup/*.sh; do
         $f
     fi
 done
+
+# Create proper permissions for static files served by nginx
+chown -R $USER:www-data /home/media
+chown -R $USER:www-data /home/static
+
 echo "Done with startup"
 
 # Run `cron -f &` so that it's a background job owned by bash and then `wait`.

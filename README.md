@@ -14,7 +14,7 @@ projects, we have a lot of ideas for how we can move towards a more environmenta
 
 This repository houses CTS's website which also includes web applications and tools that we hope can be of use to
 others. Tools built for use outside of the web environment will be hosted in their own repositories. We'll talk more
-about any such tools on our [blog](https://conservationtechnologysolutions.com/cts-blog) and 
+about any such tools on our [blog](https://conservationtechnologysolutions.org/cts-blog) and
 [twitter account](https://twitter.com/ctsadmin).
 
 Our latest project can be found under the 'plant-tracker' branch. There we'd like to develop a mapping web application
@@ -25,7 +25,7 @@ collection locations with their underlying
 
 # Get Involved
 
-Check out our website at [conservationtechnologysolutions.com](https://conservationtechnologysolutions.com)
+Check out our website at [conservationtechnologysolutions.org](https://conservationtechnologysolutions.org)
 where you can find our blog to learn a bit more about what we're trying to do.
 
 Please also follow us on twitter [@ctsadmin](https://twitter.com/ctsadmin) for updates and general news about natural

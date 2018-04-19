@@ -3,9 +3,9 @@
 
 FROM nginx
 
-ENV SERVER_NAME="${SERVER_NAME_1}conservationtechnologysolutions.com ${SERVER_NAME_2}conservationtechnologysolutions.com"
+ENV SERVER_NAME="${SERVER_NAME_1}conservationtechnologysolutions.org ${SERVER_NAME_2}conservationtechnologysolutions.org"
 ENV CRED_LOC=/.htpasswd
-ENV CERTBOT_EMAIL=ctsadmin@conservationtechnologysolutions.com
+ENV CERTBOT_EMAIL=ctsadmin@conservationtechnologysolutions.org
 
 VOLUME /etc/letsencrypt
 EXPOSE 80

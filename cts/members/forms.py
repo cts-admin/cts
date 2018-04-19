@@ -126,7 +126,7 @@ class CorporateMemberSignUpForm(forms.ModelForm):
             [
                 settings.DEFAULT_FROM_EMAIL,
                 self.instance.contact_email,
-                'ctsadmin@conservationtechnologysolutions.com',
+                'ctsadmin@conservationtechnologysolutions.org',
             ],
         )
         instance.invoice_set.create(amount=self.cleaned_data['amount'])

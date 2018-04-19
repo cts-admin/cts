@@ -26,9 +26,9 @@ class IndividualMemberTests(TestCase):
 
     def test_linked_name(self):
         self.assertEqual(self.member.linked_name, 'CTS Conservationist')
-        self.member.website = 'conservationtechnologysolutions.com'
+        self.member.website = 'conservationtechnologysolutions.org'
         self.assertEqual(self.member.linked_name,
-                         '<a href="conservationtechnologysolutions.com">CTS Conservationist</a>')
+                         '<a href="conservationtechnologysolutions.org">CTS Conservationist</a>')
         self.assertIsInstance(self.member.linked_name, SafeData)
 
     def test_member_since_should_have_default(self):
