@@ -68,11 +68,7 @@ Follow these steps for deploying locally:
     $ docker-compose up
     ```
 
-You should now be able to navigate to [http://0.0.0.0:8000](http://127.0.0.1:8000) to view the web server. Nginx is
-configured with basic auth, but for local testing you can use the following credentials:
-
-username: `testuser`
-password: `testpassword`
+You should now be able to navigate to [http://0.0.0.0:8000](http://0.0.0.0:8000) to view the web server.
 
 # License
 
