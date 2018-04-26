@@ -33,6 +33,8 @@ done
 # Create proper permissions for static files served by nginx
 chown -R $USER:www-data /home/media
 chown -R $USER:www-data /home/static
+chgrp -R 999 /etc/letsencrypt
+chmod -R g+rx /etc/letsencrypt
 
 echo "Done with startup"
 
