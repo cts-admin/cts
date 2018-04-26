@@ -31,9 +31,6 @@ services:
     build: .
     env_file: /opt/django_secrets.env
     command: ./run_web.sh
-    volumes:
-      - static:/code/static
-      - media:/code/media
     links:
       - db
       - rabbit
@@ -55,7 +52,3 @@ services:
       - redis
     depends_on:
       - rabbit
-
-volumes:
-  static:
-  media:

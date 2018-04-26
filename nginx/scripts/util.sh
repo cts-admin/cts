@@ -62,5 +62,5 @@ auto_enable_configs() {
 get_certificate() {
     echo "Getting certificate for domain $1 on behalf of user $2"
     certbot certonly --agree-tos --keep -n -m $2 -d $1 \
-        --webroot --webroot-path=/data/letsencrypt --debug $STAGING
+        --webroot --webroot-path=/usr/share/nginx/html --debug $STAGING
 }
