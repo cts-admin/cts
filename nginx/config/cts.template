@@ -37,6 +37,6 @@ server {
 server {
     listen      443           ssl http2;
     listen [::]:443           ssl http2;
-    server_name .conservationtechnologysolutions.com;
+    server_name *.conservationtechnologysolutions.com conservationtechnologysolutions.com;
     return 301 $scheme://conservationtechnologysolutions.org$request_uri;
 }
