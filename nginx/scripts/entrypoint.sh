@@ -3,7 +3,7 @@
 #!/bin/sh
 
 # Create our config file from the template
-envsubst < /etc/nginx/conf.d/cts.template > /etc/nginx/conf.d/cts.conf
+envsubst '${SERVER_NAME_1} ${SERVER_NAME_2}'< /etc/nginx/conf.d/cts.template > /etc/nginx/conf.d/cts.conf
 
 # When we get killed, kill all our children
 trap "exit" INT TERM
