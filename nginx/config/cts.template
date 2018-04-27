@@ -1,7 +1,7 @@
 server {
     listen      443           ssl http2 default_server;
     listen [::]:443           ssl http2 default_server;
-    server_name ${SERVER_NAME};
+    server_name ${SERVER_NAME_1}conservationtechnologysolutions.org ${SERVER_NAME_2}conservationtechnologysolutions.org;
     charset utf-8;
 
     ssl_certificate /etc/letsencrypt/live/${SERVER_NAME_1}conservationtechnologysolutions.org/fullchain.pem;
@@ -32,4 +32,11 @@ server {
 
         include /etc/nginx/conf.d/proxy.conf;
     }
+}
+
+server {
+    listen      443           ssl http2;
+    listen [::]:443           ssl http2;
+    server_name .conservationtechnologysolutions.com;
+    return 301 $scheme://conservationtechnologysolutions.org$request_uri;
 }
