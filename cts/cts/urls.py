@@ -11,7 +11,7 @@ from wagtail.documents import urls as wagtaildocs_urls
 from accounts import views as account_views
 
 urlpatterns = [
-    url(r'^django-admin/', include(admin.site.urls)),
+    url(r'^django-admin/', admin.site.urls),
 
     # Django-Registration
     url(r'^accounts/', include('accounts.urls')),

@@ -40,7 +40,7 @@ class BlogCategory(models.Model):
 
 
 class BlogPageTag(TaggedItemBase):
-    content_object = ParentalKey('BlogPage', related_name='tagged_items')
+    content_object = ParentalKey('BlogPage', related_name='tagged_items', on_delete=models.CASCADE)
 
 
 class BlogIndexPage(BlogRoutes, Page):
@@ -123,7 +123,7 @@ class BlogPage(Page):
 
 
 class BlogPageGalleryImage(Orderable):
-    page = ParentalKey(BlogPage, related_name='gallery_images')
+    page = ParentalKey(BlogPage, related_name='gallery_images', on_delete=models.CASCADE)
     image = models.ForeignKey(
         'wagtailimages.Image', on_delete=models.CASCADE, related_name='+'
     )

@@ -16,5 +16,5 @@ urlpatterns = [
         name='edit_profile',
     ),
     url(r'', include('django.contrib.auth.urls')),
-    url(r'', include('registration.backends.default.urls')),
+    url(r'', include('registration.backends.model_activation.urls')),
 ]
