@@ -22,6 +22,8 @@ urlpatterns = [
     url(r'^admin/', include(wagtailadmin_urls)),
     url(r'^documents/', include(wagtaildocs_urls)),
 
+    url(r'^beekeeping/', include('beecam.urls')),
+
     url(r'^members/', include('members.urls')),
     url(r'^fundraising/', include('fundraising.urls')),
     url(r'', include('home.urls')),
