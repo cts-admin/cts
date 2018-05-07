@@ -19,7 +19,7 @@ python clear_wagtail_data.py
 python manage.py loaddata $DB_DATA_FILE
 
 # start slack bot
-python manage.py sos_bot
+python manage.py sos_bot &
 
 # serve with gunicorn
 gunicorn cts.wsgi:application -w 2 --timeout 120 -b :8000
