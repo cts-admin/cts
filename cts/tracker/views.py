@@ -5,7 +5,7 @@ import json
 from django.contrib.gis.db.models.functions import Distance
 from django.contrib.gis.gdal import DataSource
 from django.contrib.gis.geos import Point
-from django.core.urlresolvers import reverse
+from django.urls import reverse
 from django.http import HttpResponse, HttpResponseRedirect
 from django.shortcuts import render
 from django.template.loader import render_to_string
