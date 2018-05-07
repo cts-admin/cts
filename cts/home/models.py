@@ -3,10 +3,10 @@ from __future__ import absolute_import, unicode_literals
 from django.db import models
 from django.shortcuts import render
 
-from wagtail.wagtailcore.models import Page
-from wagtail.wagtailcore.fields import RichTextField, StreamField
-from wagtail.wagtailcore import blocks
-from wagtail.wagtailadmin.edit_handlers import StreamFieldPanel, FieldPanel
+from wagtail.core.models import Page
+from wagtail.core.fields import RichTextField, StreamField
+from wagtail.core import blocks
+from wagtail.admin.edit_handlers import StreamFieldPanel, FieldPanel
 
 from .tasks import mail_task
 
@@ -28,7 +28,7 @@ class ContactPage(Page):
         if request.method == 'POST':
             form = ContactForm(request.POST)
             if form.is_valid():
-                cts_mail = 'ctsadmin@conservationtechnologysolutions.com'
+                cts_mail = 'ctsadmin@conservationtechnologysolutions.org'
                 name = form.cleaned_data['name']
                 subject = form.cleaned_data['subject']
                 sender = form.cleaned_data['sender']

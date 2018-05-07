@@ -28,19 +28,20 @@ INSTALLED_APPS = [
     'members',
     'accounts',
     'tracker',
+    'slack',
 
-    'wagtail.contrib.wagtailroutablepage',
-    'wagtail.wagtailforms',
-    'wagtail.wagtailredirects',
-    'wagtail.wagtailembeds',
-    'wagtail.wagtailsites',
-    'wagtail.wagtailusers',
-    'wagtail.wagtailsnippets',
-    'wagtail.wagtaildocs',
-    'wagtail.wagtailimages',
-    'wagtail.wagtailsearch',
-    'wagtail.wagtailadmin',
-    'wagtail.wagtailcore',
+    'wagtail.contrib.routable_page',
+    'wagtail.contrib.forms',
+    'wagtail.contrib.redirects',
+    'wagtail.embeds',
+    'wagtail.sites',
+    'wagtail.users',
+    'wagtail.snippets',
+    'wagtail.documents',
+    'wagtail.images',
+    'wagtail.search',
+    'wagtail.admin',
+    'wagtail.core',
 
     'modelcluster',
     'taggit',
@@ -63,13 +64,12 @@ MIDDLEWARE = [
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
-    'django.contrib.auth.middleware.SessionAuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
     'django.middleware.security.SecurityMiddleware',
 
-    'wagtail.wagtailcore.middleware.SiteMiddleware',
-    'wagtail.wagtailredirects.middleware.RedirectMiddleware',
+    'wagtail.core.middleware.SiteMiddleware',
+    'wagtail.contrib.redirects.middleware.RedirectMiddleware',
 ]
 
 ROOT_URLCONF = 'cts.urls'
@@ -153,23 +153,23 @@ WAGTAIL_SITE_NAME = "cts"
 
 # Base URL to use when referring to full URLs within the Wagtail admin backend -
 # e.g. in notification emails. Don't include '/admin' or a trailing slash
-BASE_URL = 'http://conservationtechnologysolutions.com'
+BASE_URL = 'http://conservationtechnologysolutions.org'
 
 
 # Email
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 EMAIL_HOST = 'smtp-relay.gmail.com'
 EMAIL_PORT = 587
-EMAIL_HOST_USER = 'ctsadmin@conservationtechnologysolutions.com'
+EMAIL_HOST_USER = 'ctsadmin@conservationtechnologysolutions.org'
 EMAIL_HOST_PASSWORD = os.environ.get('EMAIL_HOST_PASS', '')
 EMAIL_USE_TLS = True
 EMAIL_USE_SSL = False
 
-DEFAULT_FROM_EMAIL = 'info@conservationtechnologysolutions.com'
-SERVER_EMAIL = 'ctsadmin@conservationtechnologysolutions.com'
-ADMINS = [('Avery', 'ctsadmin@conservationtechnologysolutions.com'),
-          ('Will', 'wtrost@conservationtechnologysolutions.com'),
-          ('Summer', 'srasmussen@conservationtechnologysolutions.com')]
+DEFAULT_FROM_EMAIL = 'info@conservationtechnologysolutions.org'
+SERVER_EMAIL = 'ctsadmin@conservationtechnologysolutions.org'
+ADMINS = [('Avery', 'ctsadmin@conservationtechnologysolutions.org'),
+          ('Will', 'wtrost@conservationtechnologysolutions.org'),
+          ('Summer', 'srasmussen@conservationtechnologysolutions.org')]
 
 
 # Redis
@@ -235,3 +235,6 @@ ACCOUNT_ACTIVATION_DAYS = 7
 
 # Django auth settings
 LOGIN_REDIRECT_URL = 'edit_profile'
+
+# Slack Bot
+SLACK_BOT_TOKEN = os.environ.get('SLACK_BOT_TOKEN')

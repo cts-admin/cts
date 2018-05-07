@@ -13,7 +13,7 @@ def contact(request):
     if request.method == 'POST':
         form = ContactForm(request.POST)
         if form.is_valid():
-            cts_mail = 'ctsadmin@conservationtechnologysolutions.com'
+            cts_mail = 'ctsadmin@conservationtechnologysolutions.org'
             name = form.cleaned_data['name']
             subject = form.cleaned_data['subject']
             sender = form.cleaned_data['sender']

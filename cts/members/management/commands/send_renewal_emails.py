@@ -26,6 +26,6 @@ class Command(BaseCommand):
                     [
                         settings.DEFAULT_FROM_EMAIL,
                         member.contact_email,
-                        'ctsadmin@conservationtechnologysolutions.com'
+                        'ctsadmin@conservationtechnologysolutions.org'
                     ],
                     )

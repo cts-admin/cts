@@ -5,8 +5,8 @@ from django.shortcuts import get_object_or_404
 from django.utils.dateformat import DateFormat
 from django.utils.formats import date_format
 
-from wagtail.contrib.wagtailroutablepage.models import RoutablePageMixin, route
-from wagtail.wagtailcore.models import Page
+from wagtail.contrib.routable_page.models import RoutablePageMixin, route
+from wagtail.core.models import Page
 
 
 class BlogRoutes(RoutablePageMixin):
