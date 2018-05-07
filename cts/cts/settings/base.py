@@ -27,6 +27,7 @@ INSTALLED_APPS = [
     'fundraising',
     'members',
     'accounts',
+    'slack',
 
     'wagtail.contrib.routable_page',
     'wagtail.contrib.forms',
@@ -233,3 +234,6 @@ ACCOUNT_ACTIVATION_DAYS = 7
 
 # Django auth settings
 LOGIN_REDIRECT_URL = 'edit_profile'
+
+# Slack Bot
+SLACK_BOT_TOKEN = os.environ.get('SLACK_BOT_TOKEN')
