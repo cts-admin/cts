@@ -85,10 +85,11 @@
 </div>
 
 <script>
-    var map;
-    var geocoder;
-    var pstz = false;
-    var loading = false;
+    let map;
+    let geocoder;
+    let pstz = false;
+    let loading = false;
+    let infoWindow;
 </script>
 <script type="text/javascript" src="{% static 'tracker/js/map.js'%}"></script>
 <script async defer
@@ -118,9 +119,9 @@
 </script>
 
 <script>
-    var userMarker;
-    var waypointByID = {};
-    var currentObject;
+    let userMarker;
+    let waypointByID = {};
+    let currentObject;
     {% for waypoint in waypoints %}
         waypointByID[{{waypoint.id}}] = {
             name: "{{waypoint.name}}",
@@ -159,7 +160,7 @@
                 'address': $('#address').val()
             }, function (results, status) {
                 if (status === google.maps.GeocoderStatus.OK) {
-                    var position = results[0].geometry.location;
+                    let position = results[0].geometry.location;
                     $.get("{% url 'tracker:search' %}", {
                         lat: position.lat(),
                         lng: position.lng()
@@ -183,11 +184,11 @@
         });
         $('#saveWaypoints').click(function () {
             function getCookie(name) {
-                var cookieValue = null;
+                let cookieValue = null;
                 if (document.cookie && document.cookie !== '') {
-                    var cookies = document.cookie.split(';');
-                    for (var i = 0; i < cookies.length; i++) {
-                        var cookie = jQuery.trim(cookies[i]);
+                    let cookies = document.cookie.split(';');
+                    for (let i = 0; i < cookies.length; i++) {
+                        let cookie = jQuery.trim(cookies[i]);
                         // Does this cookie string begin with the name we want?
                         if (cookie.substring(0, name.length + 1) === (name + '=')) {
                             cookieValue = decodeURIComponent(cookie.substring(name.length + 1));
@@ -197,8 +198,8 @@
                 }
                 return cookieValue;
             }
-            var csrftoken = getCookie('csrftoken');
-            var waypointStrings = [];
+            const csrftoken = getCookie('csrftoken');
+            let waypointStrings = [];
             for (id in waypointByID) {
                 waypoint = waypointByID[id];
                 waypointStrings.push(id + ' ' + waypoint.lng + ' ' + waypoint.lat);
@@ -219,6 +220,20 @@
 </script>
 
 <script>
+    // Escapes HTML characters in a template literal string, to prevent XSS.
+    // See https://www.owasp.org/index.php/XSS_%28Cross_Site_Scripting%29_Prevention_Cheat_Sheet#RULE_.231_-_HTML_Escape_Before_Inserting_Untrusted_Data_into_HTML_Element_Content
+    function sanitizeHTML(strings) {
+        const entities = {'&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;'};
+        let result = strings[0];
+        for (let i = 1; i < arguments.length; i++) {
+            result += String(arguments[i]).replace(/[&<>'"]/g, (char) => {
+                return entities[char];
+            });
+            result += strings[i];
+        }
+        return result;
+    }
+
     $(document).ready(function () {
         console.log('document ready.');
         $("#pstz_slider").parent().change(load_pstz);
@@ -227,20 +242,20 @@
             if (loading === false && pstz === false && $("#pstz_slider").parent().hasClass("switch-on")) {
                 loading = true;
                 console.log('the slider is on so fetching json data...');
-                $.ajax({
-                    type:"GET",
-                    dataType: 'json',
-                    url:'{% url 'tracker:load_pstz' %}',
-                    success: function(response){
-                        console.log('Loading json to map...');
-                        console.log(response['pstz']);
-                        var geojson = response['pstz'];
-                        map.data.addGeoJson(geojson);
-                        console.log(map);
-                        pstz = true;
-                        loading = false;
-                    }
-                })
+                map.data.loadGeoJson("{% static 'tracker/data/provision_seed_zones/psz.geojson' %}");
+
+                map.data.addListener('click', function (event) {
+                    const seed_zone = event.feature.getProperty('seed_zone');
+                    const content = sanitizeHTML`
+                      <div>
+                        <h2><strong>Seed Zone</strong>: ${seed_zone}</h2>
+                      </div>
+                    `;
+
+                    infoWindow.setContent(content);
+                    infoWindow.setPosition(event.latLng);
+                    infoWindow.open(map);
+                });
             }
         }
     });

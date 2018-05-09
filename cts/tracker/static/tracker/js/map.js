@@ -6,4 +6,5 @@ function initMap() {
         mapTypeId: 'roadmap'
     });
     geocoder = new google.maps.Geocoder;
+    infoWindow = new google.maps.InfoWindow();
 }

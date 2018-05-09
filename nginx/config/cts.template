@@ -17,6 +17,14 @@ server {
     ssl_prefer_server_ciphers on;
     ssl_ciphers 'EECDH+AESGCM:EDH+AESGCM:AES256+EECDH:AES256+EDH';
 
+    gzip on;
+    gzip_proxied any;
+    gzip_types
+        application/javascript
+        application/json
+        text/css
+        text/js;
+
     location = /favicon.ico { access_log off; log_not_found off; }
 
     location /static {
