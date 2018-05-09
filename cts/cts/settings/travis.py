@@ -6,7 +6,7 @@ SECRET_KEY = 'This is a secret key for Travis CI'
 
 DATABASES = {
     'default': {
-        'ENGINE':   'django.db.backends.postgresql_psycopg2',
+        'ENGINE':   'django.contrib.gis.db.backends.postgis',
         'NAME':     'travis_ci_test',  # Must match travis.yml setting
         'USER':     'postgres',
         'PASSWORD': '',
