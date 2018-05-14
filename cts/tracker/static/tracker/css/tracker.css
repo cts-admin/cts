@@ -33,6 +33,7 @@ html, body {
 
 .tracker-form {
     margin-top: -35px;
+    padding-bottom: 10px;
 }
 .btn-file {
     position: relative;
@@ -70,6 +71,6 @@ html, body {
         position: absolute;
         top: 160px;
         left: 10px;
-        background: rgba(76, 175, 80, 0.3)
+        background: rgba(76, 175, 80, 0.7)
     }
 }

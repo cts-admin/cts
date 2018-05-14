@@ -49,10 +49,13 @@
 <!-- The form to upload GPX files from a GPS device. -->
 <form class="tracker-form" enctype="multipart/form-data" method="post" action="{% url 'tracker:upload' %}">
     {% csrf_token %}
-    <label class="btn btn-default btn-file">
-        Browse<input type="file" style="display: none;">
-    </label>
-    <button class="btn btn-primary" type="submit">Upload GPX</button>
+    {% for field in form %}
+        <label class="btn btn-default btn-file" for="{{ field.name }}">
+            <div id="label-text">{{ field.label }}</div>
+            {{ field }}
+        </label>
+    {% endfor %}
+    <button class="btn btn-primary disabled" id="upload-btn" type="submit">Upload GPX</button>
 </form>
 
 <!-- The actual map -->
@@ -98,23 +101,20 @@
 <script>
     // Change Browse button text to filename
     $(function() {
-        $(document).on('change', ':file', function() {
-            var input = $(this),
-                numFiles = input.get(0).files ? input.get(0).files.length : 1,
+        $("#id_file").change(function() {
+            let input = $(this),
                 label = input.val().replace(/\\/g, '/').replace(/.*\//, '');
-            input.trigger('fileselect', [numFiles, label]);
+            allowUpload(label);
         });
 
-        $(document).ready( function() {
-            $(':file').on('fileselect', function(event, numFiles, label) {
-                if (label.split('.')[1] !== 'gpx') {
-                    alert("You must select a valid GPX file.")
-                } else {
-                    $(this).parent().closest('label').text(label);
-                }
-            });
-        });
-
+        function allowUpload(label) {
+            if (label.split('.')[1] !== 'gpx') {
+                alert("You must select a valid GPX file.")
+            } else {
+                $("#label-text").text(label);
+                $('#upload-btn').toggleClass('disabled');
+            }
+        }
     });
 </script>
 
@@ -122,6 +122,7 @@
     let userMarker;
     let waypointByID = {};
     let currentObject;
+
     {% for waypoint in waypoints %}
         waypointByID[{{waypoint.id}}] = {
             name: "{{waypoint.name}}",
@@ -129,6 +130,8 @@
             lng: {{waypoint.geometry.x}}
         };
     {% endfor %}
+
+    $('')
     $(document).ready(function () {
         function activateWaypoints() {
             // Add waypoint click handler
