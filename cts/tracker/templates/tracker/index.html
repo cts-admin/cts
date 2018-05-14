@@ -38,6 +38,13 @@
 </head>
 <body>
 
+<div class="login-info">
+    {% if user.is_authenticated %}
+        <small>Logged in as:
+            <strong><a href="{% url 'edit_profile' %}">{{ user.username }}</a></strong></small>
+    {% endif %}
+</div>
+
 <div class="container">
     <div class="text-center">
         <a href="/">
@@ -62,8 +69,8 @@
 <div id="map"></div>
 
 <div class="tracker container-fluid">
-    <div id=waypoints>
-        {{content}}
+    <div class=waypoints>
+        {{ content }}
     </div>
     <button class="btn btn-primary" id="saveWaypoints" type="submit">Save</button>
     <div class="space-30"></div>
@@ -131,7 +138,6 @@
         };
     {% endfor %}
 
-    $('')
     $(document).ready(function () {
         function activateWaypoints() {
             // Add waypoint click handler

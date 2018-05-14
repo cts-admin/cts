@@ -1,8 +1,12 @@
 <h5 class="text-center">
     Waypoints
 </h5>
-{% for waypoint in waypoints %}
-    <div id={{waypoint.id}} class='waypoint linkOFF'>
-        {{waypoint.name}} ({{waypoint.geometry.y}}, {{waypoint.geometry.x}})
-    </div>
-{% endfor %}
+{% if user.is_authenticated %}
+    {% for waypoint in waypoints %}
+        <div id={{waypoint.id}} class='waypoint linkOFF'>
+            <strong>{{waypoint.name}}</strong> ({{waypoint.geometry.y}}, {{waypoint.geometry.x}})
+        </div>
+    {% endfor %}
+{% else %}
+    <p>Please <a href="{% url 'login' %}?next={% url 'tracker:index' %}"><strong>login</strong></a> to start adding waypoints!</p>
+{% endif %}

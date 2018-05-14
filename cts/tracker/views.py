@@ -2,6 +2,7 @@ import os
 import tempfile
 import json
 
+from django.contrib.auth.decorators import login_required
 from django.contrib.gis.db.models.functions import Distance
 from django.contrib.gis.gdal import DataSource
 from django.contrib.gis.geos import Point
@@ -23,7 +24,7 @@ def index(request):
         'waypoints': waypoints,
         'maps_api_key': MAPS_API_KEY,
         'form': form,
-        'content': render_to_string('tracker/waypoints.html', {'waypoints': waypoints}),
+        'content': render_to_string('tracker/waypoints.html', {'waypoints': waypoints}, request),
     })
 
 
@@ -91,6 +92,7 @@ def handle_uploaded_file(file):
     os.remove(target_path)
 
 
+@login_required(login_url='/accounts/login/')
 def upload(request):
     """
     Upload waypoints from GPX file.

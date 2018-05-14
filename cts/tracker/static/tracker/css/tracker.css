@@ -4,13 +4,22 @@ html, body {
     padding: 0;
 }
 
+.login-info {
+    float: left;
+}
+
 #map {
     width: 100%;
     height: 90%;
 }
 
-#waypoints {
+.waypoints {
     overflow: auto;
+    padding-left: 10px;
+}
+
+.waypoints a {
+    color: darkblue;
 }
 #saveWaypoints {
     display: none;
