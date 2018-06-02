@@ -100,6 +100,21 @@
     let pstz = false;
     let loading = false;
     let infoWindow;
+    let markers = [];
+
+    // Adds a marker to the map and push to the array.
+    function addMarker(location) {
+        const marker = new google.maps.Marker({
+            position: location,
+            map: map
+        });
+        marker.addListener("click", function () {
+            infoWindow.setContent('<p>Latitude: ' + marker.position.lat() + '</p>' +
+            '<p>Longitude: ' + marker.position.lng() + '</p>');
+            infoWindow.open(map, marker);
+        });
+        markers.push(marker);
+    }
 </script>
 <script type="text/javascript" src="{% static 'tracker/js/map.js'%}"></script>
 <script async defer
@@ -126,37 +141,35 @@
 </script>
 
 <script>
-    let userMarker;
     let waypointByID = {};
-    let currentObject;
 
     {% for waypoint in waypoints %}
-        waypointByID[{{waypoint.id}}] = {
-            name: "{{waypoint.name}}",
-            lat: {{waypoint.geometry.y}},
-            lng: {{waypoint.geometry.x}}
+        waypointByID[{{ waypoint.id }}] = {
+            name: "{{ waypoint.name }}",
+            lat: {{ waypoint.geometry.y }},
+            lng: {{ waypoint.geometry.x }}
         };
     {% endfor %}
+
+    function updateGeometry(event, currentObject, waypoint) {
+        let newLat = event.latLng.lat();
+        let newLng = event.latLng.lng();
+        currentObject.find('span.geometry').replaceWith(newLat + ', ' + newLng);
+        waypoint.lat = newLat;
+        waypoint.lng = newLng;
+        $('#saveWaypoints').css('display', 'block');
+    }
 
     $(document).ready(function () {
         function activateWaypoints() {
             // Add waypoint click handler
             $('.waypoint').each(function () {
                 $(this).click(function() {
-                    var waypoint = waypointByID[this.id];
-                    var new_center = new google.maps.LatLng(waypoint.lat, waypoint.lng);
-                    currentObject = $(this);
-                    if (userMarker) userMarker.setMap();
-                    userMarker = new google.maps.Marker({map: map, position: new_center, draggable: true});
-                    google.maps.event.addListener(userMarker, 'dragend', function () {
-                        var position = userMarker.getPosition();
-                        waypoint.lat = position.lat();
-                        waypoint.lng = position.lng();
-                        currentObject.html(waypoint.name +
-                            ' (' + waypoint.lat +
-                            ', ' + waypoint.lng + ')');
-                        $('#saveWaypoints').css('display', 'block');
-                    });
+                    let waypoint = waypointByID[$(this).find('input:first').attr('id')];
+                    let new_center = new google.maps.LatLng(waypoint.lat, waypoint.lng);
+                    let currentObject = $(this);
+                    let userMarker = new google.maps.Marker({map: map, position: new_center, draggable: true});
+                    userMarker.addListener('dragend', updateGeometry(event, currentObject, waypoint));
                     map.panTo(new_center);
                 }).hover(
                     function () {this.className = this.className.replace('OFF', 'ON');},
@@ -212,7 +225,7 @@
             for (id in waypointByID) {
                 waypoint = waypointByID[id];
                 waypointStrings.push(id + ' ' + waypoint.lng + ' ' + waypoint.lat);
-            };
+            }
             $.post("{% url 'tracker:save' %}", {
                 waypointsPayload: waypointStrings.join('\n'),
                 'csrfmiddlewaretoken': csrftoken

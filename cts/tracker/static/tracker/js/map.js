@@ -7,4 +7,8 @@ function initMap() {
     });
     geocoder = new google.maps.Geocoder;
     infoWindow = new google.maps.InfoWindow();
+    // This event listener will call addMarker() when the map is clicked.
+    map.addListener('click', function(event) {
+      addMarker(event.latLng);
+    });
 }

@@ -31,15 +31,17 @@ html, body {
 .linkON {
     color: white;
     background-color: darkblue;
+    cursor: pointer;
 }
-
+.tracker {
+    max-width: 400px;
+}
 .tracker-logo {
     overflow: hidden;
     height: 80px;
     width: auto;
     clear: left;
 }
-
 .tracker-form {
     margin-top: -35px;
     padding-bottom: 10px;

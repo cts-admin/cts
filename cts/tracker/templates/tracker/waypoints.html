@@ -3,9 +3,13 @@
 </h5>
 {% if user.is_authenticated %}
     {% for waypoint in waypoints %}
-        <div id={{waypoint.id}} class='waypoint linkOFF'>
-            <strong>{{waypoint.name}}</strong> ({{waypoint.geometry.y}}, {{waypoint.geometry.x}})
-        </div>
+        <label class="checkbox ct-blue waypoint linkOFF" for="{{ waypoint.id }}">
+            <input id="{{ waypoint.id }}" type="checkbox" value="" data-toggle="checkbox" checked>
+            <strong>{{ waypoint.name }}</strong>
+            (<span class="geometry">{{ waypoint.geometry.y }}, {{ waypoint.geometry.x }}</span>)
+        </label>
+    {% empty %}
+        <p>No waypoints yet. Click the map or upload a GPX file above to add them.</p>
     {% endfor %}
 {% else %}
     <p>Please <a href="{% url 'login' %}?next={% url 'tracker:index' %}"><strong>login</strong></a> to start adding waypoints!</p>
