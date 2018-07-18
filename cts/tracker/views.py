@@ -17,6 +17,19 @@ from .forms import UploadFileForm
 MAPS_API_KEY = os.environ.get('MAPS_API_KEY', None)
 
 
+def add_marker(request):
+    name = request.GET.get('name')
+    marker_point = Point(float(request.GET.get('lng')), float(request.GET.get('lat')), srid=3857)
+    waypoint = Waypoint(name=name, geometry=marker_point)
+    waypoint.save()
+    waypoints = Waypoint.objects.all()
+    return HttpResponse(json.dumps(dict(
+        content=render_to_string('tracker/waypoints.html', {
+            'waypoints': waypoints
+        }),
+    )), content_type='application/json')
+
+
 def index(request):
     form = UploadFileForm()
     waypoints = Waypoint.objects.all().order_by('name')

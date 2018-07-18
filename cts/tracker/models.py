@@ -1,4 +1,11 @@
+from django.conf import settings
+from django.contrib.auth import get_user_model
+from django.contrib.auth.models import User
 from django.contrib.gis.db import models
+
+
+def get_sentinel_user():
+    return get_user_model().objects.get_or_create(username='deleted')[0]
 
 
 class ProvisionalSeedZone(models.Model):
@@ -21,6 +28,8 @@ class ProvisionalSeedZone(models.Model):
 class Waypoint(models.Model):
     name = models.CharField(max_length=32)
     geometry = models.PointField(srid=3857)
+
+    user = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.SET(get_sentinel_user))
 
     def __unicode__(self):
         return '{} {} {}'.format(self.name, self.geometry.x, self.geometry.y)
