@@ -23,6 +23,12 @@ server {
         alias /home/static;
     }
 
+    # One off project for RBG Volunteer Coordination
+    location /rbg/volunteers {
+        alias /home/static/rbg;
+        autoindex on;
+    }
+
     location /media {
         alias /home/media;
     }
