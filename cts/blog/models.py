@@ -11,6 +11,7 @@ from wagtail.core import blocks
 from wagtail.core.models import Page, Orderable
 from wagtail.core.fields import RichTextField, StreamField
 from wagtail.admin.edit_handlers import FieldPanel, InlinePanel, MultiFieldPanel, StreamFieldPanel
+from wagtail.images.models import Image
 from wagtail.images.blocks import ImageChooserBlock
 from wagtail.images.edit_handlers import ImageChooserPanel
 from wagtail.snippets.models import register_snippet
@@ -23,8 +24,11 @@ from .routes import BlogRoutes
 class BlogCategory(models.Model):
     name = models.CharField(max_length=255)
     icon = models.ForeignKey(
-        'wagtailimages.Image', null=True, blank=True,
-        on_delete=models.SET_NULL, related_name='+'
+        'wagtailimages.Image',
+        null=True,
+        blank=True,
+        on_delete=models.SET_NULL,
+        related_name='+'
     )
 
     panels = [
@@ -72,6 +76,10 @@ class BlogIndexPage(BlogRoutes, Page):
         context['blogpages'] = blogpages
         context['index_page'] = self
         return context
+
+
+class WBABlogIndexPage(BlogIndexPage):
+    pass
 
 
 class BlogTagIndexPage(Page):

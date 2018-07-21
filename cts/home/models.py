@@ -69,3 +69,15 @@ class HomePage(Page):
         if self.use_detail_template:
             return 'home/mission.html'
         return 'home/home_page.html'
+
+
+class WBAHomePage(Page):
+    body = RichTextField(null=True, blank=True)
+
+    content_panels = Page.content_panels + [
+        FieldPanel('body'),
+    ]
+
+    subpage_types = ['blog.WBABlogIndexPage']
+
+    template = 'home/wba_home_page.html'

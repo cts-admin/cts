@@ -95,7 +95,7 @@ class FooterLinksRelatedLink(Orderable, RelatedLink):
 @register_setting
 class SiteBranding(BaseSetting):
     site_logo = models.ForeignKey(
-        Image,
+        'wagtailimages.Image',
         null=True,
         blank=True,
         on_delete=models.SET_NULL,

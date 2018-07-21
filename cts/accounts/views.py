@@ -14,7 +14,7 @@ from fundraising.models import CTSDonor
 
 def user_profile(request, username):
     user = get_object_or_404(User, username=username)
-    profile = Profile.objects.get(user=user)
+    profile = Profile.objects.get_or_create(user=user)
     donor = CTSDonor.objects.filter(profile=profile).first()
     if donor:
         donations = donor.donation_set.all()

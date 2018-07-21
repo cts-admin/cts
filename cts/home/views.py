@@ -5,10 +5,6 @@ from .forms import ContactForm
 from .tasks import mail_task
 
 
-def home(request):
-    return render(request, 'home/home_page.html')
-
-
 def contact(request):
     if request.method == 'POST':
         form = ContactForm(request.POST)
@@ -35,9 +31,6 @@ def contact(request):
         'form': form,
     })
 
-
-def mission(request):
-    return render(request, 'home/mission.html')
 
 # Testing out the Get Shit Done bootstrap package
 if settings.DEBUG:
