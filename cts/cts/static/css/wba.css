@@ -13,7 +13,6 @@ body, html {
     left: 0;
     right: 0;
     transition: all .3s linear;
-    z-index: -1;
 }
 
 .bg {
@@ -21,9 +20,11 @@ body, html {
     background: url("../img/bee_frame_bw.jpg") no-repeat center;
     background-size: cover;
     position: relative;
-    z-index: -2;
 }
 
 .body-container {
     padding-top: 100px;
+    background: rgba(155, 155, 155, 0.5);
+    height: 100%;
+    box-shadow: 0 0 20px 10px #a5ad32;
 }

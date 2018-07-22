@@ -59,14 +59,11 @@
 
 <div class="bg">
     {% include "includes/wba_header.html" %}
-    <div class='body-container'>
+    <div class="body-container container">
         {% block content %}{% endblock %}
     </div>
     {% include "includes/wba_footer.html" %}
 </div>
-
-{# Global javascript #}
-<script type="text/javascript" src="{% static 'js/wba.js' %}"></script>
 
 {% block extra_js %}
     {# Override this in templates to add extra javascript #}
