@@ -1,8 +1,10 @@
-from django.contrib.auth.models import User
+from django.contrib.auth import get_user_model
 from django.shortcuts import reverse
 from django.test import Client, TestCase
 
 from .models import Profile
+
+User = get_user_model()
 
 
 class ViewTests(TestCase):
@@ -13,6 +15,32 @@ class ViewTests(TestCase):
                            'password': 'password',
                            'email': 'email@email.com'}
         cls.user = User.objects.create_user(**cls.credentials)
+
+    def test_admin_to_profile(self):
+        """
+        Logging in via wagtail admin and then attempting to visit
+        the edit profile page would produce various errors since
+        it circumvented the expected process logging in via the
+        CTS login page.
+        """
+        err_c = Client()
+        admin_creds = {'username': 'admin',
+                       'password': 'password',
+                       'email': 'admin@email.com'}
+        User.objects.create_superuser(**admin_creds)
+        admin_login_response = self.client.post(reverse('wagtailadmin_login'),
+                                                {'username': 'admin', 'password': 'password'},
+                                                follow=True)
+        admin_fail_response = err_c.post(reverse('wagtailadmin_login'),
+                                         {'username': 'admin', 'password': 'wrong'},
+                                         follow=True)
+        self.assertTrue(admin_login_response.context['user'].is_authenticated)
+        self.assertFalse(admin_fail_response.context['user'].is_authenticated)
+
+        profile_response = self.client.get(reverse('edit_profile'), follow=True)
+        profile_fail_response = err_c.get(reverse('edit_profile'), follow=True)
+        self.assertContains(profile_response, "Edit Your Profile")
+        self.assertNotContains(profile_fail_response, "Edit Your Profile")
 
     def test_user_profile(self):
         self.assertEqual(User.objects.count(), 1)
