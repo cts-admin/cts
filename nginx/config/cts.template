@@ -43,6 +43,6 @@ server {
 server {
     listen      80;
     listen [::]:80;
-    server_name *.conservationtechnologysolutions.com conservationtechnologysolutions.com;
-    return 301 $scheme://conservationtechnologysolutions.org$request_uri;
+    server_name conservationtechnologysolutions.com;
+    rewrite ^/(.*)$ https://conservationtechnologysolutions.org/$1 permanent;
 }
