@@ -55,17 +55,18 @@
 </head>
 
 <body class="{% block body_class %}{% endblock %}">
-        {% wagtailuserbar %}
+{% wagtailuserbar %}
 
-        {% include "includes/wba_header.html" %}
-        <div class='body-container'>
+<div class="bg">
+    {% include "includes/wba_header.html" %}
+    <div class='body-container'>
         {% block content %}{% endblock %}
-        </div>
-        {% include "includes/wba_footer.html" %}
+    </div>
+    {% include "includes/wba_footer.html" %}
+</div>
 
 {# Global javascript #}
 <script type="text/javascript" src="{% static 'js/wba.js' %}"></script>
-<script type="text/javascript" src="{% static 'js/wba_custom.js' %}"></script>
 
 {% block extra_js %}
     {# Override this in templates to add extra javascript #}
