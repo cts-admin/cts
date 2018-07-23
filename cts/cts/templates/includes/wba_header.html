@@ -1,20 +1,20 @@
 {% load multisite_tags static wagtailcore_tags wagtailimages_tags%}
 
-<div class='header'>
-{% with settings.utils.SiteBranding as branding %}
+<div class="header">
+    {% with settings.utils.SiteBranding as branding %}
 
-<div>
-{% if branding.site_logo %}
-<a href='/'>
-  {% image branding.site_logo fill-200x200 class='logo' %}
-</a>
-{% endif %}
-</div>
+        <div>
+            {% if branding.site_logo %}
+                <a href="/">
+                    {% image branding.site_logo original class="logo" alt="Logo banner image" %}
+                </a>
+            {% endif %}
+        </div>
 
-{% endwith %}
+    {% endwith %}
 
-{% block menu %}
-    {% get_site_root as site_root %}
-    {% top_menu parent=site_root calling_page=self %}
-{% endblock %}
+    {% block menu %}
+        {% get_site_root as site_root %}
+        {% top_menu parent=site_root calling_page=self %}
+    {% endblock %}
 </div>

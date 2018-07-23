@@ -57,14 +57,14 @@
 <body class="{% block body_class %}{% endblock %}">
 {% wagtailuserbar %}
 
-<div class="bg">
-
+<div class="content">
     {% include "includes/wba_header.html" %}
+
     <div class="body-container container">
         {% block content %}{% endblock %}
     </div>
-    {% include "includes/wba_footer.html" %}
 </div>
+{% include "includes/wba_footer.html" %}
 
 {% block extra_js %}
     {# Override this in templates to add extra javascript #}

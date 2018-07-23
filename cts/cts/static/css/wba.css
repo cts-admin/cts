@@ -1,18 +1,30 @@
 body, html {
     height: 100%;
     margin: 0;
-}
-
-.bg {
-    height: 100%;
     background: url("../img/bee_frame.jpg") no-repeat center;
     background-size: cover;
     position: relative;
 }
 
-.body-container {
-    padding-top: 100px;
-    background: rgba(155, 155, 155, 0.5);
+.header {
+    max-width: 1170px;
+    display: block;
+    margin: auto;
+}
+
+img.logo {
+    padding-top: 86px;
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+.content {
     height: 100%;
+}
+
+.body-container {
+    background: rgba(155, 155, 155, 0.5);
     box-shadow: 0 0 20px 10px #a5ad32;
+    height: 100%;
 }
