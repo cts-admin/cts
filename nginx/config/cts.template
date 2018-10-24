@@ -41,14 +41,6 @@ server {
 }
 
 server {
-    listen 80;
-    listen [::]:80;
-    server_name ${SERVER_NAME_1}conservationtechnologysolutions.com ${SERVER_NAME_2}conservationtechnologysolutions.com;
-    server_name ${SERVER_NAME_1}conservationtechnologysolutions.org ${SERVER_NAME_2}conservationtechnologysolutions.org;
-    return 301 https://conservationtechnologysolutions.org$request_uri;
-}
-
-server {
     listen 443 ssl;
     listen [::]:443 ssl;
     server_name ${SERVER_NAME_1}conservationtechnologysolutions.com ${SERVER_NAME_2}conservationtechnologysolutions.com;

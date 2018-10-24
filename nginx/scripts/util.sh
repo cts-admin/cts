@@ -61,6 +61,6 @@ auto_enable_configs() {
 # EMAIL environment variable, to register the proper support email address.
 get_certificate() {
     echo "Getting certificate for domain $1 on behalf of user $2"
-    certbot certonly --agree-tos --keep -n -m $2 -d $1 \
+    certbot certonly --agree-tos --hsts --keep -n -m $2 -d $1 \
         --webroot --webroot-path=/usr/share/nginx/html --debug $STAGING
 }
