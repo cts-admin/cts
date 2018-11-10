@@ -1,6 +1,7 @@
 from django.conf.urls import include, url
-from registration.backends.model_activation.views import RegistrationView
-from registration.forms import RegistrationFormUniqueEmail
+from django_registration.views import RegistrationView
+
+from django_registration.forms import RegistrationFormUniqueEmail
 
 from . import views as account_views
 
@@ -15,6 +16,6 @@ urlpatterns = [
         account_views.edit_profile,
         name='edit_profile',
     ),
+    url(r'', include('django_registration.backends.activation.urls')),
     url(r'', include('django.contrib.auth.urls')),
-    url(r'', include('registration.backends.model_activation.urls')),
 ]

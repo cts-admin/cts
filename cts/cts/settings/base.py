@@ -45,7 +45,6 @@ INSTALLED_APPS = [
     'modelcluster',
     'taggit',
     'django_celery_results',
-    'registration',
     'sorl.thumbnail',
 
     'django.contrib.admin',
