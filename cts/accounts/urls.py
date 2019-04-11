@@ -1,5 +1,5 @@
 from django.conf.urls import include, url
-from django_registration.views import RegistrationView
+from django_registration.backends.activation.views import RegistrationView
 
 from django_registration.forms import RegistrationFormUniqueEmail
 
@@ -9,7 +9,7 @@ urlpatterns = [
     url(
         r'^register/$',
         RegistrationView.as_view(form_class=RegistrationFormUniqueEmail),
-        name='registration_register',
+        name='django_registration_register',
     ),
     url(
         r'^edit/$',
