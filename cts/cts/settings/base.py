@@ -108,14 +108,6 @@ DATABASES = {
         'PASSWORD': os.environ['PG_PASSWORD'],
         'HOST': os.environ.get('DB_HOST', '0.0.0.0'),
         'PORT': '',
-    },
-    'plant_database': {
-        'ENGINE': 'django.contrib.gis.db.backends.postgis',
-        'NAME': os.environ.get('PLANT_DB'),
-        'USER': os.environ.get('PLANT_DB_USER'),
-        'PASSWORD': os.environ['PLANT_DB_PASSWORD'],
-        'HOST': os.environ.get('PLANT_DB_HOST', '0.0.0.0'),
-        'PORT': '',
     }
 }
 
