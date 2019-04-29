@@ -1,0 +1,43 @@
+{% extends 'base.html' %}
+{% load humanize static %}
+
+{% block title %}Plant Database{% endblock %}
+
+{% block extra_css %}<link rel="stylesheet" type="text/css" href="{% static 'css/overlay.css' %}">{% endblock %}
+
+{% block content %}
+    {% block nav %}{{ block.super }}{% endblock %}
+    {% block messages %}{{ block.super }}{% endblock %}
+
+    <div class="main">
+        <div class="container tim-container" style="padding-top:50px">
+            <div class="col-md-3">
+                <h2>
+                    CTS Plant Database
+                </h2>
+
+                <div class="text-muted">
+                    GIS-linked plant database suitable for tracking herbarium specimens and/or seed collections.
+                </div>
+            </div>
+
+            <div class="col-md-9">
+                {% if user.is_authenticated %}
+                    <p>
+                        This is the plant database.
+                    </p>
+                {% else %}
+                    <p>
+                        Please <a href="{% url 'login' %}?next={{request.path}}">log in</a> to get started with your own
+                        personal plant database.
+                    </p>
+                {% endif %}
+            </div>
+        </div>
+
+        <div class="space"></div>
+        <!-- end container -->
+    </div>
+    <!-- end main -->
+
+{% endblock %}

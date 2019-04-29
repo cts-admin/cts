@@ -3,6 +3,7 @@ from __future__ import absolute_import, unicode_literals
 from django.conf import settings
 from django.conf.urls import include, url
 from django.contrib import admin
+from django.urls import path
 
 from wagtail.admin import urls as wagtailadmin_urls
 from wagtail.core import urls as wagtail_urls
@@ -15,6 +16,9 @@ urlpatterns = [
 
     # Django-Registration
     url(r'^accounts/', include('accounts.urls')),
+
+    # Plant database
+    path('plant-database', include('plant_database.urls')),
 
     # User stats
     url(r'^~(?P<username>[\w.@+-]+)/$', account_views.user_profile, name='user_profile'),

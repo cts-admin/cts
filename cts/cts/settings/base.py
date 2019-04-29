@@ -22,11 +22,12 @@ SECRET_KEY = os.environ.get('DJANGO_SECRET_KEY', '')
 # Application definition
 
 INSTALLED_APPS = [
-    'home',
+    'accounts',
     'blog',
     'fundraising',
+    'home',
     'members',
-    'accounts',
+    'plant_database',
     'slack',
 
     'wagtail.contrib.routable_page',
