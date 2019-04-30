@@ -19,13 +19,25 @@
                 <div class="text-muted">
                     GIS-linked plant database suitable for tracking herbarium specimens and/or seed collections.
                 </div>
+                <br/>
+                <div class="text-muted">
+                    Use the <a href="{% url 'plant_database:add_accession' %}">seed accession form</a> to add new seed
+                    accessions to the database.
+                </div>
             </div>
 
             <div class="col-md-9">
                 {% if user.is_authenticated %}
-                    <p>
-                        This is the plant database.
-                    </p>
+                    <ul>
+                        {% for accession in accessions %}
+                            <li>accession.genus accession.species</li>
+                        {% empty %}
+                            <p>Your plant database is empty!</p>
+                            <p>
+                                <a href="{% url 'plant_database:add_accession' %}">Add your first accession!</a>
+                            </p>
+                        {% endfor %}
+                    </ul>
                 {% else %}
                     <p>
                         Please <a href="{% url 'login' %}?next={{request.path}}">log in</a> to get started with your own

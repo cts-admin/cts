@@ -4,15 +4,15 @@ from django.contrib.gis.db import models
 
 
 class Collector(models.Model):
-    first_name = models.CharField(max_length=200)
-    last_name = models.CharField(max_length=200)
+    first_name = models.CharField(max_length=30)
+    last_name = models.CharField(max_length=30)
 
     def __str__(self):
         return ' '.join([self.first_name, self.last_name])
 
 
 class CommonName(models.Model):
-    name = models.CharField(max_length=200)
+    name = models.CharField(max_length=70)
 
     def __str__(self):
         return self.name
@@ -23,7 +23,7 @@ class CommonName(models.Model):
 
 
 class Family(models.Model):
-    name = models.CharField(max_length=200)
+    name = models.CharField(max_length=70)
 
     def __str__(self):
         return self.name
@@ -34,7 +34,7 @@ class Family(models.Model):
 
 class Genus(models.Model):
     family = models.ForeignKey(Family, on_delete=models.CASCADE)
-    name = models.CharField(max_length=200)
+    name = models.CharField(max_length=70)
 
     def __str__(self):
         return self.name
@@ -46,7 +46,7 @@ class Genus(models.Model):
 class Species(models.Model):
     genus = models.ForeignKey(Genus, on_delete=models.CASCADE)
     common_name = models.ManyToManyField(CommonName)
-    name = models.CharField(max_length=200)
+    name = models.CharField(max_length=70)
 
     def __str__(self):
         return self.name
@@ -57,7 +57,7 @@ class Species(models.Model):
 
 class Variety(models.Model):
     species = models.ForeignKey(Species, on_delete=models.CASCADE)
-    name = models.CharField(max_length=200)
+    name = models.CharField(max_length=70)
 
     def __str__(self):
         return self.name
@@ -67,17 +67,17 @@ class Variety(models.Model):
 
 
 class Site(models.Model):
-    country = models.CharField(max_length=200)
-    major_country_area = models.CharField(max_length=200)  # e.g. a U.S. state
-    minor_country_area = models.CharField(max_length=200)  # e.g. a U.S. county
-    locality = models.CharField(max_length=200)  # e.g. local name like 'Saltflat Springs'
+    country = models.CharField(max_length=70)
+    major_country_area = models.CharField(max_length=70)  # e.g. a U.S. state
+    minor_country_area = models.CharField(max_length=70)  # e.g. a U.S. county
+    locality = models.CharField(max_length=70)  # e.g. local name like 'Saltflat Springs'
 
 
 class Accession(models.Model):
     family = models.ForeignKey(Family, on_delete=models.SET_NULL, null=True)
     genus = models.ForeignKey(Genus, on_delete=models.SET_NULL, null=True)
     species = models.ForeignKey(Species, on_delete=models.SET_NULL, null=True)
-    variety = models.ForeignKey(Variety, on_delete=models.SET_NULL, null=True)
+    variety = models.ForeignKey(Variety, on_delete=models.SET_NULL, null=True, blank=True)
     site = models.ForeignKey(Site, on_delete=models.SET_NULL, null=True)
     collectors = models.ManyToManyField(Collector)
     plant_total = models.IntegerField()
@@ -89,3 +89,9 @@ class Accession(models.Model):
     location = models.PointField()  # GPS location it was collected from
     altitude = models.FloatField(max_length=6)
     bank_date = models.DateField(default=date.today)  # When accession was added to the seed bank
+
+    def __str__(self):
+        if self.variety:
+            return ' '.join([self.genus.name, self.species.name, 'var.', self.variety.name])
+        else:
+            return ' '.join([self.genus.name, self.species.name])

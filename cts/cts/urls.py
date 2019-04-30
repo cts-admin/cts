@@ -18,7 +18,7 @@ urlpatterns = [
     url(r'^accounts/', include('accounts.urls')),
 
     # Plant database
-    path('plant-database', include('plant_database.urls')),
+    path('plant-database/', include('plant_database.urls')),
 
     # User stats
     url(r'^~(?P<username>[\w.@+-]+)/$', account_views.user_profile, name='user_profile'),
