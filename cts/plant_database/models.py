@@ -72,6 +72,9 @@ class Site(models.Model):
     minor_country_area = models.CharField(max_length=70, blank=True)  # e.g. a U.S. county
     locality = models.CharField(max_length=70, blank=True)  # e.g. local name like 'Saltflat Springs'
 
+    def __str__(self):
+        return ', '.join([self.country, self.major_country_area, self.minor_country_area, self.locality])
+
 
 class Accession(models.Model):
     family = models.ForeignKey(Family, on_delete=models.SET_NULL, null=True)
