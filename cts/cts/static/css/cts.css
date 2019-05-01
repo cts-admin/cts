@@ -100,3 +100,7 @@ div.form-group.checkbox {
     max-width: 90%;
     max-height: 170px;
 }
+
+.italic {
+    font-style: italic;
+}
