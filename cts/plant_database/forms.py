@@ -43,17 +43,20 @@ class AccessionForm(forms.Form):
                               required=False)
 
     country = forms.CharField(max_length=70, label="Country",
-                              widget=forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'Country'}))
+                              widget=forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'Country'}),
+                              required=False)
     maj_country = forms.CharField(max_length=70, label="Major country area",
                                   widget=forms.TextInput(
-                                      attrs={'class': 'form-control', 'placeholder': 'e.g. a U.S. state'}))
+                                      attrs={'class': 'form-control', 'placeholder': 'e.g. a U.S. state'}),
+                                  required=False)
     min_country = forms.CharField(max_length=70, label="Minor country area",
                                   widget=forms.TextInput(
-                                      attrs={'class': 'form-control', 'placeholder': 'e.g. a U.S. county'}))
+                                      attrs={'class': 'form-control', 'placeholder': 'e.g. a U.S. county'}),
+                                  required=False)
     locality = forms.CharField(max_length=70, label="Locality",
                                widget=forms.TextInput(
                                    attrs={'class': 'form-control',
-                                          'placeholder': 'e.g. local name like "Saltflat Springs"'}))
+                                          'placeholder': 'e.g. local name like "Saltflat Springs"'}), required=False)
 
     plant_total = forms.IntegerField(widget=forms.NumberInput(attrs={'class': 'form-control',
                                                                      'placeholder':

@@ -67,10 +67,10 @@ class Variety(models.Model):
 
 
 class Site(models.Model):
-    country = models.CharField(max_length=70)
-    major_country_area = models.CharField(max_length=70)  # e.g. a U.S. state
-    minor_country_area = models.CharField(max_length=70)  # e.g. a U.S. county
-    locality = models.CharField(max_length=70)  # e.g. local name like 'Saltflat Springs'
+    country = models.CharField(max_length=70, blank=True)
+    major_country_area = models.CharField(max_length=70, blank=True)  # e.g. a U.S. state
+    minor_country_area = models.CharField(max_length=70, blank=True)  # e.g. a U.S. county
+    locality = models.CharField(max_length=70, blank=True)  # e.g. local name like 'Saltflat Springs'
 
 
 class Accession(models.Model):
@@ -91,7 +91,7 @@ class Accession(models.Model):
     bank_date = models.DateField(default=date.today)  # When accession was added to the seed bank
 
     def __str__(self):
-        if self.variety:
+        if self.variety is not None:
             return ' '.join([self.genus.name, self.species.name, 'var.', self.variety.name])
         else:
             return ' '.join([self.genus.name, self.species.name])

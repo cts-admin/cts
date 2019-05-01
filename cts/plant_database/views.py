@@ -31,13 +31,13 @@ def add_accession(request):
             family = form.cleaned_data['family']
             genus = form.cleaned_data['genus']
             species_data = form.cleaned_data['species']
-            species, created = Species.objects.get_or_create(genus=genus, name=species_data,
-                                                             defaults={'common_name': common_name})
-            if not created and common_name not in list(species.common_name.all()):
+            species, created = Species.objects.get_or_create(genus=genus, name=species_data)
+            if created or common_name not in list(species.common_name.all()):
                 species.common_name.add(common_name)
 
             variety_data = form.cleaned_data['variety']
-            variety, created = Variety.objects.get_or_create(species=species, name=variety_data)
+            if len(variety_data) > 0:
+                variety, created = Variety.objects.get_or_create(species=species, name=variety_data)
 
             country = form.cleaned_data['country']
             maj_country = form.cleaned_data['maj_country']
@@ -55,7 +55,7 @@ def add_accession(request):
 
             latitude = form.cleaned_data['latitude']
             longitude = form.cleaned_data['longitude']
-            point = Point(latitude, longitude)
+            point = Point(longitude, latitude)
 
             altitude = form.cleaned_data['altitude']
             bank_date = form.cleaned_data['bank_date']
