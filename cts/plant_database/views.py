@@ -60,7 +60,8 @@ def add_accession(request):
             altitude = form.cleaned_data['altitude']
             bank_date = form.cleaned_data['bank_date']
 
-            accession = Accession(family=family,
+            accession = Accession(owner=request.user,
+                                  family=family,
                                   genus=genus,
                                   species=species,
                                   variety=variety,
@@ -86,5 +87,5 @@ def add_accession(request):
 
 
 def index(request):
-    accessions = Accession.objects.all()
+    accessions = Accession.objects.filter(owner=request.user)
     return render(request, 'plant_database/index.html', {'accessions': accessions})

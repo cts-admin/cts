@@ -1,5 +1,6 @@
 from datetime import date
 
+from django.contrib.auth.models import User
 from django.contrib.gis.db import models
 
 
@@ -77,6 +78,7 @@ class Site(models.Model):
 
 
 class Accession(models.Model):
+    owner = models.ForeignKey(User, on_delete=models.CASCADE)
     family = models.ForeignKey(Family, on_delete=models.SET_NULL, null=True)
     genus = models.ForeignKey(Genus, on_delete=models.SET_NULL, null=True)
     species = models.ForeignKey(Species, on_delete=models.SET_NULL, null=True)
