@@ -30,7 +30,7 @@ def add_accession(request):
 
             family = form.cleaned_data['family']
             genus = form.cleaned_data['genus']
-            species_data = form.cleaned_data['species']
+            species_data = form.cleaned_data['species'].lower()
             species, created = Species.objects.get_or_create(genus=genus, name=species_data)
             if created or common_name not in list(species.common_name.all()):
                 species.common_name.add(common_name)
@@ -38,6 +38,8 @@ def add_accession(request):
             variety_data = form.cleaned_data['variety']
             if len(variety_data) > 0:
                 variety, created = Variety.objects.get_or_create(species=species, name=variety_data)
+            else:
+                variety = None
 
             country = form.cleaned_data['country']
             maj_country = form.cleaned_data['maj_country']
@@ -48,7 +50,7 @@ def add_accession(request):
 
             plant_total = form.cleaned_data['plant_total']
             sample_size = form.cleaned_data['sample_size']
-            percent_sampled = form.cleaned_data['percent_sampled']
+            percent_sampled = (float(sample_size) / float(plant_total)) * 100
             percent_flowering = form.cleaned_data['percent_flowering']
             percent_fruiting = form.cleaned_data['percent_fruiting']
             storage_location = form.cleaned_data['storage_location']
@@ -87,5 +89,7 @@ def add_accession(request):
 
 
 def index(request):
-    accessions = Accession.objects.filter(owner=request.user)
+    accessions = []
+    if not request.user.is_anonymous:
+        accessions = Accession.objects.filter(owner=request.user)
     return render(request, 'plant_database/index.html', {'accessions': accessions})
