@@ -64,8 +64,6 @@ class AccessionForm(forms.Form):
     sample_size = forms.IntegerField(widget=forms.NumberInput(attrs={'class': 'form-control',
                                                                      'placeholder':
                                                                          'Total number of plants sampled from'}))
-    percent_sampled = forms.FloatField(min_value=0, max_value=100,
-                                       widget=forms.NumberInput(attrs={'class': 'form-control'}))
     percent_flowering = forms.FloatField(min_value=0, max_value=100,
                                          widget=forms.NumberInput(attrs={'class': 'form-control'}))
     percent_fruiting = forms.FloatField(min_value=0, max_value=100,
