@@ -1,7 +1,7 @@
 #!/bin/bash
 set -e
 
-# Enable PostGIS as describe here https://trac.osgeo.org/postgis/wiki/UsersWikiPostGIS23UbuntuPGSQL96Apt
+# Enable PostGIS as described here https://trac.osgeo.org/postgis/wiki/UsersWikiPostGIS23UbuntuPGSQL96Apt
 
 # enable PostGIS
 psql -U postgres -c "CREATE EXTENSION adminpack"
