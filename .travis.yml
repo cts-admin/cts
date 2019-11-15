@@ -11,6 +11,7 @@ install:
 - pip install coverage
 - pip install coveralls
 - pip install -r cts/requirements.txt
+- sudo apt-get install binutils libproj-dev gdal-bin
 script:
 - cd cts
 - coverage run manage.py test
