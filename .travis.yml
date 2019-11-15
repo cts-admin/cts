@@ -14,7 +14,7 @@ install:
 - sudo apt-get install binutils libproj-dev gdal-bin
 script:
 - cd cts
-- coverage run manage.py test
+- coverage run manage.py test --keepdb
 after_success:
 - coverage report
 - coveralls
