@@ -4,15 +4,13 @@ Django settings for cts project.
 
 from __future__ import absolute_import, unicode_literals
 from kombu import Exchange, Queue
+from .secret_settings import *
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 import os
 
 PROJECT_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 BASE_DIR = os.path.dirname(PROJECT_DIR)
-
-# SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = os.environ.get('DJANGO_SECRET_KEY', '')
 
 
 # Quick-start development settings - unsuitable for production
@@ -107,7 +105,8 @@ DATABASES = {
         'USER': os.environ.get('PG_USER', 'postgres'),
         'PASSWORD': os.environ['PG_PASSWORD'],
         'HOST': os.environ.get('DB_HOST', '0.0.0.0'),
-        'PORT': '',
+        'PORT': os.environ.get('PG_PORT', ''),
+        'OPTIONS': {'sslmode': 'require'},
     }
 }
 
@@ -236,3 +235,9 @@ LOGIN_REDIRECT_URL = 'edit_profile'
 
 # Slack Bot
 SLACK_BOT_TOKEN = os.environ.get('SLACK_BOT_TOKEN')
+
+# SSL Stuff
+SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
+SESSION_COOKIE_SECURE = True
+CSRF_COOKIE_SECURE = True
+SECURE_SSL_REDIRECT = True
