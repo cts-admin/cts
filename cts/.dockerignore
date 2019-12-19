@@ -1,4 +1,0 @@
-docker*
-*.pem
-.dockerignore
-production_backups/
