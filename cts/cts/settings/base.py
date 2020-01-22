@@ -107,7 +107,11 @@ DATABASES = {
         'USER': os.environ.get('PG_USER', 'postgres'),
         'PASSWORD': os.environ['PG_PASSWORD'],
         'HOST': os.environ.get('DB_HOST', '0.0.0.0'),
-        'PORT': '',
+        'PORT': os.environ.get('PG_PORT', ''),
+        'OPTIONS': {'sslmode': 'require'},
+        'TEST': {
+            'NAME': 'travis_ci_test'
+        }
     }
 }
 
