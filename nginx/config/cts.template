@@ -13,7 +13,7 @@ server {
     add_header Strict-Transport-Security max-age=15768000;
     ssl_stapling on;
     ssl_stapling_verify on;
-    ssl_protocols TLSv1.2;
+    ssl_protocols TLSv1.3;
     ssl_prefer_server_ciphers on;
     ssl_ciphers 'EECDH+AESGCM:EDH+AESGCM:AES256+EECDH:AES256+EDH';
 
@@ -21,6 +21,12 @@ server {
 
     location /static {
         alias /home/static;
+    }
+
+    # One off project for RBG Volunteer Coordination
+    location /rbg/volunteers {
+        alias /home/static/rbg;
+        autoindex on;
     }
 
     location /media {
@@ -35,8 +41,8 @@ server {
 }
 
 server {
-    listen      80;
-    listen [::]:80;
-    server_name *.conservationtechnologysolutions.com conservationtechnologysolutions.com;
-    return 301 $scheme://conservationtechnologysolutions.org$request_uri;
+    listen 443 ssl;
+    listen [::]:443 ssl;
+    server_name ${SERVER_NAME_1}conservationtechnologysolutions.com ${SERVER_NAME_2}conservationtechnologysolutions.com;
+    return 301 https://conservationtechnologysolutions.org$request_uri;
 }

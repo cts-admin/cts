@@ -1,6 +1,8 @@
 {% extends "base.html" %}
 {% load  static wagtailimages_tags wagtailcore_tags %}
 
+{% block extra_head %}<script src="https://hypothes.is/embed.js" async></script>{% endblock %}
+
 {% block extra_css %}<link href="{% static 'blog/css/blog.css' %}" rel="stylesheet" type="text/css" />{% endblock %}
 
 {% block title %}{{ page.title }}{% endblock %}

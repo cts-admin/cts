@@ -1,6 +1,7 @@
 import stripe
 from django import forms
 from django.conf import settings
+from django.db import IntegrityError
 from django.forms.widgets import Select
 from django.template.loader import render_to_string
 from django.utils.safestring import mark_safe
@@ -188,7 +189,8 @@ class PaymentForm(forms.Form):
         is_bitcoin = token_type == 'source_bitcoin'
         user = self.user
 
-        donor = CTSDonor.objects.filter(email=receipt_email).first()
+        donor = CTSDonor.objects.filter(email=receipt_email).first() or \
+                CTSDonor.objects.filter(email=user.email).first()
 
         try:
             if donor and donor.stripe_customer_id:
@@ -255,11 +257,13 @@ class PaymentForm(forms.Form):
 
         else:
             if not donor:
-                donor = CTSDonor.objects.create(
-                    profile=Profile.objects.get(user=user),
+                profile, created = Profile.objects.get_or_create(user=user)
+                donor, created = CTSDonor.objects.get_or_create(
+                    profile=profile,
                     email=receipt_email,
                     stripe_customer_id=customer.id,
                 )
+
             # Finally create the donation and return it
             donation = Donation.objects.create(
                 interval=interval,
