@@ -88,7 +88,7 @@ class CTSDonor(FundraisingModel):
 
     @property
     def thumbnail(self):
-        return get_thumbnail(self.logo, '170x170', quality=100)
+        return get_thumbnail(self.logo, '170x170', quality=100) if self.logo else None
 
     @property
     def name_with_fallback(self):
@@ -155,7 +155,7 @@ class InKindDonor(models.Model):
 
     @property
     def thumbnail(self):
-        return get_thumbnail(self.logo, '170x170', quality=100)
+        return get_thumbnail(self.logo, '170x170', quality=100) if self.logo else None
 
 
 @receiver(post_save, sender=CTSDonor)

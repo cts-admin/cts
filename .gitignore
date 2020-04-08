@@ -103,11 +103,9 @@ ENV/
 # mypy
 .mypy_cache/
 
-/cts/static/
 /cts/restore_dump.sh
 /cts/docker-compose.production.yml
 /cts/docker-compose.staging.yml
-/cts/media/
 /cts/production_backups/
 /postgis/
 /nginx/config/.htpasswd
