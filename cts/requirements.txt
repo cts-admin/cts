@@ -17,7 +17,7 @@ colorama==0.3.9
 confusable-homoglyphs==3.0.0
 cryptography==2.6.1
 cssselect==1.0.1
-Django==3.0.3
+Django==3.0.7
 django-appconf==1.0.2
 django-celery-results==1.0.1
 django-markdownx==2.0.21
