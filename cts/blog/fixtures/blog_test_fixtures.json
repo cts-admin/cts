@@ -1,0 +1,2019 @@
+[
+  {
+    "model": "auth.user",
+    "pk": 1,
+    "fields": {
+      "password": "pbkdf2_wrapped_sha1$180000$salt$xou7iyanPGFme3FjwMbDWLeqecJY7INpC+3zh8K76yQ=",
+      "last_login": "2020-05-07T02:09:02.507Z",
+      "is_superuser": true,
+      "username": "ctsadmin",
+      "first_name": "Avery",
+      "last_name": "Uslaner",
+      "email": "ctsadmin@conservationtechnologysolutions.org",
+      "is_staff": true,
+      "is_active": true,
+      "date_joined": "2017-06-01T17:33:07.676Z",
+      "groups": [],
+      "user_permissions": []
+    }
+  },
+  {
+    "model": "home.contactpage",
+    "pk": 5,
+    "fields": {
+      "intro": "<p>If you have questions, comments, or need some help with something technical of your own, please reach out to us! We'd love to hear from you!</p>",
+      "thankyou_page_title": "Thanks for reaching out!"
+    }
+  },
+  {
+    "model": "home.homepage",
+    "pk": 3,
+    "fields": {
+      "body": "[]",
+      "use_detail_template": false
+    }
+  },
+  {
+    "model": "home.homepage",
+    "pk": 4,
+    "fields": {
+      "body": "[{\"type\": \"motto\", \"value\": \"To Save the World\", \"id\": \"41f74001-f114-4d79-8638-b7508c6fc5de\"}, {\"type\": \"paragraph\", \"value\": \"<p>We want to make life easier for anyone involved in environmental conservation work. To make this happen, we\\u2019ve made it our goal to leverage the power of existing technologies as well as develop our own. From web apps, to DIY hardware-based citizen science projects, we have a lot of ideas for how we can move towards a more environmentally conscious future.</p>\", \"id\": \"2436fb23-eed9-4a71-9c38-57104620878c\"}, {\"type\": \"motto\", \"value\": \"Communication\", \"id\": \"64264abc-5acd-4102-9a29-9d0a02e08ec7\"}, {\"type\": \"paragraph\", \"value\": \"<p>Your team can\\u2019t reach its full potential without an effective portal for communication. If you need help figuring out what communication tools would work best for your needs, or you need help deploying them, please get in touch.</p><p><br/></p><p>We\\u2019ll also be experimenting with various chat bot technologies to help raise environmental awareness and boost productivity.</p>\", \"id\": \"7d60e91d-f0d0-4e6f-848a-b7ec5e05d47c\"}, {\"type\": \"motto\", \"value\": \"Promoting Citizen Science\", \"id\": \"70abfe2f-e07c-492a-9b40-8fec61881bad\"}, {\"type\": \"paragraph\", \"value\": \"<p>You don\\u2019t need a lab coat to be a scientist! We want to show people the value of taking a scientific approach to thinking about the world. We\\u2019ll be putting together some projects to get kids and adults alike asking questions about the world around them.</p>\", \"id\": \"94715d48-e349-4a5c-937b-eb0670b8ddf2\"}]",
+      "use_detail_template": true
+    }
+  },
+  {
+    "model": "blog.blogcategory",
+    "pk": 1,
+    "fields": {
+      "name": "Project",
+      "icon": 7
+    }
+  },
+  {
+    "model": "blog.blogpagetag",
+    "pk": 26,
+    "fields": {
+      "tag": 1,
+      "content_object": 8
+    }
+  },
+  {
+    "model": "blog.blogpagetag",
+    "pk": 27,
+    "fields": {
+      "tag": 2,
+      "content_object": 8
+    }
+  },
+  {
+    "model": "blog.blogpagetag",
+    "pk": 28,
+    "fields": {
+      "tag": 3,
+      "content_object": 8
+    }
+  },
+  {
+    "model": "blog.blogpagetag",
+    "pk": 29,
+    "fields": {
+      "tag": 4,
+      "content_object": 8
+    }
+  },
+  {
+    "model": "blog.blogpagetag",
+    "pk": 30,
+    "fields": {
+      "tag": 5,
+      "content_object": 8
+    }
+  },
+  {
+    "model": "blog.blogpagetag",
+    "pk": 31,
+    "fields": {
+      "tag": 2,
+      "content_object": 9
+    }
+  },
+  {
+    "model": "blog.blogpagetag",
+    "pk": 32,
+    "fields": {
+      "tag": 3,
+      "content_object": 9
+    }
+  },
+  {
+    "model": "blog.blogpagetag",
+    "pk": 33,
+    "fields": {
+      "tag": 4,
+      "content_object": 9
+    }
+  },
+  {
+    "model": "blog.blogpagetag",
+    "pk": 34,
+    "fields": {
+      "tag": 6,
+      "content_object": 9
+    }
+  },
+  {
+    "model": "blog.blogpagetag",
+    "pk": 35,
+    "fields": {
+      "tag": 7,
+      "content_object": 9
+    }
+  },
+  {
+    "model": "blog.blogpagetag",
+    "pk": 41,
+    "fields": {
+      "tag": 16,
+      "content_object": 10
+    }
+  },
+  {
+    "model": "blog.blogpagetag",
+    "pk": 42,
+    "fields": {
+      "tag": 17,
+      "content_object": 10
+    }
+  },
+  {
+    "model": "blog.blogpagetag",
+    "pk": 43,
+    "fields": {
+      "tag": 3,
+      "content_object": 10
+    }
+  },
+  {
+    "model": "blog.blogpagetag",
+    "pk": 44,
+    "fields": {
+      "tag": 14,
+      "content_object": 10
+    }
+  },
+  {
+    "model": "blog.blogpagetag",
+    "pk": 45,
+    "fields": {
+      "tag": 15,
+      "content_object": 10
+    }
+  },
+  {
+    "model": "blog.blogpagetag",
+    "pk": 46,
+    "fields": {
+      "tag": 5,
+      "content_object": 11
+    }
+  },
+  {
+    "model": "blog.blogpagetag",
+    "pk": 47,
+    "fields": {
+      "tag": 18,
+      "content_object": 11
+    }
+  },
+  {
+    "model": "blog.blogpagetag",
+    "pk": 48,
+    "fields": {
+      "tag": 19,
+      "content_object": 11
+    }
+  },
+  {
+    "model": "blog.blogpagetag",
+    "pk": 49,
+    "fields": {
+      "tag": 20,
+      "content_object": 11
+    }
+  },
+  {
+    "model": "blog.blogpagetag",
+    "pk": 50,
+    "fields": {
+      "tag": 21,
+      "content_object": 11
+    }
+  },
+  {
+    "model": "blog.blogpagetag",
+    "pk": 51,
+    "fields": {
+      "tag": 22,
+      "content_object": 11
+    }
+  },
+  {
+    "model": "blog.blogpagetag",
+    "pk": 52,
+    "fields": {
+      "tag": 24,
+      "content_object": 12
+    }
+  },
+  {
+    "model": "blog.blogpagetag",
+    "pk": 53,
+    "fields": {
+      "tag": 25,
+      "content_object": 12
+    }
+  },
+  {
+    "model": "blog.blogpagetag",
+    "pk": 54,
+    "fields": {
+      "tag": 23,
+      "content_object": 12
+    }
+  },
+  {
+    "model": "blog.blogindexpage",
+    "pk": 6,
+    "fields": {
+      "intro": "<p>News, updates, and other miscellaneous tidbits related to natural resource conservation</p>",
+      "about": "<p>Find out what CTS is up to, learn about a new technology or tool used in conservation, and take a more scientific approach to the world around you!</p>"
+    }
+  },
+  {
+    "model": "blog.blogtagindexpage",
+    "pk": 7,
+    "fields": {}
+  },
+  {
+    "model": "blog.blogpage",
+    "pk": 8,
+    "fields": {
+      "date": "2017-09-22T17:00:00Z",
+      "intro": "A project designed to capture the fascinating process of seed germination.",
+      "body": "[{\"type\": \"paragraph\", \"value\": \"<p>While most people have a functional understanding of what seed germination is, few people are curious enough about the topic to dig into the nitty-gritty details of how the process actually works. This project, on its face, aims to provoke such a sense of curiosity in a process that people have previously taken for granted.</p><p><br/></p><h2>Plant Blindness</h2><p>Too often, plants are overlooked by people, and generally perceived as nothing more than a backdrop for the animal world. This phenomenon has become known as \\\"plant blindness\\\", a problem that is likely to be addressed by multiple CTS projects going forward.</p><p>Human brains are wired to ascribe greater importance to objects that stand out to us. The seemingly static nature of plants often makes this difficult.\\u00a0Even when we are surrounded by plants, we rarely take the time to consciously acknowledge them.\\u00a0And while aspects of plant blindness may themselves be natural (e.g. minimal evolutionary consequence of ignoring plants), they can also be easily overcome.</p><p><br/></p><h2>Cultivating Interest</h2><p><embed alt=\\\"Time lapse setup\\\" embedtype=\\\"image\\\" format=\\\"left\\\" id=\\\"1\\\"/><img/>In the case of germination, the process would quickly become boring to watch in real-time given the speed at which it occurs. Using time-lapse photography, we can solve this problem rather easily. Several days can be condensed into just a few minutes, allowing people the opportunity to see into a world they've never noticed before.</p><p>To achieve this, we will be using a DSLR camera controlled programmatically with the help of an inexpensive computer called a\\u00a0<a href=\\\"http://amzn.to/2wExDAu\\\">Raspberry Pi</a>. The images will be stitched together into a short video that hopefully even those without any prior interest in plant life will think is pretty neat to watch.</p><p>In the <a id=\\\"9\\\" linktype=\\\"page\\\">next blog post</a>, we'll explain the technical details of the project for those who care to replicate it either in a classroom setting or for themselves.</p><p><br/></p>\", \"id\": \"d7d731b8-c4fe-462d-b627-fa10d42ff7c2\"}, {\"type\": \"paragraph\", \"value\": \"<h2>Part II Now Available</h2><p>You can now see the final results of this project and read about the technical details in <a id=\\\"9\\\" linktype=\\\"page\\\">part two of this project series</a>.</p>\", \"id\": \"d48afd0f-a8f7-4d9f-8f6b-ed5aaec8d5b6\"}]",
+      "references": "<p>Botanical Society of America. (2001). Toward a Theory of Plant Blindness.\u00a0<i><a href=\"https://www.botany.org/bsa/psb/2001/psb47-1.pdf\">Plant Science Bulletin</a>, 47</i>(1), 2-9.</p>",
+      "categories": []
+    }
+  },
+  {
+    "model": "blog.blogpage",
+    "pk": 9,
+    "fields": {
+      "date": "2017-10-09T16:24:00Z",
+      "intro": "Capturing time-lapse video using a digital SLR camera.",
+      "body": "[{\"type\": \"paragraph\", \"value\": \"<p>This is the second and final post regarding our first timelapse project. If you haven't read part one yet, you can find it <a id=\\\"8\\\" linktype=\\\"page\\\">here</a>.</p><p><br/></p><h2>Final Results</h2><p>The below video represents the final results of our first timelapse project.</p><p></p><embed embedtype=\\\"media\\\" url=\\\"https://youtu.be/4CAnbyFLV2Y\\\"/>\\n\\n\\n\\n\\n\\n<p></p><h2><br/></h2>\", \"id\": \"53c98320-814e-46d0-b8f2-c3058a6a72b7\"}, {\"type\": \"paragraph\", \"value\": \"<h2><br/></h2><h2>Technical Details</h2><p>This project made use of a\\u00a0<a href=\\\"http://amzn.to/2zDVEJ7\\\">Canon 7D</a>, an\\u00a0<a href=\\\"http://amzn.to/2j9ysLZ\\\">18-55mm lens</a>, powered with a <a href=\\\"http://amzn.to/2ydsrQQ\\\">AC adapter battery</a>, a\\u00a0<a href=\\\"http://amzn.to/2yda4vv\\\">tripod</a>, and a\\u00a0<a href=\\\"http://amzn.to/2yDNJvp\\\">Raspberry Pi 3</a>. Lighting was provided by an 11 Watt 1050 lumen LED bulb similar to\\u00a0<a href=\\\"http://amzn.to/2yFT4Cj\\\">this one</a>.</p><p><br/></p><p>The camera itself was triggered using the\\u00a0<a href=\\\"http://www.gphoto.org/doc/manual/ref-gphoto2-cli.html\\\">gphoto2 command line utility</a>\\u00a0running on the Raspberry Pi which itself was connected to the DSLR camera via USB. You can find the source code used for this project on our <a href=\\\"https://github.com/cts-admin/timelapse-dslr\\\">GitHub repository</a>. If you explore the code repository, you can see that the original plan for this project was to use a <a href=\\\"http://amzn.to/2zp2LnM\\\">mini servo</a>\\u00a0to manually press the camera's shutter release button which ended up not being a very reliable solution.</p><p><br/></p><p>The new and improved method used software commands to capture and download images from the camera at 15 minute intervals. After about four weeks of taking pictures, we ended up with roughly 1300 still images which were later stitched together into a continuous video file. To do this, we first sorted the images in chronological order and then passed in those ordered filenames to a text file. We were then able to use the mencoder command line utility to produce an initial .avi video file of all of our images. The Raspberry Pi Foundation has a <a href=\\\"https://www.raspberrypi.org/documentation/usage/camera/raspicam/timelapse.md\\\">good tutorial on this process</a>.</p><p><br/></p><p>The final post-production of the video was done in <a href=\\\"http://amzn.to/2zCLmc9\\\">Adobe Premier Pro</a>.</p>\", \"id\": \"2ebb9825-6bd6-4b80-92de-b7385eba73aa\"}, {\"type\": \"paragraph\", \"value\": \"<h2><br/></h2><h2>First Attempts</h2><p>As stated above, our first attempts made use of a micro servo to manually control the camera. The results of this attempt can be seen in the animated GIF below. It shows a\\u00a0'Blue Lake Stringless' garden bean germinating over a 5 hour period. That's about as long as we were able to capture images before we realized the servo method wasn't going to work for the long-term.</p>\", \"id\": \"14f6774a-7e64-44e5-ab2e-0e0c2cd38678\"}, {\"type\": \"image\", \"value\": 6, \"id\": \"85866830-607d-4144-8462-f8b49eb18474\"}, {\"type\": \"paragraph\", \"value\": \"<h2><br/></h2><h2>Challenges</h2><p>Even after transitioning away from the servo method, we ran into a few technical problems using the software method. The first major problem was that the camera needed to stay on indefinitely to respond to the software image capture signals every 15 minutes. Obviously, leaving the camera on continuously quickly drained the camera battery. This problem was mitigated in part using an <a href=\\\"http://amzn.to/2ydsrQQ\\\">AC battery pack</a>, which allowed the battery to be plugged into a wall socket. Unfortunately, the camera seemed to treat this as a normal draining battery so the battery would need to be reseated in the camera about every 12 hours to restore the battery power indicator to full strength.</p><p><br/></p><h3>Code Challenges</h3><p>In order to stitch together still images into a continuous timelapse video, it's important that the chronological order of the images is preserved. The earliest iteration of the code controlling the camera images attempted to do this by naming the images based on the number of times the camera was given a command to take a picture. For example, the first picture was named 0.jpeg, the second picture was named 1.jpeg, etc. Unfortunately, this counting mechanism did not take into account the possibility that the program may have to restart at some point. When this happened, the counter would just start from the beginning, naming new pictures as 0.jpeg, overwriting the existing 0.jpeg file that had been taken in the past!</p><p><br/></p><p>Later iterations of the code solved this problem by examining the folder containing all of the images that had already been taken. The program would read all of the filenames, find the highest number, and then name all subsequent photos starting from that point, rather than starting over from zero.</p><p><br/></p><p>Because some images had been taken using the original flawed code, we couldn't rely solely on the filenames to sort the images in chronological order. To get around this issue, we wrote another script that read the metadata of the image files, specifically the 'DateTimeOriginal' property of the EXIF data which contains the timestamp of when the image was originally shot. This script allowed us to rename the files in a way that made sorting them easy and intuitive (important when dealing with 1300+ image files).</p><p><br/></p><h3>Lighting Challenges</h3><p>As you can see from the YouTube video up top, many of the images are overexposed. Unfortunately, this problem was mainly due to our inexperience of taking timelapse video. The exposure was set early on in the seedling stage but never readjusted as time went on. As the seedling grew towards the light source, the overexposure became more apparent, and we unfortunately lost a lot of detail in the color of the leaves. This problem was exacerbated by setting the camera to take low resolution JPEG images, rather than using a high resolution RAW image format which would have allowed us to correct the exposure in post-production.</p><p><br/></p><p>For subsequent timelapse projects, we will likely address these problems by taking the camera out of full-manual settings, allowing it to adjust its shutter speed for a more even and consistent exposure. Additionally, we would take RAW camera images, and closely monitor the storage space of the SD card to ensure we do not run out of space before the timelapse project is complete.</p><hr/>If you have any questions or comments about this project, be sure to leave them in the comments below!\", \"id\": \"e9cd4b8f-b49b-4eed-87db-3b37f295a75e\"}]",
+      "references": "",
+      "categories": []
+    }
+  },
+  {
+    "model": "blog.blogpage",
+    "pk": 10,
+    "fields": {
+      "date": "2017-12-04T17:30:00Z",
+      "intro": "Tracking plants geographically has become vitally important to furthering our understanding of how to successfully execute environmental restoration efforts.",
+      "body": "[{\"type\": \"paragraph\", \"value\": \"<h2>Building a Mapping Platform</h2><p>This website is built on top of <a href=\\\"https://docs.djangoproject.com/en/1.11/ref/contrib/gis/\\\">GeoDjango</a>\\u00a0which will enable us to develop advanced mapping tools for all sorts of people who work with geographic data, from hobbyists to scientists. Since my own background is in plants, the initial iterations of these mapping tools will revolve around the tracking of plant populations and seed collections.</p><p><br/></p><p>Our first prototype will keep things simple, by allowing users to record waypoints on a map, using Google Maps-like interface. Users will have the ability to record additional information about these waypoints, to suit their own needs. One user may wish to mark sightings of a particular bird species, while another may wish to record the presence of a plant species they may wish to later revisit for seed collection.</p><p><br/></p><p>Future iterations of the mapping application may be extended to correlate species locations to particular ecotypes, and soil compositions which may aid land managers in determining appropriate seed sources used in restoration, to investigating areas at risk of invasive plant encroachment.</p>\", \"id\": \"39cf6630-e215-43dd-8a5b-180fbbeb5ede\"}]",
+      "references": "",
+      "categories": []
+    }
+  },
+  {
+    "model": "blog.blogpage",
+    "pk": 11,
+    "fields": {
+      "date": "2018-02-05T09:00:00Z",
+      "intro": "Setting up a raspberry pi to monitor environmental conditions in a backyard setting.",
+      "body": "[{\"type\": \"image\", \"value\": 9, \"id\": \"9009303a-afcb-4f6c-ad3f-6e01ae98ffc2\"}]",
+      "references": "",
+      "categories": []
+    }
+  },
+  {
+    "model": "blog.blogpage",
+    "pk": 12,
+    "fields": {
+      "date": "2018-06-20T13:27:00Z",
+      "intro": "A guide to using the programming language Python for analyzing data from a vegetation survey.",
+      "body": "[{\"type\": \"paragraph\", \"value\": \"<h2>Getting Started</h2><p>In this post, we&#x27;ll be using the programming language Python to analyze an excel file containing a data from a vegetation survey.</p>\", \"id\": \"d4842d91-d9b1-4789-b6de-761e623da1e2\"}]",
+      "references": "<p></p>",
+      "categories": []
+    }
+  },
+  {
+    "model": "blog.blogpagegalleryimage",
+    "pk": 1,
+    "fields": {
+      "sort_order": 0,
+      "page": 10,
+      "image": 8,
+      "caption": "View from Frisco Peak overlooking the Wah Wah Valley at sunset."
+    }
+  },
+  {
+    "model": "accounts.profile",
+    "pk": 1,
+    "fields": {
+      "user": [
+        "ctsadmin"
+      ],
+      "name": "Avery Uslaner"
+    }
+  },
+  {
+    "model": "wagtailembeds.embed",
+    "pk": 1,
+    "fields": {
+      "url": "https://youtu.be/4CAnbyFLV2Y",
+      "max_width": null,
+      "type": "video",
+      "html": "<iframe width=\"480\" height=\"270\" src=\"https://www.youtube.com/embed/4CAnbyFLV2Y?feature=oembed\" frameborder=\"0\" gesture=\"media\" allowfullscreen></iframe>",
+      "title": "Timelapse: Green Bean Germination",
+      "author_name": "Conservation Technology Solutions Inc",
+      "provider_name": "YouTube",
+      "thumbnail_url": "https://i.ytimg.com/vi/4CAnbyFLV2Y/hqdefault.jpg",
+      "width": 480,
+      "height": 270,
+      "last_updated": "2017-11-07T17:56:54.941Z"
+    }
+  },
+  {
+    "model": "wagtailusers.userprofile",
+    "pk": 1,
+    "fields": {
+      "user": [
+        "ctsadmin"
+      ],
+      "submitted_notifications": true,
+      "approved_notifications": true,
+      "rejected_notifications": true,
+      "preferred_language": "",
+      "current_time_zone": "",
+      "avatar": ""
+    }
+  },
+  {
+    "model": "wagtailimages.image",
+    "pk": 1,
+    "fields": {
+      "collection": 1,
+      "title": "Time lapse setup",
+      "file": "original_images/time-lapse-setup-500.jpg",
+      "width": 500,
+      "height": 616,
+      "created_at": "2017-09-22T22:52:57.030Z",
+      "uploaded_by_user": [
+        "ctsadmin"
+      ],
+      "focal_point_x": null,
+      "focal_point_y": null,
+      "focal_point_width": null,
+      "focal_point_height": null,
+      "file_size": 207411,
+      "file_hash": ""
+    }
+  },
+  {
+    "model": "wagtailimages.image",
+    "pk": 6,
+    "fields": {
+      "collection": 1,
+      "title": "Seed Germination",
+      "file": "original_images/giphy1.gif",
+      "width": 480,
+      "height": 320,
+      "created_at": "2017-11-07T17:35:11.525Z",
+      "uploaded_by_user": [
+        "ctsadmin"
+      ],
+      "focal_point_x": null,
+      "focal_point_y": null,
+      "focal_point_width": null,
+      "focal_point_height": null,
+      "file_size": 936878,
+      "file_hash": ""
+    }
+  },
+  {
+    "model": "wagtailimages.image",
+    "pk": 7,
+    "fields": {
+      "collection": 1,
+      "title": "project-icon",
+      "file": "original_images/activity-80_JkcPb9A.png",
+      "width": 80,
+      "height": 73,
+      "created_at": "2017-11-30T00:28:39.941Z",
+      "uploaded_by_user": [
+        "ctsadmin"
+      ],
+      "focal_point_x": null,
+      "focal_point_y": null,
+      "focal_point_width": null,
+      "focal_point_height": null,
+      "file_size": 1328,
+      "file_hash": ""
+    }
+  },
+  {
+    "model": "wagtailimages.image",
+    "pk": 8,
+    "fields": {
+      "collection": 1,
+      "title": "Sunset Landscape",
+      "file": "original_images/sunset-landscape_WAdnGpc.jpg",
+      "width": 5184,
+      "height": 3456,
+      "created_at": "2017-11-30T00:48:14.702Z",
+      "uploaded_by_user": [
+        "ctsadmin"
+      ],
+      "focal_point_x": null,
+      "focal_point_y": null,
+      "focal_point_width": null,
+      "focal_point_height": null,
+      "file_size": 398700,
+      "file_hash": ""
+    }
+  },
+  {
+    "model": "wagtailimages.image",
+    "pk": 9,
+    "fields": {
+      "collection": 1,
+      "title": "rpi_3_sense_cam_sm.jpg",
+      "file": "original_images/rpi_3_sense_cam_sm.jpg",
+      "width": 4046,
+      "height": 2097,
+      "created_at": "2018-02-04T01:09:49.352Z",
+      "uploaded_by_user": [
+        "ctsadmin"
+      ],
+      "focal_point_x": null,
+      "focal_point_y": null,
+      "focal_point_width": null,
+      "focal_point_height": null,
+      "file_size": 214881,
+      "file_hash": ""
+    }
+  },
+  {
+    "model": "wagtailimages.rendition",
+    "pk": 1,
+    "fields": {
+      "filter_spec": "max-800x600",
+      "file": "images/time-lapse-setup-500.max-800x600.jpg",
+      "width": 487,
+      "height": 600,
+      "focal_point_key": "",
+      "image": 1
+    }
+  },
+  {
+    "model": "wagtailimages.rendition",
+    "pk": 2,
+    "fields": {
+      "filter_spec": "width-500",
+      "file": "images/time-lapse-setup-500.width-500.jpg",
+      "width": 500,
+      "height": 616,
+      "focal_point_key": "",
+      "image": 1
+    }
+  },
+  {
+    "model": "wagtailimages.rendition",
+    "pk": 3,
+    "fields": {
+      "filter_spec": "max-165x165",
+      "file": "images/time-lapse-setup-500.max-165x165.jpg",
+      "width": 133,
+      "height": 165,
+      "focal_point_key": "",
+      "image": 1
+    }
+  },
+  {
+    "model": "wagtailimages.rendition",
+    "pk": 4,
+    "fields": {
+      "filter_spec": "original",
+      "file": "images/time-lapse-setup-500.original.jpg",
+      "width": 500,
+      "height": 616,
+      "focal_point_key": "",
+      "image": 1
+    }
+  },
+  {
+    "model": "wagtailimages.rendition",
+    "pk": 21,
+    "fields": {
+      "filter_spec": "max-165x165",
+      "file": "images/rpi_3_sense_cam_sm.max-165x165.jpg",
+      "width": 165,
+      "height": 85,
+      "focal_point_key": "",
+      "image": 9
+    }
+  },
+  {
+    "model": "wagtailimages.rendition",
+    "pk": 24,
+    "fields": {
+      "filter_spec": "max-165x165",
+      "file": "images/sunset-landscape_WAdnGpc.max-165x165.jpg",
+      "width": 165,
+      "height": 110,
+      "focal_point_key": "",
+      "image": 8
+    }
+  },
+  {
+    "model": "wagtailimages.rendition",
+    "pk": 25,
+    "fields": {
+      "filter_spec": "max-165x165",
+      "file": "images/activity-80_JkcPb9A.max-165x165.png",
+      "width": 80,
+      "height": 73,
+      "focal_point_key": "",
+      "image": 7
+    }
+  },
+  {
+    "model": "wagtailimages.rendition",
+    "pk": 30,
+    "fields": {
+      "filter_spec": "max-165x165",
+      "file": "images/giphy1.max-165x165.png",
+      "width": 165,
+      "height": 110,
+      "focal_point_key": "",
+      "image": 6
+    }
+  },
+  {
+    "model": "wagtailimages.rendition",
+    "pk": 31,
+    "fields": {
+      "filter_spec": "original",
+      "file": "images/giphy1.original.png",
+      "width": 480,
+      "height": 320,
+      "focal_point_key": "",
+      "image": 6
+    }
+  },
+  {
+    "model": "wagtailimages.rendition",
+    "pk": 32,
+    "fields": {
+      "filter_spec": "max-800x600",
+      "file": "images/giphy1.max-800x600.png",
+      "width": 480,
+      "height": 320,
+      "focal_point_key": "",
+      "image": 6
+    }
+  },
+  {
+    "model": "wagtailimages.rendition",
+    "pk": 33,
+    "fields": {
+      "filter_spec": "fill-160x100",
+      "file": "images/sunset-landscape_WAdnGpc.2e16d0ba.fill-160x100.jpg",
+      "width": 160,
+      "height": 100,
+      "focal_point_key": "2e16d0ba",
+      "image": 8
+    }
+  },
+  {
+    "model": "wagtailimages.rendition",
+    "pk": 34,
+    "fields": {
+      "filter_spec": "fill-320x240",
+      "file": "images/sunset-landscape_WAdnGpc.2e16d0ba.fill-320x240.jpg",
+      "width": 320,
+      "height": 240,
+      "focal_point_key": "2e16d0ba",
+      "image": 8
+    }
+  },
+  {
+    "model": "wagtailcore.site",
+    "pk": 2,
+    "fields": {
+      "hostname": "conservationtechnologysolutions.org",
+      "port": 80,
+      "site_name": "Conservation Technology Solutions",
+      "root_page": 3,
+      "is_default_site": true
+    }
+  },
+  {
+    "model": "wagtailcore.page",
+    "pk": 1,
+    "fields": {
+      "path": "0001",
+      "depth": 1,
+      "numchild": 1,
+      "title": "Root",
+      "draft_title": "Root",
+      "slug": "root",
+      "content_type": [
+        "wagtailcore",
+        "page"
+      ],
+      "live": true,
+      "has_unpublished_changes": false,
+      "url_path": "/",
+      "owner": null,
+      "seo_title": "",
+      "show_in_menus": false,
+      "search_description": "",
+      "go_live_at": null,
+      "expire_at": null,
+      "expired": false,
+      "locked": false,
+      "first_published_at": null,
+      "last_published_at": null,
+      "latest_revision_created_at": null,
+      "live_revision": null
+    }
+  },
+  {
+    "model": "wagtailcore.page",
+    "pk": 3,
+    "fields": {
+      "path": "00010001",
+      "depth": 2,
+      "numchild": 4,
+      "title": "Index",
+      "draft_title": "Index",
+      "slug": "index",
+      "content_type": [
+        "home",
+        "homepage"
+      ],
+      "live": true,
+      "has_unpublished_changes": false,
+      "url_path": "/index/",
+      "owner": [
+        "ctsadmin"
+      ],
+      "seo_title": "",
+      "show_in_menus": false,
+      "search_description": "",
+      "go_live_at": null,
+      "expire_at": null,
+      "expired": false,
+      "locked": false,
+      "first_published_at": "2017-06-03T02:51:55.260Z",
+      "last_published_at": "2017-06-03T02:51:55.230Z",
+      "latest_revision_created_at": "2017-06-03T02:51:55.230Z",
+      "live_revision": null
+    }
+  },
+  {
+    "model": "wagtailcore.page",
+    "pk": 4,
+    "fields": {
+      "path": "000100010001",
+      "depth": 3,
+      "numchild": 0,
+      "title": "Our Mission",
+      "draft_title": "Our Mission",
+      "slug": "mission",
+      "content_type": [
+        "home",
+        "homepage"
+      ],
+      "live": true,
+      "has_unpublished_changes": false,
+      "url_path": "/index/mission/",
+      "owner": [
+        "ctsadmin"
+      ],
+      "seo_title": "Mission Statement",
+      "show_in_menus": true,
+      "search_description": "Mission statement and specific goals moving forward.",
+      "go_live_at": null,
+      "expire_at": null,
+      "expired": false,
+      "locked": false,
+      "first_published_at": "2017-06-03T02:52:39.741Z",
+      "last_published_at": "2017-06-06T18:27:25.753Z",
+      "latest_revision_created_at": "2017-06-06T18:27:25.753Z",
+      "live_revision": null
+    }
+  },
+  {
+    "model": "wagtailcore.page",
+    "pk": 5,
+    "fields": {
+      "path": "000100010002",
+      "depth": 3,
+      "numchild": 0,
+      "title": "Contact Us",
+      "draft_title": "Contact Us",
+      "slug": "contact_us",
+      "content_type": [
+        "home",
+        "contactpage"
+      ],
+      "live": true,
+      "has_unpublished_changes": false,
+      "url_path": "/index/contact_us/",
+      "owner": [
+        "ctsadmin"
+      ],
+      "seo_title": "Contact Us",
+      "show_in_menus": true,
+      "search_description": "Contact Page",
+      "go_live_at": null,
+      "expire_at": null,
+      "expired": false,
+      "locked": false,
+      "first_published_at": "2017-06-03T02:52:29.843Z",
+      "last_published_at": "2017-06-03T02:52:29.797Z",
+      "latest_revision_created_at": "2017-06-03T02:52:29.797Z",
+      "live_revision": null
+    }
+  },
+  {
+    "model": "wagtailcore.page",
+    "pk": 6,
+    "fields": {
+      "path": "000100010003",
+      "depth": 3,
+      "numchild": 5,
+      "title": "CTS Blog",
+      "draft_title": "CTS Blog",
+      "slug": "cts-blog",
+      "content_type": [
+        "blog",
+        "blogindexpage"
+      ],
+      "live": true,
+      "has_unpublished_changes": false,
+      "url_path": "/index/cts-blog/",
+      "owner": [
+        "ctsadmin"
+      ],
+      "seo_title": "",
+      "show_in_menus": false,
+      "search_description": "",
+      "go_live_at": null,
+      "expire_at": null,
+      "expired": false,
+      "locked": false,
+      "first_published_at": "2017-09-22T22:47:08.529Z",
+      "last_published_at": "2017-09-22T22:47:08.529Z",
+      "latest_revision_created_at": "2017-09-22T22:47:08.487Z",
+      "live_revision": 9
+    }
+  },
+  {
+    "model": "wagtailcore.page",
+    "pk": 7,
+    "fields": {
+      "path": "000100010004",
+      "depth": 3,
+      "numchild": 0,
+      "title": "Tags",
+      "draft_title": "Tags",
+      "slug": "tags",
+      "content_type": [
+        "blog",
+        "blogtagindexpage"
+      ],
+      "live": true,
+      "has_unpublished_changes": false,
+      "url_path": "/index/tags/",
+      "owner": [
+        "ctsadmin"
+      ],
+      "seo_title": "",
+      "show_in_menus": false,
+      "search_description": "",
+      "go_live_at": null,
+      "expire_at": null,
+      "expired": false,
+      "locked": false,
+      "first_published_at": "2017-09-22T22:47:40.737Z",
+      "last_published_at": "2017-09-22T22:47:40.737Z",
+      "latest_revision_created_at": "2017-09-22T22:47:40.697Z",
+      "live_revision": 10
+    }
+  },
+  {
+    "model": "wagtailcore.page",
+    "pk": 8,
+    "fields": {
+      "path": "0001000100030001",
+      "depth": 4,
+      "numchild": 0,
+      "title": "Time-lapse seed germination: Part I",
+      "draft_title": "Time-lapse seed germination: Part I",
+      "slug": "time-lapse-seed-germination-part-i",
+      "content_type": [
+        "blog",
+        "blogpage"
+      ],
+      "live": true,
+      "has_unpublished_changes": false,
+      "url_path": "/index/cts-blog/time-lapse-seed-germination-part-i/",
+      "owner": [
+        "ctsadmin"
+      ],
+      "seo_title": "",
+      "show_in_menus": false,
+      "search_description": "",
+      "go_live_at": null,
+      "expire_at": null,
+      "expired": false,
+      "locked": false,
+      "first_published_at": "2017-09-22T22:58:27.459Z",
+      "last_published_at": "2017-11-30T00:29:37.487Z",
+      "latest_revision_created_at": "2017-11-30T00:29:37.445Z",
+      "live_revision": 23
+    }
+  },
+  {
+    "model": "wagtailcore.page",
+    "pk": 9,
+    "fields": {
+      "path": "0001000100030002",
+      "depth": 4,
+      "numchild": 0,
+      "title": "Time-Lapse Seed Germination: Part II",
+      "draft_title": "Time-Lapse Seed Germination: Part II",
+      "slug": "time-lapse-seed-germination-part-ii",
+      "content_type": [
+        "blog",
+        "blogpage"
+      ],
+      "live": true,
+      "has_unpublished_changes": false,
+      "url_path": "/index/cts-blog/time-lapse-seed-germination-part-ii/",
+      "owner": [
+        "ctsadmin"
+      ],
+      "seo_title": "",
+      "show_in_menus": false,
+      "search_description": "",
+      "go_live_at": null,
+      "expire_at": null,
+      "expired": false,
+      "locked": false,
+      "first_published_at": "2017-11-07T19:42:51.142Z",
+      "last_published_at": "2017-11-30T00:29:47.708Z",
+      "latest_revision_created_at": "2017-11-30T00:29:47.625Z",
+      "live_revision": 24
+    }
+  },
+  {
+    "model": "wagtailcore.page",
+    "pk": 10,
+    "fields": {
+      "path": "0001000100030003",
+      "depth": 4,
+      "numchild": 0,
+      "title": "Plant Tracker",
+      "draft_title": "Plant Tracker",
+      "slug": "plant-tracker",
+      "content_type": [
+        "blog",
+        "blogpage"
+      ],
+      "live": true,
+      "has_unpublished_changes": false,
+      "url_path": "/index/cts-blog/plant-tracker/",
+      "owner": [
+        "ctsadmin"
+      ],
+      "seo_title": "",
+      "show_in_menus": false,
+      "search_description": "",
+      "go_live_at": null,
+      "expire_at": null,
+      "expired": false,
+      "locked": false,
+      "first_published_at": "2017-12-03T20:51:12.159Z",
+      "last_published_at": "2017-12-03T20:51:12.159Z",
+      "latest_revision_created_at": "2017-12-03T20:51:12.112Z",
+      "live_revision": 30
+    }
+  },
+  {
+    "model": "wagtailcore.page",
+    "pk": 11,
+    "fields": {
+      "path": "0001000100030004",
+      "depth": 4,
+      "numchild": 0,
+      "title": "Backyard Environmental Monitoring",
+      "draft_title": "Backyard Environmental Monitoring",
+      "slug": "backyard-environmental-monitoring",
+      "content_type": [
+        "blog",
+        "blogpage"
+      ],
+      "live": false,
+      "has_unpublished_changes": true,
+      "url_path": "/index/cts-blog/backyard-environmental-monitoring/",
+      "owner": [
+        "ctsadmin"
+      ],
+      "seo_title": "",
+      "show_in_menus": false,
+      "search_description": "",
+      "go_live_at": null,
+      "expire_at": null,
+      "expired": false,
+      "locked": false,
+      "first_published_at": null,
+      "last_published_at": null,
+      "latest_revision_created_at": "2018-02-04T02:07:23.041Z",
+      "live_revision": null
+    }
+  },
+  {
+    "model": "wagtailcore.page",
+    "pk": 12,
+    "fields": {
+      "path": "0001000100030005",
+      "depth": 4,
+      "numchild": 0,
+      "title": "How To Use Python For Data Analysis",
+      "draft_title": "How To Use Python For Data Analysis",
+      "slug": "how-use-python-data-analysis",
+      "content_type": [
+        "blog",
+        "blogpage"
+      ],
+      "live": false,
+      "has_unpublished_changes": true,
+      "url_path": "/index/cts-blog/how-use-python-data-analysis/",
+      "owner": [
+        "ctsadmin"
+      ],
+      "seo_title": "",
+      "show_in_menus": false,
+      "search_description": "",
+      "go_live_at": null,
+      "expire_at": null,
+      "expired": false,
+      "locked": false,
+      "first_published_at": null,
+      "last_published_at": null,
+      "latest_revision_created_at": "2018-06-21T02:53:58.921Z",
+      "live_revision": null
+    }
+  },
+  {
+    "model": "wagtailcore.pagerevision",
+    "pk": 1,
+    "fields": {
+      "page": 3,
+      "submitted_for_moderation": false,
+      "created_at": "2017-06-01T17:40:08.124Z",
+      "user": [
+        "ctsadmin"
+      ],
+      "content_json": "{\"slug\": \"index\", \"search_description\": \"\", \"title\": \"Index\", \"body\": \"[]\", \"numchild\": 0, \"url_path\": \"/index/\", \"has_unpublished_changes\": false, \"expire_at\": null, \"latest_revision_created_at\": null, \"path\": \"00010001\", \"pk\": 3, \"depth\": 2, \"first_published_at\": null, \"use_detail_template\": false, \"content_type\": 6, \"show_in_menus\": false, \"locked\": false, \"live\": false, \"owner\": 1, \"seo_title\": \"\", \"go_live_at\": null, \"expired\": false}",
+      "approved_go_live_at": null
+    }
+  },
+  {
+    "model": "wagtailcore.pagerevision",
+    "pk": 2,
+    "fields": {
+      "page": 4,
+      "submitted_for_moderation": false,
+      "created_at": "2017-06-01T18:16:33.542Z",
+      "user": [
+        "ctsadmin"
+      ],
+      "content_json": "{\"live\": false, \"title\": \"Our Mission\", \"owner\": 1, \"slug\": \"our-mission\", \"use_detail_template\": true, \"body\": \"[{\\\"value\\\": \\\"To Save the World\\\", \\\"type\\\": \\\"motto\\\"}, {\\\"value\\\": \\\"<p>We want to make life easier for anyone involved in environmental conservation work. To make this happen, we\\\\u2019ve made it our goal to leverage the power of existing technologies as well as develop our own. From web apps, to DIY hardware-based citizen science projects, we have a lot of ideas for how we can move towards a more environmentally conscious future.</p>\\\", \\\"type\\\": \\\"paragraph\\\"}, {\\\"value\\\": \\\"Communication\\\", \\\"type\\\": \\\"motto\\\"}, {\\\"value\\\": \\\"<p>Your team can\\\\u2019t reach it\\\\u2019s full potential without an effective portal for communication. If you need help figuring out what communication tools would work best for your needs, or you need help deploying them, please get in touch.</p><p><br/></p><p>We\\\\u2019ll also be experimenting with various chat bot technologies to help raise environmental awareness and boost productivity.</p>\\\", \\\"type\\\": \\\"paragraph\\\"}, {\\\"value\\\": \\\"Promoting Citizen Science\\\", \\\"type\\\": \\\"motto\\\"}, {\\\"value\\\": \\\"<p>You don\\\\u2019t need a lab coat to be a scientist! We want to show people the value of taking a scientific approach to thinking about the world. We\\\\u2019ll be putting together some projects to get kids and adults alike asking questions about the world around them.</p>\\\", \\\"type\\\": \\\"paragraph\\\"}]\", \"depth\": 3, \"numchild\": 0, \"path\": \"000100010001\", \"first_published_at\": null, \"go_live_at\": null, \"expired\": false, \"expire_at\": null, \"search_description\": \"\", \"content_type\": 6, \"seo_title\": \"\", \"url_path\": \"/index/our-mission/\", \"latest_revision_created_at\": null, \"locked\": false, \"show_in_menus\": false, \"has_unpublished_changes\": false, \"pk\": 4}",
+      "approved_go_live_at": null
+    }
+  },
+  {
+    "model": "wagtailcore.pagerevision",
+    "pk": 3,
+    "fields": {
+      "page": 5,
+      "submitted_for_moderation": false,
+      "created_at": "2017-06-01T18:18:16.652Z",
+      "user": [
+        "ctsadmin"
+      ],
+      "content_json": "{\"live\": false, \"title\": \"Contact Us\", \"owner\": 1, \"slug\": \"contact_us\", \"intro\": \"<p>If you have questions, comments, or need some help with something technical of your own, please reach out to us! We'd love to hear from you!</p>\", \"depth\": 3, \"numchild\": 0, \"path\": \"000100010002\", \"first_published_at\": null, \"thankyou_page_title\": \"Thanks for reaching out!\", \"go_live_at\": null, \"expired\": false, \"expire_at\": null, \"search_description\": \"Contact Page\", \"content_type\": 5, \"seo_title\": \"Contact Us\", \"url_path\": \"/index/contact_us/\", \"latest_revision_created_at\": null, \"locked\": false, \"show_in_menus\": true, \"has_unpublished_changes\": false, \"pk\": 5}",
+      "approved_go_live_at": null
+    }
+  },
+  {
+    "model": "wagtailcore.pagerevision",
+    "pk": 4,
+    "fields": {
+      "page": 4,
+      "submitted_for_moderation": false,
+      "created_at": "2017-06-01T18:20:00.203Z",
+      "user": [
+        "ctsadmin"
+      ],
+      "content_json": "{\"live\": false, \"title\": \"Our Mission\", \"owner\": 1, \"slug\": \"mission\", \"use_detail_template\": true, \"body\": \"[{\\\"value\\\": \\\"To Save the World\\\", \\\"type\\\": \\\"motto\\\"}, {\\\"value\\\": \\\"<p>We want to make life easier for anyone involved in environmental conservation work. To make this happen, we\\\\u2019ve made it our goal to leverage the power of existing technologies as well as develop our own. From web apps, to DIY hardware-based citizen science projects, we have a lot of ideas for how we can move towards a more environmentally conscious future.</p>\\\", \\\"type\\\": \\\"paragraph\\\"}, {\\\"value\\\": \\\"Communication\\\", \\\"type\\\": \\\"motto\\\"}, {\\\"value\\\": \\\"<p>Your team can\\\\u2019t reach it\\\\u2019s full potential without an effective portal for communication. If you need help figuring out what communication tools would work best for your needs, or you need help deploying them, please get in touch.</p><p><br/></p><p>We\\\\u2019ll also be experimenting with various chat bot technologies to help raise environmental awareness and boost productivity.</p>\\\", \\\"type\\\": \\\"paragraph\\\"}, {\\\"value\\\": \\\"Promoting Citizen Science\\\", \\\"type\\\": \\\"motto\\\"}, {\\\"value\\\": \\\"<p>You don\\\\u2019t need a lab coat to be a scientist! We want to show people the value of taking a scientific approach to thinking about the world. We\\\\u2019ll be putting together some projects to get kids and adults alike asking questions about the world around them.</p>\\\", \\\"type\\\": \\\"paragraph\\\"}]\", \"depth\": 3, \"numchild\": 0, \"path\": \"000100010001\", \"first_published_at\": null, \"go_live_at\": null, \"expired\": false, \"expire_at\": null, \"search_description\": \"Mission statement and specific goals moving forward.\", \"content_type\": 6, \"seo_title\": \"Mission Statement\", \"url_path\": \"/index/our-mission/\", \"latest_revision_created_at\": \"2017-06-01T18:16:33.542Z\", \"locked\": false, \"show_in_menus\": true, \"has_unpublished_changes\": true, \"pk\": 4}",
+      "approved_go_live_at": null
+    }
+  },
+  {
+    "model": "wagtailcore.pagerevision",
+    "pk": 5,
+    "fields": {
+      "page": 3,
+      "submitted_for_moderation": false,
+      "created_at": "2017-06-03T02:51:55.230Z",
+      "user": [
+        "ctsadmin"
+      ],
+      "content_json": "{\"expire_at\": null, \"use_detail_template\": false, \"title\": \"Index\", \"pk\": 3, \"live\": false, \"url_path\": \"/index/\", \"depth\": 2, \"body\": \"[]\", \"locked\": false, \"path\": \"00010001\", \"numchild\": 2, \"latest_revision_created_at\": \"2017-06-01T17:40:08.124Z\", \"has_unpublished_changes\": true, \"seo_title\": \"\", \"first_published_at\": null, \"owner\": 1, \"slug\": \"index\", \"search_description\": \"\", \"go_live_at\": null, \"show_in_menus\": false, \"expired\": false, \"content_type\": 6}",
+      "approved_go_live_at": null
+    }
+  },
+  {
+    "model": "wagtailcore.pagerevision",
+    "pk": 6,
+    "fields": {
+      "page": 5,
+      "submitted_for_moderation": false,
+      "created_at": "2017-06-03T02:52:29.797Z",
+      "user": [
+        "ctsadmin"
+      ],
+      "content_json": "{\"expire_at\": null, \"pk\": 5, \"title\": \"Contact Us\", \"intro\": \"<p>If you have questions, comments, or need some help with something technical of your own, please reach out to us! We'd love to hear from you!</p>\", \"live\": false, \"url_path\": \"/index/contact_us/\", \"depth\": 3, \"locked\": false, \"path\": \"000100010002\", \"numchild\": 0, \"latest_revision_created_at\": \"2017-06-01T18:18:16.652Z\", \"has_unpublished_changes\": true, \"seo_title\": \"Contact Us\", \"thankyou_page_title\": \"Thanks for reaching out!\", \"first_published_at\": null, \"owner\": 1, \"slug\": \"contact_us\", \"search_description\": \"Contact Page\", \"go_live_at\": null, \"show_in_menus\": true, \"expired\": false, \"content_type\": 5}",
+      "approved_go_live_at": null
+    }
+  },
+  {
+    "model": "wagtailcore.pagerevision",
+    "pk": 7,
+    "fields": {
+      "page": 4,
+      "submitted_for_moderation": false,
+      "created_at": "2017-06-03T02:52:39.685Z",
+      "user": [
+        "ctsadmin"
+      ],
+      "content_json": "{\"expire_at\": null, \"use_detail_template\": true, \"title\": \"Our Mission\", \"pk\": 4, \"live\": false, \"url_path\": \"/index/mission/\", \"depth\": 3, \"body\": \"[{\\\"type\\\": \\\"motto\\\", \\\"value\\\": \\\"To Save the World\\\"}, {\\\"type\\\": \\\"paragraph\\\", \\\"value\\\": \\\"<p>We want to make life easier for anyone involved in environmental conservation work. To make this happen, we\\\\u2019ve made it our goal to leverage the power of existing technologies as well as develop our own. From web apps, to DIY hardware-based citizen science projects, we have a lot of ideas for how we can move towards a more environmentally conscious future.</p>\\\"}, {\\\"type\\\": \\\"motto\\\", \\\"value\\\": \\\"Communication\\\"}, {\\\"type\\\": \\\"paragraph\\\", \\\"value\\\": \\\"<p>Your team can\\\\u2019t reach it\\\\u2019s full potential without an effective portal for communication. If you need help figuring out what communication tools would work best for your needs, or you need help deploying them, please get in touch.</p><p><br/></p><p>We\\\\u2019ll also be experimenting with various chat bot technologies to help raise environmental awareness and boost productivity.</p>\\\"}, {\\\"type\\\": \\\"motto\\\", \\\"value\\\": \\\"Promoting Citizen Science\\\"}, {\\\"type\\\": \\\"paragraph\\\", \\\"value\\\": \\\"<p>You don\\\\u2019t need a lab coat to be a scientist! We want to show people the value of taking a scientific approach to thinking about the world. We\\\\u2019ll be putting together some projects to get kids and adults alike asking questions about the world around them.</p>\\\"}]\", \"locked\": false, \"path\": \"000100010001\", \"numchild\": 0, \"latest_revision_created_at\": \"2017-06-01T18:20:00.203Z\", \"has_unpublished_changes\": true, \"seo_title\": \"Mission Statement\", \"first_published_at\": null, \"owner\": 1, \"slug\": \"mission\", \"search_description\": \"Mission statement and specific goals moving forward.\", \"go_live_at\": null, \"show_in_menus\": true, \"expired\": false, \"content_type\": 6}",
+      "approved_go_live_at": null
+    }
+  },
+  {
+    "model": "wagtailcore.pagerevision",
+    "pk": 8,
+    "fields": {
+      "page": 4,
+      "submitted_for_moderation": false,
+      "created_at": "2017-06-06T18:27:25.753Z",
+      "user": [
+        "ctsadmin"
+      ],
+      "content_json": "{\"show_in_menus\": true, \"expired\": false, \"title\": \"Our Mission\", \"expire_at\": null, \"body\": \"[{\\\"type\\\": \\\"motto\\\", \\\"value\\\": \\\"To Save the World\\\"}, {\\\"type\\\": \\\"paragraph\\\", \\\"value\\\": \\\"<p>We want to make life easier for anyone involved in environmental conservation work. To make this happen, we\\\\u2019ve made it our goal to leverage the power of existing technologies as well as develop our own. From web apps, to DIY hardware-based citizen science projects, we have a lot of ideas for how we can move towards a more environmentally conscious future.</p>\\\"}, {\\\"type\\\": \\\"motto\\\", \\\"value\\\": \\\"Communication\\\"}, {\\\"type\\\": \\\"paragraph\\\", \\\"value\\\": \\\"<p>Your team can\\\\u2019t reach its full potential without an effective portal for communication. If you need help figuring out what communication tools would work best for your needs, or you need help deploying them, please get in touch.</p><p><br/></p><p>We\\\\u2019ll also be experimenting with various chat bot technologies to help raise environmental awareness and boost productivity.</p>\\\"}, {\\\"type\\\": \\\"motto\\\", \\\"value\\\": \\\"Promoting Citizen Science\\\"}, {\\\"type\\\": \\\"paragraph\\\", \\\"value\\\": \\\"<p>You don\\\\u2019t need a lab coat to be a scientist! We want to show people the value of taking a scientific approach to thinking about the world. We\\\\u2019ll be putting together some projects to get kids and adults alike asking questions about the world around them.</p>\\\"}]\", \"locked\": false, \"latest_revision_created_at\": \"2017-06-03T02:52:39.685Z\", \"live\": true, \"depth\": 3, \"path\": \"000100010001\", \"numchild\": 0, \"has_unpublished_changes\": false, \"search_description\": \"Mission statement and specific goals moving forward.\", \"go_live_at\": null, \"pk\": 4, \"slug\": \"mission\", \"content_type\": 6, \"first_published_at\": \"2017-06-03T02:52:39.741Z\", \"use_detail_template\": true, \"owner\": 1, \"seo_title\": \"Mission Statement\", \"url_path\": \"/index/mission/\"}",
+      "approved_go_live_at": null
+    }
+  },
+  {
+    "model": "wagtailcore.pagerevision",
+    "pk": 9,
+    "fields": {
+      "page": 6,
+      "submitted_for_moderation": false,
+      "created_at": "2017-09-22T22:47:08.487Z",
+      "user": [
+        "ctsadmin"
+      ],
+      "content_json": "{\"last_published_at\": null, \"title\": \"CTS Blog\", \"numchild\": 0, \"latest_revision_created_at\": null, \"first_published_at\": null, \"go_live_at\": null, \"live\": true, \"draft_title\": \"CTS Blog\", \"search_description\": \"\", \"pk\": 6, \"owner\": 1, \"url_path\": \"/index/cts-blog/\", \"slug\": \"cts-blog\", \"path\": \"000100010003\", \"expired\": false, \"show_in_menus\": false, \"depth\": 3, \"intro\": \"<p>News, updates, and other miscellaneous tidbits related to natural resource conservation</p>\", \"live_revision\": null, \"expire_at\": null, \"about\": \"<p>Find out what CTS is up to, learn about a new technology or tool used in conservation, and take a more scientific approach to the world around you!</p>\", \"locked\": false, \"content_type\": 12, \"seo_title\": \"\", \"has_unpublished_changes\": false}",
+      "approved_go_live_at": null
+    }
+  },
+  {
+    "model": "wagtailcore.pagerevision",
+    "pk": 10,
+    "fields": {
+      "page": 7,
+      "submitted_for_moderation": false,
+      "created_at": "2017-09-22T22:47:40.697Z",
+      "user": [
+        "ctsadmin"
+      ],
+      "content_json": "{\"last_published_at\": null, \"title\": \"Tags\", \"numchild\": 0, \"latest_revision_created_at\": null, \"first_published_at\": null, \"go_live_at\": null, \"live\": true, \"draft_title\": \"Tags\", \"search_description\": \"\", \"pk\": 7, \"owner\": 1, \"url_path\": \"/index/tags/\", \"slug\": \"tags\", \"path\": \"000100010004\", \"expired\": false, \"show_in_menus\": false, \"depth\": 3, \"live_revision\": null, \"expire_at\": null, \"locked\": false, \"content_type\": 11, \"seo_title\": \"\", \"has_unpublished_changes\": false}",
+      "approved_go_live_at": null
+    }
+  },
+  {
+    "model": "wagtailcore.pagerevision",
+    "pk": 11,
+    "fields": {
+      "page": 8,
+      "submitted_for_moderation": false,
+      "created_at": "2017-09-22T22:51:13.235Z",
+      "user": [
+        "ctsadmin"
+      ],
+      "content_json": "{\"last_published_at\": null, \"title\": \"Time-lapse seed germination: Part I\", \"numchild\": 0, \"latest_revision_created_at\": null, \"body\": \"[{\\\"value\\\": \\\"<p>While most people have a functional understanding of what seed germination is, few people are curious enough about the topic to dig into the nitty-gritty details of how the process actually works. This project, on its face, aims to provoke such a sense of curiosity in a process that people have previously taken for granted.</p><p><br/></p><h2>Plant Blindness</h2><p>Too often, plants are overlooked by people, and generally perceived as nothing more than a backdrop for the animal world. This phenomenon has become known as \\\\\\\"plant blindness\\\\\\\", a problem that is likely to be addressed by multiple CTS projects going forward.</p><p>Human brains are wired to ascribe greater importance to objects that stand out to us. The seemingly static nature of plants often makes this difficult.\\\\u00a0Even when we are surrounded by plants, we rarely take the time to consciously acknowledge them.\\\\u00a0And while aspects of plant blindness may themselves be natural (e.g. minimal evolutionary consequence of ignoring plants), they can also be easily overcome.</p><p><br/></p><h2>Cultivating Interest</h2><p><embed alt=\\\\\\\"Time-lapse Setup\\\\\\\" embedtype=\\\\\\\"image\\\\\\\" format=\\\\\\\"left\\\\\\\" id=\\\\\\\"2\\\\\\\"/></p><p>In the case of germination, the process would quickly become boring to watch in real-time given the speed at which it occurs. Using time-lapse photography, we can solve this problem rather easily. Several days can be condensed into just a few minutes, allowing people the opportunity to see into a world they've never noticed before.<br/></p><p>To achieve this, we will be using a DSLR camera controlled programmatically with the help of an inexpensive computer called a\\\\u00a0<a href=\\\\\\\"http://amzn.to/2wExDAu\\\\\\\">Raspberry Pi</a>. The images will be stitched together into a short video that hopefully even those without any prior interest in plant life will think is pretty neat to watch.</p><p>In the next blog post, we'll explain the technical details of the project for those who care to replicate it either in a classroom setting or for themselves.</p><p><br/></p>\\\", \\\"type\\\": \\\"paragraph\\\", \\\"id\\\": \\\"d7d731b8-c4fe-462d-b627-fa10d42ff7c2\\\"}]\", \"first_published_at\": null, \"go_live_at\": null, \"live\": false, \"draft_title\": \"Time-lapse seed germination: Part I\", \"search_description\": \"\", \"date\": \"2017-09-22T17:00:00Z\", \"pk\": 8, \"owner\": 1, \"url_path\": \"/index/cts-blog/time-lapse-seed-germination-part-i/\", \"slug\": \"time-lapse-seed-germination-part-i\", \"tagged_items\": [{\"pk\": 1, \"tag\": 1, \"content_object\": 8}, {\"pk\": 2, \"tag\": 2, \"content_object\": 8}, {\"pk\": 3, \"tag\": 3, \"content_object\": 8}, {\"pk\": 4, \"tag\": 4, \"content_object\": 8}, {\"pk\": 5, \"tag\": 5, \"content_object\": 8}], \"path\": \"0001000100030001\", \"expired\": false, \"gallery_images\": [], \"show_in_menus\": false, \"depth\": 4, \"intro\": \"A project designed to capture the fascinating process of seed germination.\", \"live_revision\": null, \"expire_at\": null, \"references\": \"<p>Botanical Society of America. (2001). Toward a Theory of Plant Blindness.\\u00a0<i><a href=\\\"https://www.botany.org/bsa/psb/2001/psb47-1.pdf\\\">Plant Science Bulletin</a>, 47</i>(1), 2-9.</p>\", \"locked\": false, \"content_type\": 8, \"categories\": [], \"seo_title\": \"\", \"has_unpublished_changes\": false}",
+      "approved_go_live_at": null
+    }
+  },
+  {
+    "model": "wagtailcore.pagerevision",
+    "pk": 12,
+    "fields": {
+      "page": 8,
+      "submitted_for_moderation": false,
+      "created_at": "2017-09-22T22:58:27.405Z",
+      "user": [
+        "ctsadmin"
+      ],
+      "content_json": "{\"last_published_at\": null, \"title\": \"Time-lapse seed germination: Part I\", \"numchild\": 0, \"latest_revision_created_at\": \"2017-09-22T22:51:13.235Z\", \"body\": \"[{\\\"value\\\": \\\"<p>While most people have a functional understanding of what seed germination is, few people are curious enough about the topic to dig into the nitty-gritty details of how the process actually works. This project, on its face, aims to provoke such a sense of curiosity in a process that people have previously taken for granted.</p><p><br/></p><h2>Plant Blindness</h2><p>Too often, plants are overlooked by people, and generally perceived as nothing more than a backdrop for the animal world. This phenomenon has become known as \\\\\\\"plant blindness\\\\\\\", a problem that is likely to be addressed by multiple CTS projects going forward.</p><p>Human brains are wired to ascribe greater importance to objects that stand out to us. The seemingly static nature of plants often makes this difficult.\\\\u00a0Even when we are surrounded by plants, we rarely take the time to consciously acknowledge them.\\\\u00a0And while aspects of plant blindness may themselves be natural (e.g. minimal evolutionary consequence of ignoring plants), they can also be easily overcome.</p><p><br/></p><h2>Cultivating Interest</h2><p><embed alt=\\\\\\\"Time lapse setup\\\\\\\" embedtype=\\\\\\\"image\\\\\\\" format=\\\\\\\"left\\\\\\\" id=\\\\\\\"1\\\\\\\"/><img/>In the case of germination, the process would quickly become boring to watch in real-time given the speed at which it occurs. Using time-lapse photography, we can solve this problem rather easily. Several days can be condensed into just a few minutes, allowing people the opportunity to see into a world they've never noticed before.</p><p>To achieve this, we will be using a DSLR camera controlled programmatically with the help of an inexpensive computer called a\\\\u00a0<a href=\\\\\\\"http://amzn.to/2wExDAu\\\\\\\">Raspberry Pi</a>. The images will be stitched together into a short video that hopefully even those without any prior interest in plant life will think is pretty neat to watch.</p><p>In the next blog post, we'll explain the technical details of the project for those who care to replicate it either in a classroom setting or for themselves.</p><p><br/></p>\\\", \\\"type\\\": \\\"paragraph\\\", \\\"id\\\": \\\"d7d731b8-c4fe-462d-b627-fa10d42ff7c2\\\"}]\", \"first_published_at\": null, \"go_live_at\": null, \"live\": false, \"draft_title\": \"Time-lapse seed germination: Part I\", \"search_description\": \"\", \"date\": \"2017-09-22T17:00:00Z\", \"pk\": 8, \"owner\": 1, \"url_path\": \"/index/cts-blog/time-lapse-seed-germination-part-i/\", \"slug\": \"time-lapse-seed-germination-part-i\", \"tagged_items\": [{\"pk\": null, \"tag\": 1, \"content_object\": 8}, {\"pk\": null, \"tag\": 2, \"content_object\": 8}, {\"pk\": null, \"tag\": 3, \"content_object\": 8}, {\"pk\": null, \"tag\": 4, \"content_object\": 8}, {\"pk\": null, \"tag\": 5, \"content_object\": 8}], \"path\": \"0001000100030001\", \"expired\": false, \"gallery_images\": [], \"show_in_menus\": false, \"depth\": 4, \"intro\": \"A project designed to capture the fascinating process of seed germination.\", \"live_revision\": null, \"expire_at\": null, \"references\": \"<p>Botanical Society of America. (2001). Toward a Theory of Plant Blindness.\\u00a0<i><a href=\\\"https://www.botany.org/bsa/psb/2001/psb47-1.pdf\\\">Plant Science Bulletin</a>, 47</i>(1), 2-9.</p>\", \"locked\": false, \"content_type\": 8, \"categories\": [], \"seo_title\": \"\", \"has_unpublished_changes\": true}",
+      "approved_go_live_at": null
+    }
+  },
+  {
+    "model": "wagtailcore.pagerevision",
+    "pk": 13,
+    "fields": {
+      "page": 9,
+      "submitted_for_moderation": false,
+      "created_at": "2017-10-02T22:24:29.416Z",
+      "user": [
+        "ctsadmin"
+      ],
+      "content_json": "{\"last_published_at\": null, \"title\": \"Time-Lapse Seed Germination: Part II\", \"numchild\": 0, \"latest_revision_created_at\": null, \"body\": \"[{\\\"value\\\": \\\"<p>&lt;div style=\\\\\\\"width:100%;height:0;padding-bottom:67%;position:relative;\\\\\\\"&gt;&lt;iframe src=\\\\\\\"https://giphy.com/embed/l1J9RHmkVlGaiiqKA\\\\\\\" width=\\\\\\\"100%\\\\\\\" height=\\\\\\\"100%\\\\\\\" style=\\\\\\\"position:absolute\\\\\\\" frameBorder=\\\\\\\"0\\\\\\\" class=\\\\\\\"giphy-embed\\\\\\\" allowFullScreen&gt;&lt;/iframe&gt;&lt;/div&gt;&lt;p&gt;&lt;a href=\\\\\\\"https://giphy.com/gifs/bean-seed-germination-l1J9RHmkVlGaiiqKA\\\\\\\"&gt;via GIPHY&lt;/a&gt;&lt;/p&gt;<br/></p><p>'Blue Lake Stringless' garden bean germinating over a 5 hour period.</p>\\\", \\\"type\\\": \\\"paragraph\\\", \\\"id\\\": \\\"53c98320-814e-46d0-b8f2-c3058a6a72b7\\\"}]\", \"first_published_at\": null, \"go_live_at\": null, \"live\": false, \"draft_title\": \"Time-Lapse Seed Germination: Part II\", \"search_description\": \"\", \"date\": \"2017-10-09T16:24:00Z\", \"pk\": 9, \"owner\": 1, \"url_path\": \"/index/cts-blog/time-lapse-seed-germination-part-ii/\", \"slug\": \"time-lapse-seed-germination-part-ii\", \"tagged_items\": [{\"pk\": 11, \"tag\": 2, \"content_object\": 9}, {\"pk\": 12, \"tag\": 3, \"content_object\": 9}, {\"pk\": 13, \"tag\": 4, \"content_object\": 9}, {\"pk\": 14, \"tag\": 6, \"content_object\": 9}, {\"pk\": 15, \"tag\": 7, \"content_object\": 9}], \"path\": \"0001000100030002\", \"expired\": false, \"gallery_images\": [], \"show_in_menus\": false, \"depth\": 4, \"intro\": \"Capturing time-lapse video using a digital SLR camera.\", \"live_revision\": null, \"expire_at\": null, \"references\": \"\", \"locked\": false, \"content_type\": 8, \"categories\": [], \"seo_title\": \"\", \"has_unpublished_changes\": false}",
+      "approved_go_live_at": null
+    }
+  },
+  {
+    "model": "wagtailcore.pagerevision",
+    "pk": 14,
+    "fields": {
+      "page": 9,
+      "submitted_for_moderation": false,
+      "created_at": "2017-10-02T22:32:57.393Z",
+      "user": [
+        "ctsadmin"
+      ],
+      "content_json": "{\"last_published_at\": null, \"title\": \"Time-Lapse Seed Germination: Part II\", \"numchild\": 0, \"latest_revision_created_at\": \"2017-10-02T22:24:29.416Z\", \"body\": \"[{\\\"value\\\": \\\"<p>&lt;div style=\\\\\\\"width:100%;height:0;padding-bottom:67%;position:relative;\\\\\\\"&gt;&lt;iframe src=\\\\\\\"https://giphy.com/embed/l1J9RHmkVlGaiiqKA\\\\\\\" width=\\\\\\\"100%\\\\\\\" height=\\\\\\\"100%\\\\\\\" style=\\\\\\\"position:absolute\\\\\\\" frameBorder=\\\\\\\"0\\\\\\\" class=\\\\\\\"giphy-embed\\\\\\\" allowFullScreen&gt;&lt;/iframe&gt;&lt;/div&gt;&lt;p&gt;&lt;a href=\\\\\\\"https://giphy.com/gifs/bean-seed-germination-l1J9RHmkVlGaiiqKA\\\\\\\"&gt;via GIPHY&lt;/a&gt;&lt;/p&gt;<br/></p><p>https://media.giphy.com/media/l1J9RHmkVlGaiiqKA/giphy.gif<br/></p><p>'Blue Lake Stringless' garden bean germinating over a 5 hour period.</p>\\\", \\\"type\\\": \\\"paragraph\\\", \\\"id\\\": \\\"53c98320-814e-46d0-b8f2-c3058a6a72b7\\\"}]\", \"first_published_at\": null, \"go_live_at\": null, \"live\": false, \"draft_title\": \"Time-Lapse Seed Germination: Part II\", \"search_description\": \"\", \"date\": \"2017-10-09T16:24:00Z\", \"pk\": 9, \"owner\": 1, \"url_path\": \"/index/cts-blog/time-lapse-seed-germination-part-ii/\", \"slug\": \"time-lapse-seed-germination-part-ii\", \"tagged_items\": [{\"pk\": null, \"tag\": 2, \"content_object\": 9}, {\"pk\": null, \"tag\": 3, \"content_object\": 9}, {\"pk\": null, \"tag\": 4, \"content_object\": 9}, {\"pk\": null, \"tag\": 6, \"content_object\": 9}, {\"pk\": null, \"tag\": 7, \"content_object\": 9}], \"path\": \"0001000100030002\", \"expired\": false, \"gallery_images\": [], \"show_in_menus\": false, \"depth\": 4, \"intro\": \"Capturing time-lapse video using a digital SLR camera.\", \"live_revision\": null, \"expire_at\": null, \"references\": \"\", \"locked\": false, \"content_type\": 8, \"categories\": [], \"seo_title\": \"\", \"has_unpublished_changes\": true}",
+      "approved_go_live_at": null
+    }
+  },
+  {
+    "model": "wagtailcore.pagerevision",
+    "pk": 15,
+    "fields": {
+      "page": 9,
+      "submitted_for_moderation": false,
+      "created_at": "2017-11-07T19:31:34.836Z",
+      "user": [
+        "ctsadmin"
+      ],
+      "content_json": "{\"body\": \"[{\\\"id\\\": \\\"53c98320-814e-46d0-b8f2-c3058a6a72b7\\\", \\\"value\\\": \\\"<p>This is the second and final post regarding our first timelapse project. If you haven't read part one yet, you can find it <a id=\\\\\\\"8\\\\\\\" linktype=\\\\\\\"page\\\\\\\">here</a>.</p><h2>Final Results</h2><p>The below video represents the final results of our first timelapse project.</p><p><embed embedtype=\\\\\\\"media\\\\\\\" url=\\\\\\\"https://youtu.be/4CAnbyFLV2Y\\\\\\\"/></p><h2><br/></h2>\\\", \\\"type\\\": \\\"paragraph\\\"}, {\\\"id\\\": \\\"2ebb9825-6bd6-4b80-92de-b7385eba73aa\\\", \\\"value\\\": \\\"<h2>Technical Details</h2><p>This project made use of\\\\u00a0<a href=\\\\\\\"http://amzn.to/2zDVEJ7\\\\\\\">Canon 7D</a>, a\\\\u00a0<a href=\\\\\\\"http://amzn.to/2j9ysLZ\\\\\\\">18-55mm lens</a>, powered with a <a href=\\\\\\\"http://amzn.to/2ydsrQQ\\\\\\\">AC adapter battery</a>, a\\\\u00a0<a href=\\\\\\\"http://amzn.to/2yda4vv\\\\\\\">tripod</a>, and a\\\\u00a0<a href=\\\\\\\"http://amzn.to/2yDNJvp\\\\\\\">Raspberry Pi 3</a>. Lighting was provided by an 11 Watt 1050 lumen LED bulb similar to\\\\u00a0<a href=\\\\\\\"http://amzn.to/2yFT4Cj\\\\\\\">this one</a>.</p><p><br/></p><p>The camera itself was triggered using the\\\\u00a0<a href=\\\\\\\"http://www.gphoto.org/doc/manual/ref-gphoto2-cli.html\\\\\\\">gphoto2 command line utility</a>\\\\u00a0running on the Raspberry Pi which itself was connected to the DSLR camera via USB. You can find the source code used for this project on our <a href=\\\\\\\"https://github.com/cts-admin/timelapse-dslr\\\\\\\">GitHub repository</a>. If you explore the code repository, you can see that the original plan for this project was to use a <a href=\\\\\\\"http://amzn.to/2zp2LnM\\\\\\\">mini servo</a>\\\\u00a0to manually press the camera's shutter release button which ended up not being a very reliable solution.</p><p><br/></p><p>The new and improved method used software commands to capture and download images from camera at 15 minute intervals. After about four weeks of taking pictures, we ended up with roughly 1300 still images which were later stitched together into a continuous video file. To do this, we first sorted the images in chronological order and then passed in those ordered filenames to a text file. We were then able to use the mencoder command line utility to produce an initial .avi video file of all of our images. The Raspberry Pi Foundation has a <a href=\\\\\\\"https://www.raspberrypi.org/documentation/usage/camera/raspicam/timelapse.md\\\\\\\">good tutorial on this process</a>.</p><p><br/></p>\\\", \\\"type\\\": \\\"paragraph\\\"}, {\\\"id\\\": \\\"14f6774a-7e64-44e5-ab2e-0e0c2cd38678\\\", \\\"value\\\": \\\"<h2>First Attempts</h2><p>As stated above, our first attempts made use of a micro servo to manually control the camera. The results of this attempt can be seen in the animated GIF below. It shows a\\\\u00a0'Blue Lake Stringless' garden bean germinating over a 5 hour period. That's about as long as we were able to capture images before we realized the servo method wasn't going to work for the long-term.</p>\\\", \\\"type\\\": \\\"paragraph\\\"}, {\\\"id\\\": \\\"85866830-607d-4144-8462-f8b49eb18474\\\", \\\"value\\\": 6, \\\"type\\\": \\\"image\\\"}, {\\\"id\\\": \\\"e9cd4b8f-b49b-4eed-87db-3b37f295a75e\\\", \\\"value\\\": \\\"<h2>Challenges</h2><p>Even after transitioning away from the servo method, we ran into a few technical problems using the software method. The first major problem was that the camera needed to stay on indefinitely to respond to the software image capture signals every 15 minutes. Obviously, leaving the camera on continuously quickly drained the camera battery. This problem was mitigated in part using an <a href=\\\\\\\"http://amzn.to/2ydsrQQ\\\\\\\">AC battery pack</a>, which allowed the battery to be plugged into a wall socket. Unfortunately, the camera seemed to treat this as a normal draining battery so the battery would need to be reseated in the camera about every 12 hours to restore the battery power indicator to full strength.</p><h3>Code Challenges</h3><p>In order to stitch together still images into a continuous timelapse video, it's important that the chronological order of the images is preserved. The earliest iteration of the code controlling the camera images, attempted to do this by naming the images based on the number of times the camera was given a command to take a picture. For example, the first picture was named 0.jpeg, the second picture was named 1.jpeg, etc. Unfortunately, this counting mechanism did not take into account the possibility that the program may have to restart at some point. When this happened, the counter would just start from the beginning, naming new pictures as 0.jpeg, overwriting the existing 0.jpeg file that had been taken in the past!</p><p><br/></p><p>Later iterations of the code solved this problem by examining the folder containing all of the images that had already been taken. The program would read all of the filenames, find the highest number, and then name all subsequent photos starting from that point, rather than starting over from zero.</p><p><br/></p><p>Because some images had been taken using the original flawed code, we couldn't rely solely on the filenames to sort the images in chronological order. To get around this issue, we wrote another script that read the metadata of the image files, specifically the 'DateTimeOriginal' property of the EXIF data which contains the timestamp of when the image was originally shot. This script allowed us to rename the files in a way that made sorting them easy and intuitive (important when dealing with 1300+ image files).</p><h3>Lighting Challenges</h3><p>As you can see from the YouTube video up top, many of the images are overexposed. Unfortunately, this problem was mainly due to our inexperience of taking timelapse video. The exposure was set early on in the seedling stage but never readjusted as time went on. As the seedling grew towards the light source, the overexposure became more apparent, and we unfortunately lost a lot of detail in the color of the leaves. This problem was exacerbated by setting the camera to take low resolution JPEG images, rather than using a high resolution RAW image format which would have allowed us to correct the exposure in post-production.</p><p><br/></p><p>For subsequent timelapse projects, we will likely address these problems by taking the camera out of full-manual settings, allowing it to adjust its shutter speed for a more even and consistent exposure. Additionally, we would take RAW camera images, and closely monitor the storage space of the SD card to ensure we do not run out of space before the timelapse project is complete.</p>\\\", \\\"type\\\": \\\"paragraph\\\"}]\", \"expired\": false, \"path\": \"0001000100030002\", \"show_in_menus\": false, \"content_type\": 8, \"pk\": 9, \"has_unpublished_changes\": true, \"title\": \"Time-Lapse Seed Germination: Part II\", \"latest_revision_created_at\": \"2017-10-02T22:32:57.393Z\", \"last_published_at\": null, \"intro\": \"Capturing time-lapse video using a digital SLR camera.\", \"go_live_at\": null, \"slug\": \"time-lapse-seed-germination-part-ii\", \"url_path\": \"/index/cts-blog/time-lapse-seed-germination-part-ii/\", \"tagged_items\": [{\"pk\": null, \"content_object\": 9, \"tag\": 2}, {\"pk\": null, \"content_object\": 9, \"tag\": 3}, {\"pk\": null, \"content_object\": 9, \"tag\": 4}, {\"pk\": null, \"content_object\": 9, \"tag\": 6}, {\"pk\": null, \"content_object\": 9, \"tag\": 7}], \"numchild\": 0, \"date\": \"2017-10-09T16:24:00Z\", \"references\": \"\", \"owner\": 1, \"draft_title\": \"Time-Lapse Seed Germination: Part II\", \"seo_title\": \"\", \"expire_at\": null, \"depth\": 4, \"first_published_at\": null, \"live\": false, \"live_revision\": null, \"categories\": [], \"locked\": false, \"search_description\": \"\", \"gallery_images\": []}",
+      "approved_go_live_at": null
+    }
+  },
+  {
+    "model": "wagtailcore.pagerevision",
+    "pk": 16,
+    "fields": {
+      "page": 9,
+      "submitted_for_moderation": false,
+      "created_at": "2017-11-07T19:35:45.320Z",
+      "user": [
+        "ctsadmin"
+      ],
+      "content_json": "{\"body\": \"[{\\\"id\\\": \\\"53c98320-814e-46d0-b8f2-c3058a6a72b7\\\", \\\"value\\\": \\\"<p>This is the second and final post regarding our first timelapse project. If you haven't read part one yet, you can find it <a id=\\\\\\\"8\\\\\\\" linktype=\\\\\\\"page\\\\\\\">here</a>.</p><h2>Final Results</h2><p>The below video represents the final results of our first timelapse project.</p><p></p><embed embedtype=\\\\\\\"media\\\\\\\" url=\\\\\\\"https://youtu.be/4CAnbyFLV2Y\\\\\\\"/>\\\\n<p></p><h2><br/></h2>\\\", \\\"type\\\": \\\"paragraph\\\"}, {\\\"id\\\": \\\"2ebb9825-6bd6-4b80-92de-b7385eba73aa\\\", \\\"value\\\": \\\"<h2>Technical Details</h2><p>This project made use of a\\\\u00a0<a href=\\\\\\\"http://amzn.to/2zDVEJ7\\\\\\\">Canon 7D</a>, an\\\\u00a0<a href=\\\\\\\"http://amzn.to/2j9ysLZ\\\\\\\">18-55mm lens</a>, powered with a <a href=\\\\\\\"http://amzn.to/2ydsrQQ\\\\\\\">AC adapter battery</a>, a\\\\u00a0<a href=\\\\\\\"http://amzn.to/2yda4vv\\\\\\\">tripod</a>, and a\\\\u00a0<a href=\\\\\\\"http://amzn.to/2yDNJvp\\\\\\\">Raspberry Pi 3</a>. Lighting was provided by an 11 Watt 1050 lumen LED bulb similar to\\\\u00a0<a href=\\\\\\\"http://amzn.to/2yFT4Cj\\\\\\\">this one</a>.</p><p><br/></p><p>The camera itself was triggered using the\\\\u00a0<a href=\\\\\\\"http://www.gphoto.org/doc/manual/ref-gphoto2-cli.html\\\\\\\">gphoto2 command line utility</a>\\\\u00a0running on the Raspberry Pi which itself was connected to the DSLR camera via USB. You can find the source code used for this project on our <a href=\\\\\\\"https://github.com/cts-admin/timelapse-dslr\\\\\\\">GitHub repository</a>. If you explore the code repository, you can see that the original plan for this project was to use a <a href=\\\\\\\"http://amzn.to/2zp2LnM\\\\\\\">mini servo</a>\\\\u00a0to manually press the camera's shutter release button which ended up not being a very reliable solution.</p><p><br/></p><p>The new and improved method used software commands to capture and download images from the camera at 15 minute intervals. After about four weeks of taking pictures, we ended up with roughly 1300 still images which were later stitched together into a continuous video file. To do this, we first sorted the images in chronological order and then passed in those ordered filenames to a text file. We were then able to use the mencoder command line utility to produce an initial .avi video file of all of our images. The Raspberry Pi Foundation has a <a href=\\\\\\\"https://www.raspberrypi.org/documentation/usage/camera/raspicam/timelapse.md\\\\\\\">good tutorial on this process</a>.</p><p>The final post-production of the video was done in <a href=\\\\\\\"http://amzn.to/2zCLmc9\\\\\\\">Adobe Premier Pro</a>.</p>\\\", \\\"type\\\": \\\"paragraph\\\"}, {\\\"id\\\": \\\"14f6774a-7e64-44e5-ab2e-0e0c2cd38678\\\", \\\"value\\\": \\\"<h2>First Attempts</h2><p>As stated above, our first attempts made use of a micro servo to manually control the camera. The results of this attempt can be seen in the animated GIF below. It shows a\\\\u00a0'Blue Lake Stringless' garden bean germinating over a 5 hour period. That's about as long as we were able to capture images before we realized the servo method wasn't going to work for the long-term.</p>\\\", \\\"type\\\": \\\"paragraph\\\"}, {\\\"id\\\": \\\"85866830-607d-4144-8462-f8b49eb18474\\\", \\\"value\\\": 6, \\\"type\\\": \\\"image\\\"}, {\\\"id\\\": \\\"e9cd4b8f-b49b-4eed-87db-3b37f295a75e\\\", \\\"value\\\": \\\"<h2>Challenges</h2><p>Even after transitioning away from the servo method, we ran into a few technical problems using the software method. The first major problem was that the camera needed to stay on indefinitely to respond to the software image capture signals every 15 minutes. Obviously, leaving the camera on continuously quickly drained the camera battery. This problem was mitigated in part using an <a href=\\\\\\\"http://amzn.to/2ydsrQQ\\\\\\\">AC battery pack</a>, which allowed the battery to be plugged into a wall socket. Unfortunately, the camera seemed to treat this as a normal draining battery so the battery would need to be reseated in the camera about every 12 hours to restore the battery power indicator to full strength.</p><h3>Code Challenges</h3><p>In order to stitch together still images into a continuous timelapse video, it's important that the chronological order of the images is preserved. The earliest iteration of the code controlling the camera images, attempted to do this by naming the images based on the number of times the camera was given a command to take a picture. For example, the first picture was named 0.jpeg, the second picture was named 1.jpeg, etc. Unfortunately, this counting mechanism did not take into account the possibility that the program may have to restart at some point. When this happened, the counter would just start from the beginning, naming new pictures as 0.jpeg, overwriting the existing 0.jpeg file that had been taken in the past!</p><p><br/></p><p>Later iterations of the code solved this problem by examining the folder containing all of the images that had already been taken. The program would read all of the filenames, find the highest number, and then name all subsequent photos starting from that point, rather than starting over from zero.</p><p><br/></p><p>Because some images had been taken using the original flawed code, we couldn't rely solely on the filenames to sort the images in chronological order. To get around this issue, we wrote another script that read the metadata of the image files, specifically the 'DateTimeOriginal' property of the EXIF data which contains the timestamp of when the image was originally shot. This script allowed us to rename the files in a way that made sorting them easy and intuitive (important when dealing with 1300+ image files).</p><h3>Lighting Challenges</h3><p>As you can see from the YouTube video up top, many of the images are overexposed. Unfortunately, this problem was mainly due to our inexperience of taking timelapse video. The exposure was set early on in the seedling stage but never readjusted as time went on. As the seedling grew towards the light source, the overexposure became more apparent, and we unfortunately lost a lot of detail in the color of the leaves. This problem was exacerbated by setting the camera to take low resolution JPEG images, rather than using a high resolution RAW image format which would have allowed us to correct the exposure in post-production.</p><p><br/></p><p>For subsequent timelapse projects, we will likely address these problems by taking the camera out of full-manual settings, allowing it to adjust its shutter speed for a more even and consistent exposure. Additionally, we would take RAW camera images, and closely monitor the storage space of the SD card to ensure we do not run out of space before the timelapse project is complete.</p>\\\", \\\"type\\\": \\\"paragraph\\\"}]\", \"expired\": false, \"path\": \"0001000100030002\", \"show_in_menus\": false, \"content_type\": 8, \"pk\": 9, \"has_unpublished_changes\": true, \"title\": \"Time-Lapse Seed Germination: Part II\", \"latest_revision_created_at\": \"2017-11-07T19:31:34.836Z\", \"last_published_at\": null, \"intro\": \"Capturing time-lapse video using a digital SLR camera.\", \"go_live_at\": null, \"slug\": \"time-lapse-seed-germination-part-ii\", \"url_path\": \"/index/cts-blog/time-lapse-seed-germination-part-ii/\", \"tagged_items\": [{\"pk\": null, \"content_object\": 9, \"tag\": 2}, {\"pk\": null, \"content_object\": 9, \"tag\": 3}, {\"pk\": null, \"content_object\": 9, \"tag\": 4}, {\"pk\": null, \"content_object\": 9, \"tag\": 6}, {\"pk\": null, \"content_object\": 9, \"tag\": 7}], \"numchild\": 0, \"date\": \"2017-10-09T16:24:00Z\", \"references\": \"\", \"owner\": 1, \"draft_title\": \"Time-Lapse Seed Germination: Part II\", \"seo_title\": \"\", \"expire_at\": null, \"depth\": 4, \"first_published_at\": null, \"live\": false, \"live_revision\": null, \"categories\": [], \"locked\": false, \"search_description\": \"\", \"gallery_images\": []}",
+      "approved_go_live_at": null
+    }
+  },
+  {
+    "model": "wagtailcore.pagerevision",
+    "pk": 17,
+    "fields": {
+      "page": 9,
+      "submitted_for_moderation": false,
+      "created_at": "2017-11-07T19:37:11.667Z",
+      "user": [
+        "ctsadmin"
+      ],
+      "content_json": "{\"body\": \"[{\\\"id\\\": \\\"53c98320-814e-46d0-b8f2-c3058a6a72b7\\\", \\\"value\\\": \\\"<p>This is the second and final post regarding our first timelapse project. If you haven't read part one yet, you can find it <a id=\\\\\\\"8\\\\\\\" linktype=\\\\\\\"page\\\\\\\">here</a>.</p><h2>Final Results</h2><p>The below video represents the final results of our first timelapse project.</p><p></p><embed embedtype=\\\\\\\"media\\\\\\\" url=\\\\\\\"https://youtu.be/4CAnbyFLV2Y\\\\\\\"/>\\\\n\\\\n<p></p><h2><br/></h2>\\\", \\\"type\\\": \\\"paragraph\\\"}, {\\\"id\\\": \\\"2ebb9825-6bd6-4b80-92de-b7385eba73aa\\\", \\\"value\\\": \\\"<h2>Technical Details</h2><p>This project made use of a\\\\u00a0<a href=\\\\\\\"http://amzn.to/2zDVEJ7\\\\\\\">Canon 7D</a>, an\\\\u00a0<a href=\\\\\\\"http://amzn.to/2j9ysLZ\\\\\\\">18-55mm lens</a>, powered with a <a href=\\\\\\\"http://amzn.to/2ydsrQQ\\\\\\\">AC adapter battery</a>, a\\\\u00a0<a href=\\\\\\\"http://amzn.to/2yda4vv\\\\\\\">tripod</a>, and a\\\\u00a0<a href=\\\\\\\"http://amzn.to/2yDNJvp\\\\\\\">Raspberry Pi 3</a>. Lighting was provided by an 11 Watt 1050 lumen LED bulb similar to\\\\u00a0<a href=\\\\\\\"http://amzn.to/2yFT4Cj\\\\\\\">this one</a>.</p><p><br/></p><p>The camera itself was triggered using the\\\\u00a0<a href=\\\\\\\"http://www.gphoto.org/doc/manual/ref-gphoto2-cli.html\\\\\\\">gphoto2 command line utility</a>\\\\u00a0running on the Raspberry Pi which itself was connected to the DSLR camera via USB. You can find the source code used for this project on our <a href=\\\\\\\"https://github.com/cts-admin/timelapse-dslr\\\\\\\">GitHub repository</a>. If you explore the code repository, you can see that the original plan for this project was to use a <a href=\\\\\\\"http://amzn.to/2zp2LnM\\\\\\\">mini servo</a>\\\\u00a0to manually press the camera's shutter release button which ended up not being a very reliable solution.</p><p><br/></p><p>The new and improved method used software commands to capture and download images from the camera at 15 minute intervals. After about four weeks of taking pictures, we ended up with roughly 1300 still images which were later stitched together into a continuous video file. To do this, we first sorted the images in chronological order and then passed in those ordered filenames to a text file. We were then able to use the mencoder command line utility to produce an initial .avi video file of all of our images. The Raspberry Pi Foundation has a <a href=\\\\\\\"https://www.raspberrypi.org/documentation/usage/camera/raspicam/timelapse.md\\\\\\\">good tutorial on this process</a>.</p><p><br/></p><p>The final post-production of the video was done in <a href=\\\\\\\"http://amzn.to/2zCLmc9\\\\\\\">Adobe Premier Pro</a>.</p>\\\", \\\"type\\\": \\\"paragraph\\\"}, {\\\"id\\\": \\\"14f6774a-7e64-44e5-ab2e-0e0c2cd38678\\\", \\\"value\\\": \\\"<h2>First Attempts</h2><p>As stated above, our first attempts made use of a micro servo to manually control the camera. The results of this attempt can be seen in the animated GIF below. It shows a\\\\u00a0'Blue Lake Stringless' garden bean germinating over a 5 hour period. That's about as long as we were able to capture images before we realized the servo method wasn't going to work for the long-term.</p>\\\", \\\"type\\\": \\\"paragraph\\\"}, {\\\"id\\\": \\\"85866830-607d-4144-8462-f8b49eb18474\\\", \\\"value\\\": 6, \\\"type\\\": \\\"image\\\"}, {\\\"id\\\": \\\"e9cd4b8f-b49b-4eed-87db-3b37f295a75e\\\", \\\"value\\\": \\\"<h2>Challenges</h2><p>Even after transitioning away from the servo method, we ran into a few technical problems using the software method. The first major problem was that the camera needed to stay on indefinitely to respond to the software image capture signals every 15 minutes. Obviously, leaving the camera on continuously quickly drained the camera battery. This problem was mitigated in part using an <a href=\\\\\\\"http://amzn.to/2ydsrQQ\\\\\\\">AC battery pack</a>, which allowed the battery to be plugged into a wall socket. Unfortunately, the camera seemed to treat this as a normal draining battery so the battery would need to be reseated in the camera about every 12 hours to restore the battery power indicator to full strength.</p><p><br/></p><h3>Code Challenges</h3><p>In order to stitch together still images into a continuous timelapse video, it's important that the chronological order of the images is preserved. The earliest iteration of the code controlling the camera images, attempted to do this by naming the images based on the number of times the camera was given a command to take a picture. For example, the first picture was named 0.jpeg, the second picture was named 1.jpeg, etc. Unfortunately, this counting mechanism did not take into account the possibility that the program may have to restart at some point. When this happened, the counter would just start from the beginning, naming new pictures as 0.jpeg, overwriting the existing 0.jpeg file that had been taken in the past!</p><p><br/></p><p>Later iterations of the code solved this problem by examining the folder containing all of the images that had already been taken. The program would read all of the filenames, find the highest number, and then name all subsequent photos starting from that point, rather than starting over from zero.</p><p><br/></p><p>Because some images had been taken using the original flawed code, we couldn't rely solely on the filenames to sort the images in chronological order. To get around this issue, we wrote another script that read the metadata of the image files, specifically the 'DateTimeOriginal' property of the EXIF data which contains the timestamp of when the image was originally shot. This script allowed us to rename the files in a way that made sorting them easy and intuitive (important when dealing with 1300+ image files).</p><p><br/></p><h3>Lighting Challenges</h3><p>As you can see from the YouTube video up top, many of the images are overexposed. Unfortunately, this problem was mainly due to our inexperience of taking timelapse video. The exposure was set early on in the seedling stage but never readjusted as time went on. As the seedling grew towards the light source, the overexposure became more apparent, and we unfortunately lost a lot of detail in the color of the leaves. This problem was exacerbated by setting the camera to take low resolution JPEG images, rather than using a high resolution RAW image format which would have allowed us to correct the exposure in post-production.</p><p><br/></p><p>For subsequent timelapse projects, we will likely address these problems by taking the camera out of full-manual settings, allowing it to adjust its shutter speed for a more even and consistent exposure. Additionally, we would take RAW camera images, and closely monitor the storage space of the SD card to ensure we do not run out of space before the timelapse project is complete.</p>\\\", \\\"type\\\": \\\"paragraph\\\"}]\", \"expired\": false, \"path\": \"0001000100030002\", \"show_in_menus\": false, \"content_type\": 8, \"pk\": 9, \"has_unpublished_changes\": true, \"title\": \"Time-Lapse Seed Germination: Part II\", \"latest_revision_created_at\": \"2017-11-07T19:35:45.320Z\", \"last_published_at\": null, \"intro\": \"Capturing time-lapse video using a digital SLR camera.\", \"go_live_at\": null, \"slug\": \"time-lapse-seed-germination-part-ii\", \"url_path\": \"/index/cts-blog/time-lapse-seed-germination-part-ii/\", \"tagged_items\": [{\"pk\": null, \"content_object\": 9, \"tag\": 2}, {\"pk\": null, \"content_object\": 9, \"tag\": 3}, {\"pk\": null, \"content_object\": 9, \"tag\": 4}, {\"pk\": null, \"content_object\": 9, \"tag\": 6}, {\"pk\": null, \"content_object\": 9, \"tag\": 7}], \"numchild\": 0, \"date\": \"2017-10-09T16:24:00Z\", \"references\": \"\", \"owner\": 1, \"draft_title\": \"Time-Lapse Seed Germination: Part II\", \"seo_title\": \"\", \"expire_at\": null, \"depth\": 4, \"first_published_at\": null, \"live\": false, \"live_revision\": null, \"categories\": [], \"locked\": false, \"search_description\": \"\", \"gallery_images\": []}",
+      "approved_go_live_at": null
+    }
+  },
+  {
+    "model": "wagtailcore.pagerevision",
+    "pk": 18,
+    "fields": {
+      "page": 9,
+      "submitted_for_moderation": false,
+      "created_at": "2017-11-07T19:38:08.872Z",
+      "user": [
+        "ctsadmin"
+      ],
+      "content_json": "{\"body\": \"[{\\\"id\\\": \\\"53c98320-814e-46d0-b8f2-c3058a6a72b7\\\", \\\"value\\\": \\\"<p>This is the second and final post regarding our first timelapse project. If you haven't read part one yet, you can find it <a id=\\\\\\\"8\\\\\\\" linktype=\\\\\\\"page\\\\\\\">here</a>.</p><p><br/></p><h2>Final Results</h2><p>The below video represents the final results of our first timelapse project.</p><p></p><embed embedtype=\\\\\\\"media\\\\\\\" url=\\\\\\\"https://youtu.be/4CAnbyFLV2Y\\\\\\\"/>\\\\n\\\\n\\\\n<p></p><h2><br/></h2>\\\", \\\"type\\\": \\\"paragraph\\\"}, {\\\"id\\\": \\\"2ebb9825-6bd6-4b80-92de-b7385eba73aa\\\", \\\"value\\\": \\\"<h2><br/></h2><h2>Technical Details</h2><p>This project made use of a\\\\u00a0<a href=\\\\\\\"http://amzn.to/2zDVEJ7\\\\\\\">Canon 7D</a>, an\\\\u00a0<a href=\\\\\\\"http://amzn.to/2j9ysLZ\\\\\\\">18-55mm lens</a>, powered with a <a href=\\\\\\\"http://amzn.to/2ydsrQQ\\\\\\\">AC adapter battery</a>, a\\\\u00a0<a href=\\\\\\\"http://amzn.to/2yda4vv\\\\\\\">tripod</a>, and a\\\\u00a0<a href=\\\\\\\"http://amzn.to/2yDNJvp\\\\\\\">Raspberry Pi 3</a>. Lighting was provided by an 11 Watt 1050 lumen LED bulb similar to\\\\u00a0<a href=\\\\\\\"http://amzn.to/2yFT4Cj\\\\\\\">this one</a>.</p><p><br/></p><p>The camera itself was triggered using the\\\\u00a0<a href=\\\\\\\"http://www.gphoto.org/doc/manual/ref-gphoto2-cli.html\\\\\\\">gphoto2 command line utility</a>\\\\u00a0running on the Raspberry Pi which itself was connected to the DSLR camera via USB. You can find the source code used for this project on our <a href=\\\\\\\"https://github.com/cts-admin/timelapse-dslr\\\\\\\">GitHub repository</a>. If you explore the code repository, you can see that the original plan for this project was to use a <a href=\\\\\\\"http://amzn.to/2zp2LnM\\\\\\\">mini servo</a>\\\\u00a0to manually press the camera's shutter release button which ended up not being a very reliable solution.</p><p><br/></p><p>The new and improved method used software commands to capture and download images from the camera at 15 minute intervals. After about four weeks of taking pictures, we ended up with roughly 1300 still images which were later stitched together into a continuous video file. To do this, we first sorted the images in chronological order and then passed in those ordered filenames to a text file. We were then able to use the mencoder command line utility to produce an initial .avi video file of all of our images. The Raspberry Pi Foundation has a <a href=\\\\\\\"https://www.raspberrypi.org/documentation/usage/camera/raspicam/timelapse.md\\\\\\\">good tutorial on this process</a>.</p><p><br/></p><p>The final post-production of the video was done in <a href=\\\\\\\"http://amzn.to/2zCLmc9\\\\\\\">Adobe Premier Pro</a>.</p>\\\", \\\"type\\\": \\\"paragraph\\\"}, {\\\"id\\\": \\\"14f6774a-7e64-44e5-ab2e-0e0c2cd38678\\\", \\\"value\\\": \\\"<h2><br/></h2><h2>First Attempts</h2><p>As stated above, our first attempts made use of a micro servo to manually control the camera. The results of this attempt can be seen in the animated GIF below. It shows a\\\\u00a0'Blue Lake Stringless' garden bean germinating over a 5 hour period. That's about as long as we were able to capture images before we realized the servo method wasn't going to work for the long-term.</p>\\\", \\\"type\\\": \\\"paragraph\\\"}, {\\\"id\\\": \\\"85866830-607d-4144-8462-f8b49eb18474\\\", \\\"value\\\": 6, \\\"type\\\": \\\"image\\\"}, {\\\"id\\\": \\\"e9cd4b8f-b49b-4eed-87db-3b37f295a75e\\\", \\\"value\\\": \\\"<h2><br/></h2><h2>Challenges</h2><p>Even after transitioning away from the servo method, we ran into a few technical problems using the software method. The first major problem was that the camera needed to stay on indefinitely to respond to the software image capture signals every 15 minutes. Obviously, leaving the camera on continuously quickly drained the camera battery. This problem was mitigated in part using an <a href=\\\\\\\"http://amzn.to/2ydsrQQ\\\\\\\">AC battery pack</a>, which allowed the battery to be plugged into a wall socket. Unfortunately, the camera seemed to treat this as a normal draining battery so the battery would need to be reseated in the camera about every 12 hours to restore the battery power indicator to full strength.</p><p><br/></p><h3>Code Challenges</h3><p>In order to stitch together still images into a continuous timelapse video, it's important that the chronological order of the images is preserved. The earliest iteration of the code controlling the camera images, attempted to do this by naming the images based on the number of times the camera was given a command to take a picture. For example, the first picture was named 0.jpeg, the second picture was named 1.jpeg, etc. Unfortunately, this counting mechanism did not take into account the possibility that the program may have to restart at some point. When this happened, the counter would just start from the beginning, naming new pictures as 0.jpeg, overwriting the existing 0.jpeg file that had been taken in the past!</p><p><br/></p><p>Later iterations of the code solved this problem by examining the folder containing all of the images that had already been taken. The program would read all of the filenames, find the highest number, and then name all subsequent photos starting from that point, rather than starting over from zero.</p><p><br/></p><p>Because some images had been taken using the original flawed code, we couldn't rely solely on the filenames to sort the images in chronological order. To get around this issue, we wrote another script that read the metadata of the image files, specifically the 'DateTimeOriginal' property of the EXIF data which contains the timestamp of when the image was originally shot. This script allowed us to rename the files in a way that made sorting them easy and intuitive (important when dealing with 1300+ image files).</p><p><br/></p><h3>Lighting Challenges</h3><p>As you can see from the YouTube video up top, many of the images are overexposed. Unfortunately, this problem was mainly due to our inexperience of taking timelapse video. The exposure was set early on in the seedling stage but never readjusted as time went on. As the seedling grew towards the light source, the overexposure became more apparent, and we unfortunately lost a lot of detail in the color of the leaves. This problem was exacerbated by setting the camera to take low resolution JPEG images, rather than using a high resolution RAW image format which would have allowed us to correct the exposure in post-production.</p><p><br/></p><p>For subsequent timelapse projects, we will likely address these problems by taking the camera out of full-manual settings, allowing it to adjust its shutter speed for a more even and consistent exposure. Additionally, we would take RAW camera images, and closely monitor the storage space of the SD card to ensure we do not run out of space before the timelapse project is complete.</p>\\\", \\\"type\\\": \\\"paragraph\\\"}]\", \"expired\": false, \"path\": \"0001000100030002\", \"show_in_menus\": false, \"content_type\": 8, \"pk\": 9, \"has_unpublished_changes\": true, \"title\": \"Time-Lapse Seed Germination: Part II\", \"latest_revision_created_at\": \"2017-11-07T19:37:11.667Z\", \"last_published_at\": null, \"intro\": \"Capturing time-lapse video using a digital SLR camera.\", \"go_live_at\": null, \"slug\": \"time-lapse-seed-germination-part-ii\", \"url_path\": \"/index/cts-blog/time-lapse-seed-germination-part-ii/\", \"tagged_items\": [{\"pk\": null, \"content_object\": 9, \"tag\": 2}, {\"pk\": null, \"content_object\": 9, \"tag\": 3}, {\"pk\": null, \"content_object\": 9, \"tag\": 4}, {\"pk\": null, \"content_object\": 9, \"tag\": 6}, {\"pk\": null, \"content_object\": 9, \"tag\": 7}], \"numchild\": 0, \"date\": \"2017-10-09T16:24:00Z\", \"references\": \"\", \"owner\": 1, \"draft_title\": \"Time-Lapse Seed Germination: Part II\", \"seo_title\": \"\", \"expire_at\": null, \"depth\": 4, \"first_published_at\": null, \"live\": false, \"live_revision\": null, \"categories\": [], \"locked\": false, \"search_description\": \"\", \"gallery_images\": []}",
+      "approved_go_live_at": null
+    }
+  },
+  {
+    "model": "wagtailcore.pagerevision",
+    "pk": 19,
+    "fields": {
+      "page": 9,
+      "submitted_for_moderation": false,
+      "created_at": "2017-11-07T19:42:12.755Z",
+      "user": [
+        "ctsadmin"
+      ],
+      "content_json": "{\"body\": \"[{\\\"id\\\": \\\"53c98320-814e-46d0-b8f2-c3058a6a72b7\\\", \\\"value\\\": \\\"<p>This is the second and final post regarding our first timelapse project. If you haven't read part one yet, you can find it <a id=\\\\\\\"8\\\\\\\" linktype=\\\\\\\"page\\\\\\\">here</a>.</p><p><br/></p><h2>Final Results</h2><p>The below video represents the final results of our first timelapse project.</p><p></p><embed embedtype=\\\\\\\"media\\\\\\\" url=\\\\\\\"https://youtu.be/4CAnbyFLV2Y\\\\\\\"/>\\\\n\\\\n\\\\n\\\\n<p></p><h2><br/></h2>\\\", \\\"type\\\": \\\"paragraph\\\"}, {\\\"id\\\": \\\"2ebb9825-6bd6-4b80-92de-b7385eba73aa\\\", \\\"value\\\": \\\"<h2><br/></h2><h2>Technical Details</h2><p>This project made use of a\\\\u00a0<a href=\\\\\\\"http://amzn.to/2zDVEJ7\\\\\\\">Canon 7D</a>, an\\\\u00a0<a href=\\\\\\\"http://amzn.to/2j9ysLZ\\\\\\\">18-55mm lens</a>, powered with a <a href=\\\\\\\"http://amzn.to/2ydsrQQ\\\\\\\">AC adapter battery</a>, a\\\\u00a0<a href=\\\\\\\"http://amzn.to/2yda4vv\\\\\\\">tripod</a>, and a\\\\u00a0<a href=\\\\\\\"http://amzn.to/2yDNJvp\\\\\\\">Raspberry Pi 3</a>. Lighting was provided by an 11 Watt 1050 lumen LED bulb similar to\\\\u00a0<a href=\\\\\\\"http://amzn.to/2yFT4Cj\\\\\\\">this one</a>.</p><p><br/></p><p>The camera itself was triggered using the\\\\u00a0<a href=\\\\\\\"http://www.gphoto.org/doc/manual/ref-gphoto2-cli.html\\\\\\\">gphoto2 command line utility</a>\\\\u00a0running on the Raspberry Pi which itself was connected to the DSLR camera via USB. You can find the source code used for this project on our <a href=\\\\\\\"https://github.com/cts-admin/timelapse-dslr\\\\\\\">GitHub repository</a>. If you explore the code repository, you can see that the original plan for this project was to use a <a href=\\\\\\\"http://amzn.to/2zp2LnM\\\\\\\">mini servo</a>\\\\u00a0to manually press the camera's shutter release button which ended up not being a very reliable solution.</p><p><br/></p><p>The new and improved method used software commands to capture and download images from the camera at 15 minute intervals. After about four weeks of taking pictures, we ended up with roughly 1300 still images which were later stitched together into a continuous video file. To do this, we first sorted the images in chronological order and then passed in those ordered filenames to a text file. We were then able to use the mencoder command line utility to produce an initial .avi video file of all of our images. The Raspberry Pi Foundation has a <a href=\\\\\\\"https://www.raspberrypi.org/documentation/usage/camera/raspicam/timelapse.md\\\\\\\">good tutorial on this process</a>.</p><p><br/></p><p>The final post-production of the video was done in <a href=\\\\\\\"http://amzn.to/2zCLmc9\\\\\\\">Adobe Premier Pro</a>.</p>\\\", \\\"type\\\": \\\"paragraph\\\"}, {\\\"id\\\": \\\"14f6774a-7e64-44e5-ab2e-0e0c2cd38678\\\", \\\"value\\\": \\\"<h2><br/></h2><h2>First Attempts</h2><p>As stated above, our first attempts made use of a micro servo to manually control the camera. The results of this attempt can be seen in the animated GIF below. It shows a\\\\u00a0'Blue Lake Stringless' garden bean germinating over a 5 hour period. That's about as long as we were able to capture images before we realized the servo method wasn't going to work for the long-term.</p>\\\", \\\"type\\\": \\\"paragraph\\\"}, {\\\"id\\\": \\\"85866830-607d-4144-8462-f8b49eb18474\\\", \\\"value\\\": 6, \\\"type\\\": \\\"image\\\"}, {\\\"id\\\": \\\"e9cd4b8f-b49b-4eed-87db-3b37f295a75e\\\", \\\"value\\\": \\\"<h2><br/></h2><h2>Challenges</h2><p>Even after transitioning away from the servo method, we ran into a few technical problems using the software method. The first major problem was that the camera needed to stay on indefinitely to respond to the software image capture signals every 15 minutes. Obviously, leaving the camera on continuously quickly drained the camera battery. This problem was mitigated in part using an <a href=\\\\\\\"http://amzn.to/2ydsrQQ\\\\\\\">AC battery pack</a>, which allowed the battery to be plugged into a wall socket. Unfortunately, the camera seemed to treat this as a normal draining battery so the battery would need to be reseated in the camera about every 12 hours to restore the battery power indicator to full strength.</p><p><br/></p><h3>Code Challenges</h3><p>In order to stitch together still images into a continuous timelapse video, it's important that the chronological order of the images is preserved. The earliest iteration of the code controlling the camera images attempted to do this by naming the images based on the number of times the camera was given a command to take a picture. For example, the first picture was named 0.jpeg, the second picture was named 1.jpeg, etc. Unfortunately, this counting mechanism did not take into account the possibility that the program may have to restart at some point. When this happened, the counter would just start from the beginning, naming new pictures as 0.jpeg, overwriting the existing 0.jpeg file that had been taken in the past!</p><p><br/></p><p>Later iterations of the code solved this problem by examining the folder containing all of the images that had already been taken. The program would read all of the filenames, find the highest number, and then name all subsequent photos starting from that point, rather than starting over from zero.</p><p><br/></p><p>Because some images had been taken using the original flawed code, we couldn't rely solely on the filenames to sort the images in chronological order. To get around this issue, we wrote another script that read the metadata of the image files, specifically the 'DateTimeOriginal' property of the EXIF data which contains the timestamp of when the image was originally shot. This script allowed us to rename the files in a way that made sorting them easy and intuitive (important when dealing with 1300+ image files).</p><p><br/></p><h3>Lighting Challenges</h3><p>As you can see from the YouTube video up top, many of the images are overexposed. Unfortunately, this problem was mainly due to our inexperience of taking timelapse video. The exposure was set early on in the seedling stage but never readjusted as time went on. As the seedling grew towards the light source, the overexposure became more apparent, and we unfortunately lost a lot of detail in the color of the leaves. This problem was exacerbated by setting the camera to take low resolution JPEG images, rather than using a high resolution RAW image format which would have allowed us to correct the exposure in post-production.</p><p><br/></p><p>For subsequent timelapse projects, we will likely address these problems by taking the camera out of full-manual settings, allowing it to adjust its shutter speed for a more even and consistent exposure. Additionally, we would take RAW camera images, and closely monitor the storage space of the SD card to ensure we do not run out of space before the timelapse project is complete.</p><hr/>If you have any questions or comments about this project, be sure to leave them in the comments below!\\\", \\\"type\\\": \\\"paragraph\\\"}]\", \"expired\": false, \"path\": \"0001000100030002\", \"show_in_menus\": false, \"content_type\": 8, \"pk\": 9, \"has_unpublished_changes\": true, \"title\": \"Time-Lapse Seed Germination: Part II\", \"latest_revision_created_at\": \"2017-11-07T19:38:08.872Z\", \"last_published_at\": null, \"intro\": \"Capturing time-lapse video using a digital SLR camera.\", \"go_live_at\": null, \"slug\": \"time-lapse-seed-germination-part-ii\", \"url_path\": \"/index/cts-blog/time-lapse-seed-germination-part-ii/\", \"tagged_items\": [{\"pk\": null, \"content_object\": 9, \"tag\": 2}, {\"pk\": null, \"content_object\": 9, \"tag\": 3}, {\"pk\": null, \"content_object\": 9, \"tag\": 4}, {\"pk\": null, \"content_object\": 9, \"tag\": 6}, {\"pk\": null, \"content_object\": 9, \"tag\": 7}], \"numchild\": 0, \"date\": \"2017-10-09T16:24:00Z\", \"references\": \"\", \"owner\": 1, \"draft_title\": \"Time-Lapse Seed Germination: Part II\", \"seo_title\": \"\", \"expire_at\": null, \"depth\": 4, \"first_published_at\": null, \"live\": false, \"live_revision\": null, \"categories\": [], \"locked\": false, \"search_description\": \"\", \"gallery_images\": []}",
+      "approved_go_live_at": null
+    }
+  },
+  {
+    "model": "wagtailcore.pagerevision",
+    "pk": 20,
+    "fields": {
+      "page": 9,
+      "submitted_for_moderation": false,
+      "created_at": "2017-11-07T19:42:51.108Z",
+      "user": [
+        "ctsadmin"
+      ],
+      "content_json": "{\"body\": \"[{\\\"id\\\": \\\"53c98320-814e-46d0-b8f2-c3058a6a72b7\\\", \\\"value\\\": \\\"<p>This is the second and final post regarding our first timelapse project. If you haven't read part one yet, you can find it <a id=\\\\\\\"8\\\\\\\" linktype=\\\\\\\"page\\\\\\\">here</a>.</p><p><br/></p><h2>Final Results</h2><p>The below video represents the final results of our first timelapse project.</p><p></p><embed embedtype=\\\\\\\"media\\\\\\\" url=\\\\\\\"https://youtu.be/4CAnbyFLV2Y\\\\\\\"/>\\\\n\\\\n\\\\n\\\\n\\\\n<p></p><h2><br/></h2>\\\", \\\"type\\\": \\\"paragraph\\\"}, {\\\"id\\\": \\\"2ebb9825-6bd6-4b80-92de-b7385eba73aa\\\", \\\"value\\\": \\\"<h2><br/></h2><h2>Technical Details</h2><p>This project made use of a\\\\u00a0<a href=\\\\\\\"http://amzn.to/2zDVEJ7\\\\\\\">Canon 7D</a>, an\\\\u00a0<a href=\\\\\\\"http://amzn.to/2j9ysLZ\\\\\\\">18-55mm lens</a>, powered with a <a href=\\\\\\\"http://amzn.to/2ydsrQQ\\\\\\\">AC adapter battery</a>, a\\\\u00a0<a href=\\\\\\\"http://amzn.to/2yda4vv\\\\\\\">tripod</a>, and a\\\\u00a0<a href=\\\\\\\"http://amzn.to/2yDNJvp\\\\\\\">Raspberry Pi 3</a>. Lighting was provided by an 11 Watt 1050 lumen LED bulb similar to\\\\u00a0<a href=\\\\\\\"http://amzn.to/2yFT4Cj\\\\\\\">this one</a>.</p><p><br/></p><p>The camera itself was triggered using the\\\\u00a0<a href=\\\\\\\"http://www.gphoto.org/doc/manual/ref-gphoto2-cli.html\\\\\\\">gphoto2 command line utility</a>\\\\u00a0running on the Raspberry Pi which itself was connected to the DSLR camera via USB. You can find the source code used for this project on our <a href=\\\\\\\"https://github.com/cts-admin/timelapse-dslr\\\\\\\">GitHub repository</a>. If you explore the code repository, you can see that the original plan for this project was to use a <a href=\\\\\\\"http://amzn.to/2zp2LnM\\\\\\\">mini servo</a>\\\\u00a0to manually press the camera's shutter release button which ended up not being a very reliable solution.</p><p><br/></p><p>The new and improved method used software commands to capture and download images from the camera at 15 minute intervals. After about four weeks of taking pictures, we ended up with roughly 1300 still images which were later stitched together into a continuous video file. To do this, we first sorted the images in chronological order and then passed in those ordered filenames to a text file. We were then able to use the mencoder command line utility to produce an initial .avi video file of all of our images. The Raspberry Pi Foundation has a <a href=\\\\\\\"https://www.raspberrypi.org/documentation/usage/camera/raspicam/timelapse.md\\\\\\\">good tutorial on this process</a>.</p><p><br/></p><p>The final post-production of the video was done in <a href=\\\\\\\"http://amzn.to/2zCLmc9\\\\\\\">Adobe Premier Pro</a>.</p>\\\", \\\"type\\\": \\\"paragraph\\\"}, {\\\"id\\\": \\\"14f6774a-7e64-44e5-ab2e-0e0c2cd38678\\\", \\\"value\\\": \\\"<h2><br/></h2><h2>First Attempts</h2><p>As stated above, our first attempts made use of a micro servo to manually control the camera. The results of this attempt can be seen in the animated GIF below. It shows a\\\\u00a0'Blue Lake Stringless' garden bean germinating over a 5 hour period. That's about as long as we were able to capture images before we realized the servo method wasn't going to work for the long-term.</p>\\\", \\\"type\\\": \\\"paragraph\\\"}, {\\\"id\\\": \\\"85866830-607d-4144-8462-f8b49eb18474\\\", \\\"value\\\": 6, \\\"type\\\": \\\"image\\\"}, {\\\"id\\\": \\\"e9cd4b8f-b49b-4eed-87db-3b37f295a75e\\\", \\\"value\\\": \\\"<h2><br/></h2><h2>Challenges</h2><p>Even after transitioning away from the servo method, we ran into a few technical problems using the software method. The first major problem was that the camera needed to stay on indefinitely to respond to the software image capture signals every 15 minutes. Obviously, leaving the camera on continuously quickly drained the camera battery. This problem was mitigated in part using an <a href=\\\\\\\"http://amzn.to/2ydsrQQ\\\\\\\">AC battery pack</a>, which allowed the battery to be plugged into a wall socket. Unfortunately, the camera seemed to treat this as a normal draining battery so the battery would need to be reseated in the camera about every 12 hours to restore the battery power indicator to full strength.</p><p><br/></p><h3>Code Challenges</h3><p>In order to stitch together still images into a continuous timelapse video, it's important that the chronological order of the images is preserved. The earliest iteration of the code controlling the camera images attempted to do this by naming the images based on the number of times the camera was given a command to take a picture. For example, the first picture was named 0.jpeg, the second picture was named 1.jpeg, etc. Unfortunately, this counting mechanism did not take into account the possibility that the program may have to restart at some point. When this happened, the counter would just start from the beginning, naming new pictures as 0.jpeg, overwriting the existing 0.jpeg file that had been taken in the past!</p><p><br/></p><p>Later iterations of the code solved this problem by examining the folder containing all of the images that had already been taken. The program would read all of the filenames, find the highest number, and then name all subsequent photos starting from that point, rather than starting over from zero.</p><p><br/></p><p>Because some images had been taken using the original flawed code, we couldn't rely solely on the filenames to sort the images in chronological order. To get around this issue, we wrote another script that read the metadata of the image files, specifically the 'DateTimeOriginal' property of the EXIF data which contains the timestamp of when the image was originally shot. This script allowed us to rename the files in a way that made sorting them easy and intuitive (important when dealing with 1300+ image files).</p><p><br/></p><h3>Lighting Challenges</h3><p>As you can see from the YouTube video up top, many of the images are overexposed. Unfortunately, this problem was mainly due to our inexperience of taking timelapse video. The exposure was set early on in the seedling stage but never readjusted as time went on. As the seedling grew towards the light source, the overexposure became more apparent, and we unfortunately lost a lot of detail in the color of the leaves. This problem was exacerbated by setting the camera to take low resolution JPEG images, rather than using a high resolution RAW image format which would have allowed us to correct the exposure in post-production.</p><p><br/></p><p>For subsequent timelapse projects, we will likely address these problems by taking the camera out of full-manual settings, allowing it to adjust its shutter speed for a more even and consistent exposure. Additionally, we would take RAW camera images, and closely monitor the storage space of the SD card to ensure we do not run out of space before the timelapse project is complete.</p><hr/>If you have any questions or comments about this project, be sure to leave them in the comments below!\\\", \\\"type\\\": \\\"paragraph\\\"}]\", \"expired\": false, \"path\": \"0001000100030002\", \"show_in_menus\": false, \"content_type\": 8, \"pk\": 9, \"has_unpublished_changes\": true, \"title\": \"Time-Lapse Seed Germination: Part II\", \"latest_revision_created_at\": \"2017-11-07T19:42:12.755Z\", \"last_published_at\": null, \"intro\": \"Capturing time-lapse video using a digital SLR camera.\", \"go_live_at\": null, \"slug\": \"time-lapse-seed-germination-part-ii\", \"url_path\": \"/index/cts-blog/time-lapse-seed-germination-part-ii/\", \"tagged_items\": [{\"pk\": null, \"content_object\": 9, \"tag\": 2}, {\"pk\": null, \"content_object\": 9, \"tag\": 3}, {\"pk\": null, \"content_object\": 9, \"tag\": 4}, {\"pk\": null, \"content_object\": 9, \"tag\": 6}, {\"pk\": null, \"content_object\": 9, \"tag\": 7}], \"numchild\": 0, \"date\": \"2017-10-09T16:24:00Z\", \"references\": \"\", \"owner\": 1, \"draft_title\": \"Time-Lapse Seed Germination: Part II\", \"seo_title\": \"\", \"expire_at\": null, \"depth\": 4, \"first_published_at\": null, \"live\": false, \"live_revision\": null, \"categories\": [], \"locked\": false, \"search_description\": \"\", \"gallery_images\": []}",
+      "approved_go_live_at": null
+    }
+  },
+  {
+    "model": "wagtailcore.pagerevision",
+    "pk": 21,
+    "fields": {
+      "page": 8,
+      "submitted_for_moderation": false,
+      "created_at": "2017-11-07T19:45:28.614Z",
+      "user": [
+        "ctsadmin"
+      ],
+      "content_json": "{\"body\": \"[{\\\"id\\\": \\\"d7d731b8-c4fe-462d-b627-fa10d42ff7c2\\\", \\\"value\\\": \\\"<p>While most people have a functional understanding of what seed germination is, few people are curious enough about the topic to dig into the nitty-gritty details of how the process actually works. This project, on its face, aims to provoke such a sense of curiosity in a process that people have previously taken for granted.</p><p><br/></p><h2>Plant Blindness</h2><p>Too often, plants are overlooked by people, and generally perceived as nothing more than a backdrop for the animal world. This phenomenon has become known as \\\\\\\"plant blindness\\\\\\\", a problem that is likely to be addressed by multiple CTS projects going forward.</p><p>Human brains are wired to ascribe greater importance to objects that stand out to us. The seemingly static nature of plants often makes this difficult.\\\\u00a0Even when we are surrounded by plants, we rarely take the time to consciously acknowledge them.\\\\u00a0And while aspects of plant blindness may themselves be natural (e.g. minimal evolutionary consequence of ignoring plants), they can also be easily overcome.</p><p><br/></p><h2>Cultivating Interest</h2><p><embed alt=\\\\\\\"Time lapse setup\\\\\\\" embedtype=\\\\\\\"image\\\\\\\" format=\\\\\\\"left\\\\\\\" id=\\\\\\\"1\\\\\\\"/><img/>In the case of germination, the process would quickly become boring to watch in real-time given the speed at which it occurs. Using time-lapse photography, we can solve this problem rather easily. Several days can be condensed into just a few minutes, allowing people the opportunity to see into a world they've never noticed before.</p><p>To achieve this, we will be using a DSLR camera controlled programmatically with the help of an inexpensive computer called a\\\\u00a0<a href=\\\\\\\"http://amzn.to/2wExDAu\\\\\\\">Raspberry Pi</a>. The images will be stitched together into a short video that hopefully even those without any prior interest in plant life will think is pretty neat to watch.</p><p>In the <a id=\\\\\\\"9\\\\\\\" linktype=\\\\\\\"page\\\\\\\">next blog post</a>, we'll explain the technical details of the project for those who care to replicate it either in a classroom setting or for themselves.</p><p><br/></p>\\\", \\\"type\\\": \\\"paragraph\\\"}, {\\\"id\\\": \\\"d48afd0f-a8f7-4d9f-8f6b-ed5aaec8d5b6\\\", \\\"value\\\": \\\"<h2>Part II Now Available</h2><p>You can now see the final results of this project and read about the technical details in <a id=\\\\\\\"9\\\\\\\" linktype=\\\\\\\"page\\\\\\\">part two of this project series</a>.</p>\\\", \\\"type\\\": \\\"paragraph\\\"}]\", \"expired\": false, \"path\": \"0001000100030001\", \"show_in_menus\": false, \"content_type\": 8, \"pk\": 8, \"has_unpublished_changes\": false, \"title\": \"Time-lapse seed germination: Part I\", \"latest_revision_created_at\": \"2017-09-22T22:58:27.405Z\", \"last_published_at\": \"2017-09-22T22:58:27.459Z\", \"intro\": \"A project designed to capture the fascinating process of seed germination.\", \"go_live_at\": null, \"slug\": \"time-lapse-seed-germination-part-i\", \"url_path\": \"/index/cts-blog/time-lapse-seed-germination-part-i/\", \"tagged_items\": [{\"pk\": null, \"content_object\": 8, \"tag\": 1}, {\"pk\": null, \"content_object\": 8, \"tag\": 2}, {\"pk\": null, \"content_object\": 8, \"tag\": 3}, {\"pk\": null, \"content_object\": 8, \"tag\": 4}, {\"pk\": null, \"content_object\": 8, \"tag\": 5}], \"numchild\": 0, \"date\": \"2017-09-22T17:00:00Z\", \"references\": \"<p>Botanical Society of America. (2001). Toward a Theory of Plant Blindness.\\u00a0<i><a href=\\\"https://www.botany.org/bsa/psb/2001/psb47-1.pdf\\\">Plant Science Bulletin</a>, 47</i>(1), 2-9.</p>\", \"owner\": 1, \"draft_title\": \"Time-lapse seed germination: Part I\", \"seo_title\": \"\", \"expire_at\": null, \"depth\": 4, \"first_published_at\": \"2017-09-22T22:58:27.459Z\", \"live\": true, \"live_revision\": 12, \"categories\": [], \"locked\": false, \"search_description\": \"\", \"gallery_images\": []}",
+      "approved_go_live_at": null
+    }
+  },
+  {
+    "model": "wagtailcore.pagerevision",
+    "pk": 22,
+    "fields": {
+      "page": 8,
+      "submitted_for_moderation": false,
+      "created_at": "2017-11-30T00:29:11.775Z",
+      "user": [
+        "ctsadmin"
+      ],
+      "content_json": "{\"search_description\": \"\", \"live_revision\": 21, \"expired\": false, \"slug\": \"time-lapse-seed-germination-part-i\", \"categories\": [1], \"path\": \"0001000100030001\", \"latest_revision_created_at\": \"2017-11-07T19:45:28.614Z\", \"numchild\": 0, \"show_in_menus\": false, \"seo_title\": \"\", \"content_type\": 8, \"body\": \"[{\\\"type\\\": \\\"paragraph\\\", \\\"id\\\": \\\"d7d731b8-c4fe-462d-b627-fa10d42ff7c2\\\", \\\"value\\\": \\\"<p>While most people have a functional understanding of what seed germination is, few people are curious enough about the topic to dig into the nitty-gritty details of how the process actually works. This project, on its face, aims to provoke such a sense of curiosity in a process that people have previously taken for granted.</p><p><br/></p><h2>Plant Blindness</h2><p>Too often, plants are overlooked by people, and generally perceived as nothing more than a backdrop for the animal world. This phenomenon has become known as \\\\\\\"plant blindness\\\\\\\", a problem that is likely to be addressed by multiple CTS projects going forward.</p><p>Human brains are wired to ascribe greater importance to objects that stand out to us. The seemingly static nature of plants often makes this difficult.\\\\u00a0Even when we are surrounded by plants, we rarely take the time to consciously acknowledge them.\\\\u00a0And while aspects of plant blindness may themselves be natural (e.g. minimal evolutionary consequence of ignoring plants), they can also be easily overcome.</p><p><br/></p><h2>Cultivating Interest</h2><p><embed alt=\\\\\\\"Time lapse setup\\\\\\\" embedtype=\\\\\\\"image\\\\\\\" format=\\\\\\\"left\\\\\\\" id=\\\\\\\"1\\\\\\\"/><img/>In the case of germination, the process would quickly become boring to watch in real-time given the speed at which it occurs. Using time-lapse photography, we can solve this problem rather easily. Several days can be condensed into just a few minutes, allowing people the opportunity to see into a world they've never noticed before.</p><p>To achieve this, we will be using a DSLR camera controlled programmatically with the help of an inexpensive computer called a\\\\u00a0<a href=\\\\\\\"http://amzn.to/2wExDAu\\\\\\\">Raspberry Pi</a>. The images will be stitched together into a short video that hopefully even those without any prior interest in plant life will think is pretty neat to watch.</p><p>In the <a id=\\\\\\\"9\\\\\\\" linktype=\\\\\\\"page\\\\\\\">next blog post</a>, we'll explain the technical details of the project for those who care to replicate it either in a classroom setting or for themselves.</p><p><br/></p>\\\"}, {\\\"type\\\": \\\"paragraph\\\", \\\"id\\\": \\\"d48afd0f-a8f7-4d9f-8f6b-ed5aaec8d5b6\\\", \\\"value\\\": \\\"<h2>Part II Now Available</h2><p>You can now see the final results of this project and read about the technical details in <a id=\\\\\\\"9\\\\\\\" linktype=\\\\\\\"page\\\\\\\">part two of this project series</a>.</p>\\\"}]\", \"pk\": 8, \"gallery_images\": [], \"go_live_at\": null, \"references\": \"<p>Botanical Society of America. (2001). Toward a Theory of Plant Blindness.\\u00a0<i><a href=\\\"https://www.botany.org/bsa/psb/2001/psb47-1.pdf\\\">Plant Science Bulletin</a>, 47</i>(1), 2-9.</p>\", \"tagged_items\": [{\"tag\": 1, \"pk\": null, \"content_object\": 8}, {\"tag\": 2, \"pk\": null, \"content_object\": 8}, {\"tag\": 3, \"pk\": null, \"content_object\": 8}, {\"tag\": 4, \"pk\": null, \"content_object\": 8}, {\"tag\": 5, \"pk\": null, \"content_object\": 8}], \"intro\": \"A project designed to capture the fascinating process of seed germination.\", \"title\": \"Time-lapse seed germination: Part I\", \"depth\": 4, \"live\": true, \"date\": \"2017-09-22T17:00:00Z\", \"draft_title\": \"Time-lapse seed germination: Part I\", \"last_published_at\": \"2017-11-07T19:45:28.658Z\", \"expire_at\": null, \"has_unpublished_changes\": false, \"url_path\": \"/index/cts-blog/time-lapse-seed-germination-part-i/\", \"first_published_at\": \"2017-09-22T22:58:27.459Z\", \"owner\": 1, \"locked\": false}",
+      "approved_go_live_at": null
+    }
+  },
+  {
+    "model": "wagtailcore.pagerevision",
+    "pk": 23,
+    "fields": {
+      "page": 8,
+      "submitted_for_moderation": false,
+      "created_at": "2017-11-30T00:29:37.445Z",
+      "user": [
+        "ctsadmin"
+      ],
+      "content_json": "{\"search_description\": \"\", \"live_revision\": 21, \"expired\": false, \"slug\": \"time-lapse-seed-germination-part-i\", \"categories\": [1], \"path\": \"0001000100030001\", \"latest_revision_created_at\": \"2017-11-30T00:29:11.775Z\", \"numchild\": 0, \"show_in_menus\": false, \"seo_title\": \"\", \"content_type\": 8, \"body\": \"[{\\\"type\\\": \\\"paragraph\\\", \\\"id\\\": \\\"d7d731b8-c4fe-462d-b627-fa10d42ff7c2\\\", \\\"value\\\": \\\"<p>While most people have a functional understanding of what seed germination is, few people are curious enough about the topic to dig into the nitty-gritty details of how the process actually works. This project, on its face, aims to provoke such a sense of curiosity in a process that people have previously taken for granted.</p><p><br/></p><h2>Plant Blindness</h2><p>Too often, plants are overlooked by people, and generally perceived as nothing more than a backdrop for the animal world. This phenomenon has become known as \\\\\\\"plant blindness\\\\\\\", a problem that is likely to be addressed by multiple CTS projects going forward.</p><p>Human brains are wired to ascribe greater importance to objects that stand out to us. The seemingly static nature of plants often makes this difficult.\\\\u00a0Even when we are surrounded by plants, we rarely take the time to consciously acknowledge them.\\\\u00a0And while aspects of plant blindness may themselves be natural (e.g. minimal evolutionary consequence of ignoring plants), they can also be easily overcome.</p><p><br/></p><h2>Cultivating Interest</h2><p><embed alt=\\\\\\\"Time lapse setup\\\\\\\" embedtype=\\\\\\\"image\\\\\\\" format=\\\\\\\"left\\\\\\\" id=\\\\\\\"1\\\\\\\"/><img/>In the case of germination, the process would quickly become boring to watch in real-time given the speed at which it occurs. Using time-lapse photography, we can solve this problem rather easily. Several days can be condensed into just a few minutes, allowing people the opportunity to see into a world they've never noticed before.</p><p>To achieve this, we will be using a DSLR camera controlled programmatically with the help of an inexpensive computer called a\\\\u00a0<a href=\\\\\\\"http://amzn.to/2wExDAu\\\\\\\">Raspberry Pi</a>. The images will be stitched together into a short video that hopefully even those without any prior interest in plant life will think is pretty neat to watch.</p><p>In the <a id=\\\\\\\"9\\\\\\\" linktype=\\\\\\\"page\\\\\\\">next blog post</a>, we'll explain the technical details of the project for those who care to replicate it either in a classroom setting or for themselves.</p><p><br/></p>\\\"}, {\\\"type\\\": \\\"paragraph\\\", \\\"id\\\": \\\"d48afd0f-a8f7-4d9f-8f6b-ed5aaec8d5b6\\\", \\\"value\\\": \\\"<h2>Part II Now Available</h2><p>You can now see the final results of this project and read about the technical details in <a id=\\\\\\\"9\\\\\\\" linktype=\\\\\\\"page\\\\\\\">part two of this project series</a>.</p>\\\"}]\", \"pk\": 8, \"gallery_images\": [], \"go_live_at\": null, \"references\": \"<p>Botanical Society of America. (2001). Toward a Theory of Plant Blindness.\\u00a0<i><a href=\\\"https://www.botany.org/bsa/psb/2001/psb47-1.pdf\\\">Plant Science Bulletin</a>, 47</i>(1), 2-9.</p>\", \"tagged_items\": [{\"tag\": 1, \"pk\": null, \"content_object\": 8}, {\"tag\": 2, \"pk\": null, \"content_object\": 8}, {\"tag\": 3, \"pk\": null, \"content_object\": 8}, {\"tag\": 4, \"pk\": null, \"content_object\": 8}, {\"tag\": 5, \"pk\": null, \"content_object\": 8}], \"intro\": \"A project designed to capture the fascinating process of seed germination.\", \"title\": \"Time-lapse seed germination: Part I\", \"depth\": 4, \"live\": true, \"date\": \"2017-09-22T17:00:00Z\", \"draft_title\": \"Time-lapse seed germination: Part I\", \"last_published_at\": \"2017-11-07T19:45:28.658Z\", \"expire_at\": null, \"has_unpublished_changes\": true, \"url_path\": \"/index/cts-blog/time-lapse-seed-germination-part-i/\", \"first_published_at\": \"2017-09-22T22:58:27.459Z\", \"owner\": 1, \"locked\": false}",
+      "approved_go_live_at": null
+    }
+  },
+  {
+    "model": "wagtailcore.pagerevision",
+    "pk": 24,
+    "fields": {
+      "page": 9,
+      "submitted_for_moderation": false,
+      "created_at": "2017-11-30T00:29:47.625Z",
+      "user": [
+        "ctsadmin"
+      ],
+      "content_json": "{\"search_description\": \"\", \"live_revision\": 20, \"expired\": false, \"slug\": \"time-lapse-seed-germination-part-ii\", \"categories\": [1], \"path\": \"0001000100030002\", \"latest_revision_created_at\": \"2017-11-07T19:42:51.108Z\", \"numchild\": 0, \"show_in_menus\": false, \"seo_title\": \"\", \"content_type\": 8, \"body\": \"[{\\\"type\\\": \\\"paragraph\\\", \\\"id\\\": \\\"53c98320-814e-46d0-b8f2-c3058a6a72b7\\\", \\\"value\\\": \\\"<p>This is the second and final post regarding our first timelapse project. If you haven't read part one yet, you can find it <a id=\\\\\\\"8\\\\\\\" linktype=\\\\\\\"page\\\\\\\">here</a>.</p><p><br/></p><h2>Final Results</h2><p>The below video represents the final results of our first timelapse project.</p><p></p><embed embedtype=\\\\\\\"media\\\\\\\" url=\\\\\\\"https://youtu.be/4CAnbyFLV2Y\\\\\\\"/>\\\\n\\\\n\\\\n\\\\n\\\\n\\\\n<p></p><h2><br/></h2>\\\"}, {\\\"type\\\": \\\"paragraph\\\", \\\"id\\\": \\\"2ebb9825-6bd6-4b80-92de-b7385eba73aa\\\", \\\"value\\\": \\\"<h2><br/></h2><h2>Technical Details</h2><p>This project made use of a\\\\u00a0<a href=\\\\\\\"http://amzn.to/2zDVEJ7\\\\\\\">Canon 7D</a>, an\\\\u00a0<a href=\\\\\\\"http://amzn.to/2j9ysLZ\\\\\\\">18-55mm lens</a>, powered with a <a href=\\\\\\\"http://amzn.to/2ydsrQQ\\\\\\\">AC adapter battery</a>, a\\\\u00a0<a href=\\\\\\\"http://amzn.to/2yda4vv\\\\\\\">tripod</a>, and a\\\\u00a0<a href=\\\\\\\"http://amzn.to/2yDNJvp\\\\\\\">Raspberry Pi 3</a>. Lighting was provided by an 11 Watt 1050 lumen LED bulb similar to\\\\u00a0<a href=\\\\\\\"http://amzn.to/2yFT4Cj\\\\\\\">this one</a>.</p><p><br/></p><p>The camera itself was triggered using the\\\\u00a0<a href=\\\\\\\"http://www.gphoto.org/doc/manual/ref-gphoto2-cli.html\\\\\\\">gphoto2 command line utility</a>\\\\u00a0running on the Raspberry Pi which itself was connected to the DSLR camera via USB. You can find the source code used for this project on our <a href=\\\\\\\"https://github.com/cts-admin/timelapse-dslr\\\\\\\">GitHub repository</a>. If you explore the code repository, you can see that the original plan for this project was to use a <a href=\\\\\\\"http://amzn.to/2zp2LnM\\\\\\\">mini servo</a>\\\\u00a0to manually press the camera's shutter release button which ended up not being a very reliable solution.</p><p><br/></p><p>The new and improved method used software commands to capture and download images from the camera at 15 minute intervals. After about four weeks of taking pictures, we ended up with roughly 1300 still images which were later stitched together into a continuous video file. To do this, we first sorted the images in chronological order and then passed in those ordered filenames to a text file. We were then able to use the mencoder command line utility to produce an initial .avi video file of all of our images. The Raspberry Pi Foundation has a <a href=\\\\\\\"https://www.raspberrypi.org/documentation/usage/camera/raspicam/timelapse.md\\\\\\\">good tutorial on this process</a>.</p><p><br/></p><p>The final post-production of the video was done in <a href=\\\\\\\"http://amzn.to/2zCLmc9\\\\\\\">Adobe Premier Pro</a>.</p>\\\"}, {\\\"type\\\": \\\"paragraph\\\", \\\"id\\\": \\\"14f6774a-7e64-44e5-ab2e-0e0c2cd38678\\\", \\\"value\\\": \\\"<h2><br/></h2><h2>First Attempts</h2><p>As stated above, our first attempts made use of a micro servo to manually control the camera. The results of this attempt can be seen in the animated GIF below. It shows a\\\\u00a0'Blue Lake Stringless' garden bean germinating over a 5 hour period. That's about as long as we were able to capture images before we realized the servo method wasn't going to work for the long-term.</p>\\\"}, {\\\"type\\\": \\\"image\\\", \\\"id\\\": \\\"85866830-607d-4144-8462-f8b49eb18474\\\", \\\"value\\\": 6}, {\\\"type\\\": \\\"paragraph\\\", \\\"id\\\": \\\"e9cd4b8f-b49b-4eed-87db-3b37f295a75e\\\", \\\"value\\\": \\\"<h2><br/></h2><h2>Challenges</h2><p>Even after transitioning away from the servo method, we ran into a few technical problems using the software method. The first major problem was that the camera needed to stay on indefinitely to respond to the software image capture signals every 15 minutes. Obviously, leaving the camera on continuously quickly drained the camera battery. This problem was mitigated in part using an <a href=\\\\\\\"http://amzn.to/2ydsrQQ\\\\\\\">AC battery pack</a>, which allowed the battery to be plugged into a wall socket. Unfortunately, the camera seemed to treat this as a normal draining battery so the battery would need to be reseated in the camera about every 12 hours to restore the battery power indicator to full strength.</p><p><br/></p><h3>Code Challenges</h3><p>In order to stitch together still images into a continuous timelapse video, it's important that the chronological order of the images is preserved. The earliest iteration of the code controlling the camera images attempted to do this by naming the images based on the number of times the camera was given a command to take a picture. For example, the first picture was named 0.jpeg, the second picture was named 1.jpeg, etc. Unfortunately, this counting mechanism did not take into account the possibility that the program may have to restart at some point. When this happened, the counter would just start from the beginning, naming new pictures as 0.jpeg, overwriting the existing 0.jpeg file that had been taken in the past!</p><p><br/></p><p>Later iterations of the code solved this problem by examining the folder containing all of the images that had already been taken. The program would read all of the filenames, find the highest number, and then name all subsequent photos starting from that point, rather than starting over from zero.</p><p><br/></p><p>Because some images had been taken using the original flawed code, we couldn't rely solely on the filenames to sort the images in chronological order. To get around this issue, we wrote another script that read the metadata of the image files, specifically the 'DateTimeOriginal' property of the EXIF data which contains the timestamp of when the image was originally shot. This script allowed us to rename the files in a way that made sorting them easy and intuitive (important when dealing with 1300+ image files).</p><p><br/></p><h3>Lighting Challenges</h3><p>As you can see from the YouTube video up top, many of the images are overexposed. Unfortunately, this problem was mainly due to our inexperience of taking timelapse video. The exposure was set early on in the seedling stage but never readjusted as time went on. As the seedling grew towards the light source, the overexposure became more apparent, and we unfortunately lost a lot of detail in the color of the leaves. This problem was exacerbated by setting the camera to take low resolution JPEG images, rather than using a high resolution RAW image format which would have allowed us to correct the exposure in post-production.</p><p><br/></p><p>For subsequent timelapse projects, we will likely address these problems by taking the camera out of full-manual settings, allowing it to adjust its shutter speed for a more even and consistent exposure. Additionally, we would take RAW camera images, and closely monitor the storage space of the SD card to ensure we do not run out of space before the timelapse project is complete.</p><hr/>If you have any questions or comments about this project, be sure to leave them in the comments below!\\\"}]\", \"pk\": 9, \"gallery_images\": [], \"go_live_at\": null, \"references\": \"\", \"tagged_items\": [{\"tag\": 2, \"pk\": null, \"content_object\": 9}, {\"tag\": 3, \"pk\": null, \"content_object\": 9}, {\"tag\": 4, \"pk\": null, \"content_object\": 9}, {\"tag\": 6, \"pk\": null, \"content_object\": 9}, {\"tag\": 7, \"pk\": null, \"content_object\": 9}], \"intro\": \"Capturing time-lapse video using a digital SLR camera.\", \"title\": \"Time-Lapse Seed Germination: Part II\", \"depth\": 4, \"live\": true, \"date\": \"2017-10-09T16:24:00Z\", \"draft_title\": \"Time-Lapse Seed Germination: Part II\", \"last_published_at\": \"2017-11-07T19:42:51.142Z\", \"expire_at\": null, \"has_unpublished_changes\": false, \"url_path\": \"/index/cts-blog/time-lapse-seed-germination-part-ii/\", \"first_published_at\": \"2017-11-07T19:42:51.142Z\", \"owner\": 1, \"locked\": false}",
+      "approved_go_live_at": null
+    }
+  },
+  {
+    "model": "wagtailcore.pagerevision",
+    "pk": 25,
+    "fields": {
+      "page": 10,
+      "submitted_for_moderation": false,
+      "created_at": "2017-11-30T00:48:48.375Z",
+      "user": [
+        "ctsadmin"
+      ],
+      "content_json": "{\"search_description\": \"\", \"live_revision\": null, \"expired\": false, \"slug\": \"plant-tracker\", \"categories\": [1], \"path\": \"0001000100030003\", \"latest_revision_created_at\": null, \"numchild\": 0, \"show_in_menus\": false, \"seo_title\": \"\", \"content_type\": 8, \"body\": \"[{\\\"type\\\": \\\"paragraph\\\", \\\"id\\\": \\\"39cf6630-e215-43dd-8a5b-180fbbeb5ede\\\", \\\"value\\\": \\\"<p>Filler</p>\\\"}]\", \"pk\": 10, \"gallery_images\": [{\"image\": 8, \"sort_order\": 0, \"pk\": 1, \"page\": 10, \"caption\": \"\"}], \"go_live_at\": null, \"references\": \"\", \"tagged_items\": [{\"tag\": 16, \"pk\": 36, \"content_object\": 10}, {\"tag\": 17, \"pk\": 37, \"content_object\": 10}, {\"tag\": 3, \"pk\": 38, \"content_object\": 10}, {\"tag\": 14, \"pk\": 39, \"content_object\": 10}, {\"tag\": 15, \"pk\": 40, \"content_object\": 10}], \"intro\": \"Tracking plants geographically has become vitally important to furthering our understanding of how to successfully execute an environmental restoration effort.\", \"title\": \"Plant Tracker\", \"depth\": 4, \"live\": false, \"date\": \"2017-12-04T17:30:00Z\", \"draft_title\": \"Plant Tracker\", \"last_published_at\": null, \"expire_at\": null, \"has_unpublished_changes\": false, \"url_path\": \"/index/cts-blog/plant-tracker/\", \"first_published_at\": null, \"owner\": 1, \"locked\": false}",
+      "approved_go_live_at": null
+    }
+  },
+  {
+    "model": "wagtailcore.pagerevision",
+    "pk": 26,
+    "fields": {
+      "page": 10,
+      "submitted_for_moderation": false,
+      "created_at": "2017-11-30T00:50:35.548Z",
+      "user": [
+        "ctsadmin"
+      ],
+      "content_json": "{\"search_description\": \"\", \"live_revision\": null, \"expired\": false, \"slug\": \"plant-tracker\", \"categories\": [1], \"path\": \"0001000100030003\", \"latest_revision_created_at\": \"2017-11-30T00:48:48.375Z\", \"numchild\": 0, \"show_in_menus\": false, \"seo_title\": \"\", \"content_type\": 8, \"body\": \"[{\\\"type\\\": \\\"paragraph\\\", \\\"id\\\": \\\"39cf6630-e215-43dd-8a5b-180fbbeb5ede\\\", \\\"value\\\": \\\"<h5>Building a Mapping Platform</h5><p><br/></p>\\\"}]\", \"pk\": 10, \"gallery_images\": [{\"image\": 8, \"sort_order\": 0, \"pk\": 1, \"page\": null, \"caption\": \"\"}], \"go_live_at\": null, \"references\": \"\", \"tagged_items\": [{\"tag\": 16, \"pk\": null, \"content_object\": 10}, {\"tag\": 17, \"pk\": null, \"content_object\": 10}, {\"tag\": 3, \"pk\": null, \"content_object\": 10}, {\"tag\": 14, \"pk\": null, \"content_object\": 10}, {\"tag\": 15, \"pk\": null, \"content_object\": 10}], \"intro\": \"Tracking plants geographically has become vitally important to furthering our understanding of how to successfully execute environmental restoration efforts.\", \"title\": \"Plant Tracker\", \"depth\": 4, \"live\": false, \"date\": \"2017-12-04T17:30:00Z\", \"draft_title\": \"Plant Tracker\", \"last_published_at\": null, \"expire_at\": null, \"has_unpublished_changes\": true, \"url_path\": \"/index/cts-blog/plant-tracker/\", \"first_published_at\": null, \"owner\": 1, \"locked\": false}",
+      "approved_go_live_at": null
+    }
+  },
+  {
+    "model": "wagtailcore.pagerevision",
+    "pk": 27,
+    "fields": {
+      "page": 10,
+      "submitted_for_moderation": false,
+      "created_at": "2017-11-30T00:59:09.293Z",
+      "user": [
+        "ctsadmin"
+      ],
+      "content_json": "{\"search_description\": \"\", \"live_revision\": null, \"expired\": false, \"slug\": \"plant-tracker\", \"categories\": [1], \"path\": \"0001000100030003\", \"latest_revision_created_at\": \"2017-11-30T00:50:35.548Z\", \"numchild\": 0, \"show_in_menus\": false, \"seo_title\": \"\", \"content_type\": 8, \"body\": \"[{\\\"type\\\": \\\"paragraph\\\", \\\"id\\\": \\\"39cf6630-e215-43dd-8a5b-180fbbeb5ede\\\", \\\"value\\\": \\\"<h2>Building a Mapping Platform</h2><p>This website is built on top of <a href=\\\\\\\"https://docs.djangoproject.com/en/1.11/ref/contrib/gis/\\\\\\\">GeoDjango</a>\\\\u00a0which will enable us to develop advanced mapping tools for all sorts of people who work with geographic data, from hobbyists to scientists. Since my own background is in plants, the initial iterations of these mapping tools will revolve around the tracking of plant populations and seed collections.</p><p><br/></p><p>Our first prototype will keep things simple, by allowing users to record waypoints on a map, using Google Maps-like interface. Users will have the ability to record additional information about these waypoints, to suit their own needs. One user may wish to mark sightings of a particular bird species, while another may wish to record the presence of a plant species they may wish to later revisit for seed collection.</p>\\\"}]\", \"pk\": 10, \"gallery_images\": [{\"image\": 8, \"sort_order\": 0, \"pk\": 1, \"page\": null, \"caption\": \"\"}], \"go_live_at\": null, \"references\": \"\", \"tagged_items\": [{\"tag\": 16, \"pk\": null, \"content_object\": 10}, {\"tag\": 17, \"pk\": null, \"content_object\": 10}, {\"tag\": 3, \"pk\": null, \"content_object\": 10}, {\"tag\": 14, \"pk\": null, \"content_object\": 10}, {\"tag\": 15, \"pk\": null, \"content_object\": 10}], \"intro\": \"Tracking plants geographically has become vitally important to furthering our understanding of how to successfully execute environmental restoration efforts.\", \"title\": \"Plant Tracker\", \"depth\": 4, \"live\": false, \"date\": \"2017-12-04T17:30:00Z\", \"draft_title\": \"Plant Tracker\", \"last_published_at\": null, \"expire_at\": null, \"has_unpublished_changes\": true, \"url_path\": \"/index/cts-blog/plant-tracker/\", \"first_published_at\": null, \"owner\": 1, \"locked\": false}",
+      "approved_go_live_at": null
+    }
+  },
+  {
+    "model": "wagtailcore.pagerevision",
+    "pk": 28,
+    "fields": {
+      "page": 10,
+      "submitted_for_moderation": false,
+      "created_at": "2017-11-30T18:10:37.439Z",
+      "user": [
+        "ctsadmin"
+      ],
+      "content_json": "{\"search_description\": \"\", \"live_revision\": null, \"expired\": false, \"slug\": \"plant-tracker\", \"categories\": [1], \"path\": \"0001000100030003\", \"latest_revision_created_at\": \"2017-11-30T00:59:09.293Z\", \"numchild\": 0, \"show_in_menus\": false, \"seo_title\": \"\", \"content_type\": 8, \"body\": \"[{\\\"type\\\": \\\"paragraph\\\", \\\"id\\\": \\\"39cf6630-e215-43dd-8a5b-180fbbeb5ede\\\", \\\"value\\\": \\\"<h2>Building a Mapping Platform</h2><p>This website is built on top of <a href=\\\\\\\"https://docs.djangoproject.com/en/1.11/ref/contrib/gis/\\\\\\\">GeoDjango</a>\\\\u00a0which will enable us to develop advanced mapping tools for all sorts of people who work with geographic data, from hobbyists to scientists. Since my own background is in plants, the initial iterations of these mapping tools will revolve around the tracking of plant populations and seed collections.</p><p><br/></p><p>Our first prototype will keep things simple, by allowing users to record waypoints on a map, using Google Maps-like interface. Users will have the ability to record additional information about these waypoints, to suit their own needs. One user may wish to mark sightings of a particular bird species, while another may wish to record the presence of a plant species they may wish to later revisit for seed collection.</p>\\\"}]\", \"pk\": 10, \"gallery_images\": [{\"image\": 8, \"sort_order\": 0, \"pk\": 1, \"page\": 10, \"caption\": \"View from Frisco Peak overlooking the Wah Wah Valley at sunset.\"}], \"go_live_at\": null, \"references\": \"\", \"tagged_items\": [{\"tag\": 16, \"pk\": null, \"content_object\": 10}, {\"tag\": 17, \"pk\": null, \"content_object\": 10}, {\"tag\": 3, \"pk\": null, \"content_object\": 10}, {\"tag\": 14, \"pk\": null, \"content_object\": 10}, {\"tag\": 15, \"pk\": null, \"content_object\": 10}], \"intro\": \"Tracking plants geographically has become vitally important to furthering our understanding of how to successfully execute environmental restoration efforts.\", \"title\": \"Plant Tracker\", \"depth\": 4, \"live\": false, \"date\": \"2017-12-04T17:30:00Z\", \"draft_title\": \"Plant Tracker\", \"last_published_at\": null, \"expire_at\": null, \"has_unpublished_changes\": true, \"url_path\": \"/index/cts-blog/plant-tracker/\", \"first_published_at\": null, \"owner\": 1, \"locked\": false}",
+      "approved_go_live_at": null
+    }
+  },
+  {
+    "model": "wagtailcore.pagerevision",
+    "pk": 29,
+    "fields": {
+      "page": 10,
+      "submitted_for_moderation": false,
+      "created_at": "2017-11-30T18:16:49.777Z",
+      "user": [
+        "ctsadmin"
+      ],
+      "content_json": "{\"search_description\": \"\", \"live_revision\": null, \"expired\": false, \"slug\": \"plant-tracker\", \"categories\": [1], \"path\": \"0001000100030003\", \"latest_revision_created_at\": \"2017-11-30T18:10:37.439Z\", \"numchild\": 0, \"show_in_menus\": false, \"seo_title\": \"\", \"content_type\": 8, \"body\": \"[{\\\"type\\\": \\\"paragraph\\\", \\\"id\\\": \\\"39cf6630-e215-43dd-8a5b-180fbbeb5ede\\\", \\\"value\\\": \\\"<h2>Building a Mapping Platform</h2><p>This website is built on top of <a href=\\\\\\\"https://docs.djangoproject.com/en/1.11/ref/contrib/gis/\\\\\\\">GeoDjango</a>\\\\u00a0which will enable us to develop advanced mapping tools for all sorts of people who work with geographic data, from hobbyists to scientists. Since my own background is in plants, the initial iterations of these mapping tools will revolve around the tracking of plant populations and seed collections.</p><p><br/></p><p>Our first prototype will keep things simple, by allowing users to record waypoints on a map, using Google Maps-like interface. Users will have the ability to record additional information about these waypoints, to suit their own needs. One user may wish to mark sightings of a particular bird species, while another may wish to record the presence of a plant species they may wish to later revisit for seed collection.</p><p><br/></p><p>Future iterations of the mapping application may be extended to correlate species locations to particular ecotypes, and soil compositions which may aid land managers in determining appropriate seed sources used in restoration, to investigating areas at risk of invasive plant encroachment.</p>\\\"}]\", \"pk\": 10, \"gallery_images\": [{\"image\": 8, \"sort_order\": 0, \"pk\": 1, \"page\": null, \"caption\": \"View from Frisco Peak overlooking the Wah Wah Valley at sunset.\"}], \"go_live_at\": null, \"references\": \"\", \"tagged_items\": [{\"tag\": 16, \"pk\": null, \"content_object\": 10}, {\"tag\": 17, \"pk\": null, \"content_object\": 10}, {\"tag\": 3, \"pk\": null, \"content_object\": 10}, {\"tag\": 14, \"pk\": null, \"content_object\": 10}, {\"tag\": 15, \"pk\": null, \"content_object\": 10}], \"intro\": \"Tracking plants geographically has become vitally important to furthering our understanding of how to successfully execute environmental restoration efforts.\", \"title\": \"Plant Tracker\", \"depth\": 4, \"live\": false, \"date\": \"2017-12-04T17:30:00Z\", \"draft_title\": \"Plant Tracker\", \"last_published_at\": null, \"expire_at\": null, \"has_unpublished_changes\": true, \"url_path\": \"/index/cts-blog/plant-tracker/\", \"first_published_at\": null, \"owner\": 1, \"locked\": false}",
+      "approved_go_live_at": null
+    }
+  },
+  {
+    "model": "wagtailcore.pagerevision",
+    "pk": 30,
+    "fields": {
+      "page": 10,
+      "submitted_for_moderation": false,
+      "created_at": "2017-12-03T20:51:12.112Z",
+      "user": [
+        "ctsadmin"
+      ],
+      "content_json": "{\"search_description\": \"\", \"live_revision\": null, \"expired\": false, \"slug\": \"plant-tracker\", \"categories\": [1], \"path\": \"0001000100030003\", \"latest_revision_created_at\": \"2017-11-30T18:16:49.777Z\", \"numchild\": 0, \"show_in_menus\": false, \"seo_title\": \"\", \"content_type\": 8, \"body\": \"[{\\\"type\\\": \\\"paragraph\\\", \\\"id\\\": \\\"39cf6630-e215-43dd-8a5b-180fbbeb5ede\\\", \\\"value\\\": \\\"<h2>Building a Mapping Platform</h2><p>This website is built on top of <a href=\\\\\\\"https://docs.djangoproject.com/en/1.11/ref/contrib/gis/\\\\\\\">GeoDjango</a>\\\\u00a0which will enable us to develop advanced mapping tools for all sorts of people who work with geographic data, from hobbyists to scientists. Since my own background is in plants, the initial iterations of these mapping tools will revolve around the tracking of plant populations and seed collections.</p><p><br/></p><p>Our first prototype will keep things simple, by allowing users to record waypoints on a map, using Google Maps-like interface. Users will have the ability to record additional information about these waypoints, to suit their own needs. One user may wish to mark sightings of a particular bird species, while another may wish to record the presence of a plant species they may wish to later revisit for seed collection.</p><p><br/></p><p>Future iterations of the mapping application may be extended to correlate species locations to particular ecotypes, and soil compositions which may aid land managers in determining appropriate seed sources used in restoration, to investigating areas at risk of invasive plant encroachment.</p>\\\"}]\", \"pk\": 10, \"gallery_images\": [{\"image\": 8, \"sort_order\": 0, \"pk\": 1, \"page\": null, \"caption\": \"View from Frisco Peak overlooking the Wah Wah Valley at sunset.\"}], \"go_live_at\": null, \"references\": \"\", \"tagged_items\": [{\"tag\": 16, \"pk\": null, \"content_object\": 10}, {\"tag\": 17, \"pk\": null, \"content_object\": 10}, {\"tag\": 3, \"pk\": null, \"content_object\": 10}, {\"tag\": 14, \"pk\": null, \"content_object\": 10}, {\"tag\": 15, \"pk\": null, \"content_object\": 10}], \"intro\": \"Tracking plants geographically has become vitally important to furthering our understanding of how to successfully execute environmental restoration efforts.\", \"title\": \"Plant Tracker\", \"depth\": 4, \"live\": false, \"date\": \"2017-12-04T17:30:00Z\", \"draft_title\": \"Plant Tracker\", \"last_published_at\": null, \"expire_at\": null, \"has_unpublished_changes\": true, \"url_path\": \"/index/cts-blog/plant-tracker/\", \"first_published_at\": null, \"owner\": 1, \"locked\": false}",
+      "approved_go_live_at": null
+    }
+  },
+  {
+    "model": "wagtailcore.pagerevision",
+    "pk": 31,
+    "fields": {
+      "page": 11,
+      "submitted_for_moderation": false,
+      "created_at": "2018-02-04T01:12:20.245Z",
+      "user": [
+        "ctsadmin"
+      ],
+      "content_json": "{\"references\": \"\", \"draft_title\": \"Backyard Environmental Monitoring\", \"seo_title\": \"\", \"search_description\": \"\", \"depth\": 4, \"gallery_images\": [], \"last_published_at\": null, \"tagged_items\": [{\"content_object\": 11, \"pk\": 46, \"tag\": 5}, {\"content_object\": 11, \"pk\": 47, \"tag\": 18}, {\"content_object\": 11, \"pk\": 48, \"tag\": 19}, {\"content_object\": 11, \"pk\": 49, \"tag\": 20}, {\"content_object\": 11, \"pk\": 50, \"tag\": 21}, {\"content_object\": 11, \"pk\": 51, \"tag\": 22}], \"owner\": 1, \"first_published_at\": null, \"latest_revision_created_at\": null, \"slug\": \"backyard-environmental-monitoring\", \"numchild\": 0, \"body\": \"[{\\\"type\\\": \\\"image\\\", \\\"value\\\": 9, \\\"id\\\": \\\"00334fe9-608a-4bf2-bff2-4ded68324bc0\\\"}]\", \"has_unpublished_changes\": false, \"live\": false, \"url_path\": \"/index/cts-blog/backyard-environmental-monitoring/\", \"categories\": [1], \"title\": \"Backyard Environmental Monitoring\", \"pk\": 11, \"live_revision\": null, \"content_type\": 8, \"path\": \"0001000100030004\", \"go_live_at\": null, \"show_in_menus\": false, \"intro\": \"Setting up a raspberry pi to monitor environmental conditions in a backyard setting.\", \"locked\": false, \"expire_at\": null, \"expired\": false, \"date\": \"2018-02-05T09:00:00Z\"}",
+      "approved_go_live_at": null
+    }
+  },
+  {
+    "model": "wagtailcore.pagerevision",
+    "pk": 32,
+    "fields": {
+      "page": 11,
+      "submitted_for_moderation": false,
+      "created_at": "2018-02-04T02:04:27.764Z",
+      "user": [
+        "ctsadmin"
+      ],
+      "content_json": "{\"references\": \"\", \"draft_title\": \"Backyard Environmental Monitoring\", \"seo_title\": \"\", \"search_description\": \"\", \"depth\": 4, \"gallery_images\": [], \"last_published_at\": null, \"tagged_items\": [{\"content_object\": 11, \"pk\": null, \"tag\": 5}, {\"content_object\": 11, \"pk\": null, \"tag\": 18}, {\"content_object\": 11, \"pk\": null, \"tag\": 19}, {\"content_object\": 11, \"pk\": null, \"tag\": 20}, {\"content_object\": 11, \"pk\": null, \"tag\": 21}, {\"content_object\": 11, \"pk\": null, \"tag\": 22}], \"owner\": 1, \"first_published_at\": null, \"latest_revision_created_at\": \"2018-02-04T01:12:20.245Z\", \"slug\": \"backyard-environmental-monitoring\", \"numchild\": 0, \"body\": \"[{\\\"type\\\": \\\"image\\\", \\\"value\\\": 9, \\\"id\\\": \\\"00334fe9-608a-4bf2-bff2-4ded68324bc0\\\"}, {\\\"type\\\": \\\"paragraph\\\", \\\"value\\\": \\\"<p>We'll be walking through the setup of a backyard environmental monitoring system using cheap electronic devices you could use yourself. The final product will be able to record the following metrics:</p><p></p><ul><li>Temperature</li><li>Hummidity</li><li>Pressure</li><li>1080p black &amp; white video @ 30FPS with infrared night vision</li></ul><p></p>\\\", \\\"id\\\": \\\"e0f4ad3e-3d88-477c-b2ad-6fd12a3ed9c3\\\"}, {\\\"type\\\": \\\"paragraph\\\", \\\"value\\\": \\\"<p>Once we have our environmental monitoring system all set up, we'll be able to analyze patterns in our own weather data, record seasonal time-lapse videos, predict incoming weather changes by observing changes in atmospheric pressure, and keep an eye on our future bee colonies.</p>\\\", \\\"id\\\": \\\"12990447-5814-4c27-9380-1b2bc23948bb\\\"}]\", \"has_unpublished_changes\": true, \"live\": false, \"url_path\": \"/index/cts-blog/backyard-environmental-monitoring/\", \"categories\": [1], \"title\": \"Backyard Environmental Monitoring\", \"pk\": 11, \"live_revision\": null, \"content_type\": 8, \"path\": \"0001000100030004\", \"go_live_at\": null, \"show_in_menus\": false, \"intro\": \"Setting up a raspberry pi to monitor environmental conditions in a backyard setting.\", \"locked\": false, \"expire_at\": null, \"expired\": false, \"date\": \"2018-02-05T09:00:00Z\"}",
+      "approved_go_live_at": null
+    }
+  },
+  {
+    "model": "wagtailcore.pagerevision",
+    "pk": 33,
+    "fields": {
+      "page": 11,
+      "submitted_for_moderation": false,
+      "created_at": "2018-02-04T02:07:23.041Z",
+      "user": [
+        "ctsadmin"
+      ],
+      "content_json": "{\"references\": \"\", \"draft_title\": \"Backyard Environmental Monitoring\", \"seo_title\": \"\", \"search_description\": \"\", \"depth\": 4, \"gallery_images\": [], \"last_published_at\": null, \"tagged_items\": [{\"content_object\": 11, \"pk\": null, \"tag\": 5}, {\"content_object\": 11, \"pk\": null, \"tag\": 18}, {\"content_object\": 11, \"pk\": null, \"tag\": 19}, {\"content_object\": 11, \"pk\": null, \"tag\": 20}, {\"content_object\": 11, \"pk\": null, \"tag\": 21}, {\"content_object\": 11, \"pk\": null, \"tag\": 22}], \"owner\": 1, \"first_published_at\": null, \"latest_revision_created_at\": \"2018-02-04T02:04:27.764Z\", \"slug\": \"backyard-environmental-monitoring\", \"numchild\": 0, \"body\": \"[{\\\"type\\\": \\\"image\\\", \\\"value\\\": 9, \\\"id\\\": \\\"00334fe9-608a-4bf2-bff2-4ded68324bc0\\\"}, {\\\"type\\\": \\\"paragraph\\\", \\\"value\\\": \\\"<p>We'll be walking through the setup of a backyard environmental monitoring system using cheap electronic devices you could use yourself. The final product will be able to record the following metrics:</p><p></p><ul><li>Temperature</li><li>Hummidity</li><li>Pressure</li><li>1080p black &amp; white video @ 30FPS with infrared night vision</li></ul><p></p>\\\", \\\"id\\\": \\\"e0f4ad3e-3d88-477c-b2ad-6fd12a3ed9c3\\\"}, {\\\"type\\\": \\\"paragraph\\\", \\\"value\\\": \\\"<p>Once we have our environmental monitoring system all set up, we'll be able to analyze patterns in our own weather data, record seasonal time-lapse videos, predict incoming weather changes by observing changes in atmospheric pressure, and keep an eye on our future bee colonies.</p><h3>Supplies</h3><p>For the monitoring equipment, we'll be using a Raspberry Pi, a Sense Hat breakout board, and a 5 megapixel Raspberry Pi camera module with infrared night vision capability.</p><p><br/></p>\\\", \\\"id\\\": \\\"12990447-5814-4c27-9380-1b2bc23948bb\\\"}]\", \"has_unpublished_changes\": true, \"live\": false, \"url_path\": \"/index/cts-blog/backyard-environmental-monitoring/\", \"categories\": [1], \"title\": \"Backyard Environmental Monitoring\", \"pk\": 11, \"live_revision\": null, \"content_type\": 8, \"path\": \"0001000100030004\", \"go_live_at\": null, \"show_in_menus\": false, \"intro\": \"Setting up a raspberry pi to monitor environmental conditions in a backyard setting.\", \"locked\": false, \"expire_at\": null, \"expired\": false, \"date\": \"2018-02-05T09:00:00Z\"}",
+      "approved_go_live_at": null
+    }
+  },
+  {
+    "model": "wagtailcore.pagerevision",
+    "pk": 34,
+    "fields": {
+      "page": 12,
+      "submitted_for_moderation": false,
+      "created_at": "2018-06-20T19:42:07.575Z",
+      "user": [
+        "ctsadmin"
+      ],
+      "content_json": "{\"pk\": 12, \"path\": \"0001000100030005\", \"depth\": 4, \"numchild\": 0, \"title\": \"How To Use Python For Data Analysis\", \"draft_title\": \"How To Use Python For Data Analysis\", \"slug\": \"how-use-python-data-analysis\", \"content_type\": 9, \"live\": false, \"has_unpublished_changes\": false, \"url_path\": \"/index/cts-blog/how-use-python-data-analysis/\", \"owner\": 1, \"seo_title\": \"\", \"show_in_menus\": false, \"search_description\": \"\", \"go_live_at\": null, \"expire_at\": null, \"expired\": false, \"locked\": false, \"first_published_at\": null, \"last_published_at\": null, \"latest_revision_created_at\": null, \"live_revision\": null, \"date\": \"2018-06-20T13:27:00Z\", \"intro\": \"A guide to using the programming language Python for analyzing data from a vegetation survey.\", \"body\": \"[{\\\"type\\\": \\\"paragraph\\\", \\\"value\\\": \\\"<h2>Getting Started</h2><p>In this post, we&#x27;ll be using the programming language Python to analyze an excel file containing a data from a vegetation survey.</p>\\\", \\\"id\\\": \\\"25077174-7612-4c19-944a-26c4b688de4a\\\"}]\", \"references\": \"<p></p>\", \"tagged_items\": [{\"pk\": 52, \"tag\": 24, \"content_object\": 12}, {\"pk\": 53, \"tag\": 25, \"content_object\": 12}, {\"pk\": 54, \"tag\": 23, \"content_object\": 12}], \"gallery_images\": [], \"categories\": []}",
+      "approved_go_live_at": null
+    }
+  },
+  {
+    "model": "wagtailcore.pagerevision",
+    "pk": 35,
+    "fields": {
+      "page": 12,
+      "submitted_for_moderation": false,
+      "created_at": "2018-06-20T21:15:42.742Z",
+      "user": [
+        "ctsadmin"
+      ],
+      "content_json": "{\"pk\": 12, \"path\": \"0001000100030005\", \"depth\": 4, \"numchild\": 0, \"title\": \"How To Use Python For Data Analysis\", \"draft_title\": \"How To Use Python For Data Analysis\", \"slug\": \"how-use-python-data-analysis\", \"content_type\": 9, \"live\": false, \"has_unpublished_changes\": true, \"url_path\": \"/index/cts-blog/how-use-python-data-analysis/\", \"owner\": 1, \"seo_title\": \"\", \"show_in_menus\": false, \"search_description\": \"\", \"go_live_at\": null, \"expire_at\": null, \"expired\": false, \"locked\": false, \"first_published_at\": null, \"last_published_at\": null, \"latest_revision_created_at\": \"2018-06-20T19:42:07.575Z\", \"live_revision\": null, \"date\": \"2018-06-20T13:27:00Z\", \"intro\": \"A guide to using the programming language Python for analyzing data from a vegetation survey.\", \"body\": \"[{\\\"type\\\": \\\"paragraph\\\", \\\"value\\\": \\\"<h2>Getting Started</h2><p>In this post, we&#x27;ll be using the programming language Python to analyze an excel file containing a data from a vegetation survey.</p><h3>Installing Python</h3><p>First, we need to download and install Python. For this post, we&#x27;ll be using <a href=\\\\\\\"https://www.python.org/downloads/release/python-365/\\\\\\\">Python 3.6.5</a>. There are a few options for how to install Python. </p><h4>For Advanced Users</h4><p>If you consider yourself a more advanced user and want the most control over how to manage your installation, you may want to download and install the appropriate file under &quot;Files&quot; from <a href=\\\\\\\"https://www.python.org/downloads/release/python-365/\\\\\\\">this link</a>.</p><h4>The Easier Way</h4><p>If troubleshooting computer issues isn&#x27;t your thing, your best option for installing Python may be to use <a href=\\\\\\\"https://www.anaconda.com/what-is-anaconda/\\\\\\\">Anaconda</a>. Anaconda takes a lot of the hassle out of managing python environments. It also makes it much easier to install scientific python libraries which makes it an especially good option when using Python for data science. If that sounds like a good fit to you, visit the <a href=\\\\\\\"https://www.anaconda.com/download\\\\\\\">download page</a> and choose the appropriate download for you operating system.</p><h3>Verifying Your Installation</h3><p>You can verify that you have</p>\\\", \\\"id\\\": \\\"25077174-7612-4c19-944a-26c4b688de4a\\\"}]\", \"references\": \"<p></p>\", \"tagged_items\": [{\"pk\": null, \"tag\": 24, \"content_object\": 12}, {\"pk\": null, \"tag\": 25, \"content_object\": 12}, {\"pk\": null, \"tag\": 23, \"content_object\": 12}], \"gallery_images\": [], \"categories\": []}",
+      "approved_go_live_at": null
+    }
+  },
+  {
+    "model": "wagtailcore.pagerevision",
+    "pk": 36,
+    "fields": {
+      "page": 12,
+      "submitted_for_moderation": false,
+      "created_at": "2018-06-20T21:24:10.048Z",
+      "user": [
+        "ctsadmin"
+      ],
+      "content_json": "{\"pk\": 12, \"path\": \"0001000100030005\", \"depth\": 4, \"numchild\": 0, \"title\": \"How To Use Python For Data Analysis\", \"draft_title\": \"How To Use Python For Data Analysis\", \"slug\": \"how-use-python-data-analysis\", \"content_type\": 9, \"live\": false, \"has_unpublished_changes\": true, \"url_path\": \"/index/cts-blog/how-use-python-data-analysis/\", \"owner\": 1, \"seo_title\": \"\", \"show_in_menus\": false, \"search_description\": \"\", \"go_live_at\": null, \"expire_at\": null, \"expired\": false, \"locked\": false, \"first_published_at\": null, \"last_published_at\": null, \"latest_revision_created_at\": \"2018-06-20T21:15:42.742Z\", \"live_revision\": null, \"date\": \"2018-06-20T13:27:00Z\", \"intro\": \"A guide to using the programming language Python for analyzing data from a vegetation survey.\", \"body\": \"[{\\\"type\\\": \\\"paragraph\\\", \\\"value\\\": \\\"<h2>Getting Started</h2><p>In this post, we&#x27;ll be using the programming language Python to analyze an excel file containing a data from a vegetation survey.</p><h3>Installing Python</h3><p>First, we need to download and install Python. For this post, we&#x27;ll be using <a href=\\\\\\\"https://www.python.org/downloads/release/python-365/\\\\\\\">Python 3.6.5</a>. There are a few options for how to install Python.</p><h4>For Advanced Users</h4><p>If you consider yourself a more advanced user and want the most control over how to manage your installation, you may want to download and install the appropriate file under &quot;Files&quot; from <a href=\\\\\\\"https://www.python.org/downloads/release/python-365/\\\\\\\">this link</a>.</p><h4>The Easier Way</h4><p>If troubleshooting computer issues isn&#x27;t your thing, your best option for installing Python may be to use <a href=\\\\\\\"https://www.anaconda.com/what-is-anaconda/\\\\\\\">Anaconda</a>. Anaconda takes a lot of the hassle out of managing python environments. It also makes it much easier to install scientific python libraries which makes it an especially good option when using Python for data science. If that sounds like a good fit to you, visit the <a href=\\\\\\\"https://www.anaconda.com/download\\\\\\\">download page</a> and choose the appropriate download for you operating system.</p><h3>Verifying Your Installation</h3><p>You can verify that you have</p>\\\", \\\"id\\\": \\\"25077174-7612-4c19-944a-26c4b688de4a\\\"}]\", \"references\": \"<p></p>\", \"tagged_items\": [{\"pk\": null, \"tag\": 24, \"content_object\": 12}, {\"pk\": null, \"tag\": 25, \"content_object\": 12}, {\"pk\": null, \"tag\": 23, \"content_object\": 12}], \"gallery_images\": [], \"categories\": []}",
+      "approved_go_live_at": null
+    }
+  },
+  {
+    "model": "wagtailcore.pagerevision",
+    "pk": 37,
+    "fields": {
+      "page": 12,
+      "submitted_for_moderation": false,
+      "created_at": "2018-06-21T02:53:58.921Z",
+      "user": [
+        "ctsadmin"
+      ],
+      "content_json": "{\"pk\": 12, \"path\": \"0001000100030005\", \"depth\": 4, \"numchild\": 0, \"title\": \"How To Use Python For Data Analysis\", \"draft_title\": \"How To Use Python For Data Analysis\", \"slug\": \"how-use-python-data-analysis\", \"content_type\": 9, \"live\": false, \"has_unpublished_changes\": true, \"url_path\": \"/index/cts-blog/how-use-python-data-analysis/\", \"owner\": 1, \"seo_title\": \"\", \"show_in_menus\": false, \"search_description\": \"\", \"go_live_at\": null, \"expire_at\": null, \"expired\": false, \"locked\": false, \"first_published_at\": null, \"last_published_at\": null, \"latest_revision_created_at\": \"2018-06-20T21:24:10.048Z\", \"live_revision\": null, \"date\": \"2018-06-20T13:27:00Z\", \"intro\": \"A guide to using the programming language Python for analyzing data from a vegetation survey.\", \"body\": \"[{\\\"type\\\": \\\"paragraph\\\", \\\"value\\\": \\\"<h2>Getting Started</h2><p>In this post, we&#x27;ll be using the programming language Python to analyze an excel file containing a data from a vegetation survey.</p><h3>Installing Python</h3><p>First, we need to download and install Python. For this post, we&#x27;ll be using <a href=\\\\\\\"https://www.python.org/downloads/release/python-365/\\\\\\\">Python 3.6.5</a>. There are a few options for how to install Python.</p><h4>For Advanced Users</h4><p>If you consider yourself a more advanced user and want the most control over how to manage your installation, you may want to download and install the appropriate file under &quot;Files&quot; from <a href=\\\\\\\"https://www.python.org/downloads/release/python-365/\\\\\\\">this link</a>.</p><h4>The Easier Way</h4><p>If troubleshooting computer issues isn&#x27;t your thing, your best option for installing Python may be to use <a href=\\\\\\\"https://www.anaconda.com/what-is-anaconda/\\\\\\\">Anaconda</a>. Anaconda takes a lot of the hassle out of managing python environments. It also makes it much easier to install scientific python libraries which makes it an especially good option when using Python for data science. If that sounds like a good fit to you, visit the <a href=\\\\\\\"https://www.anaconda.com/download\\\\\\\">download page</a> and choose the appropriate download for you operating system.</p><h3>Verifying Your Installation</h3><p>You can verify that you have python install by running &quot;python --version&quot;. If everything is install correctly, you&#x27;ll get back a response with the python version you just installed.</p><h2>Writing Your Script</h2><p>Now that we have Python installed, we can start interacting with some data. </p>\\\", \\\"id\\\": \\\"25077174-7612-4c19-944a-26c4b688de4a\\\"}]\", \"references\": \"<p></p>\", \"tagged_items\": [{\"pk\": null, \"tag\": 24, \"content_object\": 12}, {\"pk\": null, \"tag\": 25, \"content_object\": 12}, {\"pk\": null, \"tag\": 23, \"content_object\": 12}], \"gallery_images\": [], \"categories\": []}",
+      "approved_go_live_at": null
+    }
+  },
+  {
+    "model": "wagtailcore.grouppagepermission",
+    "pk": 1,
+    "fields": {
+      "group": [
+        "Moderators"
+      ],
+      "page": 1,
+      "permission_type": "add"
+    }
+  },
+  {
+    "model": "wagtailcore.grouppagepermission",
+    "pk": 2,
+    "fields": {
+      "group": [
+        "Moderators"
+      ],
+      "page": 1,
+      "permission_type": "edit"
+    }
+  },
+  {
+    "model": "wagtailcore.grouppagepermission",
+    "pk": 3,
+    "fields": {
+      "group": [
+        "Moderators"
+      ],
+      "page": 1,
+      "permission_type": "publish"
+    }
+  },
+  {
+    "model": "wagtailcore.grouppagepermission",
+    "pk": 4,
+    "fields": {
+      "group": [
+        "Editors"
+      ],
+      "page": 1,
+      "permission_type": "add"
+    }
+  },
+  {
+    "model": "wagtailcore.grouppagepermission",
+    "pk": 5,
+    "fields": {
+      "group": [
+        "Editors"
+      ],
+      "page": 1,
+      "permission_type": "edit"
+    }
+  },
+  {
+    "model": "wagtailcore.grouppagepermission",
+    "pk": 6,
+    "fields": {
+      "group": [
+        "Moderators"
+      ],
+      "page": 1,
+      "permission_type": "lock"
+    }
+  },
+  {
+    "model": "wagtailcore.collection",
+    "pk": 1,
+    "fields": {
+      "path": "0001",
+      "depth": 1,
+      "numchild": 0,
+      "name": "Root"
+    }
+  },
+  {
+    "model": "wagtailcore.groupcollectionpermission",
+    "pk": 1,
+    "fields": {
+      "group": [
+        "Moderators"
+      ],
+      "collection": 1,
+      "permission": [
+        "add_image",
+        "wagtailimages",
+        "image"
+      ]
+    }
+  },
+  {
+    "model": "wagtailcore.groupcollectionpermission",
+    "pk": 2,
+    "fields": {
+      "group": [
+        "Editors"
+      ],
+      "collection": 1,
+      "permission": [
+        "add_image",
+        "wagtailimages",
+        "image"
+      ]
+    }
+  },
+  {
+    "model": "wagtailcore.groupcollectionpermission",
+    "pk": 3,
+    "fields": {
+      "group": [
+        "Moderators"
+      ],
+      "collection": 1,
+      "permission": [
+        "change_image",
+        "wagtailimages",
+        "image"
+      ]
+    }
+  },
+  {
+    "model": "wagtailcore.groupcollectionpermission",
+    "pk": 4,
+    "fields": {
+      "group": [
+        "Editors"
+      ],
+      "collection": 1,
+      "permission": [
+        "change_image",
+        "wagtailimages",
+        "image"
+      ]
+    }
+  },
+  {
+    "model": "wagtailcore.groupcollectionpermission",
+    "pk": 5,
+    "fields": {
+      "group": [
+        "Moderators"
+      ],
+      "collection": 1,
+      "permission": [
+        "add_document",
+        "wagtaildocs",
+        "document"
+      ]
+    }
+  },
+  {
+    "model": "wagtailcore.groupcollectionpermission",
+    "pk": 6,
+    "fields": {
+      "group": [
+        "Editors"
+      ],
+      "collection": 1,
+      "permission": [
+        "add_document",
+        "wagtaildocs",
+        "document"
+      ]
+    }
+  },
+  {
+    "model": "wagtailcore.groupcollectionpermission",
+    "pk": 7,
+    "fields": {
+      "group": [
+        "Moderators"
+      ],
+      "collection": 1,
+      "permission": [
+        "change_document",
+        "wagtaildocs",
+        "document"
+      ]
+    }
+  },
+  {
+    "model": "wagtailcore.groupcollectionpermission",
+    "pk": 8,
+    "fields": {
+      "group": [
+        "Editors"
+      ],
+      "collection": 1,
+      "permission": [
+        "change_document",
+        "wagtaildocs",
+        "document"
+      ]
+    }
+  },
+  {
+    "model": "taggit.tag",
+    "pk": 1,
+    "fields": {
+      "name": "plant blindness",
+      "slug": "plant-blindness"
+    }
+  },
+  {
+    "model": "taggit.tag",
+    "pk": 2,
+    "fields": {
+      "name": "seeds",
+      "slug": "seeds"
+    }
+  },
+  {
+    "model": "taggit.tag",
+    "pk": 3,
+    "fields": {
+      "name": "projects",
+      "slug": "projects"
+    }
+  },
+  {
+    "model": "taggit.tag",
+    "pk": 4,
+    "fields": {
+      "name": "germination",
+      "slug": "germination"
+    }
+  },
+  {
+    "model": "taggit.tag",
+    "pk": 5,
+    "fields": {
+      "name": "raspberry pi",
+      "slug": "raspberry-pi"
+    }
+  },
+  {
+    "model": "taggit.tag",
+    "pk": 6,
+    "fields": {
+      "name": "time-lapse",
+      "slug": "time-lapse"
+    }
+  },
+  {
+    "model": "taggit.tag",
+    "pk": 7,
+    "fields": {
+      "name": "video",
+      "slug": "video"
+    }
+  },
+  {
+    "model": "taggit.tag",
+    "pk": 8,
+    "fields": {
+      "name": "picture",
+      "slug": "picture"
+    }
+  },
+  {
+    "model": "taggit.tag",
+    "pk": 9,
+    "fields": {
+      "name": "camera",
+      "slug": "camera"
+    }
+  },
+  {
+    "model": "taggit.tag",
+    "pk": 10,
+    "fields": {
+      "name": "gif",
+      "slug": "gif"
+    }
+  },
+  {
+    "model": "taggit.tag",
+    "pk": 11,
+    "fields": {
+      "name": "bean",
+      "slug": "bean"
+    }
+  },
+  {
+    "model": "taggit.tag",
+    "pk": 12,
+    "fields": {
+      "name": "landscape",
+      "slug": "landscape"
+    }
+  },
+  {
+    "model": "taggit.tag",
+    "pk": 13,
+    "fields": {
+      "name": "sunset",
+      "slug": "sunset"
+    }
+  },
+  {
+    "model": "taggit.tag",
+    "pk": 14,
+    "fields": {
+      "name": "plants",
+      "slug": "plants"
+    }
+  },
+  {
+    "model": "taggit.tag",
+    "pk": 15,
+    "fields": {
+      "name": "gps",
+      "slug": "gps"
+    }
+  },
+  {
+    "model": "taggit.tag",
+    "pk": 16,
+    "fields": {
+      "name": "mapping",
+      "slug": "mapping"
+    }
+  },
+  {
+    "model": "taggit.tag",
+    "pk": 17,
+    "fields": {
+      "name": "gis",
+      "slug": "gis"
+    }
+  },
+  {
+    "model": "taggit.tag",
+    "pk": 18,
+    "fields": {
+      "name": "IR Camera",
+      "slug": "ir-camera"
+    }
+  },
+  {
+    "model": "taggit.tag",
+    "pk": 19,
+    "fields": {
+      "name": "sense hat",
+      "slug": "sense-hat"
+    }
+  },
+  {
+    "model": "taggit.tag",
+    "pk": 20,
+    "fields": {
+      "name": "hardware",
+      "slug": "hardware"
+    }
+  },
+  {
+    "model": "taggit.tag",
+    "pk": 21,
+    "fields": {
+      "name": "electronics",
+      "slug": "electronics"
+    }
+  },
+  {
+    "model": "taggit.tag",
+    "pk": 22,
+    "fields": {
+      "name": "software",
+      "slug": "software"
+    }
+  },
+  {
+    "model": "taggit.tag",
+    "pk": 23,
+    "fields": {
+      "name": "python",
+      "slug": "python"
+    }
+  },
+  {
+    "model": "taggit.tag",
+    "pk": 24,
+    "fields": {
+      "name": "data science",
+      "slug": "data-science"
+    }
+  },
+  {
+    "model": "taggit.tag",
+    "pk": 25,
+    "fields": {
+      "name": "programming",
+      "slug": "programming"
+    }
+  },
+  {
+    "model": "taggit.taggeditem",
+    "pk": 1,
+    "fields": {
+      "tag": 8,
+      "content_type": [
+        "wagtailimages",
+        "image"
+      ],
+      "object_id": 1
+    }
+  },
+  {
+    "model": "taggit.taggeditem",
+    "pk": 2,
+    "fields": {
+      "tag": 9,
+      "content_type": [
+        "wagtailimages",
+        "image"
+      ],
+      "object_id": 1
+    }
+  },
+  {
+    "model": "taggit.taggeditem",
+    "pk": 3,
+    "fields": {
+      "tag": 6,
+      "content_type": [
+        "wagtailimages",
+        "image"
+      ],
+      "object_id": 1
+    }
+  },
+  {
+    "model": "taggit.taggeditem",
+    "pk": 4,
+    "fields": {
+      "tag": 7,
+      "content_type": [
+        "wagtailimages",
+        "image"
+      ],
+      "object_id": 1
+    }
+  },
+  {
+    "model": "taggit.taggeditem",
+    "pk": 11,
+    "fields": {
+      "tag": 3,
+      "content_type": [
+        "wagtailimages",
+        "image"
+      ],
+      "object_id": 7
+    }
+  },
+  {
+    "model": "taggit.taggeditem",
+    "pk": 12,
+    "fields": {
+      "tag": 12,
+      "content_type": [
+        "wagtailimages",
+        "image"
+      ],
+      "object_id": 8
+    }
+  },
+  {
+    "model": "taggit.taggeditem",
+    "pk": 13,
+    "fields": {
+      "tag": 13,
+      "content_type": [
+        "wagtailimages",
+        "image"
+      ],
+      "object_id": 8
+    }
+  },
+  {
+    "model": "taggit.taggeditem",
+    "pk": 14,
+    "fields": {
+      "tag": 18,
+      "content_type": [
+        "wagtailimages",
+        "image"
+      ],
+      "object_id": 9
+    }
+  },
+  {
+    "model": "taggit.taggeditem",
+    "pk": 15,
+    "fields": {
+      "tag": 19,
+      "content_type": [
+        "wagtailimages",
+        "image"
+      ],
+      "object_id": 9
+    }
+  },
+  {
+    "model": "taggit.taggeditem",
+    "pk": 16,
+    "fields": {
+      "tag": 5,
+      "content_type": [
+        "wagtailimages",
+        "image"
+      ],
+      "object_id": 9
+    }
+  }
+]
