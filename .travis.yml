@@ -1,23 +1,32 @@
 language: python
+dist: bionic
+addons:
+  postgresql: 11
+  apt:
+    packages:
+      - postgresql-11-postgis-2.5
+      - postgresql-11-postgis-2.5-scripts
+before_script:
+  - psql -c 'create database travis_ci_test;' -U postgres
+  - psql -U postgres -c 'create extension postgis'
 python:
-- 3.5
-- 3.6
+  - 3.6
 env:
-- DJANGO=2.1
+  - DJANGO=3.0
 before_install:
-- export DJANGO_SETTINGS_MODULE="cts.settings.travis"
-- export DEBUG=True
+  - export DJANGO_SETTINGS_MODULE="cts.settings.travis"
+  - export DEBUG=True
 install:
-- pip install coverage
-- pip install coveralls
-- pip install -r cts/requirements.txt
-- sudo apt-get install binutils libproj-dev gdal-bin
+  - pip install coverage
+  - pip install coveralls
+  - pip install -r cts/requirements.txt
+  - sudo apt-get install binutils libproj-dev gdal-bin
 script:
-- cd cts
-- coverage run manage.py test --keepdb
+  - cd cts
+  - coverage run manage.py test --keepdb
 after_success:
-- coverage report
-- coveralls
+  - coverage report
+  - coveralls
 notifications:
   email:
     on_success: change
