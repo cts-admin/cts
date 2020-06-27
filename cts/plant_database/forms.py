@@ -17,9 +17,8 @@ class AccessionForm(forms.Form):
     """
     Dynamic fields for Collectors taken from: Yuji 'Tomita' Tomita - https://stackoverflow.com/a/6142749/1175701
     """
-    last_accession = get_last_accession_number()
     accession_number = forms.IntegerField(widget=forms.NumberInput(attrs={'class': 'form-control'}),
-                                          initial=last_accession, disabled=True)
+                                          disabled=True)
 
     col_fname = forms.CharField(max_length=30, label="Collector's first name",
                                 widget=forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'First name'}))
@@ -84,6 +83,7 @@ class AccessionForm(forms.Form):
 
         super(AccessionForm, self).__init__(*args, **kwargs)
         self.fields['add_collector_count'].initial = extra_fields
+        self.fields['accession_number'].initial = get_last_accession_number()
 
         for index in range(1, int(extra_fields)):
             self.fields['add_collector_{index}'.format(index=index)] = forms.CharField()
