@@ -7,6 +7,7 @@
     <!--     Font Awesome     -->
     <link href="https://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Grand+Hotel" rel="stylesheet" type="text/css">
+    <link href="{% static 'css/plant_database.css' %}" rel="stylesheet" type="text/css">
 {% endblock extra_css %}
 
 {% block content %}
@@ -27,7 +28,7 @@
 
             <div class="col-md-9">
                 {% if user.is_authenticated %}
-                    <form id="accession-form" class="form-horizontal" action="{% url 'plant_database:add_accession' %}" method="POST">
+                    <form id="accession-form" class="form-horizontal" action="{% url 'plant_database:add_seed_accession' %}" method="POST">
                         {% csrf_token %}
                         {% for error in form.non_field_errors %}
                             <div class="form-group has-error text-danger">
@@ -51,7 +52,7 @@
                                 <button id="remove-another" class="btn btn-sm btn-danger hidden">Remove collector</button>
                             {% endif %}
                         {% endfor %}
-                        <button class="btn btn-primary form-group">Submit</button>
+                        <button id="id_submit" class="btn btn-primary form-group">Submit</button>
                     </form>
                 {% else %}
                     <p>
@@ -69,5 +70,5 @@
 {% endblock %}
 
 {% block extra_js %}
-    <script type="text/javascript" src="{% static 'js/add_accession.js' %}"></script>
+    <script type="text/javascript" src="{% static 'js/add_seed_accession.js' %}"></script>
 {% endblock %}

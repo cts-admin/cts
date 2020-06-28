@@ -3,10 +3,10 @@ from django.contrib.gis.geos import Point
 from django.shortcuts import render, redirect
 
 from .forms import AccessionForm
-from .models import Accession, Collector, CommonName, Site, Species, Variety
+from .models import Accession, Collector, CommonName, Site, Species, Variety, Family, Genus
 
 
-def add_accession(request):
+def add_seed_accession(request):
     if request.method == 'POST':
         form = AccessionForm(request.POST)
 
@@ -28,8 +28,10 @@ def add_accession(request):
             common_name_data = form.cleaned_data['common_name']
             common_name, created = CommonName.objects.get_or_create(name=common_name_data)
 
-            family = form.cleaned_data['family']
-            genus = form.cleaned_data['genus']
+            family_data = form.cleaned_data['family'].capitalize()
+            family, _ = Family.objects.get_or_create(name=family_data)
+            genus_data = form.cleaned_data['genus'].capitalize()
+            genus, _ = Genus.objects.get_or_create(name=genus_data)
             species_data = form.cleaned_data['species'].lower()
             species, created = Species.objects.get_or_create(genus=genus, name=species_data)
             if created or common_name not in list(species.common_name.all()):
@@ -85,7 +87,7 @@ def add_accession(request):
     else:
         form = AccessionForm()
 
-    return render(request, "plant_database/accession.html", {'form': form})
+    return render(request, "plant_database/add_seed_accession.html", {'form': form})
 
 
 def index(request):

@@ -21,8 +21,8 @@
                 </div>
                 <br/>
                 <div class="text-muted">
-                    Use the <a href="{% url 'plant_database:add_accession' %}">seed accession form</a> to add new seed
-                    accessions to the database.
+                    Use the <a href="{% url 'plant_database:add_seed_accession' %}">seed accession form</a> to add new
+                    seed accessions to the database.
                 </div>
             </div>
 
@@ -49,7 +49,8 @@
                             {% empty %}
                                 <p>Your plant database is empty!</p>
                                 <p>
-                                    <a href="{% url 'plant_database:add_accession' %}">Add your first accession!</a>
+                                    <a href="{% url 'plant_database:add_seed_accession' %}">Add your first seed
+                                        accession!</a>
                                 </p>
                             {% endfor %}
                         </div>
