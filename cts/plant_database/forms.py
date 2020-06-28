@@ -2,7 +2,12 @@ from datetime import date
 
 from django import forms
 
-from .models import Accession, Family, Genus
+from .models import Accession, Family, Genus, Country
+
+ALTITUDE_UNIT_CHOICES = [
+    ('M', 'Meters'),
+    ('F', 'Feet')
+]
 
 
 def get_last_accession_number():
@@ -30,9 +35,9 @@ class AccessionForm(forms.Form):
     common_name = forms.CharField(max_length=70, label="Species common name",
                                   widget=forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'Common name'}))
 
-    family = forms.ModelChoiceField(queryset=Family.objects.all(), widget=forms.Select(attrs={'class': 'form-control'}))
+    family = forms.CharField(max_length=70, widget=forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'Family'}))
 
-    genus = forms.ModelChoiceField(queryset=Genus.objects.all(), widget=forms.Select(attrs={'class': 'form-control'}))
+    genus = forms.CharField(max_length=70, widget=forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'Genus'}))
 
     species = forms.CharField(max_length=70, label="Species scientific name",
                               widget=forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'Species name'}))
@@ -41,9 +46,8 @@ class AccessionForm(forms.Form):
                               widget=forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'Variety name'}),
                               required=False)
 
-    country = forms.CharField(max_length=70, label="Country",
-                              widget=forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'Country'}),
-                              required=False)
+    country = forms.ModelChoiceField(queryset=Country.objects.all(), required=True, empty_label=None,
+                                     widget=forms.Select(attrs={'class': 'form-control'}))
     maj_country = forms.CharField(max_length=70, label="Major country area",
                                   widget=forms.TextInput(
                                       attrs={'class': 'form-control', 'placeholder': 'e.g. a U.S. state'}),
@@ -74,9 +78,11 @@ class AccessionForm(forms.Form):
     latitude = forms.FloatField(min_value=-90, max_value=90, widget=forms.NumberInput(attrs={'class': 'form-control'}))
     longitude = forms.FloatField(min_value=-180, max_value=180,
                                  widget=forms.NumberInput(attrs={'class': 'form-control'}))
-    # TODO add dropdown to choose unit for elevation
+    altitude_unit = forms.ChoiceField(choices=ALTITUDE_UNIT_CHOICES,
+                                      widget=forms.Select(attrs={'class': 'form-control'}))
     altitude = forms.FloatField(widget=forms.NumberInput(attrs={'class': 'form-control'}))
-    bank_date = forms.DateField(initial=date.today)  # When accession was added to the seed bank
+
+    bank_date = forms.DateField(initial=date.today, widget=forms.SelectDateWidget(attrs={'class': 'form-control'}))  # When accession was added to the seed bank
 
     def __init__(self, *args, **kwargs):
         extra_fields = kwargs.pop('extra', 1)
