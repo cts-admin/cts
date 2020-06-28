@@ -67,8 +67,15 @@ class Variety(models.Model):
         verbose_name_plural = "Varieties"
 
 
+class Country(models.Model):
+    name = models.CharField(max_length=70, blank=True, unique=True)
+
+    def __str__(self):
+        return self.name
+
+
 class Site(models.Model):
-    country = models.CharField(max_length=70, blank=True)
+    country = models.ForeignKey(Country, on_delete=models.SET_NULL, null=True)
     major_country_area = models.CharField(max_length=70, blank=True)  # e.g. a U.S. state
     minor_country_area = models.CharField(max_length=70, blank=True)  # e.g. a U.S. county
     locality = models.CharField(max_length=70, blank=True)  # e.g. local name like 'Saltflat Springs'
@@ -100,3 +107,16 @@ class Accession(models.Model):
             return ' '.join([self.genus.name, self.species.name, 'var.', self.variety.name])
         else:
             return ' '.join([self.genus.name, self.species.name])
+
+
+# TODO
+"""
+Refactor Accessions so some properties become those of a SeedAccession in anticipation of
+LivingAccessions.
+"""
+
+
+class SeedAccession(Accession):
+
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
