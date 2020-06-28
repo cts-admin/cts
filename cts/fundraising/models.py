@@ -10,7 +10,7 @@ from sorl.thumbnail import ImageField, get_thumbnail
 
 from accounts.models import Profile
 
-GOAL_AMOUNT = Decimal("20000.00")
+GOAL_AMOUNT = Decimal("1000.00")
 GOAL_START_DATE = datetime.date(2017, 1, 1)
 DISPLAY_DONOR_DAYS = 365
 DEFAULT_DONATION_AMOUNT = 10
