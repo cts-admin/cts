@@ -5,7 +5,7 @@
     <div class="donor-goals">
         <ul>
             <li><strong>{{ goal_percent }}% funded</strong></li>
-            <li><strong>${{ donated_amount|intcomma }} donated</strong> of US&nbsp;${{ goal_amount|intcomma }} goal for
+            <li><strong>${{ donated_amount|intcomma }} donated</strong> of ${{ goal_amount|intcomma }} goal for
                 {{ goal_start_date|date:"Y" }}</li>
             <li><strong>{{ total_donors }} donor{{ total_donors|pluralize:",s" }}</strong></li>
         </ul>

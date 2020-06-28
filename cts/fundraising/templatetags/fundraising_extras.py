@@ -1,3 +1,5 @@
+import datetime
+
 from decimal import Decimal
 
 from django import template
@@ -7,7 +9,7 @@ from django.template.defaultfilters import floatformat
 
 from ..forms import DonateForm
 from ..models import (
-    DEFAULT_DONATION_AMOUNT, DISPLAY_DONOR_DAYS, GOAL_AMOUNT, GOAL_START_DATE,
+    DEFAULT_DONATION_AMOUNT, DISPLAY_DONOR_DAYS, GOAL_AMOUNT,
     LEADERSHIP_LEVEL_AMOUNT, CTSDonor, InKindDonor, Payment,
 )
 from members.models import (
@@ -31,19 +33,20 @@ def as_percentage(part, total):
 @register.inclusion_tag('fundraising/includes/donation_form.html', takes_context=True)
 def donation_form(context):
     user = context['user']
-    donated_amount = Payment.objects.filter(date__gte=GOAL_START_DATE).aggregate(
+    goal_start = datetime.date(datetime.datetime.now().year, 1, 1)
+    donated_amount = Payment.objects.filter(date__gte=goal_start).aggregate(
         models.Sum('amount'))['amount__sum'] or 0
-    donated_amount += Invoice.objects.filter(paid_date__gte=GOAL_START_DATE).aggregate(
+    donated_amount += Invoice.objects.filter(paid_date__gte=goal_start).aggregate(
         models.Sum('amount'))['amount__sum'] or 0
 
-    total_donors = CTSDonor.objects.filter(donation__payment__date__gte=GOAL_START_DATE).distinct().count()
+    total_donors = CTSDonor.objects.filter(donation__payment__date__gte=goal_start).distinct().count()
     form = DonateForm(initial={
         'amount': DEFAULT_DONATION_AMOUNT,
     })
 
     return {
         'goal_amount': GOAL_AMOUNT,
-        'goal_start_date': GOAL_START_DATE,
+        'goal_start_date': goal_start,
         'donated_amount': donated_amount,
         'total_donors': total_donors,
         'form': form,
