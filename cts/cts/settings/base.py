@@ -111,7 +111,7 @@ DATABASES = {
         'PORT': os.environ.get('PG_PORT', ''),
         'OPTIONS': {'sslmode': 'require'},
         'TEST': {
-            'NAME': 'travis_ci_test'
+            'NAME': 'ctsdev'
         }
     }
 }
