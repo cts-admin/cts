@@ -31,6 +31,7 @@ INSTALLED_APPS = [
     'slack',
 
     'wagtail.contrib.routable_page',
+    "wagtail.contrib.search_promotions",
     'wagtail.contrib.forms',
     'wagtail.contrib.redirects',
     'wagtail.embeds',

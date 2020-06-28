@@ -1,7 +1,33 @@
 import pytest
 from django.contrib.auth import get_user_model
+from django.urls import reverse
+from selenium import webdriver
+from selenium.webdriver.common.keys import Keys
+from selenium.webdriver.support.select import Select
 
-from .models import Family, Genus
+from .models import Family, Genus, Country
+
+
+@pytest.fixture(scope='module')
+def browser():
+    """Provide a selenium webdriver instance."""
+    # SetUp
+    options = webdriver.FirefoxOptions()
+    options.add_argument('headless')
+
+    browser_ = webdriver.Firefox(firefox_options=options)
+
+    yield browser_
+
+    # TearDown
+    browser_.quit()
+
+
+@pytest.fixture()
+def country(db):
+    country = Country(name='United States of America')
+    country.save()
+    return country
 
 
 @pytest.fixture()
@@ -19,7 +45,7 @@ def genus(family, db):
 
 
 @pytest.mark.django_db
-def test_accession_privacy(client, family, genus):
+def test_accession_privacy(client, family, genus, country):
     """
     Test that accession objects are not visible to users other
     than the user who created them.
@@ -32,16 +58,16 @@ def test_accession_privacy(client, family, genus):
     client.login(username=user_one.username, password="test_one")
 
     # Create a new accession object
-    response = client.post("/plant-database/add-accession", {
+    response = client.post("/plant-database/add-seed-accession", {
         "col_fname": "User",
         "col_lname": "One",
         "add_collector_count": 1,
         "common_name": "Common name",
-        "family": family.pk,
-        "genus": genus.pk,
+        "family": family.name,
+        "genus": genus.name,
         "species": "species",
         "variety": "",
-        "county": "USA",
+        "country": country.pk,
         "maj_country": "Utah",
         "min_country": "Salt Lake",
         "locality": "City Creek",
@@ -52,6 +78,7 @@ def test_accession_privacy(client, family, genus):
         "storage_location": "Freezer",
         "latitude": 40.0,
         "longitude": -112.0,
+        "altitude_unit": 'M',
         "altitude": 3800,
         "bank_date": "2019-05-03"
     }, follow=True)
@@ -67,3 +94,85 @@ def test_accession_privacy(client, family, genus):
     print(str(response.content, encoding='utf-8'))
     assert "Dummus species" not in str(response.content, encoding='utf-8')
     assert "<p>Your plant database is empty!</p>" in str(response.content, encoding='utf-8')
+
+
+@pytest.mark.django_db
+def test_add_seed_accession_requires_login(client):
+    user_model = get_user_model()
+    user_one = user_model.objects.create_user(username="test_user_one", email="test1@gmail.com", password="test_one")
+    response = client.get('/plant-database/add-seed-accession')
+    assert response.status_code == 200
+    login_url = reverse('login')
+    assert 'Please <a href="' + login_url + '?next=/plant-database/add-seed-accession">log in</a> to add new accessions to your plant database.' in str(
+        response.content, encoding='utf-8')
+    client.login(username=user_one.username, password="test_one")
+    response = client.get('/plant-database/add-seed-accession')
+    assert response.status_code == 200
+    assert "Accession number:" in str(response.content, encoding='utf-8')
+
+
+def test_add_seed_accession_form_single_collector(browser, client, live_server):
+    """
+    Test web form handling of the creation of a new seed accession.
+    :return: None
+    """
+    user_model = get_user_model()
+    user_one = user_model.objects.create_user(username="test_user_one", email="test1@gmail.com",
+                                              password="test_one")
+    client.login(username=user_one.username, password="test_one")
+    cookie = client.cookies['sessionid']
+
+    browser.get(live_server + '/plant-database/add-seed-accession')
+    browser.add_cookie({'name': 'sessionid', 'value': cookie.value, 'secure': False, 'path': '/'})
+    browser.refresh()
+
+    col_fname = browser.find_element_by_id('id_col_fname')
+    col_lname = browser.find_element_by_id('id_col_lname')
+    common_name = browser.find_element_by_id('id_common_name')
+    family = browser.find_element_by_id('id_family')
+    genus = browser.find_element_by_id('id_genus')
+    species = browser.find_element_by_id('id_species')
+    variety = browser.find_element_by_id('id_variety')
+    country = browser.find_element_by_id('id_country')
+    maj_country = browser.find_element_by_id('id_maj_country')
+    min_country = browser.find_element_by_id('id_min_country')
+    locality = browser.find_element_by_id('id_locality')
+    plant_total = browser.find_element_by_id('id_plant_total')
+    sample_size = browser.find_element_by_id('id_sample_size')
+    percent_flowering = browser.find_element_by_id('id_percent_flowering')
+    percent_fruiting = browser.find_element_by_id('id_percent_fruiting')
+    storage_location = browser.find_element_by_id('id_storage_location')
+    latitude = browser.find_element_by_id('id_latitude')
+    longitude = browser.find_element_by_id('id_longitude')
+    altitude_unit = browser.find_element_by_id('id_altitude_unit')
+    altitude = browser.find_element_by_id('id_altitude')
+
+    submit = browser.find_element_by_id('id_submit')
+
+    col_fname.send_keys('John')
+    col_lname.send_keys('Doe')
+    common_name.send_keys('marijuana')
+    family.send_keys('Cannabaceae')
+    genus.send_keys('Cannabis')
+    species.send_keys('sativa')
+    variety.send_keys('sativa')
+
+    for option in country.find_elements_by_tag_name('option'):
+        if option.text == 'United States of America':
+            option.click()
+            break
+
+    maj_country.send_keys('Colorado')
+    min_country.send_keys('El Paso')
+    locality.send_keys('Colorado Springs')
+    plant_total.send_keys(30)
+    sample_size.send_keys(100)
+    percent_flowering.send_keys(100)
+    percent_fruiting.send_keys(0)
+    storage_location.send_keys('Downstairs freezer')
+    latitude.send_keys('38.849263')
+    longitude.send_keys('-104.825885')
+    Select(altitude_unit).select_by_visible_text('Meters')
+    altitude.send_keys('1846.58')
+
+    submit.send_keys(Keys.RETURN)
