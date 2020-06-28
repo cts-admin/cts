@@ -1,0 +1,72 @@
+{% extends 'base.html' %}
+{% load humanize static %}
+
+{% block title %}Plant Database{% endblock %}
+
+{% block extra_css %}<link rel="stylesheet" type="text/css" href="{% static 'css/overlay.css' %}">{% endblock %}
+
+{% block content %}
+    {% block nav %}{{ block.super }}{% endblock %}
+    {% block messages %}{{ block.super }}{% endblock %}
+
+    <div class="main">
+        <div class="container tim-container" style="padding-top:50px">
+            <div class="col-md-3">
+                <h2>
+                    CTS Plant Database
+                </h2>
+
+                <div class="text-muted">
+                    GIS-linked plant database suitable for tracking herbarium specimens and/or seed collections.
+                </div>
+                <br/>
+                <div class="text-muted">
+                    Use the <a href="{% url 'plant_database:add_seed_accession' %}">seed accession form</a> to add new
+                    seed accessions to the database.
+                </div>
+            </div>
+
+            <div class="col-md-9">
+                {% if user.is_authenticated %}
+                    <div id="acordeon">
+                        <div class="panel-group" id="accordion">
+                            {% for accession in accessions %}
+                                <div class="panel panel-default">
+                                    <div class="panel-heading">
+                                        <h4 class="panel-title">
+                                            <a data-target="#collapse{{ accession.id }}" href="collapse{{ accession.id }}" data-toggle="gsdk-collapse">
+                                                Accession #{{ accession.id }}: <span class="italic">{{ accession.genus }} {{ accession.species }}</span>
+                                            </a>
+                                        </h4>
+                                    </div>
+                                    <div id="collapse{{ accession.id }}" class="panel-collapse collapse">
+                                        <div class="panel-body">
+                                            <!-- TODO add link to accession edit form -->
+                                            <p>Accession details</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            {% empty %}
+                                <p>Your plant database is empty!</p>
+                                <p>
+                                    <a href="{% url 'plant_database:add_seed_accession' %}">Add your first seed
+                                        accession!</a>
+                                </p>
+                            {% endfor %}
+                        </div>
+                    </div>
+                {% else %}
+                    <p>
+                        Please <a href="{% url 'login' %}?next={{request.path}}">log in</a> to get started with your own
+                        personal plant database.
+                    </p>
+                {% endif %}
+            </div>
+        </div>
+
+        <div class="space"></div>
+        <!-- end container -->
+    </div>
+    <!-- end main -->
+
+{% endblock %}

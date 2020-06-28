@@ -116,3 +116,5 @@ ENV/
 /cts/docker-compose.yml
 /cts/Dockerfile
 /nginx/scripts/
+
+cts/upgrades_readme.txt

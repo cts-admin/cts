@@ -22,14 +22,16 @@ SECRET_KEY = os.environ.get('DJANGO_SECRET_KEY', '')
 # Application definition
 
 INSTALLED_APPS = [
-    'home',
+    'accounts',
     'blog',
     'fundraising',
+    'home',
     'members',
-    'accounts',
+    'plant_database',
     'slack',
 
     'wagtail.contrib.routable_page',
+    "wagtail.contrib.search_promotions",
     'wagtail.contrib.forms',
     'wagtail.contrib.redirects',
     'wagtail.embeds',
@@ -96,7 +98,6 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'cts.wsgi.application'
 
-
 # Database
 # https://docs.djangoproject.com/en/3.0/ref/settings/#databases
 
@@ -110,7 +111,7 @@ DATABASES = {
         'PORT': os.environ.get('PG_PORT', ''),
         'OPTIONS': {'sslmode': 'require'},
         'TEST': {
-            'NAME': 'travis_ci_test'
+            'NAME': 'ctsdev'
         }
     }
 }
