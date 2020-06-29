@@ -31,7 +31,7 @@ def add_seed_accession(request):
             family_data = form.cleaned_data['family'].capitalize()
             family, _ = Family.objects.get_or_create(name=family_data)
             genus_data = form.cleaned_data['genus'].capitalize()
-            genus, _ = Genus.objects.get_or_create(name=genus_data)
+            genus, _ = Genus.objects.get_or_create(family=family, name=genus_data)
             species_data = form.cleaned_data['species'].lower()
             species, created = Species.objects.get_or_create(genus=genus, name=species_data)
             if created or common_name not in list(species.common_name.all()):

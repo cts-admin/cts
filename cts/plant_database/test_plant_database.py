@@ -13,7 +13,6 @@ def browser():
     """Provide a selenium webdriver instance."""
     # SetUp
     options = webdriver.FirefoxOptions()
-    options.add_argument('headless')
 
     browser_ = webdriver.Firefox(firefox_options=options)
 
@@ -111,7 +110,7 @@ def test_add_seed_accession_requires_login(client):
     assert "Accession number:" in str(response.content, encoding='utf-8')
 
 
-def test_add_seed_accession_form_single_collector(browser, client, live_server):
+def test_add_seed_accession_form_single_collector(browser, client, country, live_server):
     """
     Test web form handling of the creation of a new seed accession.
     :return: None
@@ -175,4 +174,6 @@ def test_add_seed_accession_form_single_collector(browser, client, live_server):
     Select(altitude_unit).select_by_visible_text('Meters')
     altitude.send_keys('1846.58')
 
-    submit.send_keys(Keys.RETURN)
+    submit.submit()
+
+    assert 'Accession added to database!' in browser.page_source
