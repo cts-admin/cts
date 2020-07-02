@@ -91,6 +91,11 @@ def add_seed_accession(request):
 
 
 def index(request):
+    messages.add_message(request, messages.WARNING, 'This feature is still in active development! Please report any '
+                                                    'problems to '
+                                                    '<a href="mailto:ctsadmin@conservationtechnologysolutions.org">'
+                                                    'ctsadmin@conservationtechnologysolutions.org</a>',
+                         extra_tags='safe')
     accessions = []
     if not request.user.is_anonymous:
         accessions = Accession.objects.filter(owner=request.user)
