@@ -73,6 +73,9 @@ class Country(models.Model):
     def __str__(self):
         return self.name
 
+    class Meta:
+        verbose_name_plural = "Countries"
+
 
 class Site(models.Model):
     country = models.ForeignKey(Country, on_delete=models.SET_NULL, null=True)
@@ -93,8 +96,8 @@ class Accession(models.Model):
     site = models.ForeignKey(Site, on_delete=models.SET_NULL, null=True)
     collectors = models.ManyToManyField(Collector)
     plant_total = models.IntegerField()
+    # TODO - Don't allow sample size to be greater than plant total
     sample_size = models.IntegerField()
-    percent_sampled = models.FloatField(max_length=6)
     percent_flowering = models.FloatField(max_length=6)
     percent_fruiting = models.FloatField(max_length=6)
     storage_location = models.CharField(max_length=200)
