@@ -42,8 +42,7 @@
                                     </div>
                                     <div id="collapse{{ accession.id }}" class="panel-collapse collapse">
                                         <div class="panel-body">
-                                            <!-- TODO add link to accession edit form -->
-                                            <p>Accession details</p>
+                                            <a href="{% url 'plant_database:edit_seed_accession' accession.id %}">Edit this accession</a>
                                         </div>
                                     </div>
                                 </div>

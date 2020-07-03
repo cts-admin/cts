@@ -30,7 +30,7 @@ class AccessionForm(forms.Form):
     col_lname = forms.CharField(max_length=30, label="Collector's last name",
                                 widget=forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'Last name'}))
     # Include a hidden field to track number of additional collectors
-    add_collector_count = forms.CharField(widget=forms.HiddenInput())
+    add_collector_count = forms.IntegerField(widget=forms.HiddenInput())
 
     common_name = forms.CharField(max_length=70, label="Species common name",
                                   widget=forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'Common name'}))

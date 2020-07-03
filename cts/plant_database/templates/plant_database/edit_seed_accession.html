@@ -1,0 +1,75 @@
+{% extends 'base.html' %}
+{% load humanize static %}
+
+{% block title %}Plant Database{% endblock %}
+
+{% block extra_css %}
+    <!--     Font Awesome     -->
+    <link href="https://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Grand+Hotel" rel="stylesheet" type="text/css">
+    <link href="{% static 'css/plant_database.css' %}" rel="stylesheet" type="text/css">
+{% endblock extra_css %}
+
+{% block content %}
+    {% block nav %}{{ block.super }}{% endblock %}
+    {% block messages %}{{ block.super }}{% endblock %}
+
+    <div class="main">
+        <div class="container tim-container" style="padding-top:50px">
+            <div class="col-md-3">
+                <h2>
+                    CTS Plant Database
+                </h2>
+
+                <div class="text-muted">
+                    Edit seed accession.
+                </div>
+            </div>
+
+            <div class="col-md-9">
+                {% if user.is_authenticated %}
+                    <form id="accession-form" class="form-horizontal" action="{% url 'plant_database:edit_seed_accession' pk %}" method="POST">
+                        {% csrf_token %}
+                        {% for error in form.non_field_errors %}
+                            <div class="form-group has-error text-danger">
+                                {{ error }}
+                            </div>
+                        {% endfor %}
+                        {% for field in form %}
+                            <div class="form-group has-error text-danger">
+                                {{ field.errors }}
+                            </div>
+                            {% if not field.is_hidden %}
+                                <div class="form-group">
+                                    {{ field.label_tag }}
+                                    {{ field }}
+                                </div>
+                            {% else %}
+                                {{ field }}
+                            {% endif %}
+                            {% if field.label == "Collector's last name" %}
+                                <button id="add-another" class="btn btn-sm">Add another collector</button>
+                                <button id="remove-another" class="btn btn-sm btn-danger hidden">Remove collector</button>
+                            {% endif %}
+                        {% endfor %}
+                        <button id="id_submit" class="btn btn-primary form-group">Update</button>
+                    </form>
+                {% else %}
+                    <p>
+                        Please <a href="{% url 'login' %}?next={{request.path}}">log in</a> to make changes to your seed accessions.
+                    </p>
+                {% endif %}
+            </div>
+        </div>
+
+        <div class="space"></div>
+        <!-- end container -->
+    </div>
+    <!-- end main -->
+
+{% endblock %}
+
+{% block extra_js %}
+    <!-- We reuse the add-seed-accession javascript to handle the button to add collectors -->
+    <script type="text/javascript" src="{% static 'js/add_seed_accession.js' %}"></script>
+{% endblock %}
