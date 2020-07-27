@@ -44,6 +44,8 @@ INSTALLED_APPS = [
     'wagtail.admin',
     'wagtail.core',
 
+    'bootstrap4',
+    'django_plotly_dash.apps.DjangoPlotlyDashConfig',
     'modelcluster',
     'taggit',
     'django_celery_results',
@@ -67,6 +69,9 @@ MIDDLEWARE = [
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
     'django.middleware.security.SecurityMiddleware',
+
+    'django_plotly_dash.middleware.BaseMiddleware',
+    'django_plotly_dash.middleware.ExternalRedirectionMiddleware',
 
     'wagtail.core.middleware.SiteMiddleware',
     'wagtail.contrib.redirects.middleware.RedirectMiddleware',
@@ -137,6 +142,10 @@ USE_TZ = True
 STATICFILES_FINDERS = [
     'django.contrib.staticfiles.finders.FileSystemFinder',
     'django.contrib.staticfiles.finders.AppDirectoriesFinder',
+
+    'django_plotly_dash.finders.DashAssetFinder',
+    'django_plotly_dash.finders.DashComponentFinder',
+    'django_plotly_dash.finders.DashAppDirectoryFinder',
 ]
 
 STATICFILES_DIRS = [
@@ -266,3 +275,25 @@ LOGGING = {
         },
     }
 }
+
+# Django Plotly Settings
+X_FRAME_OPTIONS = 'SAMEORIGIN'
+PLOTLY_COMPONENTS = [
+    # Common components
+    'dash_core_components',
+    'dash_html_components',
+    'dash_renderer',
+
+    # django-plotly-dash components
+    'dpd_components',
+    # static support if serving local assets
+    'dpd_static_support',
+
+    # Other components, as needed
+    'dash_bootstrap_components',
+]
+PLOTLY_DASH = {
+    "view_decorator": None,
+    "stateless_loader": "home.scaffold.stateless_app_loader",
+}
+

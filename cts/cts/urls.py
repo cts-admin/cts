@@ -11,6 +11,7 @@ from wagtail.documents import urls as wagtaildocs_urls
 
 from accounts import views as account_views
 
+
 urlpatterns = [
     url(r'^django-admin/', admin.site.urls),
 
@@ -38,6 +39,9 @@ urlpatterns = [
     # Alternatively, if you want Wagtail pages to be served from a subpath
     # of your site, rather than the site root:
     #    url(r'^pages/', include(wagtail_urls)),
+
+    # Dash
+    path('django_plotly_dash/', include('django_plotly_dash.urls')),
 ]
 
 
