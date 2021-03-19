@@ -25,7 +25,7 @@ django-modelcluster==5.0
 django-registration==3.1
 django-taggit==1.0.0
 django-treebeard==4.2.0
-djangorestframework==3.11.0
+djangorestframework==3.11.2
 docopt==0.6.2
 draftjs-exporter==2.1.5
 feedfinder2==0.0.4
