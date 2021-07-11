@@ -4,6 +4,7 @@ from django.views.decorators.csrf import ensure_csrf_cookie
 from django.utils.decorators import method_decorator
 
 from wagtail.core import hooks
+from wagtail.core.models import Site
 
 from .utils import strip_prefix_and_ending_slash
 
@@ -12,7 +13,7 @@ class BlogPageServe(View):
 
     @method_decorator(ensure_csrf_cookie)
     def get(self, request, *args, **kwargs):
-        if not request.site:
+        if not Site.find_for_request(request):
             raise Http404
         if request.resolver_match.url_name == 'blog_page_serve_slug':
             # Splitting the request path and obtaining the path_components
@@ -28,7 +29,7 @@ class BlogPageServe(View):
             path_components = split_path[:-4] + split_path[-1:]
         else:
             path_components = [strip_prefix_and_ending_slash(request.path).split('/')[-1]]
-        page, args, kwargs = request.site.root_page.specific.route(request, path_components)
+        page, args, kwargs = Site.find_for_request(request).root_page.specific.route(request, path_components)
 
         for fn in hooks.get_hooks('before_serve_page'):
             result = fn(page, request, args, kwargs)

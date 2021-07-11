@@ -1,9 +1,12 @@
+import time
+
 import pytest
 from django.contrib.auth import get_user_model
-from django.urls import reverse
 from selenium import webdriver
-from selenium.webdriver.common.keys import Keys
+from selenium.webdriver.common.by import By
 from selenium.webdriver.support.select import Select
+from selenium.webdriver.support import expected_conditions as EC
+from selenium.webdriver.support.ui import WebDriverWait
 
 from .models import Family, Genus, Country
 
@@ -100,17 +103,14 @@ def test_add_seed_accession_requires_login(client):
     user_model = get_user_model()
     user_one = user_model.objects.create_user(username="test_user_one", email="test1@gmail.com", password="test_one")
     response = client.get('/plant-database/add-seed-accession')
-    assert response.status_code == 200
-    login_url = reverse('login')
-    assert 'Please <a href="' + login_url + '?next=/plant-database/add-seed-accession">log in</a> to add new accessions to your plant database.' in str(
-        response.content, encoding='utf-8')
+    assert response.status_code == 302  # View should redirect to login page
     client.login(username=user_one.username, password="test_one")
     response = client.get('/plant-database/add-seed-accession')
     assert response.status_code == 200
     assert "Accession number:" in str(response.content, encoding='utf-8')
 
 
-def test_add_seed_accession_form_single_collector(browser, client, country, live_server):
+def test_add_seed_accession_form_single_collector(browser, country, live_server):
     """
     Test web form handling of the creation of a new seed accession.
     :return: None
@@ -118,12 +118,13 @@ def test_add_seed_accession_form_single_collector(browser, client, country, live
     user_model = get_user_model()
     user_one = user_model.objects.create_user(username="test_user_one", email="test1@gmail.com",
                                               password="test_one")
-    client.login(username=user_one.username, password="test_one")
-    cookie = client.cookies['sessionid']
 
     browser.get(live_server + '/plant-database/add-seed-accession')
-    browser.add_cookie({'name': 'sessionid', 'value': cookie.value, 'secure': False, 'path': '/'})
-    browser.refresh()
+    username_el = browser.find_element_by_id('id_username')
+    username_el.send_keys(user_one.username)
+    password_el = browser.find_element_by_id('id_password')
+    password_el.send_keys('test_one')
+    browser.find_element_by_xpath('/html/body/div[2]/div[1]/div[2]/form/button').click()
 
     col_fname = browser.find_element_by_id('id_col_fname')
     col_lname = browser.find_element_by_id('id_col_lname')
@@ -175,5 +176,7 @@ def test_add_seed_accession_form_single_collector(browser, client, country, live
     altitude.send_keys('1846.58')
 
     submit.submit()
+
+    time.sleep(1)  # Wait for page to load so page source is correct for next assertion
 
     assert 'Accession added to database!' in browser.page_source
