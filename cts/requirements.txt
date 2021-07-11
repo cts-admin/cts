@@ -87,7 +87,7 @@ telepath==0.2
 texttable==0.8.8
 tldextract==2.2.0
 Unidecode==0.4.21
-urllib3==1.24.2
+urllib3==1.26.5
 vine==5.0.0
 wagtail==2.13.2
 wcwidth==0.2.5
