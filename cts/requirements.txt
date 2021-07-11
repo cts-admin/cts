@@ -28,7 +28,7 @@ django-celery-results==2.1.0
 django-filter==2.4.0
 django-markdownx==2.0.21
 django-modelcluster==5.1
-django-registration==3.1
+django-registration==3.1.2
 django-taggit==1.0.0
 django-treebeard==4.2.0
 djangorestframework==3.12.4
