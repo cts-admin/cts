@@ -45,7 +45,7 @@ jieba3k==0.35.1
 jsonschema==2.6.0
 kombu==5.1.0
 l18n==2018.5
-lxml==4.6.3
+lxml==4.6.5
 Markdown==2.6.8
 more-itertools==4.3.0
 newspaper3k==0.2.5
