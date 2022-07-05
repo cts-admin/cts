@@ -22,7 +22,7 @@ colorama==0.3.9
 confusable-homoglyphs==3.0.0
 cryptography==2.6.1
 cssselect==1.0.1
-Django==3.2.4
+Django==3.2.14
 django-appconf==1.0.2
 django-celery-results==2.1.0
 django-filter==2.4.0
